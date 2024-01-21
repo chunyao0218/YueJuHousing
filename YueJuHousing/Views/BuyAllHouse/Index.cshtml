@@ -1,0 +1,392 @@
+﻿@{
+    ViewData["Title"] = "悅聚房屋 | 最佳房屋選擇";
+}
+
+<html lang="en">
+<head>
+
+    <!--
+
+    Template 2098 Health
+
+    http://www.tooplate.com/view/2098-health
+
+    -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Tooplate">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/animate.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/css/custom-style.css">
+    <link rel="stylesheet" href="~/font-awesome/css/all.css">
+    <link rel="stylesheet" href="~/css/index.css">
+    <link rel="stylesheet" href="~/css/BuyAllHouse.css">
+    <link rel="stylesheet" href="~/css/BuyAllHouseSidebar.css">
+    <link rel="stylesheet" href="~/css/ui.css">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="~/css/tooplate-style.css">
+
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+    <!-- PRE LOADER -->
+    <section class="preloader">
+        <div class="spinner">
+            @*<img src="~/images/Preloadlogo.png" class="img-responsive" alt="" style="text-align:center;width:100px;height:100px;">*@
+            <span class="spinner-rotate">
+                <img src="~/images/Preloadlogo.jpg" class="img-responsive" alt="" style="text-align:center;width:100px;height:100px;">
+            </span>
+        </div>
+    </section>
+
+    <!-- MAKE A POST -->
+    <section id="appointment" data-stellar-background-ratio="3">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12 col-sm-12">
+                    <!-- CONTACT FORM HERE -->
+                    <form id="appointment-form" role="form" method="post" action="Index">
+
+                        <!-- SECTION TITLE -->
+                        <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
+                            <h2><i class=" fa fa-house-flag" style="color:#456270"></i> 刊登出售廣告</h2>
+                            @*<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OA knee Clinical SDM Support System</h2>
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                            <label for="Reoperation">*本系統僅提供建議，實際狀況請至醫療院所經與專業醫師討論判斷為主。</label>
+                            </div>*@
+                        <div class="col-md-12 col-sm-12">
+                                <h3 style="background: #456270;padding: 4px 15px 4px;letter-spacing: 0.1vw;font-weight: 500;font-size: 20px;display: table;color: #fff;margin-bottom: 10px;border-radius: 50px;">基本資料</h3>
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                                <label for="address" style="margin-right: 10px;"><i class="fa fa-intersex"></i>出售地址：</label>
+                        </div>
+                        <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                <select id="city" class="form-control" name="KLSCALE" style="margin-right: 10px;" onchange="updateTownships()" required>
+                                    <option value="" disabled selected style="color: #b7b7b7;">請選擇縣市</option>
+                                    <option value="基隆市">基隆市</option>
+                                    <option value="台北市">台北市</option>
+                                    <option value="新北市">新北市</option>
+                                    <option value="桃園市">桃園市</option>
+                                    <option value="新竹市">新竹市</option>
+                                    <option value="台中市">台中市</option>
+                                    <option value="嘉義市">嘉義市</option>
+                                    <option value="台南市">台南市</option>
+                                    <option value="高雄市">高雄市</option>
+                                    <option value="新竹縣">新竹縣</option>
+                                    <option value="苗栗縣">苗栗縣</option>
+                                    <option value="彰化縣">彰化縣</option>
+                                    <option value="南投縣">南投縣</option>
+                                    <option value="雲林縣">雲林縣</option>
+                                    <option value="嘉義縣">嘉義縣</option>
+                                    <option value="屏東縣">屏東縣</option>
+                                    <option value="宜蘭縣">宜蘭縣</option>
+                                    <option value="花蓮縣">花蓮縣</option>
+                                    <option value="台東縣">台東縣</option>
+                                </select>
+                                <select id="township" class="form-control" name="KLSCALE" style="margin-right: 10px;" disabled required>
+                                    <option value="1">等級1(Grade 1)</option>
+                                    <option value="2">等級2(Grade 2)</option>
+                                    <option value="3">等級3(Grade 3)</option>
+                                    <option value="4">等級4(Grade 4)</option>
+                                </select>
+                                <select class="form-control" name="KLSCALE" style="margin-right: 10px;">
+                                    <option value="1">等級1(Grade 1)</option>
+                                    <option value="2">等級2(Grade 2)</option>
+                                    <option value="3">等級3(Grade 3)</option>
+                                    <option value="4">等級4(Grade 4)</option>
+                                </select>
+                                <input type="text" class="form-control" id="floor" name="floor" placeholder="巷"><p><strong>巷</strong></p>
+                                <input type="text" class="form-control" id="floor" name="floor" placeholder="弄"><p><strong>弄</strong></p>
+                                <input type="text" class="form-control" id="floor" name="floor" placeholder="號"><p><strong>號</strong></p>
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                                <label for="address" style="margin-right: 10px;"><i class="fa fa-intersex"></i>出售總樓層：</label>
+                        </div>
+                        <div class="col-md-3 col-sm-3" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                <input type="text" class="form-control" id="floor" name="floor" placeholder="層">
+                        </div>
+                         <div class="col-md-12 col-sm-12">
+                                <label for="address" style="margin-right: 10px;"><i class="fa fa-intersex"></i>社區名稱：</label>
+                        </div>
+                        <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                <input type="text" class="form-control" id="floor" name="floor" placeholder="請輸入社區所在社區名稱">
+                        </div>
+                         <div class="col-md-12 col-sm-12">
+                                <label for="address" style="margin-right: 10px;"><i class="fa fa-intersex"></i>格局(現況)：</label>
+                        </div>
+                        <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                <input type="text" class="form-control" id="floor" name="floor" placeholder="必填"><p><strong>房</strong></p>
+                                <input type="text" class="form-control" id="floor" name="floor" placeholder="廳"><p>廳</p>
+                                <input type="text" class="form-control" id="floor" name="floor" placeholder="衛"><p>衛</p>
+                                <input type="text" class="form-control" id="floor" name="floor" placeholder="陽台"><p>陽台</p>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <label for="Weight"><i class='fas fa-weight'></i>體重(kg)：</label>
+                            <input type="text" class="form-control" id="Weight" name="Weight" placeholder="kg">
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <label for="Height">身高(cm):</label>
+                            <input type="text" class="form-control" id="Height" name="Height" placeholder="cm">
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <label for="select">退化性關節炎等級(K-L Scale Grade)：</label>
+                            <select class="form-control" name="KLSCALE">
+                                <option value="1">等級1(Grade 1)</option>
+                                <option value="2">等級2(Grade 2)</option>
+                                <option value="3">等級3(Grade 3)</option>
+                                <option value="4">等級4(Grade 4)</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                            <h3 style="background: #9CC93A;padding: 4px 15px 4px;letter-spacing: 0.1vw;font-weight: 500;font-size: 20px;display: table;color: #fff;margin-bottom: 10px;border-radius: 50px;">目標：</h3>
+                        </div>
+                        <div class="wow fadeInUp" data-wow-delay="0.8s">
+                            <div class="col-md-6 col-sm-6">
+                                <label for="name">目標 1：最低可接受疼痛減輕的幅度</label>
+                                <select class="form-control" name="GOAL1">
+                                    <option value="0.4">40%</option>
+                                    <option value="0.5">50%</option>
+                                    <option value="0.6">60%</option>
+                                    <option value="0.7">70%</option>
+                                    <option value="0.8">80%</option>
+                                </select>
+                                @*<input type="text" class="form-control" id="name" name="name" placeholder="%">*@
+                            </div>
+
+                            <div class="col-md-6 col-sm-6">
+                                <label for="email">目標 2：最低可接受功能進步的週數</label>
+                                <select class="form-control" name="GOAL2">
+                                    @*<option value="3">3週</option>
+                                    <option value="6">6週</option>
+                                    <option value="12">12週</option>
+                                    <option value="26">26週</option>
+                                    <option value="36">36週</option>
+                                    <option value="48">48週</option>
+                                    <option value="52">52週</option>*@
+                                    <option value="0">3週</option>
+                                    <option value="0.136">6週</option>
+                                    <option value="0.245">12週</option>
+                                    <option value="0.5">26週</option>
+                                    <option value="0.7">36週</option>
+                                    <option value="0.925">48週</option>
+                                    <option value="1">52週</option>
+                                </select>
+                                @*<input type="email" class="form-control" id="email" name="email" placeholder="Week">*@
+                            </div>
+
+                            <div class="col-md-6 col-sm-6">
+                                <label for="date">目標 3：最高可接受的治療費用</label>
+                                <select class="form-control" name="GOAL3">
+                                    @*<option value="5000">5,000</option>
+                                    <option value="10000">10,000</option>
+                                    <option value="20000">20,000</option>
+                                    <option value="30000">30,000</option>
+                                    <option value="40000">40,000</option>
+                                    <option value="50000">50,000</option>
+                                    <option value="110000">110,000</option>*@
+                                    <option value="1">5,000</option>
+                                    <option value="0.95">10,000</option>
+                                    <option value="0.85">20,000</option>
+                                    <option value="0.72">30,000</option>
+                                    <option value="0.56">40,000</option>
+                                    <option value="0.4">50,000</option>
+                                    <option value="0.2">100,000</option>
+                                </select>
+                                @*<input type="date" name="date" value="" class="form-control">*@
+                            </div>
+
+                            <div class="col-md-6 col-sm-6">
+                                <label for="select">目標 4：最高可接受傷口感染的風險</label>
+                                <select class="form-control" name="GOAL4">
+                                    @*<option value="0">0%</option>
+                                    <option value="1">1%</option>
+                                    <option value="1.5">1.5%</option>
+                                    <option value="2">2%</option>*@
+                                    <option value="1">0%</option>
+                                    <option value="0.7">1%</option>
+                                    <option value="0.4">1.5%</option>
+                                    <option value="0.2">2%</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <label for="select">目標 5：最久可接受的治療時間</label>
+                                <select class="form-control" name="GOAL5">
+                                    @*<option value="0.25">0.25個月</option>
+                                    <option value="3">3個月</option>
+                                    <option value="6">6個月</option>
+                                    <option value="9">9個月</option>
+                                    <option value="12">12個月</option>*@
+                                    <option value="1">0.25個月</option>
+                                    <option value="0.8">3個月</option>
+                                    <option value="0.7">6個月</option>
+                                    <option value="0.4">9個月</option>
+                                    <option value="0.1">12個月</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <label for="select">目標 6：最低可接受是非手術療法的可能</label>
+                                <select class="form-control" name="GOAL6">
+                                    @*<option value="0">0%</option>
+                                    <option value="25">25%</option>
+                                    <option value="50">50%</option>
+                                    <option value="70">70%</option>
+                                    <option value="100">100%</option>*@
+                                    <option value="0.2">0%</option>
+                                    <option value="0.4">25%</option>
+                                    <option value="0.6">50%</option>
+                                    <option value="0.8">70%</option>
+                                    <option value="1">100%</option>
+                                </select>
+                            </div>
+                            <div class="col-md-12 col-sm-12">
+                                <h3 style="background: #9CC93A;padding: 4px 15px 4px;letter-spacing: 0.1vw;font-weight: 500;font-size: 20px;display: table;color: #fff;margin-bottom: 10px;border-radius: 50px;">目標之間相對關係：</h3>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                                <select class="form-control" name="FUZZY1">
+                                    <option value="1">目標 1(疼痛減輕)</option>
+                                    <option value="2">目標 2(功能進步)</option>
+                                    <option value="3">目標 3(治療費用)</option>
+                                    <option value="4">目標 4(治療風險)</option>
+                                    <option value="5">目標 5(治療時間)</option>
+                                    <option value="6">目標 6(治療方法(開刀或非開刀))</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                                <select class="form-control" name="FUZZY2">
+                                    <option value="1">稍微重要於</option>
+                                    <option value="2">普通重要於</option>
+                                    <option value="3">非常重要於</option>
+                                    <option value="4">完全重要於</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                                <select class="form-control" name="FUZZY3">
+                                    <option value="1">目標 1(疼痛減輕)</option>
+                                    <option value="2">目標 2(功能進步)</option>
+                                    <option value="3">目標 3(治療費用)</option>
+                                    <option value="4">目標 4(治療風險)</option>
+                                    <option value="5">目標 5(治療時間)</option>
+                                    <option value="6">目標 6(治療方法(開刀或非開刀))</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                                <select class="form-control" name="FUZZY4">
+                                    <option value="1">目標 1(疼痛減輕)</option>
+                                    <option value="2">目標 2(功能進步)</option>
+                                    <option value="3">目標 3(治療費用)</option>
+                                    <option value="4">目標 4(治療風險)</option>
+                                    <option value="5">目標 5(治療時間)</option>
+                                    <option value="6">目標 6(治療方法(開刀或非開刀))</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                                <select class="form-control" name="FUZZY5">
+                                    <option value="1">稍微重要於</option>
+                                    <option value="2">普通重要於</option>
+                                    <option value="3">非常重要於</option>
+                                    <option value="4">完全重要於</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                                <select class="form-control" name="FUZZY6">
+                                    <option value="1">目標 1(疼痛減輕)</option>
+                                    <option value="2">目標 2(功能進步)</option>
+                                    <option value="3">目標 3(治療費用)</option>
+                                    <option value="4">目標 4(治療風險)</option>
+                                    <option value="5">目標 5(治療時間)</option>
+                                    <option value="6">目標 6(治療方法(開刀或非開刀))</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                                <select class="form-control" name="FUZZY7">
+                                    <option value="1">目標 1(疼痛減輕)</option>
+                                    <option value="2">目標 2(功能進步)</option>
+                                    <option value="3">目標 3(治療費用)</option>
+                                    <option value="4">目標 4(治療風險)</option>
+                                    <option value="5">目標 5(治療時間)</option>
+                                    <option value="6">目標 6(治療方法(開刀或非開刀))</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                                <select class="form-control" name="FUZZY8">
+                                    <option value="1">稍微重要於</option>
+                                    <option value="2">普通重要於</option>
+                                    <option value="3">非常重要於</option>
+                                    <option value="4">完全重要於</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                                <select class="form-control" name="FUZZY9">
+                                    <option value="1">目標 1(疼痛減輕)</option>
+                                    <option value="2">目標 2(功能進步)</option>
+                                    <option value="3">目標 3(治療費用)</option>
+                                    <option value="4">目標 4(治療風險)</option>
+                                    <option value="5">目標 5(治療時間)</option>
+                                    <option value="6">目標 6(治療方法(開刀或非開刀))</option>
+                                </select>
+                            </div>
+                            <div class="col-md-12 col-sm-12">
+                                <h3 style="background: #9CC93A;padding: 4px 15px 4px;letter-spacing: 0.1vw;font-weight: 500;font-size: 20px;display: table;color: #fff;margin-bottom: 10px;border-radius: 50px;">約束：</h3>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <label for="quality">提升生活品質的幅度：</label>
+                                <input type="text" class="form-control" id="quality" name="quality" placeholder="%">
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <label for="work">可以回原工作職場的週數：</label>
+                                <input type="text" class="form-control" id="work" name="work" placeholder="週數">
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <label for="Risk of anesthesia">可承受麻醉風險的幅度：</label>
+                                <input type="text" class="form-control" id="Risk of anesthesia" name="Risk of anesthesia" placeholder="%">
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <label for="Reoperation">可承受再次手術的可能：</label>
+                                <input type="text" class="form-control" id="Reoperation" name="Reoperation" placeholder="%">
+                            </div>
+
+                            <div class="col-md-12 col-sm-12">
+                                @*<label for="telephone">電話號碼</label>*@
+                                @*<input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone">*@
+                                @*<label for="Message">症狀概述</label>*@
+                                @*<textarea class="form-control" rows="5" id="message" name="message" placeholder="Message"></textarea>*@
+                                <button type="submit" class="form-control" id="cf-submit" name="Submit" onclick="Submit_click">送出</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+
+                @*<div class="col-md-12 col-sm-12" style="text-align:center">*@
+                @*<img src="~/images/KLSCALE.png" class="img-responsive" alt="" style="margin:auto">*@
+                @*<p>(Source: LNMIA 10358, pp. 376)</p>*@
+                @*</div>  *@
+
+
+            </div>
+        </div>
+    </section>
+    <!-- SCRIPTS -->
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.sticky.js"></script>
+    <script src="~/js/jquery.stellar.min.js"></script>
+    <script src="~/js/wow.min.js"></script>
+    <script src="~/js/smoothscroll.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/custom.js"></script>
+    <script src="~/js/index.js"></script>
+    <script src="~/js/BuyAllHouse.js"></script>
+
+</body>
+</html>
