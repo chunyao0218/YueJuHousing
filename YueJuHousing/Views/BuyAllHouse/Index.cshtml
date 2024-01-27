@@ -59,96 +59,181 @@
                         <!-- SECTION TITLE -->
                         <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
                             <h2><i class=" fa fa-house-flag" style="color:#456270"></i> 刊登出售廣告</h2>
+                            <hr></hr>
+                        </div>
                             @*<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OA knee Clinical SDM Support System</h2>
                         </div>
                         <div class="col-md-12 col-sm-12">
                             <label for="Reoperation">*本系統僅提供建議，實際狀況請至醫療院所經與專業醫師討論判斷為主。</label>
                             </div>*@
+                        <div class="wow fadeInUp" data-wow-delay="0.8s">
+                            <div class="col-md-12 col-sm-12">
+                                    <h3 style="background: #456270;padding: 4px 15px 4px;letter-spacing: 0.1vw;font-weight: 500;font-size: 20px;display: table;color: #fff;margin-bottom: 10px;border-radius: 50px;">基本資料</h3>
+                            </div>
+                            <div class="col-md-12 col-sm-12">
+                                    <label for="address" style="margin-right: 10px;"><i class="fa fa-intersex"></i>出售地址：</label>
+                            </div>
+                            <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                    <select id="city" class="form-control" name="KLSCALE" style="margin-right: 10px;" onchange="updateTownships()" required>
+                                        <option value="" disabled selected style="color: #b7b7b7;">請選擇縣市</option>
+                                        <option value="基隆市">基隆市</option>
+                                        <option value="台北市">台北市</option>
+                                        <option value="新北市">新北市</option>
+                                        <option value="桃園市">桃園市</option>
+                                        <option value="新竹市">新竹市</option>
+                                        <option value="台中市">台中市</option>
+                                        <option value="嘉義市">嘉義市</option>
+                                        <option value="台南市">台南市</option>
+                                        <option value="高雄市">高雄市</option>
+                                        <option value="新竹縣">新竹縣</option>
+                                        <option value="苗栗縣">苗栗縣</option>
+                                        <option value="彰化縣">彰化縣</option>
+                                        <option value="南投縣">南投縣</option>
+                                        <option value="雲林縣">雲林縣</option>
+                                        <option value="嘉義縣">嘉義縣</option>
+                                        <option value="屏東縣">屏東縣</option>
+                                        <option value="宜蘭縣">宜蘭縣</option>
+                                        <option value="花蓮縣">花蓮縣</option>
+                                        <option value="台東縣">台東縣</option>
+                                    </select>
+                                    <select id="township" class="form-control" name="KLSCALE" style="margin-right: 10px;" disabled required>
+                                        <option value="" disabled selected style="color: #b7b7b7;">請先選擇縣市</option>
+                                    </select>
+                                    <select class="form-control" name="KLSCALE" style="margin-right: 10px;">
+                                        <option value="1">等級1(Grade 1)</option>
+                                        <option value="2">等級2(Grade 2)</option>
+                                        <option value="3">等級3(Grade 3)</option>
+                                        <option value="4">等級4(Grade 4)</option>
+                                    </select>
+                                    <input type="text" class="form-control" id="floor" name="floor" placeholder="巷"><p><strong>巷</strong></p>
+                                    <input type="text" class="form-control" id="floor" name="floor" placeholder="弄"><p><strong>弄</strong></p>
+                                    <input type="text" class="form-control" id="floor" name="floor" placeholder="號"><p><strong>號</strong></p>
+                            </div>
+                            <div class="col-md-12 col-sm-12">
+                                    <label for="address" style="margin-right: 10px;"><i class="fa fa-intersex"></i>出售總樓層：</label>
+                            </div>
+                            <div class="col-md-3 col-sm-3" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                    <input type="text" class="form-control" id="floor" name="floor" placeholder="層">
+                            </div>
+                             <div class="col-md-12 col-sm-12">
+                                    <label for="address" style="margin-right: 10px;"><i class="fa fa-intersex"></i>社區名稱：</label>
+                            </div>
+                            <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                    <input type="text" class="form-control" id="floor" name="floor" placeholder="請輸入社區所在社區名稱">
+                            </div>
+                             <div class="col-md-12 col-sm-12">
+                                    <label for="address" style="margin-right: 10px;"><i class="fa fa-intersex"></i>格局(現況)：</label>
+                            </div>
+                            <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                    <input type="text" class="form-control" id="floor" name="floor" placeholder="必填"><p><strong>房</strong></p>
+                                    <input type="text" class="form-control" id="floor" name="floor" placeholder="廳"><p>廳</p>
+                                    <input type="text" class="form-control" id="floor" name="floor" placeholder="衛"><p>衛</p>
+                                    <input type="text" class="form-control" id="floor" name="floor" placeholder="陽台"><p>陽台</p>
+                            </div>
+                            <div class="col-md-12 col-sm-12">
+                                    <label for="address" style="margin-right: 10px;"><i class="fa fa-intersex"></i>屋齡：</label>
+                            </div>
+                            <div class="col-md-3 col-sm-3" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                    <input type="text" class="form-control" id="floor" name="floor" placeholder="年">
+                            </div>
+                            <div class="col-md-12 col-sm-12">
+                                    <label for="address" style="margin-right: 10px;"><i class="fa fa-intersex"></i>房屋座向：</label>
+                            </div>
+                            <div class="col-md-3 col-sm-3" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                    <select id="city" class="form-control" name="KLSCALE" style="margin-right: 10px;" onchange="updateTownships()" required>
+                                        <option value="" disabled selected style="color: #b7b7b7;">請選擇房屋座向</option>
+                                        <option value="坐東朝西">坐東朝西</option>
+                                        <option value="坐南朝北">坐南朝北</option>
+                                        <option value="坐西朝東">坐西朝東</option>
+                                        <option value="坐北朝南">坐北朝南</option>
+                                        <option value="坐東南朝西北">坐東南朝西北</option>
+                                        <option value="坐東北朝西南">坐東北朝西南</option>
+                                        <option value="坐西南朝東北">坐西南朝東北</option>
+                                        <option value="坐西北朝東南">坐西北朝東南</option>
+                                    </select>
+                            </div>
+                        </div>
+
                         <div class="col-md-12 col-sm-12">
-                                <h3 style="background: #456270;padding: 4px 15px 4px;letter-spacing: 0.1vw;font-weight: 500;font-size: 20px;display: table;color: #fff;margin-bottom: 10px;border-radius: 50px;">基本資料</h3>
+                            <hr></hr>
+                           <h3 style="background: #456270;padding: 4px 15px 4px;letter-spacing: 0.1vw;font-weight: 500;font-size: 20px;display: table;color: #fff;margin-bottom: 10px;border-radius: 50px;">物件面積</h3>
                         </div>
-                        <div class="col-md-12 col-sm-12">
-                                <label for="address" style="margin-right: 10px;"><i class="fa fa-intersex"></i>出售地址：</label>
+                        <div class="wow fadeInUp" data-wow-delay="0.8s">
+                            <div class="col-md-12 col-sm-12">
+                                    <label for="address" style="margin-right: 10px;"><i class="fa fa-intersex"></i>權狀坪數：</label>
+                            </div>
+                            <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                    <input type="text" class="form-control" id="floor" name="floor" placeholder="請填權狀坪數">
+                                    <select id="city" class="form-control" name="KLSCALE" style="margin-right: 10px;" onchange="updateTownships()" required>
+                                        <option value="" disabled selected style="color: #b7b7b7;">請選擇單位</option>
+                                        <option value="坪">坪</option>
+                                        <option value="平方公尺">平方公尺</option>
+                                    </select>
+                                </div>
+                                <label style="display:contents;margin-left:10px;"><input type="radio" name="gender" value="含車位面積" required>含車位面積</label>
+                                <label style="display:contents;margin-left:10px;"><input type="radio" name="gender" value="不含車位面積" style="margin-left:10px;">不含車位面積</label>
+                            </div>
                         </div>
-                        <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
-                                <select id="city" class="form-control" name="KLSCALE" style="margin-right: 10px;" onchange="updateTownships()" required>
-                                    <option value="" disabled selected style="color: #b7b7b7;">請選擇縣市</option>
-                                    <option value="基隆市">基隆市</option>
-                                    <option value="台北市">台北市</option>
-                                    <option value="新北市">新北市</option>
-                                    <option value="桃園市">桃園市</option>
-                                    <option value="新竹市">新竹市</option>
-                                    <option value="台中市">台中市</option>
-                                    <option value="嘉義市">嘉義市</option>
-                                    <option value="台南市">台南市</option>
-                                    <option value="高雄市">高雄市</option>
-                                    <option value="新竹縣">新竹縣</option>
-                                    <option value="苗栗縣">苗栗縣</option>
-                                    <option value="彰化縣">彰化縣</option>
-                                    <option value="南投縣">南投縣</option>
-                                    <option value="雲林縣">雲林縣</option>
-                                    <option value="嘉義縣">嘉義縣</option>
-                                    <option value="屏東縣">屏東縣</option>
-                                    <option value="宜蘭縣">宜蘭縣</option>
-                                    <option value="花蓮縣">花蓮縣</option>
-                                    <option value="台東縣">台東縣</option>
-                                </select>
-                                <select id="township" class="form-control" name="KLSCALE" style="margin-right: 10px;" disabled required>
-                                    <option value="1">等級1(Grade 1)</option>
-                                    <option value="2">等級2(Grade 2)</option>
-                                    <option value="3">等級3(Grade 3)</option>
-                                    <option value="4">等級4(Grade 4)</option>
-                                </select>
-                                <select class="form-control" name="KLSCALE" style="margin-right: 10px;">
-                                    <option value="1">等級1(Grade 1)</option>
-                                    <option value="2">等級2(Grade 2)</option>
-                                    <option value="3">等級3(Grade 3)</option>
-                                    <option value="4">等級4(Grade 4)</option>
-                                </select>
-                                <input type="text" class="form-control" id="floor" name="floor" placeholder="巷"><p><strong>巷</strong></p>
-                                <input type="text" class="form-control" id="floor" name="floor" placeholder="弄"><p><strong>弄</strong></p>
-                                <input type="text" class="form-control" id="floor" name="floor" placeholder="號"><p><strong>號</strong></p>
+                        <div class="wow fadeInUp" data-wow-delay="0.8s">
+                            <div class="col-md-12 col-sm-12">
+                                <label for="address" style="margin-right: 10px;"><i class="fa fa-intersex"></i>車位面積：</label>
+                            </div>
+                            <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                    <input type="text" class="form-control" id="floor" name="floor" placeholder="請填車位坪數"><p><strong>坪</strong></p>
+                                    <select id="city" class="form-control" name="KLSCALE" style="margin-left: 10px;" onchange="updateTownships()" required>
+                                        <option value="" disabled selected style="color: #b7b7b7;">請選擇單位</option>
+                                        <option value="平面停車位">平面停車位</option>
+                                        <option value="機械停車位">機械停車位</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-12 col-sm-12">
-                                <label for="address" style="margin-right: 10px;"><i class="fa fa-intersex"></i>出售總樓層：</label>
+                        <div class="wow fadeInUp" data-wow-delay="0.8s">
+                            <div class="col-md-12 col-sm-12">
+                                <label for="address" style="margin-right: 10px;"><i class="fa fa-intersex"></i>主建物：</label>
+                            </div>
+                            <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                    <input type="text" class="form-control" id="floor" name="floor" placeholder="請填主建物坪數"><p><strong>坪</strong></p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-3 col-sm-3" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
-                                <input type="text" class="form-control" id="floor" name="floor" placeholder="層">
+                        <div class="wow fadeInUp" data-wow-delay="0.8s">
+                            <div class="col-md-12 col-sm-12">
+                                <label for="address" style="margin-right: 10px;"><i class="fa fa-intersex"></i>共有部分：</label>
+                            </div>
+                            <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                    <input type="text" class="form-control" id="floor" name="floor" placeholder="請填共有部分坪數"><p><strong>坪</strong></p>
+                                </div>
+                            </div>
                         </div>
-                         <div class="col-md-12 col-sm-12">
-                                <label for="address" style="margin-right: 10px;"><i class="fa fa-intersex"></i>社區名稱：</label>
+                        <div class="wow fadeInUp" data-wow-delay="0.8s">
+                            <div class="col-md-12 col-sm-12">
+                                <label for="address" style="margin-right: 10px;"><i class="fa fa-intersex"></i>附屬建物：</label>
+                            </div>
+                            <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                    <input type="text" class="form-control" id="floor" name="floor" placeholder="請填附屬建物坪數"><p><strong>坪</strong></p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
-                                <input type="text" class="form-control" id="floor" name="floor" placeholder="請輸入社區所在社區名稱">
-                        </div>
-                         <div class="col-md-12 col-sm-12">
-                                <label for="address" style="margin-right: 10px;"><i class="fa fa-intersex"></i>格局(現況)：</label>
-                        </div>
-                        <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
-                                <input type="text" class="form-control" id="floor" name="floor" placeholder="必填"><p><strong>房</strong></p>
-                                <input type="text" class="form-control" id="floor" name="floor" placeholder="廳"><p>廳</p>
-                                <input type="text" class="form-control" id="floor" name="floor" placeholder="衛"><p>衛</p>
-                                <input type="text" class="form-control" id="floor" name="floor" placeholder="陽台"><p>陽台</p>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <label for="Weight"><i class='fas fa-weight'></i>體重(kg)：</label>
-                            <input type="text" class="form-control" id="Weight" name="Weight" placeholder="kg">
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <label for="Height">身高(cm):</label>
-                            <input type="text" class="form-control" id="Height" name="Height" placeholder="cm">
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <label for="select">退化性關節炎等級(K-L Scale Grade)：</label>
-                            <select class="form-control" name="KLSCALE">
-                                <option value="1">等級1(Grade 1)</option>
-                                <option value="2">等級2(Grade 2)</option>
-                                <option value="3">等級3(Grade 3)</option>
-                                <option value="4">等級4(Grade 4)</option>
-                            </select>
-                        </div>
-                        <div class="col-md-12 col-sm-12">
-                            <h3 style="background: #9CC93A;padding: 4px 15px 4px;letter-spacing: 0.1vw;font-weight: 500;font-size: 20px;display: table;color: #fff;margin-bottom: 10px;border-radius: 50px;">目標：</h3>
+                        <div class="wow fadeInUp" data-wow-delay="0.8s">
+                            <div class="col-md-12 col-sm-12">
+                                <label for="address" style="margin-right: 10px;"><i class="fa fa-intersex"></i>土地坪數：</label>
+                            </div>
+                            <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                    <select id="city" class="form-control" name="KLSCALE" onchange="updateTownships()" required>
+                                        <option value="" disabled selected style="color: #b7b7b7;">請選擇持有類型</option>
+                                        <option value="土地坪數">土地坪數</option>
+                                        <option value="土地持分坪數">土地持分坪數</option>
+                                    </select>
+                                    <input type="text" class="form-control" id="floor" name="floor" placeholder="請填土地坪數"><p><strong>坪</strong></p>
+                                </div>
+                            </div>
                         </div>
                         <div class="wow fadeInUp" data-wow-delay="0.8s">
                             <div class="col-md-6 col-sm-6">
@@ -248,6 +333,7 @@
                                     <option value="1">100%</option>
                                 </select>
                             </div>
+                           
                             <div class="col-md-12 col-sm-12">
                                 <h3 style="background: #9CC93A;padding: 4px 15px 4px;letter-spacing: 0.1vw;font-weight: 500;font-size: 20px;display: table;color: #fff;margin-bottom: 10px;border-radius: 50px;">目標之間相對關係：</h3>
                             </div>

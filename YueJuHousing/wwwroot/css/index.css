@@ -4164,7 +4164,7 @@ strong {
 }
 
 #hotBuild_unknow, #hotBuild_sale {
-    height: 425px
+    max-height: 425px
 }
 
 @media only screen and ( max-width: 1190px) {
