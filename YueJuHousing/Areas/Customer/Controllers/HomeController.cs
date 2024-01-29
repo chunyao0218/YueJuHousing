@@ -2,8 +2,9 @@
 using System.Diagnostics;
 using YueJuHousing.Models;
 
-namespace YueJuHousing.Controllers
+namespace YueJuHousing.Areas.Customer.Controllers
 {
+    [Area("Customer")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

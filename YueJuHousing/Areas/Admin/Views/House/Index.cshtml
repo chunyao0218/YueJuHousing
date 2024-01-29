@@ -1,0 +1,102 @@
+﻿@model List<House>
+<head>
+
+    <!--
+
+    Template 2098 Health
+
+    http://www.tooplate.com/view/2098-health
+
+    -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Tooplate">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/animate.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/css/custom-style.css">
+    <link rel="stylesheet" href="~/font-awesome/css/all.css">
+    <link rel="stylesheet" href="~/css/index.css">
+
+
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="~/css/tooplate-style.css">
+
+</head>
+
+<div class="container">
+    <div class="row pt-4 pb-3">
+        <div class="col-6">
+            <h2 class="text-primary">
+                物件清單
+            </h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="House" asp-action="Upsert" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> 刊登物件
+            </a>
+        </div>
+    </div>
+
+    @* <table class="table table-bordered table-striped"> *@
+    <table id="tblData" class="table table-bordered table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>物件名稱</th>
+                <th>類別</th>
+                <th>地址</th>
+                <th>屋齡</th>
+                <th>坪數</th>
+                <th>樓層</th>
+                <th>價格</th>
+                <th></th>
+            </tr>
+        </thead>
+       @*  <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <td>@obj.HouseName</td>
+                    <td>@obj.Category.Name</td>
+                    <td>@obj.Address</td>
+                    <td>@obj.HouseAge</td>
+                    <td>@obj.SquareMeters</td>
+                    <td>@obj.Floor</td>
+                    <td>@obj.Price</td>
+                    <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-controller="House" asp-action="Upsert" asp-route-id="@obj.Id" class="btn btn-primary mx-2">
+                                <i class="bi bi-pencil-square"></i>編輯
+                            </a>
+                            <a asp-controller="House" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-danger mx-2">
+                                <i class="bi bi-trash-fill"></i>刪除
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody> *@
+    </table>
+</div>
+
+@section Scripts {
+    <script src="~/js/house.js"></script>
+}
+
+<!-- SCRIPTS -->
+<script src="~/js/jquery.js"></script>
+<script src="~/js/bootstrap.min.js"></script>
+<script src="~/js/jquery.sticky.js"></script>
+<script src="~/js/jquery.stellar.min.js"></script>
+<script src="~/js/wow.min.js"></script>
+<script src="~/js/smoothscroll.js"></script>
+<script src="~/js/owl.carousel.min.js"></script>
+<script src="~/js/custom.js"></script>
+<script src="~/js/index.js"></script>

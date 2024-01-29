@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YueJuHousing", "YueJuHousing\YueJuHousing.csproj", "{D1ACB449-0F7A-43A7-952B-E3A35A688D65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YueJuHousing", "YueJuHousing\YueJuHousing.csproj", "{D1ACB449-0F7A-43A7-952B-E3A35A688D65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YueJuHousing.DataAccess", "YueJuHousing.DataAccess\YueJuHousing.DataAccess.csproj", "{B36C75A9-B933-45F3-A579-C194A9764861}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YueJuHousing.Models", "YueJuHousing.Models\YueJuHousing.Models.csproj", "{DD2D5D6B-3F40-4F92-8F1E-8DCF58107C08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YueJuHousing.Utility", "YueJuHousing.Utility\YueJuHousing.Utility.csproj", "{8F4D75E0-77D8-45EA-A8E5-B18519E107FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{D1ACB449-0F7A-43A7-952B-E3A35A688D65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1ACB449-0F7A-43A7-952B-E3A35A688D65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1ACB449-0F7A-43A7-952B-E3A35A688D65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B36C75A9-B933-45F3-A579-C194A9764861}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B36C75A9-B933-45F3-A579-C194A9764861}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B36C75A9-B933-45F3-A579-C194A9764861}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B36C75A9-B933-45F3-A579-C194A9764861}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD2D5D6B-3F40-4F92-8F1E-8DCF58107C08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD2D5D6B-3F40-4F92-8F1E-8DCF58107C08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD2D5D6B-3F40-4F92-8F1E-8DCF58107C08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD2D5D6B-3F40-4F92-8F1E-8DCF58107C08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F4D75E0-77D8-45EA-A8E5-B18519E107FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F4D75E0-77D8-45EA-A8E5-B18519E107FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F4D75E0-77D8-45EA-A8E5-B18519E107FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F4D75E0-77D8-45EA-A8E5-B18519E107FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

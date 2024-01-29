@@ -1,0 +1,129 @@
+﻿@model HouseVM
+<head>
+
+    <!--
+
+    Template 2098 Health
+
+    http://www.tooplate.com/view/2098-health
+
+    -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Tooplate">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/animate.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/css/custom-style.css">
+    <link rel="stylesheet" href="~/font-awesome/css/all.css">
+    <link rel="stylesheet" href="~/css/index.css">
+
+
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="~/css/tooplate-style.css">
+
+</head>
+
+<form method="post" enctype="multipart/form-data">
+    <input asp-for="House.Id" hidden />
+    <input asp-for="House.ImageUrl" hidden />
+    <div class="row">
+        <div class="col-10">
+            <div class="border p-3 mt-4">
+                <div class="row pb-2">
+                    <h2 class="text-primary"> @(Model.House.Id != 0 ? "編輯" : "刊登")物件</h2>
+                    <hr />
+                </div>
+
+                <div class="mb-3 row p-1">
+                    <label asp-for="House.HouseName" class="p-0"></label>
+                    <input asp-for="House.HouseName" class="form-control" />
+                    <span asp-validation-for="House.HouseName" class="text-danger"></span>
+                </div>
+                <div class="mb-3 row p-1">
+                    <label asp-for="House.CategoryId" class="p-0"></label>
+                    <select asp-for="House.CategoryId" asp-items="@Model.CategoryList" class="form-select">
+                        <option disabled selected>選擇類別</option>
+                    </select>
+                    <span asp-validation-for="House.CategoryId" class="text-danger"></span>
+                </div>
+                <div class="mb-3 row p-1">
+                    <label asp-for="House.Address" class="p-0"></label>
+                    <input asp-for="House.Address" class="form-control" />
+                    <span asp-validation-for="House.Address" class="text-danger"></span>
+                </div>
+                <div class="mb-3 row p-1">
+                    <label asp-for="House.HouseAge" class="p-0"></label>
+                    <input asp-for="House.HouseAge" class="form-control" />
+                    <span asp-validation-for="House.HouseAge" class="text-danger"></span>
+                </div>
+                <div class="mb-3 row p-1">
+                    <label asp-for="House.SquareMeters" class="p-0"></label>
+                    <input asp-for="House.SquareMeters" class="form-control" />
+                    <span asp-validation-for="House.SquareMeters" class="text-danger"></span>
+                </div>
+                <div class="mb-3 row p-1">
+                    <label asp-for="House.Floor" class="p-0"></label>
+                    <input asp-for="House.Floor" class="form-control" />
+                    <span asp-validation-for="House.Floor" class="text-danger"></span>
+                </div>
+                <div class="mb-3 row p-1">
+                    <label asp-for="House.Price" class="p-0"></label>
+                    <input asp-for="House.Price" class="form-control" />
+                    <span asp-validation-for="House.Price" class="text-danger"></span>
+                </div>
+
+                @* 圖片 *@
+                <div class="mb-3 row p-1">
+                    <label asp-for="House.ImageUrl" class="p-0"></label>
+                    <input type="file" name="file" asp-for="House.ImageUrl" class="form-control" />
+                </div>
+
+                <div class="row">
+                    <div class="col-6 col-md-3">
+                        @if (Model.House.Id != 0)
+                        {
+                            <button type="submit" class="btn btn-primary form-control">編輯</button>
+                        }
+                        else
+                        {
+                            <button type="submit" class="btn btn-primary form-control">刊登</button>
+                        }
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <a asp-controller="House" asp-action="Index" class="btn btn-secondary border form-control">
+                            返回
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+            <img class="mt-4" src="@Model.House.ImageUrl" width="20%" style="border-radius:5px; border:1px solid #bbb9b9" />
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+
+<!-- SCRIPTS -->
+<script src="~/js/jquery.js"></script>
+<script src="~/js/bootstrap.min.js"></script>
+<script src="~/js/jquery.sticky.js"></script>
+<script src="~/js/jquery.stellar.min.js"></script>
+<script src="~/js/wow.min.js"></script>
+<script src="~/js/smoothscroll.js"></script>
+<script src="~/js/owl.carousel.min.js"></script>
+<script src="~/js/custom.js"></script>
+<script src="~/js/index.js"></script>
