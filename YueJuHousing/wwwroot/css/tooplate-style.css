@@ -62,7 +62,7 @@ http://www.tooplate.com/view/2098-health
 
 p {
     color: #405545;
-    font-size: 17px;
+    font-size: 14px;
     font-weight: normal;
     line-height: 24px;
 }
@@ -776,7 +776,7 @@ p {
 
   #appointment input,
   #appointment select {
-    height: 45px;
+    height: 35px;
   }
 
   #appointment button#cf-submit {
