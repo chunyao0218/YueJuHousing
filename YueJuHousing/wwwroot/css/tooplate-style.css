@@ -62,7 +62,7 @@ http://www.tooplate.com/view/2098-health
 
 p {
     color: #405545;
-    font-size: 17px;
+    font-size: 14px;
     font-weight: normal;
     line-height: 24px;
 }
@@ -468,16 +468,15 @@ p {
   }
 
 
-  /*---------------------------------------
+/*---------------------------------------
       ABOUT              
   -----------------------------------------*/
-
-  #about {
+#about {
     background: url('../images/about-bg.jpg') no-repeat top center;
     background-size: cover;
     padding-top: 100px;
     padding-bottom: 150px;
-  }
+}
 
   .profile img,
   .profile figcaption {
@@ -499,7 +498,6 @@ p {
     color: #858585;
     margin: 0;
   }
-
 
 
   /*---------------------------------------
@@ -778,7 +776,7 @@ p {
 
   #appointment input,
   #appointment select {
-    height: 45px;
+    height: 35px;
   }
 
   #appointment button#cf-submit {

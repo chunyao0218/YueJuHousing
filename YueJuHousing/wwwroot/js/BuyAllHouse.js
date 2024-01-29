@@ -79,4 +79,184 @@ function updateTownships() {
     option.text = township;
     option.value = township;
     townshipDropdown.add(option);
+}
+
+
+///選擇廣告種類下拉式選單
+function updateAdtypes() {
+    var categoryDropdown = document.getElementById("category");
+    var typeDropdown = document.getElementById("type");
+    var usetypeDropdown = document.getElementById("usetype");
+
+    // Clear existing options
+    clearDropdown(typeDropdown);
+    clearDropdown(usetypeDropdown);
+
+    // Enable the type dropdown
+    typeDropdown.disabled = false;
+
+    // Add options to the type dropdown based on the selected category
+    switch (categoryDropdown.value) {
+        case "住宅":
+            addOption(typeDropdown, "公寓");
+            addOption(typeDropdown, "別墅");
+            addOption(typeDropdown, "透天厝");
+            addOption(typeDropdown, "電梯大樓");
+            break;
+        case "套房":
+            addOption(typeDropdown, "公寓");
+            addOption(typeDropdown, "別墅");
+            addOption(typeDropdown, "透天厝");
+            addOption(typeDropdown, "電梯大樓");
+            break;
+        case "車位":
+            break;
+        case "其他":
+            addOption(typeDropdown, "公寓");
+            addOption(typeDropdown, "別墅");
+            addOption(typeDropdown, "透天厝");
+            addOption(typeDropdown, "電梯大樓");
+            break;
+        case "店面":
+            addOption(typeDropdown, "公寓");
+            addOption(typeDropdown, "別墅");
+            addOption(typeDropdown, "透天厝");
+            addOption(typeDropdown, "電梯大樓");
+            addOption(typeDropdown, "店面(店鋪)");
+            break;
+        case "辦公":
+            addOption(typeDropdown, "公寓");
+            addOption(typeDropdown, "別墅");
+            addOption(typeDropdown, "透天厝");
+            addOption(typeDropdown, "電梯大樓");
+            addOption(typeDropdown, "店面(店鋪)");
+            break;
+        case "住辦":
+            addOption(typeDropdown, "公寓");
+            addOption(typeDropdown, "別墅");
+            addOption(typeDropdown, "透天厝");
+            addOption(typeDropdown, "電梯大樓");
+            addOption(typeDropdown, "店面(店鋪)");
+            break;
+        case "廠房":
+            addOption(typeDropdown, "工廠");
+            addOption(typeDropdown, "廠辦");
+            addOption(typeDropdown, "農舍");
+            addOption(typeDropdown, "倉庫");
+            break;
+        case "土地":
+            break;
+        // Add more cases for other categories as needed
     }
+
+    // Enable the usetype dropdown
+    usetypeDropdown.disabled = false;
+
+    // Add options to the usetype dropdown based on the selected category
+    switch (categoryDropdown.value) {
+        case "住宅":
+            addOption(usetypeDropdown, "住家用");
+            addOption(usetypeDropdown, "住商用");
+            addOption(usetypeDropdown, "住工用");
+            addOption(usetypeDropdown, "商業用");
+            addOption(usetypeDropdown, "工業用");
+            addOption(usetypeDropdown, "農業用");
+            addOption(usetypeDropdown, "一般事務所");
+            addOption(usetypeDropdown, "集合住宅");
+            addOption(usetypeDropdown, "其他");
+            break;
+        case "套房":
+            addOption(usetypeDropdown, "住家用");
+            addOption(usetypeDropdown, "住商用");
+            addOption(usetypeDropdown, "住工用");
+            addOption(usetypeDropdown, "商業用");
+            addOption(usetypeDropdown, "工業用");
+            addOption(usetypeDropdown, "農業用");
+            addOption(usetypeDropdown, "一般事務所");
+            addOption(usetypeDropdown, "集合住宅");
+            addOption(usetypeDropdown, "其他");
+            break;
+        case "車位":
+            break;
+        case "其他":
+            addOption(usetypeDropdown, "住家用");
+            addOption(usetypeDropdown, "住商用");
+            addOption(usetypeDropdown, "住工用");
+            addOption(usetypeDropdown, "商業用");
+            addOption(usetypeDropdown, "工業用");
+            addOption(usetypeDropdown, "農業用");
+            addOption(usetypeDropdown, "一般事務所");
+            addOption(usetypeDropdown, "集合住宅");
+            addOption(usetypeDropdown, "其他");
+            break;
+        case "店面":
+            addOption(usetypeDropdown, "住家用");
+            addOption(usetypeDropdown, "住商用");
+            addOption(usetypeDropdown, "住工用");
+            addOption(usetypeDropdown, "商業用");
+            addOption(usetypeDropdown, "工業用");
+            addOption(usetypeDropdown, "農業用");
+            addOption(usetypeDropdown, "一般事務所");
+            addOption(usetypeDropdown, "集合住宅");
+            addOption(usetypeDropdown, "其他");
+            break;
+        case "辦公":
+            addOption(usetypeDropdown, "住家用");
+            addOption(usetypeDropdown, "住商用");
+            addOption(usetypeDropdown, "住工用");
+            addOption(usetypeDropdown, "商業用");
+            addOption(usetypeDropdown, "工業用");
+            addOption(usetypeDropdown, "農業用");
+            addOption(usetypeDropdown, "一般事務所");
+            addOption(usetypeDropdown, "集合住宅");
+            addOption(usetypeDropdown, "其他");
+            break;
+        case "住辦":
+            addOption(usetypeDropdown, "住家用");
+            addOption(usetypeDropdown, "住商用");
+            addOption(usetypeDropdown, "住工用");
+            addOption(usetypeDropdown, "商業用");
+            addOption(usetypeDropdown, "工業用");
+            addOption(usetypeDropdown, "農業用");
+            addOption(usetypeDropdown, "一般事務所");
+            addOption(usetypeDropdown, "集合住宅");
+            addOption(usetypeDropdown, "其他");
+            break;
+        case "廠房":
+            addOption(usetypeDropdown, "住家用");
+            addOption(usetypeDropdown, "住商用");
+            addOption(usetypeDropdown, "住工用");
+            addOption(usetypeDropdown, "商業用");
+            addOption(usetypeDropdown, "工業用");
+            addOption(usetypeDropdown, "農業用");
+            addOption(usetypeDropdown, "一般事務所");
+            addOption(usetypeDropdown, "集合住宅");
+            addOption(usetypeDropdown, "其他");
+            break;
+        case "土地":
+            addOption(usetypeDropdown, "住家用");
+            addOption(usetypeDropdown, "住商用");
+            addOption(usetypeDropdown, "住工用");
+            addOption(usetypeDropdown, "商業用");
+            addOption(usetypeDropdown, "工業用");
+            addOption(usetypeDropdown, "農業用");
+            addOption(usetypeDropdown, "一般事務所");
+            addOption(usetypeDropdown, "集合住宅");
+            addOption(usetypeDropdown, "其他");
+            break;
+        // Add more cases for other categories as needed
+    }
+}
+
+function addOption(dropdown, optionText) {
+    var option = document.createElement("option");
+    option.text = optionText;
+    option.value = optionText;
+    dropdown.add(option);
+}
+
+function clearDropdown(dropdown) {
+    while (dropdown.options.length > 0) {
+        dropdown.options.remove(0);
+    }
+}
