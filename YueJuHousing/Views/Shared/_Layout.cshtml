@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="~/css/custom-style.css">
     <link rel="stylesheet" href="~/font-awesome/css/all.css">
-
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
 
 </head>
 <body>
@@ -23,16 +23,18 @@
 
             <div class="row">
                 <div class="col-md-12 col-sm-12 text-align-right">
-                    <a href="~/Home/Index" class="navbar-brand"><img src="~/images/HuiJuInvestmentlogo.png" style="max-width:100%;max-height:250%;left:-5%;position:relative;top:-50%;"></a>
+                    <a class="navbar-brand" asp-area="Customer" asp-controller="Home" asp-action="Index"><img src="~/images/HuiJuInvestmentlogo.png" style="max-width:100%;max-height:250%;left:-5%;position:relative;top:-50%;"></a>
                     <span class="phone-icon"><a href="tel:+886-2-28210197"><i class="fa fa-phone"></i>02-2821-0197</a></span>
                     <span><a href="https://lin.ee/pD4zte5" target="_blank"><img class="appointment-btn" src="https://scdn.line-apps.com/n/line_add_friends/btn/zh-Hant.png" alt="加入好友" height="30" border="0"></a></span>
-                    <span class="date-icon"><a href="~/News/IndexOT" style="font-size:15px">登入</a></span>
+                    @* <span class="date-icon"><a href="~/Identity/Account/Login" style="font-size:15px">登入</a></span>
                     <em style="display: inline-block; height: 11px; width: 1px; border-right: 1px solid #bbb;" class="divide-line"></em>
-                    <span class="date-icon"><a href="~/News/IndexOT" style="font-size:15px">註冊</a></span>
+                    <span class="date-icon"><a href="~/Identity/Account/Register" style="font-size:15px">註冊</a></span> *@
+                    <partial name="_LoginPartial" />
                 </div>
             </div>
         </div>
     </header>
+
     <!-- MENU -->
     <section class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container">
@@ -44,7 +46,7 @@
                     <span class="icon icon-bar"></span>
                 </button>
                 <!-- lOGO TEXT HERE -->
-                <a href="~/Home/Index" class="navbar-brand">
+                <a class="navbar-brand" asp-area="Customer" asp-controller="Home" asp-action="Index">
                     <img src="~/images/YueJuHousinglogo.png" style="position:relative;top:-50%;max-width:300px;max-height:50px">
                 </a>
             </div>
@@ -60,6 +62,13 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li class="dropdown-item">@Html.ActionLink("北投光明骨科總院", "Index", "Home")</li>
                             <li class="dropdown-item">@Html.ActionLink("萬華光明中醫分院", "Index", "WanHuaHome")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown nav-item activ">
+                        <a class="smoothScroll" style="font-size: larger; color: #fff;" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">管理</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="smoothScroll" asp-area="Admin" asp-controller="Category" asp-action="Index">類別</a></li>
+                            <li><a class="smoothScroll" asp-area="Admin" asp-controller="House" asp-action="Index">刊登</a></li>
                         </ul>
                     </li>
                     <li><a href="~/About/Index" class="smoothScroll" style="font-size: larger; color: #fff;">辦公</a></li>
@@ -211,10 +220,18 @@
         </footer>
     </div>
 
+    <div class="container">
+        <main role="main" class="pb-3">
+            <partial name="_Notification" />
+            @RenderBody()
+        </main>
+    </div>
     
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
