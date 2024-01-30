@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace YueJuHousing.Controllers
+namespace YueJuHousing.Areas.Customer.Controllers
 {
+    [Area("Customer")]
     public class BuyAllHouse : Controller
     {
         public IActionResult Index()
