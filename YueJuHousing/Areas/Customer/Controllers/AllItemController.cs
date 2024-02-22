@@ -3,12 +3,11 @@
 namespace YueJuHousing.Areas.Customer.Controllers
 {
     [Area("Customer")]
-    public class BuyAllHouse : Controller
+    public class AllItemController : Controller
     {
         public IActionResult Index()
         {
             return View();
         }
-
     }
 }

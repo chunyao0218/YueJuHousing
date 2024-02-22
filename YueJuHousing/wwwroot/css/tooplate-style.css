@@ -295,6 +295,8 @@ p {
     border-right: 1px;
     padding-right: 19px;
     padding-left: 19px;
+    border-left: 1px solid #f2f2f2;
+    border-right: 1px solid #f2f2f2;
   }
 
   header span i {

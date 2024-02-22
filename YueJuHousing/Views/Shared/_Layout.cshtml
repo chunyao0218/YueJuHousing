@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title </title>
-    <link rel="icon" href="~/images/YueJuHouse.ico" type="image/x-icon" />
+    <link rel="icon" href="~/images/YueJuHousing.ico" type="image/x-icon" />
     <link rel="stylesheet" href="~/css/custom-style.css">
     <link rel="stylesheet" href="~/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/css/font-awesome.min.css">
@@ -56,7 +56,7 @@
             <div class="collapse navbar-collapse">
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="~/BuyAllhouse/Index" class="smoothScroll" style="font-size: larger; color:#fff;">買屋</a></li>
+                    <li><a asp-area="Customer" asp-controller="AllItem" asp-action="Index" class="smoothScroll" style="font-size: larger; color:#fff;">買屋</a></li>
                     <li class="dropdown nav-item activ">
                         <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" id="navbarDropdown" style="font-size: larger; color:#fff;">租屋<span class="caret"></span></a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -76,7 +76,7 @@
                     <li><a href="~/News/Index" class="smoothScroll" style="font-size: larger; color: #fff;">廠房</a></li>
                     <li><a href="#google-map" class="smoothScroll" style="font-size: larger; color: #fff;">土地</a></li>
                     @*<li><a href="~/TDSS/Index" class="smoothScroll" target="_blank" style="font-size: medium; color: #405545;">OA治療決策輔助工具</a></li>*@
-                    <li class="appointment-btn"><a asp-area="Customer" asp-controller="BuyAllHouse" asp-action="Index" style="font-size:larger;" target="_blank">我要刊登</a></li>
+                    <li class="appointment-btn"><a asp-area="Customer" asp-controller="PostAd" asp-action="Index" style="font-size:larger;" target="_blank">我要刊登</a></li>
                 </ul>
             </div>
 
@@ -231,11 +231,13 @@
     </div>
     
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/950b571306.js" crossorigin="anonymous"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js" asp-append-version="true"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    
 </body>
 </html>
