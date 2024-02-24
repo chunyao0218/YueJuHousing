@@ -64,13 +64,16 @@
                             <li class="dropdown-item">@Html.ActionLink("萬華光明中醫分院", "Index", "WanHuaHome")</li>
                         </ul>
                     </li>
-                    <li class="dropdown nav-item activ">
-                        <a class="smoothScroll" style="font-size: larger; color: #fff;" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">管理</a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="smoothScroll" asp-area="Admin" asp-controller="Category" asp-action="Index">類別</a></li>
-                            <li><a class="smoothScroll" asp-area="Admin" asp-controller="House" asp-action="Index">刊登</a></li>
-                        </ul>
-                    </li>
+                    @if (User.IsInRole(SD.Role_Admin) || User.IsInRole(SD.Role_Manager))
+                    {
+                        <li class="dropdown nav-item activ">
+                            <a class="smoothScroll" style="font-size: larger; color: #fff;" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">管理</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="smoothScroll" asp-area="Admin" asp-controller="Category" asp-action="Index">類別</a></li>
+                                <li><a class="smoothScroll" asp-area="Admin" asp-controller="House" asp-action="Index">刊登</a></li>
+                            </ul>
+                        </li>
+                    }
                     <li><a href="~/About/Index" class="smoothScroll" style="font-size: larger; color: #fff;">辦公</a></li>
                     <li><a href="~/Team/Index" class="smoothScroll" style="font-size: larger; color: #fff;">店面</a></li>
                     <li><a href="~/News/Index" class="smoothScroll" style="font-size: larger; color: #fff;">廠房</a></li>
