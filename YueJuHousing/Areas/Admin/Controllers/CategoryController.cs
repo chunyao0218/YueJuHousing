@@ -1,11 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization.Infrastructure;
+using Microsoft.AspNetCore.Mvc;
 using YueJuHousing.DataAccess.Data;
 using YueJuHousing.DataAccess.Repository.IRepository;
 using YueJuHousing.Models;
+using YueJuHousing.Utility;
 
 namespace YueJuHousing.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = SD.Role_Admin)]
     public class CategoryController : Controller
     {
         //
