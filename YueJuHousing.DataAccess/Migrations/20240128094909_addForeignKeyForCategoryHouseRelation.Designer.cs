@@ -296,7 +296,7 @@ namespace YueJuHousing.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("HouseName")
+                    b.Property<string>("CommunityName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -320,7 +320,7 @@ namespace YueJuHousing.DataAccess.Migrations
                             CategoryId = 1,
                             Floor = "3F",
                             HouseAge = "",
-                            HouseName = "景安文匯",
+                            CommunityName = "景安文匯",
                             Price = 15000000.0,
                             SquareMeters = 20.0
                         },
@@ -331,7 +331,7 @@ namespace YueJuHousing.DataAccess.Migrations
                             CategoryId = 2,
                             Floor = "5F",
                             HouseAge = "",
-                            HouseName = "大安得逸",
+                            CommunityName = "大安得逸",
                             Price = 30000000.0,
                             SquareMeters = 30.0
                         },
@@ -342,7 +342,7 @@ namespace YueJuHousing.DataAccess.Migrations
                             CategoryId = 3,
                             Floor = "7F",
                             HouseAge = "",
-                            HouseName = "中港層峰",
+                            CommunityName = "中港層峰",
                             Price = 20000000.0,
                             SquareMeters = 40.0
                         });

@@ -293,7 +293,7 @@ namespace YueJuHousing.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("HouseName")
+                    b.Property<string>("CommunityName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -317,7 +317,7 @@ namespace YueJuHousing.DataAccess.Migrations
                             Id = 1,
                             Address = "新北市中和區",
                             HouseAge = "",
-                            HouseName = "景安文匯",
+                            CommunityName = "景安文匯",
                             Price = 15000000.0,
                             SquareMeters = 20.0,
                             floor = "3F"
@@ -327,7 +327,7 @@ namespace YueJuHousing.DataAccess.Migrations
                             Id = 2,
                             Address = "台北市大安區",
                             HouseAge = "",
-                            HouseName = "大安得逸",
+                            CommunityName = "大安得逸",
                             Price = 30000000.0,
                             SquareMeters = 30.0,
                             floor = "5F"
@@ -337,7 +337,7 @@ namespace YueJuHousing.DataAccess.Migrations
                             Id = 3,
                             Address = "台中市西屯區",
                             HouseAge = "",
-                            HouseName = "中港層峰",
+                            CommunityName = "中港層峰",
                             Price = 20000000.0,
                             SquareMeters = 40.0,
                             floor = "7F"
