@@ -10,7 +10,7 @@ namespace YueJuHousing.DataAccess.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<string>(
+            migrationBuilder.AlterColumn<string>(
                 name: "ImageUrl",
                 table: "Houses",
                 type: "nvarchar(max)",
