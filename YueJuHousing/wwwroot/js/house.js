@@ -10,7 +10,7 @@ function loadDataTable() {
             url: '/admin/house/getall'
         },
         "columns": [
-            { data: 'houseName', "width": "25%" },
+            { data: 'communityName', "width": "25%" },
             { data: 'category.name', "width": "10%" },
             { data: 'address', "width": "15%" },
             { data: 'houseAge', "width": "5%" },

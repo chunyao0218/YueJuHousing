@@ -275,63 +275,370 @@ namespace YueJuHousing.DataAccess.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    /*基本資料*/
+                    b.Property<string>("CommunityName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Address")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("HouseAge")
+                    b.Property<double>("Floor")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("HouseName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("Price")
                         .HasColumnType("float");
+
+                    b.Property<string>("BedRoom")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LivingRoom")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BathRoom")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Balcony")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("HouseAge")
+                        .IsRequired()
+                        .HasColumnType("float");
+
+                    b.Property<string>("HouseOrientation")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    /*物件面積*/
 
                     b.Property<double>("SquareMeters")
                         .HasColumnType("float");
 
-                    b.Property<string>("floor")
-                        .IsRequired()
+                    b.Property<string>("SquareMetersUnit")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IncludeCarSquareMeters")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("CarSquareMeters")
+                        .HasColumnType("float");
+
+                    b.Property<string>("CarSquareMetersUnit")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("MainBuildingSquareMeters")
+                        .HasColumnType("float");
+
+                    b.Property<double>("SharedBuildingSquareMeters")
+                        .HasColumnType("float");
+
+                    b.Property<double>("OutBuildingSquareMeters")
+                        .HasColumnType("float");
+
+                    b.Property<string>("LandSquareMetersType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("LandSquareMeters")
+                        .HasColumnType("float");
+
+                    /*物件售價*/
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.Property<string>("IncludeCarSquarePrice")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("SelfFunding")
+                        .HasColumnType("float");
+
+                    b.Property<double>("PercentageSelfFunding")
+                        .HasColumnType("float");
+
+                    b.Property<double>("CarSquarePrice")
+                        .HasColumnType("float");
+
+                    b.Property<double>("EachSquarePrice")
+                        .HasColumnType("float");
+
+                    b.Property<double>("ManageCost")
+                        .HasColumnType("float");
+
+                    b.Property<string>("ManageCostType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WithRentContract")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DecorationLevel")
+                        .HasColumnType("nvarchar(max)");
+
+                    /*生活機能*/
+
+                    b.Property<bool>("CloseConvenienceStore")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("CloseSuperMarket")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("CloseTraditionalMarket")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("CloseDepartmentStore")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("ClosePark")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("CloseSchool")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("CloseHospital")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("CloseNightMarket")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("StationOrRoad")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StationOrRoadType")
+                        .HasColumnType("nvarchar(max)");
+
+                    /*特色描述*/
+
+                    b.Property<string>("AdTitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("ControlDamper")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("ReplanArea")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("FamousSchoolArea")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("FeatureDescribe")
+                        .HasColumnType("nvarchar(max)");
+
+                    /*照片&影片*/
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PatternImageUrl")
+                       .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("VideoUrl")
+                       .HasColumnType("nvarchar(max)");
+
+                    /*聯絡資料*/
+
+                    b.Property<string>("ContactPeopleType")
+                       .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContactPeopleName")
+                       .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("NoIntermediaryDisturb")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("CellPhoneNumber")
+                       .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AreaCodePhoneNumber")
+                       .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                       .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                       .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LineID")
+                       .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProtectPhone")
+                       .HasColumnType("nvarchar(max)");
+
+
 
                     b.HasKey("Id");
 
                     b.ToTable("Houses");
 
                     b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Address = "新北市中和區",
-                            HouseAge = "",
-                            HouseName = "景安文匯",
-                            Price = 15000000.0,
-                            SquareMeters = 20.0,
-                            floor = "3F"
-                        },
+                         new
+                         {
+                             Id = 1,
+                             CommunityName = "景安文匯",
+                             Address = "新北市中和區",
+                             Floor = 3,
+                             BedRoom = "3",
+                             LivingRoom = "2",
+                             BathRoom = "2",
+                             Balcony = "1",
+                             HouseAge = 5,
+                             HouseOrientation = "坐北朝南",
+                             SquareMeters = 20,
+                             SquareMetersUnit = "坪",
+                             IncludeCarSquareMeters = "含車位面積",
+                             CarSquareMeters = 7,
+                             CarSquareMetersUnit = "坪",
+                             Price = 15000000,
+                             IncludeCarSquarePrice = "含車位售價",
+                             SelfFunding = 300,
+                             PercentageSelfFunding = 20,
+                             CarSquarePrice = 180,
+                             EachSquarePrice = 100,
+                             ManageCost = 2000,
+                             ManageCostType = "月繳",
+                             WithRentContract = "否",
+                             DecorationLevel = "簡易裝潢",
+                             CloseConvenienceStore = true,
+                             CloseSuperMarket = false,
+                             CloseTraditionalMarket = false,
+                             CloseDepartmentStore = false,
+                             ClosePark = true,
+                             CloseSchool = true,
+                             CloseHospital = false,
+                             CloseNightMarket = false,
+                             StationOrRoad = "林口站",
+                             StationOrRoadType = "公車站",
+                             AdTitle = "市場最低價",
+                             ControlDamper = true,
+                             ReplanArea = true,
+                             FamousSchoolArea = true,
+                             FeatureDescribe = "",
+                             ImageUrl = "",
+                             PatternImageUrl = "",
+                             VideoUrl = "",
+                             ContactPeopleType = "屋主",
+                             ContactPeopleName = "陳小明",
+                             NoIntermediaryDisturb = true,
+                             CellPhoneNumber = "0988888888",
+                             AreaCodePhoneNumber = "02",
+                             PhoneNumber = "27315698",
+                             Email = "kevin87332000@gmail.com",
+                             LineID = "h12s12bs",
+                             ProtectPhone = "啟用",
+                             CategoryId = 1
+                         },
                         new
                         {
                             Id = 2,
+                            CommunityName = "大安得逸",
                             Address = "台北市大安區",
-                            HouseAge = "",
-                            HouseName = "大安得逸",
-                            Price = 30000000.0,
-                            SquareMeters = 30.0,
-                            floor = "5F"
+                            Floor = 5,
+                            BedRoom = "2",
+                            LivingRoom = "2",
+                            BathRoom = "2",
+                            Balcony = "1",
+                            HouseAge = 6,
+                            HouseOrientation = "坐南朝北",
+                            SquareMeters = 30,
+                            SquareMetersUnit = "坪",
+                            IncludeCarSquareMeters = "含車位面積",
+                            CarSquareMeters = 7,
+                            CarSquareMetersUnit = "坪",
+                            Price = 30000000,
+                            IncludeCarSquarePrice = "含車位售價",
+                            SelfFunding = 600,
+                            PercentageSelfFunding = 20,
+                            CarSquarePrice = 180,
+                            EachSquarePrice = 100,
+                            ManageCost = 2000,
+                            ManageCostType = "月繳",
+                            WithRentContract = "否",
+                            DecorationLevel = "簡易裝潢",
+                            CloseConvenienceStore = true,
+                            CloseSuperMarket = false,
+                            CloseTraditionalMarket = false,
+                            CloseDepartmentStore = false,
+                            ClosePark = true,
+                            CloseSchool = true,
+                            CloseHospital = false,
+                            CloseNightMarket = false,
+                            StationOrRoad = "林口站",
+                            StationOrRoadType = "公車站",
+                            AdTitle = "市場最低價",
+                            ControlDamper = true,
+                            ReplanArea = true,
+                            FamousSchoolArea = true,
+                            FeatureDescribe = "",
+                            ImageUrl = "",
+                            PatternImageUrl = "",
+                            VideoUrl = "",
+                            ContactPeopleType = "屋主",
+                            ContactPeopleName = "陳小明",
+                            NoIntermediaryDisturb = true,
+                            CellPhoneNumber = "0988888888",
+                            AreaCodePhoneNumber = "02",
+                            PhoneNumber = "27315698",
+                            Email = "kevin87332000@gmail.com",
+                            LineID = "h12s12bs",
+                            ProtectPhone = "啟用",
+                            CategoryId = 2
                         },
                         new
                         {
                             Id = 3,
+                            CommunityName = "中港層峰",
                             Address = "台中市西屯區",
-                            HouseAge = "",
-                            HouseName = "中港層峰",
-                            Price = 20000000.0,
-                            SquareMeters = 40.0,
-                            floor = "7F"
+                            Floor = 7,
+                            BedRoom = "4",
+                            LivingRoom = "2",
+                            BathRoom = "3",
+                            Balcony = "2",
+                            HouseAge = 7,
+                            HouseOrientation = "坐東朝西",
+                            SquareMeters = 40,
+                            SquareMetersUnit = "坪",
+                            IncludeCarSquareMeters = "含車位面積",
+                            CarSquareMeters = 7,
+                            CarSquareMetersUnit = "坪",
+                            Price = 20000000,
+                            IncludeCarSquarePrice = "含車位售價",
+                            SelfFunding = 400,
+                            PercentageSelfFunding = 20,
+                            CarSquarePrice = 180,
+                            EachSquarePrice = 100,
+                            ManageCost = 2000,
+                            ManageCostType = "月繳",
+                            WithRentContract = "否",
+                            DecorationLevel = "簡易裝潢",
+                            CloseConvenienceStore = true,
+                            CloseSuperMarket = false,
+                            CloseTraditionalMarket = false,
+                            CloseDepartmentStore = false,
+                            ClosePark = true,
+                            CloseSchool = true,
+                            CloseHospital = false,
+                            CloseNightMarket = false,
+                            StationOrRoad = "林口站",
+                            StationOrRoadType = "公車站",
+                            AdTitle = "市場最低價",
+                            ControlDamper = true,
+                            ReplanArea = true,
+                            FamousSchoolArea = true,
+                            FeatureDescribe = "",
+                            ImageUrl = "",
+                            PatternImageUrl = "",
+                            VideoUrl = "",
+                            ContactPeopleType = "屋主",
+                            ContactPeopleName = "陳小明",
+                            NoIntermediaryDisturb = true,
+                            CellPhoneNumber = "0988888888",
+                            AreaCodePhoneNumber = "02",
+                            PhoneNumber = "27315698",
+                            Email = "kevin87332000@gmail.com",
+                            LineID = "h12s12bs",
+                            ProtectPhone = "啟用",
+                            CategoryId = 3
                         });
                 });
 
