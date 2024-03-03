@@ -86,7 +86,8 @@ namespace YueJuHousing.Models
         [Required]
         [Range(1, 100000000000)]
         public double SelfFunding { get; set; }
-        
+
+        [DisplayName("自備款成數:")]
         [Range(1, 100)]
         [Required]
         public double PercentageSelfFunding { get; set; }

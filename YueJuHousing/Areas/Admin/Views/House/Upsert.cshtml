@@ -1370,7 +1370,7 @@
                                     <option value="季繳">季繳</option>
                                     <option value="年繳">年繳</option>
                                 </select>
-                                <input asp-for="House.ManageCost" class="form-control" placeholder="請輸入管理費" /><p style="width: 100px;"><strong>萬/坪</strong></p>
+                                <input asp-for="House.ManageCost" class="form-control" placeholder="請輸入管理費" /><p style="width: 100px;"><strong>元/月</strong></p>
                                 <span asp-validation-for="House.ManageCost" class="text-danger"></span>
                             </div>
                         </div>
@@ -1407,15 +1407,14 @@
                         </div>
                         <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
                             <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
-                                <label asp-for="House.CloseConvenienceStore" style="display:contents;margin-left:10px;"><input asp-for="House.IncludeCarSquarePrice" type="checkbox" value="近便利商店" required>近便利商店</label>
-                                <label asp-for="House.CloseSuperMarket" style="display:contents;margin-left:10px;"><input asp-for="House.IncludeCarSquarePrice" type="checkbox" value="近超市大賣場" style="margin-left:10px;">近超市大賣場</label>
-                                <label asp-for="House.CloseTraditionalMarket" style="display:contents;margin-left:10px;"><input asp-for="House.IncludeCarSquarePrice" type="checkbox" value="近傳統市場" style="margin-left:10px;">近傳統市場</label>
-                                <label asp-for="House.CloseDepartmentStore" style="display:contents;margin-left:10px;"><input asp-for="House.IncludeCarSquarePrice" type="checkbox" value="近百貨公司" style="margin-left:10px;">近百貨公司</label>
-                                <label asp-for="House.ClosePark" style="display:contents;margin-left:10px;"><input asp-for="House.IncludeCarSquarePrice" type="checkbox" value="近公園綠地" style="margin-left:10px;">近公園綠地</label>
-                                <label asp-for="House.CloseSchool" style="display:contents;margin-left:10px;"><input asp-for="House.IncludeCarSquarePrice" type="checkbox" value="近學校" style="margin-left:10px;">近學校</label>
-                                <label asp-for="House.CloseHospital" style="display:contents;margin-left:10px;"><input asp-for="House.IncludeCarSquarePrice" type="checkbox" value="近醫療機構" style="margin-left:10px;">近醫療機構</label>
-                                <label asp-for="House.CloseNightMarket" style="display:contents;margin-left:10px;"><input asp-for="House.IncludeCarSquarePrice" type="checkbox" value="近夜市" style="margin-left:10px;">近夜市</label>
-                                <span asp-validation-for="House.Price" class="text-danger"></span>
+                                <label asp-for="House.CloseConvenienceStore" style="display:contents;margin-left:10px;"><input asp-for="House.CloseConvenienceStore" type="checkbox" value="true" required>近便利商店</label>
+                                <label asp-for="House.CloseSuperMarket" style="display:contents;margin-left:10px;"><input asp-for="House.CloseSuperMarket" type="checkbox" value="true" style="margin-left:10px;">近超市大賣場</label>
+                                <label asp-for="House.CloseTraditionalMarket" style="display:contents;margin-left:10px;"><input asp-for="House.CloseTraditionalMarket" type="checkbox" value="true" style="margin-left:10px;">近傳統市場</label>
+                                <label asp-for="House.CloseDepartmentStore" style="display:contents;margin-left:10px;"><input asp-for="House.CloseDepartmentStore" type="checkbox" value="true" style="margin-left:10px;">近百貨公司</label>
+                                <label asp-for="House.ClosePark" style="display:contents;margin-left:10px;"><input asp-for="House.ClosePark" type="checkbox" value="true" style="margin-left:10px;">近公園綠地</label>
+                                <label asp-for="House.CloseSchool" style="display:contents;margin-left:10px;"><input asp-for="House.CloseSchool" type="checkbox" value="true" style="margin-left:10px;">近學校</label>
+                                <label asp-for="House.CloseHospital" style="display:contents;margin-left:10px;"><input asp-for="House.CloseHospital" type="checkbox" value="true" style="margin-left:10px;">近醫療機構</label>
+                                <label asp-for="House.CloseNightMarket" style="display:contents;margin-left:10px;"><input asp-for="House.CloseNightMarket" type="checkbox" value="true" style="margin-left:10px;">近夜市</label>
                             </div>
                         </div>
                         <div class="col-md-12 col-sm-12">
@@ -1457,9 +1456,9 @@
                         </div>
                         <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
                             <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
-                                <label asp-for="House.ControlDamper" style="display:contents;margin-left:10px;"><input asp-for="House.IncludeCarSquarePrice" type="checkbox" value="制震宅" required>制震宅</label>
-                                <label asp-for="House.ReplanArea" style="display:contents;margin-left:10px;"><input asp-for="House.IncludeCarSquarePrice" type="checkbox" value="重劃區" style="margin-left:10px;">重劃區</label>
-                                <label asp-for="House.FamousSchoolArea" style="display:contents;margin-left:10px;"><input asp-for="House.IncludeCarSquarePrice" type="checkbox" value="明星學區" style="margin-left:10px;">明星學區</label>
+                                <label asp-for="House.ControlDamper" style="display:contents;margin-left:10px;"><input asp-for="House.ControlDamper" type="checkbox" value="制震宅" required>制震宅</label>
+                                <label asp-for="House.ReplanArea" style="display:contents;margin-left:10px;"><input asp-for="House.ReplanArea" type="checkbox" value="重劃區" style="margin-left:10px;">重劃區</label>
+                                <label asp-for="House.FamousSchoolArea" style="display:contents;margin-left:10px;"><input asp-for="House.FamousSchoolArea" type="checkbox" value="明星學區" style="margin-left:10px;">明星學區</label>
                                 <span asp-validation-for="House.ControlDamper" class="text-danger"></span>
                             </div>
                         </div>
@@ -1530,7 +1529,7 @@
                                     <option value="代理人">代理人</option>
                                 </select>
                                 <input asp-for="House.ContactPeopleName" class="form-control" placeholder="請輸入姓名" />
-                            <label asp-for="House.NoIntermediaryDisturb" style="display:contents;margin-left:10px;"><input type="checkbox" name="gender" value="屋主聲明，請仲介勿擾！" style="margin-left:10px;" required>屋主聲明，請仲介勿擾！</label>
+                            <label asp-for="House.NoIntermediaryDisturb" style="display:contents;margin-left:10px;"><input type="checkbox" name="gender" value="true" style="margin-left:10px;" required>屋主聲明，請仲介勿擾！</label>
                             <span asp-validation-for="House.NoIntermediaryDisturb" class="text-danger"></span>
                         </div>
                         <div class="col-md-12 col-sm-12">

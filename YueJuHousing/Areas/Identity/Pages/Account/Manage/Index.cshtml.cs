@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
@@ -22,6 +23,7 @@ namespace YueJuHousing.Areas.Identity.Pages.Account.Manage
             _signInManager = signInManager;
         }
 
+        [DisplayName("使用者名稱")]
         public string Username { get; set; }
 
         [TempData]
@@ -33,7 +35,7 @@ namespace YueJuHousing.Areas.Identity.Pages.Account.Manage
         public class InputModel
         {
             [Phone]
-            [Display(Name = "Phone number")]
+            [Display(Name = "手機號碼")]
             public string PhoneNumber { get; set; }
         }
 
