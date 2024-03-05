@@ -1,10 +1,32 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Profile";
+    ViewData["Title"] = "修改個人資料";
     ViewData["ActivePage"] = ManageNavPages.Index;
 }
-
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Tooplate">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/animate.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/css/custom-style.css">
+    <link rel="stylesheet" href="~/font-awesome/css/all.css">
+    <link rel="stylesheet" href="~/css/index.css">
+    <link rel="stylesheet" href="~/css/PostAd.css">
+    <link rel="stylesheet" href="~/css/PostAdSidebar.css">
+    <link rel="stylesheet" href="~/css/ui.css">
+    <link rel="stylesheet" href="~/css/upload.css">
+    <link rel="stylesheet" href="~/css/upload1.css">
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="~/css/tooplate-style.css">
+</head>
 <h4>@ViewData["Title"]</h4>
 <partial name="_StatusMessage" model="Model.StatusMessage" />
 <div class="row">
@@ -20,7 +42,7 @@
                 <input asp-for="Input.PhoneNumber" class="form-control" />
                 <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
             </div>
-            <button id="update-profile-button" type="submit" class="btn btn-default">Save</button>
+            <button id="update-profile-button" type="submit" class="btn btn-default">儲存</button>
         </form>
     </div>
 </div>
@@ -28,3 +50,13 @@
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
+<!-- SCRIPTS -->
+<script src="~/js/jquery.js"></script>
+<script src="~/js/bootstrap.min.js"></script>
+<script src="~/js/jquery.sticky.js"></script>
+<script src="~/js/jquery.stellar.min.js"></script>
+<script src="~/js/wow.min.js"></script>
+<script src="~/js/smoothscroll.js"></script>
+<script src="~/js/owl.carousel.min.js"></script>
+<script src="~/js/custom.js"></script>
+<script src="~/js/index.js"></script>

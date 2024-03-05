@@ -84,7 +84,26 @@ namespace YueJuHousing.Areas.Admin.Controllers
                         file.CopyTo(fileStream);
                     }
                     houseVM.House.ImageUrl = @"\images\house\" + fileName;
+
+
+
+                    if (!string.IsNullOrEmpty(houseVM.House.PatternImageUrl))
+                    {
+                        var oldImagePath = Path.Combine(wwwRootPath, houseVM.House.PatternImageUrl.TrimStart('\\'));
+                        if (System.IO.File.Exists(oldImagePath))
+                        {
+                            System.IO.File.Delete(oldImagePath);
+                        }
+                    }
+
+                    using (var fileStream = new FileStream(Path.Combine(housePath, fileName), FileMode.Create))
+                    {
+                        file.CopyTo(fileStream);
+                    }
+                    houseVM.House.PatternImageUrl = @"\images\house\" + fileName;
                 }
+
+
                 if (houseVM.House.Id == 0)
                 {
                     _unitOfWork.House.Add(houseVM.House);

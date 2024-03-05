@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Land>
+@{
+    ViewData["Title"] = "悅聚房屋 | 最佳房屋選擇";
+}
+<head>
+
+    <!--
+
+    Template 2098 Health
+
+    http://www.tooplate.com/view/2098-health
+
+    -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Tooplate">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/animate.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/css/custom-style.css">
+    <link rel="stylesheet" href="~/font-awesome/css/all.css">
+    <link rel="stylesheet" href="~/css/index.css">
+
+
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="~/css/tooplate-style.css">
+
+     <style>
+        .custom-img {
+            object-fit: cover;
+            height: 200px; /* 根據需要調整高度 */
+            width: 100%; /* 使圖片寬度擴展到父元素的100% */
+        }
+
+        .card-body {
+            height: 100%; /* 讓卡片主體佔據卡片的全部高度 */
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+
+</head>
+
+<div class="row pb-3">
+    @foreach (var land in Model)
+    {
+        <div class="col-lg-3 col-md-6">
+            <div class="row p-2">
+                <div class="col-12 p-1" style="border:1px solid #008cba; border-radius: 5px">
+                    <div class="card">
+                        <img src="@land.ImageUrl" class="card-img-top rounded custom-img">
+                        <div class="card-body">
+                            <div class="p-1">
+                                <p class="card-title h5 text-primary">@land.AdTitle</p>
+                                <p class="card-title text-secondary"><b>@land.Address</b></p>
+                            </div>
+                            <div class="p-1">
+                                <p>價格：<b>$@land.Price.ToString("0.00")</b></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <a asp-action="Details" class="btn btn-primary form-control" asp-route-houseId="@land.Id">
+                            Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<!-- SCRIPTS -->
+<script src="~/js/jquery.js"></script>
+<script src="~/js/bootstrap.min.js"></script>
+<script src="~/js/jquery.sticky.js"></script>
+<script src="~/js/jquery.stellar.min.js"></script>
+<script src="~/js/wow.min.js"></script>
+<script src="~/js/smoothscroll.js"></script>
+<script src="~/js/owl.carousel.min.js"></script>
+<script src="~/js/custom.js"></script>
+<script src="~/js/index.js"></script>

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<House>
+@{
     ViewData["Title"] = "悅聚房屋 | 最佳房屋選擇";
 }
 
@@ -53,6 +54,7 @@
 
 
     <!-- 最新上架物件 -->
+    @*
     <section id="AboutArea" class="wn__newsletter__area newsletter--bg">
         <!-- 簡易篩選 -->
         <div id="filter" class="">
@@ -245,7 +247,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>*@
         <!------------------------------------------------------------------------>
 
         <div class="main-title text-center" style="margin-top:50px;">
@@ -255,6 +257,115 @@
             </h3>
 
         </div>
+         @foreach (var house in Model)
+         {
+                <div data-bind="14924947" data-gtm-stat="中古屋列表頁_所有物件_點擊量" title="@house.AdTitle" addtion="bid" class="j-house houseList-item clearfix" house-detail-stat="2-8-14924947" data-browse-stated="">
+                    <a asp-action="Details" asp-route-houseId="@house.Id">
+                        <div class="houseList-item-left pull-left">
+                            <div data-gtm-stat="" class="relative">
+                                <!---->
+                                <img src="@house.ImageUrl" data-original="https://img2.591.com.tw/house/2024/01/05/170446315486209697.jpg!400x300.jpg" title="@house.AdTitle" class="houseList-item-thumb j-lazyimg" style="display: inline;">
+                                <!---->
+                                <div class="houseList-item-photonum">
+                                    <i class="icon-photo-num"></i> <span>15</span>
+                                </div>
+                            </div>
+                            <div class="houseList-item-addition">
+                                <div class="houseList-item-addition-tag z-recommend z-animate">
+                                    精選
+                                </div>
+                                <!----> <!---->
+                            </div>
+                        </div>
+                    </a>
+                    <a asp-action="Details" asp-route-houseId="@house.Id">
+                        <div title="" class="houseList-item-right text-right pull-right">
+                            <!---->
+                            <div class="houseList-item-price">
+                                <em> @house.Price.ToString("0")</em> <span>萬</span>
+                            </div>
+                            <div class="houseList-item-has-carport">
+                                ( 含車位價 )
+                            </div>
+                            <div class="houseList-item-unitprice">
+                                @house.EachSquarePrice 萬/坪
+                            </div>
+                        </div>
+                    </a>
+                    <a asp-action="Details" asp-route-houseId="@house.Id">
+                        <div class="houseList-item-main oh">
+                            <div class="houseList-item-title">
+                                <!--------------------------Mobile--------------------------->
+                                <span class="houseList-item-title-label-mobile z-good-house-mobile"></span>
+                                <!----------------------------------------------------------->
+                                <a href="/home/house/detail/2/14924947.html" title="@house.AdTitle">@house.AdTitle</a>
+
+                                <span class="houseList-item-title-label z-good-house"></span>
+
+                            </div>
+
+                            <div class="houseList-item-attr-row clearfix">
+                                <i class="icon-house"></i>
+                                <span class="houseList-item-attrs-shape">電梯大樓</span>
+                                <span class="houseList-item-attrs-layout">@house.BedRoom 房 @house.LivingRoom 廳 @house.BathRoom 衛</span>
+                                <span class="houseList-item-attrs-area">權狀 @house.SquareMeters 坪</span>
+                                <!---->
+                                <span class="houseList-item-attrs-houseage">@house.HouseAge 年</span>
+                                <span class="houseList-item-attrs-floor">11F/12F</span>
+                            </div>
+
+                            <!--------------------------Mobile device--------------------------------->
+                            <div class="houseList-item-attr-row-mobile clearfix">
+                                <span class="houseList-item-attrs-layout">@house.BedRoom 房 @house.LivingRoom 廳</span>
+                                <span class="houseList-item-attrs-area">@house.SquareMeters 坪</span>
+                                <span class="houseList-item-address pull-left"><i class="icon-address"></i> 三重區-元信二街</span>
+                            </div>
+                            <!----------------------------------------------------------------------->
+
+                            <div class="houseList-item-address-row clearfix">
+                                <i class="icon-address"></i>
+                                <span class="houseList-item-community mr15 pull-left" style="margin-right: 15px;">
+                                    <a href="https://market.591.com.tw/103592" target="_blank" data-gtm-stat="中古屋列表_社區行情_社區文字鏈" class="houseList-item-community-link">
+                                        @house.CommunityName
+                                    </a>
+                                </span>
+                                <span class="houseList-item-section pull-left">三重區-</span>
+                                <span class="houseList-item-address pull-left">元信二街</span>
+                            </div>
+                            <div class="houseList-item-user-row">
+                                <span class="houseList-item-user-head" style="background-image: url(&quot;https://img2.591.com.tw/user/2020/05/24/159028324132317003.jpg!100x100.jpg&quot;);"></span>
+                                <span class="houseList-item-user">仲介王小姐</span>
+                                <span class="split-line"></span>
+                                <i class="icon-browse"></i> <span class="houseList-item-browsenum relative">869人瀏覽</span>
+                            </div> <!---->
+
+                            <div class="houseList-item-tag-row clearfix">
+                                <!----> <!----> <!----> <!---->
+                                <div class="houseList-item-tag-item">含車位</div>
+                                <div class="houseList-item-tag-item">有陽台</div>
+                                <div class="houseList-item-tag-item">重劃區</div>
+                            </div>
+
+                            <!------------------------------------Mobile device---------------------------------------------------------------->
+                            <div title="" class="houseList-prive-main text-left pull-left">
+
+                                <div class="houseList-item-price">
+                                    <em>@house.Price</em> <span>萬</span> <span class="houseList-item-unitprice-moblie">@house.EachSquarePrice 萬/坪</span>
+                                </div>
+                                <div class="houseList-item-has-carport">
+                                    @house.IncludeCarSquarePrice
+                                </div>
+
+                            </div>
+                            <!---------------------------------------------------------------------------------------------------------------->
+
+                        </div>
+                    </a>
+                        <span class="shoucang"><a href="javascript:;" data-bind="2" data-text="14924947" data-colle="0" class="houseList-item-collect"></a></span>
+                </div>
+         }
+
+
         <div data-bind="14924947" data-gtm-stat="中古屋列表頁_所有物件_點擊量" title="(馬上約看)麗捷黃金次頂樓河景3房車" addtion="bid" class="j-house houseList-item clearfix" house-detail-stat="2-8-14924947" data-browse-stated="">
             <div class="houseList-item-left pull-left">
                 <div data-gtm-stat="" class="relative">

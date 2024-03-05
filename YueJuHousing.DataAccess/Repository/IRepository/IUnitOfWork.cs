@@ -11,6 +11,7 @@ namespace YueJuHousing.DataAccess.Repository.IRepository
         ICategoryRepository Category { get; }
         //
         IHouseRepository House { get; }
+        ILandRepository Land { get; }
         void Save();
     }
 }

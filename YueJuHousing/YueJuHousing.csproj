@@ -9,9 +9,11 @@
 
   <ItemGroup>
     <Content Remove="wwwroot\js\house.js" />
+    <Content Remove="wwwroot\js\land.js" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\js\land.js" />
     <None Include="wwwroot\js\house.js" />
     <None Include="wwwroot\js\site.js" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
@@ -83,6 +85,7 @@
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Customer\Data\" />
     <Folder Include="Areas\Customer\Models\" />
+    <Folder Include="wwwroot\images\land\" />
   </ItemGroup>
 
 </Project>
