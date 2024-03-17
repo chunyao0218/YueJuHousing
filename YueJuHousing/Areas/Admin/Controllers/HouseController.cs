@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.IdentityModel.Tokens;
 using System.Collections.Generic;
 using System.Reflection.Metadata;
 using YueJuHousing.DataAccess.Data;
@@ -56,60 +57,99 @@ namespace YueJuHousing.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        // 本次修改部分
-        public IActionResult Upsert(HouseVM houseVM, IFormFile? file)
+        public IActionResult Upsert(HouseVM houseVM, List<IFormFile>? files)
         {
             if (ModelState.IsValid)
             {
                 //
                 string wwwRootPath = _webHostEnvironment.WebRootPath;
                 
-                if(file != null)
+                if(files != null && files.Count > 0)
                 {
-                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
-                    string housePath= Path.Combine(wwwRootPath, @"images\house");
-
-                    //有新圖片上傳，刪除舊照片
-                    if (!string.IsNullOrEmpty(houseVM.House.ImageUrl))
+                    List<string> imageUrls = new List<string>();
+                    for (int i = 0; i < files.Count; i++)
                     {
-                        var oldImagePath = Path.Combine(wwwRootPath, houseVM.House.ImageUrl.TrimStart('\\'));
-                        if (System.IO.File.Exists(oldImagePath))
+                        string fileName = Guid.NewGuid().ToString() + Path.GetExtension(files[i].FileName);
+                        string housePath = Path.Combine(wwwRootPath, @"images\house");
+
+                        //有新圖片上傳，刪除舊照片
+                        if (!string.IsNullOrEmpty(houseVM.House.ImageUrl))
                         {
-                            System.IO.File.Delete(oldImagePath);
+                            var oldImagePath = Path.Combine(wwwRootPath, houseVM.House.ImageUrl.TrimStart('\\'));
+                            if (System.IO.File.Exists(oldImagePath))
+                            {
+                                System.IO.File.Delete(oldImagePath);
+                            }
+                        }
+
+                        using (var fileStream = new FileStream(Path.Combine(housePath, fileName), FileMode.Create))
+                        {
+                            files[i].CopyTo(fileStream);
+                        }
+                        imageUrls.Add(@"\images\house\" + fileName);
+                    }
+
+                    // 設置圖片URL時，使用動態的屬性名稱
+                    for (int i = 0; i < imageUrls.Count; i++)
+                    {
+                        switch (i)
+                        {
+                            case 0:
+                                houseVM.House.ImageUrl = imageUrls[i];
+                                break;
+                            case 1:
+                                houseVM.House.ImageUrl2 = imageUrls[i];
+                                break;
+                            case 2:
+                                houseVM.House.ImageUrl3 = imageUrls[i];
+                                break;
+                            case 3:
+                                houseVM.House.ImageUrl4 = imageUrls[i];
+                                break;
+                            case 4:
+                                houseVM.House.ImageUrl5 = imageUrls[i];
+                                break;
+                            case 5:
+                                houseVM.House.ImageUrl6 = imageUrls[i];
+                                break;
+                            case 6:
+                                houseVM.House.ImageUrl7 = imageUrls[i];
+                                break;
+                            case 7:
+                                houseVM.House.ImageUrl8 = imageUrls[i];
+                                break;
+                            case 8:
+                                houseVM.House.ImageUrl9 = imageUrls[i];
+                                break;
+                            case 9:
+                                houseVM.House.PatternImageUrl = imageUrls[9];
+                                break;
+                            default:
+                                break;
                         }
                     }
 
-                    using (var fileStream = new FileStream(Path.Combine(housePath, fileName), FileMode.Create))
-                    {
-                        file.CopyTo(fileStream);
-                    }
-                    houseVM.House.ImageUrl = @"\images\house\" + fileName;
+                    houseVM.House.ImageUrl = houseVM.House.ImageUrl ?? string.Empty;
+                    houseVM.House.ImageUrl2 = houseVM.House.ImageUrl2 ?? string.Empty;
+                    houseVM.House.ImageUrl3 = houseVM.House.ImageUrl3 ?? string.Empty;
+                    houseVM.House.ImageUrl4 = houseVM.House.ImageUrl4 ?? string.Empty;
+                    houseVM.House.ImageUrl5 = houseVM.House.ImageUrl5 ?? string.Empty;
+                    houseVM.House.ImageUrl6 = houseVM.House.ImageUrl6 ?? string.Empty;
+                    houseVM.House.ImageUrl7 = houseVM.House.ImageUrl7 ?? string.Empty;
+                    houseVM.House.ImageUrl8 = houseVM.House.ImageUrl8 ?? string.Empty;
+                    houseVM.House.ImageUrl9 = houseVM.House.ImageUrl9 ?? string.Empty;
 
-
-
-                    if (!string.IsNullOrEmpty(houseVM.House.PatternImageUrl))
-                    {
-                        var oldImagePath = Path.Combine(wwwRootPath, houseVM.House.PatternImageUrl.TrimStart('\\'));
-                        if (System.IO.File.Exists(oldImagePath))
-                        {
-                            System.IO.File.Delete(oldImagePath);
-                        }
-                    }
-
-                    using (var fileStream = new FileStream(Path.Combine(housePath, fileName), FileMode.Create))
-                    {
-                        file.CopyTo(fileStream);
-                    }
-                    houseVM.House.PatternImageUrl = @"\images\house\" + fileName;
                 }
-
 
                 if (houseVM.House.Id == 0)
                 {
+                    houseVM.House.PatternImageUrl = houseVM.House.PatternImageUrl ?? string.Empty;
+                    //刊登物件
                     _unitOfWork.House.Add(houseVM.House);
                 }
                 else
                 {
+                    //更新物件
                     _unitOfWork.House.Update(houseVM.House);
                 }
                 _unitOfWork.Save();

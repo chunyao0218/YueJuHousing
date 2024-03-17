@@ -79,7 +79,16 @@ namespace YueJuHousing.DataAccess.Repository
                 objFromDb.FamousSchoolArea = obj.FamousSchoolArea;
                 objFromDb.FeatureDescribe = obj.FeatureDescribe;
 
+                //房屋圖片
                 objFromDb.ImageUrl = obj.ImageUrl;
+                objFromDb.ImageUrl2 = obj.ImageUrl2;
+                objFromDb.ImageUrl3 = obj.ImageUrl3;
+                objFromDb.ImageUrl4 = obj.ImageUrl4;
+                objFromDb.ImageUrl5 = obj.ImageUrl5;
+                objFromDb.ImageUrl6 = obj.ImageUrl6;
+                objFromDb.ImageUrl7 = obj.ImageUrl7;
+                objFromDb.ImageUrl8 = obj.ImageUrl8;
+                objFromDb.ImageUrl9 = obj.ImageUrl9;
                 objFromDb.PatternImageUrl = obj.PatternImageUrl;
                 objFromDb.VideoUrl = obj.VideoUrl;
 
@@ -95,10 +104,16 @@ namespace YueJuHousing.DataAccess.Repository
 
                 objFromDb.CategoryId = obj.CategoryId;
 
-                if (objFromDb.ImageUrl != null)
-                {
-                    objFromDb.ImageUrl = obj.ImageUrl;
-                }
+                objFromDb.ImageUrl = obj.ImageUrl != null ? obj.ImageUrl : string.Empty;
+                objFromDb.ImageUrl2 = obj.ImageUrl2 != null ? obj.ImageUrl2 : string.Empty;
+                objFromDb.ImageUrl3 = obj.ImageUrl3 != null ? obj.ImageUrl3 : string.Empty;
+                objFromDb.ImageUrl4 = obj.ImageUrl4 != null ? obj.ImageUrl4 : string.Empty;
+                objFromDb.ImageUrl5 = obj.ImageUrl5 != null ? obj.ImageUrl5 : string.Empty;
+                objFromDb.ImageUrl6 = obj.ImageUrl6 != null ? obj.ImageUrl6 : string.Empty;
+                objFromDb.ImageUrl7 = obj.ImageUrl7 != null ? obj.ImageUrl7 : string.Empty;
+                objFromDb.ImageUrl8 = obj.ImageUrl8 != null ? obj.ImageUrl8 : string.Empty;
+                objFromDb.ImageUrl9 = obj.ImageUrl9 != null ? obj.ImageUrl9 : string.Empty;
+                objFromDb.PatternImageUrl = obj.PatternImageUrl != null ? obj.PatternImageUrl : string.Empty;
             }
         }
     }
