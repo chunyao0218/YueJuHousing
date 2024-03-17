@@ -10,5 +10,9 @@ namespace YueJuHousing.Areas.Customer.Controllers
             return View();
         }
 
+        public IActionResult ChooseAdType()
+        {
+            return View();
+        }
     }
 }

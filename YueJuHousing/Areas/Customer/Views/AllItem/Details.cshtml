@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="~/css/custom-style.css">
     <link rel="stylesheet" href="~/font-awesome/css/all.css">
     <link rel="stylesheet" href="~/css/index.css">
-
+    <link rel="stylesheet" href="~/css/detail.css">
 
 
     <!-- MAIN CSS -->
@@ -35,6 +35,333 @@
 </head>
 
 <form method="post">
+    <section class="img-and-info clearfix">
+        <div class="detail-title-container">
+            <div class="detail-title triggerOne_show">
+                <div class="detail-title-left">
+                    <h1 class="detail-title-content">
+                        @Model.AdTitle
+                    </h1>
+                    <div class="detail-title-info">
+                        <span class="detail-info-span pull-right">有效期：2024-04-27</span>
+                        <span class="detail-info-span">瀏覽人數：1565</span>
+                        <span class="detail-info-span">（<i class="visit-pc"></i>293 &nbsp;&nbsp;|&nbsp;&nbsp; <i class="visit-move"></i>1272）</span>
+                    </div>
+                </div>
+                <div class="detail-title-right" style="margin-top: 20px;">
+                    <div class="detail-title-func" id="j_addfav" google-data-stat="出售_新版列表詳細頁_收藏" data-behavior-collect="" data-gtm-behavior="collect">
+                        <i class="fa fa-heart-o"></i>
+                        <a href="javascript:;">
+                            收藏
+                            （4）
+                        </a>
+                    </div>
+
+                    <div class="detail-title-func line text-left">
+                        <a href="javascript:;" data-gtm-stat="中古屋詳細頁_分享_line" data-behavior-share="" data-gtm-behavior="line_share">分享</a>
+                        <div class="line-box j-line-wrap" data-url="//m.591.com.tw/v2/sale/15198587" data-gtm-stat="中古屋詳細頁_分享_line" data-behavior-share="" data-gtm-behavior="line_share">
+                            <p id="qrcode-line" style="width:120px; height: 120px; margin: 10px auto"><img src="//qcode.591.com.tw/qr?size=120&amp;margin=2&amp;text=http%3A%2F%2Fline.me%2FR%2Fmsg%2Ftext%2F%3F%E6%88%91%E5%9C%A8591%E6%88%BF%E5%B1%8B%E4%BA%A4%E6%98%93%E7%B6%B2%E7%99%BC%E7%8F%BE%E5%A5%BD%E6%88%BF%E5%B1%8B%E5%95%A6%20%2F%2Fm.591.com.tw%2Fv2%2Fsale%2F15198587%3Faid%3D1932"></p>
+                            <p>用Line掃描QR Code<br>分享給好友</p>
+                        </div>
+                    </div>
+
+                    <div class="detail-title-func fb text-left">
+                        <a class="j-share-fb" href="javascript:;" data-gtm-stat="中古屋詳細頁_分享_fb" data-href="https://sale.591.com.tw/home/house/detail/2/15198587.html" data-behavior-share="" data-gtm-behavior="fb_share">分享</a>
+                    </div>
+
+                    <div class="detail-title-func" id="detailPrint" google-data-stat="出售_新版列表詳細頁_列印" data-behavior-print=""><i class="fa fa-print"></i><a href="javascript:;">列印</a></div>
+                    <div class="detail-title-func" id="detailImpeach" google-data-stat="出售_新版列表詳細頁_檢舉"><i class="fa fa-exclamation-triangle"></i><a href="javascript:;">檢舉</a></div>
+                </div>
+            </div>
+        </div>
+        <!-- 基本資料 -->
+        <div class="info-box">
+            <div class="info-box-price">
+
+                <div class="info-price-up">
+                    <div class="info-price-left">
+                        <span class="info-price-num">@Model.Price</span><span class="info-price-unit">萬元</span>
+                        <div class="info-box-car">（@Model.IncludeCarSquarePrice）</div>
+                    </div>
+                    <div class="info-price-right">
+                        <div class="info-price-per">
+                            <span class="single-price">
+                                單<v></v>價
+                                <div class="icon-question" data-toggle="tooltip" data-html="true" title="" data-original-title="<p>
+                                        中古屋單價由591根據刊登者發佈的房源數據計算得出<br/>
+                                        單價=售價/權狀坪數<br/>
+                                        備註：以上售價與權狀坪數，皆已扣除車位數據<br/>
+                                    </p>"></div>
+                                :
+                            </span>44.58萬/坪
+                        </div>
+                        <div class="info-price-pay">
+                            <span class="tag">參考月付：</span>
+                            <a href="//mortgage.591.com.tw?price=2268&amp;ratio=20" target="_blank" data-gtm-stat="房貸_中古屋詳細頁_詳情" style="color: #333;text-decoration: underline;">
+                                月付67,049元
+                            </a>
+                        </div>
+
+
+                        <div class="info-mortgage">
+                            <a href="//mortgage.591.com.tw/calculator?totalPrice=2268&amp;firstRate=20" target="_blank" data-gtm-stat="出售_新版列表詳細頁_房貸試算A" data-gtm-behavior="mortgage_calculation">
+                                <span class="info-mortgage-desc icon-calculator">房貸試算</span>
+                            </a>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 如果是有必看好屋，取消上面的下劃線 -->
+            <div class="info-box-floor" style="">
+                <div class="info-floor-left">
+                    <div class="info-floor-key">4房2<d></d>廳2衛</div>
+                    <div class="info-floor-value">格<uuh></uuh>局</div>
+                </div>
+                <div class="info-floor-left">
+                    <div class="info-floor-key">14年</div>
+                    <div class="info-floor-value"><qlboet></qlboet>屋齡</div>
+                </div>
+                <div class="info-floor-left">
+                    <div class="info-floor-key">56.57坪<span>(含車位)</span></div>
+                    <div class="info-floor-value">權<oomd></oomd>狀坪數</div>
+                </div>
+            </div>
+
+            <div class="info-box-goodhouse">
+            </div>
+
+            <div class="info-box-addr">
+                <div class="info-addr-content">
+                    <span class="info-addr-key"><jpik></jpik>樓層</span>
+                    <span class="info-addr-value">11F/15F</span>
+                </div>
+                <div class="info-addr-content">
+                    <span class="info-addr-key">社<zhpyv></zhpyv>區</span>
+                    <span class="info-addr-value"><a href="https://market.591.com.tw/26148" data-gtm-stat="社區-中古屋業務_中古屋詳情頁_資訊-社區點擊" target="_blank" class="community-info-a">榮耀之星</a></span>
+                </div>
+                <div class="info-addr-content">
+                    <span class="info-addr-key"><dtblyu></dtblyu>地址</span>
+                    <span class="info-addr-value">新北市林口區文化三路二段<a href="#detail-map" class="info-addr-tip" data-behavior-map=""></a></span>
+                </div>
+            </div>
+            <div class="info-box-host">
+                <div class="info-host-one ">
+                    <div class="info-host-portrait">
+                        <div class="avatar">
+                            <img src="https://img2.591.com.tw/user/2020/01/16/157916835780075406.jpg!100x100.jpg" alt="" class="info-portrait-img">
+                        </div>
+                    </div>
+                    <div class="info-host-right">
+                        <div class="info-host-name">
+                            <span class="info-span-name"><fumg></fumg>林先生</span>
+                            <span class="info-span-msg">（仲<ltpozu></ltpozu>介，收取服務費）</span>
+                            <i class="info-host-rec"><div class="info-rec-info">已通過仲介職業認證</div></i>
+                            <a href="//www.591.com.tw/broker1932?type=2&amp;post_id=15241660" target="_blank" class="info-host-store"><div class="info-store-info">進入店鋪</div></a>
+
+                        </div>
+                        <div class="info-host-detail" style="margin-bottom: 8px;">
+                            <span>經紀業：恆長榮地產開發有限公司</span>
+                            <a href="javascript:;" class="info-detail-a">詳情</a>
+                            <div class="info-detail-show">
+                                經紀業：恆長榮地產開發有限公司<br>
+                                公司名：永慶不動産(加盟店)<br>
+                                分公司：林口文三信義店<br>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="info-host-two ">
+                    <div class="j-phone-trigger info-host-phone-hidden">查看聯絡電話</div>
+                    <div class="j-phone info-host-phone js-dialing kfDialingNum " member-phone="0918-406-030" dial-mode="fixedLine" member-name="林先生">
+                        <i class="info-host-tel"></i>
+                        <span class="info-host-word">
+                            <by></by>0918-406-030
+                        </span>
+
+
+
+                        <i class="info-host-qrcode">
+                            <div class="qrcode-tel">
+                                <div id="qrcode-tel"><img src="//qcode.591.com.tw/qr?size=130&amp;margin=2&amp;text=https%3A%2F%2Fm.591.com.tw%2Fv2%2Fsale%2F15241660%3Faid%3D1932%26qrcode%3Dtel"></div>
+                                <div class="qrcode-txt">掃碼QRcode撥打電話</div>
+                            </div>
+                        </i>
+                    </div>
+                </div>
+
+                <div class="mt5 mb10"></div>
+
+                <div class="info-host-four">
+                    <a href="javascript:;" id="addLine" data-url="https://line.me/ti/p/iKK4eXhGO6" class="info-four-box line" data-gtm-stat="售屋_line加好友" data-behavior-friend="" data-gtm-behavior="line_friend">
+                        <i class="info-four-img-line"></i>
+                        <span class="">加好友</span>
+                    </a>
+
+                    <div class="info-four-box qd">
+                        <i class="info-four-img-qd"></i>
+                        <span class="">掃一掃，好屋帶著走</span>
+                        <div class="info-qd" id="qrcode-mobile"><img src="//qcode.591.com.tw/qr?size=160&amp;margin=2&amp;text=https%3A%2F%2Fm.591.com.tw%2Fv2%2Fsale%2F15241660%3Faid%3D1932"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 帶縮略圖的輪播 -->
+        <div class="img-box">
+            <div id="j_photo_play">
+                <div class="img_main" data-behavior-img="">
+
+                    <img style="display: inline;" src="https://img2.591.com.tw/house/2024/03/05/170962714332189005.jpg!1000x.water2.jpg" alt="房屋圖片" title="" google-data-stat="PC端_新版詳情頁_輪播點擊查看大圖1">
+                </div>
+
+                <div class="img_prev clearfix">
+                    <a class="prev_left" href="javascript:;" google-data-stat="PC端_新版詳情頁_輪播點擊上一頁1" style="opacity: 0.3; cursor: default;"></a>
+                    <div class="img_list" id="img_list">
+                        <ol style="left: 0px;">
+                            <li class="">
+                                <a href="javascript:;" class="selected"><img src="https://img1.591.com.tw/house/2024/03/05/170962714332189005.jpg!400x300.jpg" alt="" width="118" height="88" google-data-stat="PC端_新版詳情頁_輪播點擊小圖1"></a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:;"><img src="https://img1.591.com.tw/house/2024/03/05/170962714322014808.jpg!400x300.jpg" alt="" width="118" height="88" google-data-stat="PC端_新版詳情頁_輪播點擊小圖1"></a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:;"><img src="https://img2.591.com.tw/house/2024/03/05/170962714285731000.jpg!400x300.jpg" alt="" width="118" height="88" google-data-stat="PC端_新版詳情頁_輪播點擊小圖1"></a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:;"><img src="https://img2.591.com.tw/house/2024/03/05/170962714282740002.jpg!400x300.jpg" alt="" width="118" height="88" google-data-stat="PC端_新版詳情頁_輪播點擊小圖1"></a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:;"><img src="https://img1.591.com.tw/house/2024/03/05/170962714312493401.jpg!400x300.jpg" alt="" width="118" height="88" google-data-stat="PC端_新版詳情頁_輪播點擊小圖1"></a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:;"><img src="https://img1.591.com.tw/house/2024/03/05/170962714344595603.jpg!400x300.jpg" alt="" width="118" height="88" google-data-stat="PC端_新版詳情頁_輪播點擊小圖1"></a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:;"><img src="https://img1.591.com.tw/house/2024/03/05/170962714298303502.jpg!400x300.jpg" alt="" width="118" height="88" google-data-stat="PC端_新版詳情頁_輪播點擊小圖1"></a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:;"><img src="https://img1.591.com.tw/house/2024/03/05/170962714303636508.jpg!400x300.jpg" alt="" width="118" height="88" google-data-stat="PC端_新版詳情頁_輪播點擊小圖1"></a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:;"><img src="https://img2.591.com.tw/house/2024/03/05/170962714355751708.jpg!400x300.jpg" alt="" width="118" height="88" google-data-stat="PC端_新版詳情頁_輪播點擊小圖1"></a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:;"><img src="https://img1.591.com.tw/house/2024/03/05/170964168824905204.jpg!400x300.jpg" alt="" width="118" height="88" google-data-stat="PC端_新版詳情頁_輪播點擊小圖1"></a>
+                            </li>
+                        </ol>
+                    </div>
+                    <a class="prev_right" href="javascript:;" google-data-stat="PC端_新版詳情頁_輪播點擊下一頁1" style="opacity: 1; cursor: pointer;"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="detail-house navScroll  detail-font-" data-nav="nav-type-house">
+        <div class="detail-house-title triggerOne_show">房<trc></trc>屋<trc></trc>介紹</div>
+        <div class="font-size-control">
+            <span>調整字體大小：</span>
+
+
+            <div class="font-size-btn font-size-small" google-data-stat="出售_新版列表詳細頁_字體小">小</div>
+            <div class="font-size-btn font-size-middle font-size-select" google-data-stat="出售_新版列表詳細頁_字體中">中</div>
+            <div class="font-size-btn font-size-big" google-data-stat="出售_新版列表詳細頁_字體大">大</div>
+
+        </div>
+        <div class="detail-house-box">
+            <div class="detail-house-name">房<sqftvk></sqftvk><sqftvk></sqftvk>屋資料</div>
+            <div class="detail-house-content">
+                <div class="detail-house-item">
+                    <div class="detail-house-key"><rsi></rsi>現況</div>
+                    <span>：</span>
+                    <div class="detail-house-value">住<cdzqdp></cdzqdp>宅</div>
+                </div>
+                <div class="detail-house-item">
+                    <div class="detail-house-key">型態</div>
+                    <span>：</span>
+                    <div class="detail-house-value"><qpuelq></qpuelq>電<qpuelq></qpuelq><qpuelq></qpuelq>梯大樓</div>
+                </div>
+                <div class="detail-house-item">
+                    <div class="detail-house-key">裝<qcuaks></qcuaks>潢<qcuaks></qcuaks>程度</div>
+                    <span>：</span>
+                    <div class="detail-house-value">簡<w></w>易裝潢</div>
+                </div>
+                <div class="detail-house-item">
+                    <div class="detail-house-key">管理費</div>
+                    <span>：</span>
+                    <div class="detail-house-value"><i></i>2975元/月</div>
+                </div>
+                <div class="detail-house-item">
+                    <div class="detail-house-key">帶租約</div>
+                    <span>：</span>
+                    <div class="detail-house-value">否</div>
+                </div>
+                <div class="detail-house-item">
+                    <div class="detail-house-key"><nfmhpvv></nfmhpvv>法定用途</div>
+                    <span>：</span>
+                    <div class="detail-house-value"><aw></aw><aw></aw>住家用</div>
+                </div>
+                <div class="detail-house-item">
+                    <div class="detail-house-key">車<knp></knp>位</div>
+                    <span>：</span>
+                    <div class="detail-house-value">9.0<rjydu></rjydu>5坪，<rjydu></rjydu>平面式，<rjydu></rjydu>已含售金內</div>
+                </div>
+                <div class="detail-house-item">
+                    <div class="detail-house-key">公設比</div>
+                    <span>：</span>
+                    <div class="detail-house-value">2<re></re><re></re>9%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-house-box">
+            <div class="detail-house-name">坪<imxu></imxu><imxu></imxu>數說明</div>
+            <div class="detail-house-content">
+                <div class="detail-house-item">
+                    <div class="detail-house-key">主<ppt></ppt>建物</div>
+                    <span>：</span>
+                    <div class="detail-house-value">27.55坪</div>
+                </div>
+                <div class="detail-house-item">
+                    <div class="detail-house-key">共用部分</div>
+                    <span>：</span>
+                    <div class="detail-house-value">12.<mllf></mllf>8坪</div>
+                </div>
+                <div class="detail-house-item">
+                    <div class="detail-house-key">附屬建物</div>
+                    <span>：</span>
+                    <div class="detail-house-value">4.2<vtur></vtur>4坪</div>
+                </div>
+                <div class="detail-house-item">
+                    <div class="detail-house-key">土<bzby></bzby>地<bzby></bzby>坪數</div>
+                    <span>：</span>
+                    <div class="detail-house-value">10.54坪</div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="detail-feature-box">
+            <div class="detail-house-feature">屋況特色</div>
+            <div class="detail-feature-content">
+                <div class="detail-feature-text" id="detail-feature-text" style="-moz-user-select:none;user-select:none;" onselectstart="return false;">
+                    <p align="center"><span style="font-size:18px;"><span style="background-color:#ffcccc;">格局方正&nbsp;大房大廳</span></span></p><p align="center"><span style="font-size:18px;"><span style="background-color:#ffcc99;">通風採光佳&nbsp;面中庭環境清幽<br></span></span></p><p align="center"><span style="font-size:18px;"><span style="background-color:#ffff99;">一手持有&nbsp;屋況良好&nbsp;直接入住<br></span></span></p><p align="center"><span style="font-size:18px;"><span style="background-color:#99ffff;">一層兩戶出入單純&nbsp;全天候管理<br></span></span></p><p align="center"><span style="font-size:18px;"><span style="background-color:#ccccff;">鄰近學校上下課便利&nbsp;近公園休閒好去處<br></span></span></p><p align="center"><span style="font-size:18px;"><span style="background-color:#ffccff;">佳瑪商圈&nbsp;黃昏市場&nbsp;生活機能方便</span></span><br></p><p align="center"><span style="font-size:18px;"><span style="background-color:#ffccff;"></span></span></p><br><br><span style="font-family:&quot;"><span style="color:#333333;">蘆洲在新莊副都心、士林北投科技園區、五股洪水平原，3大產業專區的包圍下，內有捷運蘆洲線、環狀線、台64快速道路作為交通動脈，市區劃分為4大重劃區、2大都更特區正準備全面翻新，再加上蘆洲運動中心已完工開始營運。未來「三環三線」整個捷運系統完成後，蘆洲的發展潛力會更驚人。此外還計畫在三蘆地區設立大型醫院，對於蘆洲地區的地方建設與發展投入大量的利多。<br>&nbsp;o &nbsp;&nbsp;&nbsp;台64快速道路串起3條快速道路、2條高速公路、3個新北市重要策略發展區(新板特區、新莊副都心、台北港特定區)&nbsp;</span></span><br><br><span style="font-family:&quot;"><span style="color:#333333;">o &nbsp;&nbsp;</span></span><span style="font-family:&quot;"><span style="color:#333333;">捷運蘆洲線通車，從捷運蘆洲站到忠孝新生站只需要19分鐘，大幅縮短蘆洲通勤至北市的時間&nbsp;</span></span><br><br><span style="font-family:&quot;"><span style="color:#333333;">o &nbsp;&nbsp;</span></span><span style="font-family:&quot;"><span style="color:#333333;">機場捷運先導公車~90分鐘立即到達機場，是新北與桃園之間第1條結合捷運與快速公車性質路線，沿途各站旅客前往機場，或回國民眾轉乘捷運蘆洲線、新莊線至大台北地區都很方便</span></span><br><br><span style="font-family:&quot;"><span style="color:#333333;">&nbsp;</span></span><span style="font-family:&quot;"><span style="color:#333333;">俗話說「地段地段地段」蘆洲發展潛力無窮要買在對的地段坐享房價增值</span></span><br><br><span style="font-family:&quot;"><span style="color:#333333;">*&nbsp;*&nbsp;*&nbsp;</span></span><span style="font-family:&quot;"><span style="color:#333333;">全&nbsp;國&nbsp;不&nbsp;動&nbsp;產&nbsp;*&nbsp;*&nbsp;*&nbsp;&nbsp;&nbsp;蘆洲捷運總站加盟店&nbsp;<br>立信不動產經紀有限公司&nbsp;<br>經紀人鐘振志&nbsp;(105)北市經證字第02342號</span></span>
+                </div>
+                <div class="detail-feature-more" google-data-stat="出售_新版列表詳細頁_查看更多內容" style="display: block;">查看更多內容</div>
+            </div>
+        </div>
+    </section>
+
+
+
     <div class="container mt-5">
         <div class="row">
             <div class="container">
@@ -66,8 +393,139 @@
 
 
                     </div>
+
+
+
                     <div class="col-12 col-lg-5 align-self-start">
-                        <img src="@Model.ImageUrl" width="100%" class="rounded" />
+                        <div class="detail owl-carousel owl-theme hotbuild">
+                            <div class="item">
+                                <div class="scroll-wrapper clearfix triggerOne_show" id="hotBuild_unknow" data-id="hotBuild">
+                                    <div class="clearfix">
+
+                                        <div class="scroll-main hot-builds">
+
+                                            <div class="scroll-list newbuild-hot clearfix" style="left: 0px;">
+                                                
+                                                    <a href="//newhouse.591.com.tw/134022" target="_blank" google-data-stat="新版首頁_熱門建案_建案0-0">
+                                                    
+                                                        <div class="img_main" data-behavior-img="">
+                                                            <img src="@Model.ImageUrl" alt="@Model.CommunityName">
+                                                        </div>
+                                                     
+                                                    </a>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="scroll-wrapper clearfix triggerOne_show" id="hotBuild_unknow" data-id="hotBuild">
+                                    <div class="clearfix">
+
+                                        <div class="scroll-main hot-builds">
+
+                                            <div class="scroll-list newbuild-hot clearfix" style="left: 0px;">
+
+                                                <a href="//newhouse.591.com.tw/134022" target="_blank" google-data-stat="新版首頁_熱門建案_建案0-0">
+
+                                                    <div class="img_main" data-behavior-img="">
+                                                        <img src="@Model.ImageUrl" alt="@Model.CommunityName">
+                                                    </div>
+
+                                                </a>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="scroll-wrapper clearfix triggerOne_show" id="hotBuild_unknow" data-id="hotBuild">
+                                    <div class="clearfix">
+                                        <div class="scroll-main hot-builds">
+                                            <div class="scroll-list newbuild-hot clearfix" style="left: 0px;">
+                                                <a href="//newhouse.591.com.tw/134022" target="_blank" google-data-stat="新版首頁_熱門建案_建案0-0">
+                                                    <div class="img_main" data-behavior-img="">
+                                                        <img src="@Model.ImageUrl" alt="@Model.CommunityName">
+                                                    </div>
+                                                </a>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="img_list" id="img_list">
+                            <div class="detailimglist owl-carousel owl-theme hotbuild">
+                                 <div class="item">
+                                        <div class="scroll-wrapper clearfix triggerOne_show" id="hotBuild_unknow" data-id="hotBuild">
+                                            <div class="clearfix">
+                                                <div class="scroll-main hot-builds">
+                                                    <div class="scroll-list newbuild-hot clearfix" style="left: 0px;">
+                                                        <a href="//newhouse.591.com.tw/134022" target="_blank" google-data-stat="新版首頁_熱門建案_建案0-0">
+                                                        <div class="img_list" id="img_list">
+                                                                <img src="@Model.ImageUrl" alt="@Model.CommunityName" style="width:120px;height:90px">
+                                                            </div>
+                                                        </a>
+                                                        </dl>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                 </div>
+                                <div class="item">
+                                    <div class="scroll-wrapper clearfix triggerOne_show" id="hotBuild_unknow" data-id="hotBuild">
+                                        <div class="clearfix">
+                                            <div class="scroll-main hot-builds">
+                                                <div class="scroll-list newbuild-hot clearfix" style="left: 0px;">
+                                                    <a href="//newhouse.591.com.tw/134022" target="_blank" google-data-stat="新版首頁_熱門建案_建案0-0">
+                                                        <div class="img_list" id="img_list">
+                                                            <img src="@Model.ImageUrl" alt="@Model.CommunityName" style="width:120px;height:90px">
+                                                        </div>
+                                                    </a>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="scroll-wrapper clearfix triggerOne_show" id="hotBuild_unknow" data-id="hotBuild">
+                                        <div class="clearfix">
+                                            <div class="scroll-main hot-builds">
+                                                <div class="scroll-list newbuild-hot clearfix" style="left: 0px;">
+                                                    <a href="//newhouse.591.com.tw/134022" target="_blank" google-data-stat="新版首頁_熱門建案_建案0-0">
+                                                        <div class="img_list" id="img_list">
+                                                            <img src="@Model.ImageUrl" alt="@Model.CommunityName" style="width:120px;height:90px">
+                                                        </div>
+                                                    </a>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="scroll-wrapper clearfix triggerOne_show" id="hotBuild_unknow" data-id="hotBuild">
+                                        <div class="clearfix">
+                                            <div class="scroll-main hot-builds">
+                                                <div class="scroll-list newbuild-hot clearfix" style="left: 0px;">
+                                                    <a href="//newhouse.591.com.tw/134022" target="_blank" google-data-stat="新版首頁_熱門建案_建案0-0">
+                                                        <div class="img_list" id="img_list">
+                                                            <img src="@Model.ImageUrl" alt="@Model.CommunityName" style="width:120px;height:90px">
+                                                        </div>
+                                                    </a>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

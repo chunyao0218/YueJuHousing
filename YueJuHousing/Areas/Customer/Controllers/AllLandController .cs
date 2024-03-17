@@ -17,14 +17,14 @@ namespace YueJuHousing.Areas.Customer.Controllers
 
         public IActionResult Index()
         {
-            IEnumerable<Land> landList = _unitOfWork.Land.GetAll(includeProperties:"Category");
+            IEnumerable<Land> landList = _unitOfWork.Land.GetAll().ToList();
 
             return View(landList);
         }
 
         public IActionResult Details(int landId)
         {
-            Land land= _unitOfWork.Land.Get(u => u.Id == landId, includeProperties: "Category");
+            Land land = _unitOfWork.Land.Get(u => u.Id == landId);
 
             return View(land);
         }
