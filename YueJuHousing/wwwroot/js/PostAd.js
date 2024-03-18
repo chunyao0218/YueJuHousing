@@ -260,3 +260,38 @@ function clearDropdown(dropdown) {
         dropdown.options.remove(0);
     }
 }
+
+// JavaScript function to toggle display based on land use zone selection
+document.addEventListener("DOMContentLoaded", function () {
+    const urbanRadio = document.querySelector('input[value="都市土地"]');
+    const nonUrbanRadio = document.querySelector('input[value="非都市土地"]');
+    const urbanZonesDiv = document.getElementById('urbanZones');
+    const nonUrbanZonesDiv = document.getElementById('nonUrbanZones');
+
+    urbanRadio.addEventListener('change', function () {
+        if (urbanRadio.checked) {
+            urbanZonesDiv.style.display = 'flex';
+            nonUrbanZonesDiv.style.display = 'none';
+        }
+    });
+
+    nonUrbanRadio.addEventListener('change', function () {
+        if (nonUrbanRadio.checked) {
+            urbanZonesDiv.style.display = 'none';
+            nonUrbanZonesDiv.style.display = 'flex';
+        }
+    });
+});
+
+// JavaScript function to ChooseAdType
+
+$(function () {
+    // 隱藏「房屋現況」的選單
+    $('#houseCondition').hide();
+
+    // 當「出售」被點選時
+    $('#sellOption').on('click', function () {
+        // 顯示「房屋現況」的選單
+        $('#houseCondition').show();
+    });
+});

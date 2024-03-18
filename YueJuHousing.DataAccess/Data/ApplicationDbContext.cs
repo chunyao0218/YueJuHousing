@@ -23,8 +23,7 @@ namespace YueJuHousing.DataAccess.Data
             modelBuilder.Entity<Category>().HasData(
                 new Category { Id = 1, Name = "預售屋", DisplayOrder = 1 },
                 new Category { Id = 2, Name = "新成屋", DisplayOrder = 2 },
-                new Category { Id = 3, Name = "中古屋", DisplayOrder = 3 },
-                new Category { Id = 4, Name = "土地", DisplayOrder = 4 }
+                new Category { Id = 3, Name = "中古屋", DisplayOrder = 3 }
                 );
 
             modelBuilder.Entity<House>().HasData(

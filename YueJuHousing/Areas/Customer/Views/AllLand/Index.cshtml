@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "悅聚房屋 | 最佳房屋選擇";
 }
+<html lang="en">
 <head>
 
     <!--
@@ -26,64 +27,459 @@
     <link rel="stylesheet" href="~/css/custom-style.css">
     <link rel="stylesheet" href="~/font-awesome/css/all.css">
     <link rel="stylesheet" href="~/css/index.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.css">
+    <link rel="stylesheet" href="~/css/AllItem.css">
 
 
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="~/css/tooplate-style.css">
 
-     <style>
-        .custom-img {
-            object-fit: cover;
-            height: 200px; /* 根據需要調整高度 */
-            width: 100%; /* 使圖片寬度擴展到父元素的100% */
-        }
-
-        .card-body {
-            height: 100%; /* 讓卡片主體佔據卡片的全部高度 */
-            display: flex;
-            flex-direction: column;
-        }
-    </style>
-
 </head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
 
-<div class="row pb-3">
-    @foreach (var land in Model)
-    {
-        <div class="col-lg-3 col-md-6">
-            <div class="row p-2">
-                <div class="col-12 p-1" style="border:1px solid #008cba; border-radius: 5px">
-                    <div class="card">
-                        <img src="@land.ImageUrl" class="card-img-top rounded custom-img">
-                        <div class="card-body">
-                            <div class="p-1">
-                                <p class="card-title h5 text-primary">@land.AdTitle</p>
-                                <p class="card-title text-secondary"><b>@land.Address</b></p>
+    <!-- PRE LOADER -->
+    <section class="preloader">
+        <div class="spinner">
+            @*<img src="~/images/Preloadlogo.png" class="img-responsive" alt="" style="text-align:center;width:100px;height:100px;">*@
+            <span class="spinner-rotate">
+                <img src="~/images/Preloadlogo.jpg" class="img-responsive" alt="" style="text-align:center;width:100px;height:100px;">
+            </span>
+        </div>
+    </section>
+
+
+
+
+    <!-- 最新上架物件 -->
+    
+    <section id="AboutArea" class="wn__newsletter__area newsletter--bg">
+        <!-- 簡易篩選 -->
+       @* <div id="filter" class="">
+            <div class="filter z-kind-null z-shType-list false">
+                <div class="select-wrap filter-location-wrap">
+                    <div class="select-label">位置</div> <div class="filter-location-content">
+                        <div class="header">
+                            <div class="select-group"><div class="select-item is-active"><span>按鄉鎮</span> <i class="expand"></i></div><div class="select-item"><span>按捷運</span> <i class="no-expand"></i></div><div class="select-item"><span>按學校</span> <i class="no-expand"></i></div><div class="select-item"><span>按商圈</span> <i class="no-expand"></i></div></div> <div class="operation">
+                                <a href="javascript:;" data-gtm-stat="中古屋列表頁_麵包屑_清空全部">
+                                    <i class="clean-search"></i>
+                                    清空條件
+                                </a> <a href="javascript:;" data-gtm-stat="中古屋列表頁_麵包屑_訂閱電子報">
+                                    <i class="subscription"></i>
+                                    訂閱電子報
+                                </a>
                             </div>
-                            <div class="p-1">
-                                <p>價格：<b>$@land.Price.ToString("0.00")</b></p>
+                        </div> <div class="filter-line"></div> <div class="select-options-wrapper"><div class="select-options-group is-section" style=""><div class="select-option-unlimit z-select">不限</div> <div class="select-option-list"><div class="option-item"><div class="checkbox-icon"></div> <span>中和區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>林口區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>淡水區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>新莊區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>汐止區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>板橋區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>新店區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>樹林區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>三重區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>三峽區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>永和區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>土城區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>蘆洲區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>五股區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>泰山區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>八里區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>鶯歌區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>深坑區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>三芝區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>瑞芳區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>金山區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>萬里區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>石碇區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>石門區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>雙溪區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>坪林區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>平溪區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>貢寮區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>烏來區</span></div></div></div> <div class="select-options-group button-group is-metro" style="display: none;"><div class="select-option-list"><div class="option-item"><span>文湖線</span></div><div class="option-item"><span>淡水信義線</span></div><div class="option-item"><span>新北投支線</span></div><div class="option-item"><span>松山新店線</span></div><div class="option-item"><span>小碧潭支線</span></div><div class="option-item"><span>中和新蘆線</span></div><div class="option-item"><span>板南線</span></div><div class="option-item"><span>淡海輕軌</span></div><div class="option-item"><span>環狀線</span></div></div></div> <!----> <div class="select-options-group is-station" style="display: none;"><div class="select-option-list"></div></div> <div class="select-options-group is-school" style="display: none;"><div class="select-option-list"><div class="option-item"><span>台灣藝術大學</span></div><div class="option-item"><span>亞東技術學院</span></div><div class="option-item"><span>致理技術學院</span></div><div class="option-item"><span>東南科技大學</span></div><div class="option-item"><span>華梵大學</span></div><div class="option-item"><span>德霖技術學院</span></div><div class="option-item"><span>輔仁大學</span></div><div class="option-item"><span>黎明技術學院</span></div><div class="option-item"><span>醒吾科技大學</span></div><div class="option-item"><span>真理大學</span></div><div class="option-item"><span>淡江大學</span></div><div class="option-item"><span>華夏科技大學</span></div><div class="option-item"><span>明志科技大學</span></div><div class="option-item"><span>景文科技大學</span></div><div class="option-item"><span>台北大學三峽校區</span></div></div></div> <div class="select-options-group is-business" style="display: none;"><div class="select-option-list"><div class="option-item"><span>蘆洲市廟街商圈</span></div><div class="option-item"><span>烏來商圈</span></div><div class="option-item"><span>瑞芳鎮九份商圈</span></div><div class="option-item"><span>鶯歌老街商圈</span></div><div class="option-item"><span>坪林商圈</span></div><div class="option-item"><span>新莊夜市商圈</span></div><div class="option-item"><span>鴻金寶商圈</span></div><div class="option-item"><span>幸福商圈</span></div><div class="option-item"><span>板橋後站商圈</span></div><div class="option-item"><span>板橋新站商圈</span></div><div class="option-item"><span>中和捷運商圈</span></div><div class="option-item"><span>中和積穗商圈</span></div><div class="option-item"><span>永和頂溪商圈</span></div><div class="option-item"><span>金國商圈</span></div><div class="option-item"><span>天台商圈</span></div><div class="option-item"><span>汐止麥當勞商圈</span></div><div class="option-item"><span>忠孝東路商圈</span></div><div class="option-item"><span>國泰建成商圈</span></div><div class="option-item"><span>大汐止百貨商圈</span></div><div class="option-item"><span>明峰市場商圈</span></div><div class="option-item"><span>樟樹灣商圈</span></div><div class="option-item"><span>碧潭商圈</span></div><div class="option-item"><span>淡水商圈</span></div><div class="option-item"><span>土城延吉商圈</span></div><div class="option-item"><span>南港軟體工業園區</span></div><div class="option-item"><span>中和工業區</span></div><div class="option-item"><span>新店工業區</span></div><div class="option-item"><span>土城工業區</span></div><div class="option-item"><span>五股工業區</span></div><div class="option-item"><span>瑞芳工業區</span></div><div class="option-item"><span>樹林工業區</span></div><div class="option-item"><span>龜山工業區</span></div><div class="option-item"><span>林口工[二]工業區</span></div><div class="option-item"><span>湯城園區</span></div><div class="option-item"><span>汐止東方科學園區</span></div><div class="option-item"><span>三和夜市商圈</span></div></div></div></div> <div class="filter-line" style="margin-top: 8px;"></div>
+                    </div>
+                </div> <div class="select-wrap filter-kind-wrap"><div class="select-label">類型</div> <div class="select-options-group"><div data-gtm-stat="中古屋列表頁_類型_不限" class="select-option-unlimit z-select">不限</div> <div class="select-option-list"><div data-gtm-stat="中古屋列表頁_類型_住宅" class="option-item filter-kind-items-9"><span>住宅</span></div><div data-gtm-stat="中古屋列表頁_類型_套房" class="option-item filter-kind-items-10"><span>套房</span></div><div data-gtm-stat="中古屋列表頁_類型_車位" class="option-item filter-kind-items-8"><span>車位</span></div><div data-gtm-stat="中古屋列表頁_類型_法拍屋" class="option-item filter-kind-items-22"><span>法拍屋</span></div><div data-gtm-stat="中古屋列表頁_類型_其他" class="option-item filter-kind-items-24"><span>其他</span></div></div></div></div> <div class="select-wrap filter-saleprice-wrap"><div class="select-label">售價</div> <div class="select-options-group"><div data-gtm-stat="中古屋列表頁_售金_不限" class="select-option-unlimit z-select">不限</div> <div class="select-option-list"><!----><div data-gtm-stat="中古屋列表頁_售金_750萬以下" class="option-item"><div class="checkbox-icon"></div> <span>750萬以下</span></div><div data-gtm-stat="中古屋列表頁_售金_750-1000萬" class="option-item"><div class="checkbox-icon"></div> <span>750-1000萬</span></div><div data-gtm-stat="中古屋列表頁_售金_1000-1250萬" class="option-item"><div class="checkbox-icon"></div> <span>1000-1250萬</span></div><div data-gtm-stat="中古屋列表頁_售金_1250-1500萬" class="option-item"><div class="checkbox-icon"></div> <span>1250-1500萬</span></div><div data-gtm-stat="中古屋列表頁_售金_1500-2000萬" class="option-item"><div class="checkbox-icon"></div> <span>1500-2000萬</span></div><div data-gtm-stat="中古屋列表頁_售金_2000-3000萬" class="option-item"><div class="checkbox-icon"></div> <span>2000-3000萬</span></div><div data-gtm-stat="中古屋列表頁_售金_3000萬以上" class="option-item"><div class="checkbox-icon"></div> <span>3000萬以上</span></div> <div class="filter-custom" style="width: 227px;"><input type="text" maxlength="6" placeholder="最低價" class="filter-custom-min filter-custom-input"> <div class="filter-custom-line"></div> <input type="text" maxlength="6" placeholder="最高價" class="filter-custom-max filter-custom-input"> <span class="filter-custom-unit">萬</span> <button type="button" class="filter-custom-submit" style="display: none;">確定</button></div></div> <!----></div> <!----></div> <div class="select-wrap filter-shape-wrap"><div class="select-label">型態</div> <div class="select-options-group"><div data-gtm-stat="中古屋列表頁_型態_不限" class="select-option-unlimit z-select">不限</div> <div class="select-option-list"><!----><div data-gtm-stat="中古屋列表頁_型態_公寓" class="option-item"><div class="checkbox-icon"></div> <span>公寓</span></div><div data-gtm-stat="中古屋列表頁_型態_電梯大樓" class="option-item"><div class="checkbox-icon"></div> <span>電梯大樓</span></div><div data-gtm-stat="中古屋列表頁_型態_透天厝" class="option-item"><div class="checkbox-icon"></div> <span>透天厝</span></div><div data-gtm-stat="中古屋列表頁_型態_別墅" class="option-item"><div class="checkbox-icon"></div> <span>別墅</span></div></div></div></div> <div class="select-wrap filter-pattern-wrap"><div class="select-label">格局</div> <div class="select-options-group"><div data-gtm-stat="中古屋列表頁_格局_不限" class="select-option-unlimit z-select">不限</div> <div class="select-option-list"><!----><div data-gtm-stat="中古屋列表頁_格局_1房" class="option-item"><div class="checkbox-icon"></div> <span>1房</span></div><div data-gtm-stat="中古屋列表頁_格局_2房" class="option-item"><div class="checkbox-icon"></div> <span>2房</span></div><div data-gtm-stat="中古屋列表頁_格局_3房" class="option-item"><div class="checkbox-icon"></div> <span>3房</span></div><div data-gtm-stat="中古屋列表頁_格局_4房" class="option-item"><div class="checkbox-icon"></div> <span>4房</span></div><div data-gtm-stat="中古屋列表頁_格局_5房及以上" class="option-item"><div class="checkbox-icon"></div> <span>5房及以上</span></div></div></div></div> <div class="select-wrap filter-area-wrap"><div class="select-label"><div class="filter-custom-select"><div class="filter-custom-select-suffix"><span>權狀</span> <i class="icon-caret-bottom"></i></div> <div class="filter-custom-select-dropdown" style="display: none;"><ul class="filter-custom-select-dropdown__list"><li data-gtm-stat="中古屋列表頁_坪數_權狀" class="filter-custom-select-dropdown__item z-select"><span>權狀</span></li><li data-gtm-stat="中古屋列表頁_坪數_主建" class="filter-custom-select-dropdown__item"><span>主建</span></li></ul></div></div></div> <div class="select-options-group"><div data-gtm-stat="中古屋列表頁_坪數_不限" class="select-option-unlimit z-select">不限</div> <div class="select-option-list"><!----><div data-gtm-stat="中古屋列表頁_坪數_20坪以下" class="option-item"><div class="checkbox-icon"></div> <span>20坪以下</span></div><div data-gtm-stat="中古屋列表頁_坪數_20-30坪" class="option-item"><div class="checkbox-icon"></div> <span>20-30坪</span></div><div data-gtm-stat="中古屋列表頁_坪數_30-40坪" class="option-item"><div class="checkbox-icon"></div> <span>30-40坪</span></div><div data-gtm-stat="中古屋列表頁_坪數_40-50坪" class="option-item"><div class="checkbox-icon"></div> <span>40-50坪</span></div><div data-gtm-stat="中古屋列表頁_坪數_50-60坪" class="option-item"><div class="checkbox-icon"></div> <span>50-60坪</span></div><div data-gtm-stat="中古屋列表頁_坪數_60-100坪" class="option-item"><div class="checkbox-icon"></div> <span>60-100坪</span></div><div data-gtm-stat="中古屋列表頁_坪數_100坪以上" class="option-item"><div class="checkbox-icon"></div> <span>100坪以上</span></div> <div class="filter-custom"><input type="text" maxlength="6" placeholder="最小坪" class="filter-custom-min filter-custom-input"> <div class="filter-custom-line"></div> <input type="text" maxlength="6" placeholder="最大坪" class="filter-custom-max filter-custom-input"> <span class="filter-custom-unit">坪</span> <button type="button" class="filter-custom-submit" style="display: none;">確定</button></div></div></div> <!----></div> <div class="select-wrap filter-more-wrap z-kind-null">
+                    <div class="select-label">更多</div> <div class="select-list">
+                        <div class="filter-more filter-publish_day">
+                            <div title="" class="filter-more-txt" style="max-width: 85px;">
+                                刊登時間
+                            </div> <div class="icon-arrow"></div> <div class="filter-more-list" style="display: none;"><div data-gtm-stat="中古屋列表頁_更多_刊登時間" class="filter-more-item"><span>不限</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_刊登時間" class="filter-more-item"><span>一天內</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_刊登時間" class="filter-more-item"><span>三天內</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_刊登時間" class="filter-more-item"><span>五天內</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_刊登時間" class="filter-more-item"><span>七天內</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_刊登時間" class="filter-more-item"><span>十五天內</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_刊登時間" class="filter-more-item"><span>三十天內</span> <div class="checkbox-icon"></div></div></div> <div class="filter-more-day-list" style="display: none;">
+                                <div class="filter-more-day-item">
+                                    不限
+                                </div><div class="filter-more-day-item">
+                                    一天內
+                                </div><div class="filter-more-day-item">
+                                    三天內
+                                </div><div class="filter-more-day-item">
+                                    五天內
+                                </div><div class="filter-more-day-item">
+                                    七天內
+                                </div><div class="filter-more-day-item">
+                                    十五天內
+                                </div><div class="filter-more-day-item">
+                                    三十天內
+                                </div>
+                            </div>
+                        </div> <div class="filter-more filter-fcicount">
+                            <div title="" class="filter-more-txt" style="max-width: 55px;">
+                                拍次
+                            </div> <div class="icon-arrow"></div> <div class="filter-more-list" style="display: none;"><div data-gtm-stat="中古屋列表頁_更多_拍次" class="filter-more-item"><span>1拍</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_拍次" class="filter-more-item"><span>2拍</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_拍次" class="filter-more-item"><span>3拍</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_拍次" class="filter-more-item"><span>4拍</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_拍次" class="filter-more-item"><span>應買</span> <div class="checkbox-icon"></div></div></div> <div class="filter-more-day-list" style="display: none;">
+                                <div class="filter-more-day-item">
+                                    1拍
+                                </div><div class="filter-more-day-item">
+                                    2拍
+                                </div><div class="filter-more-day-item">
+                                    3拍
+                                </div><div class="filter-more-day-item">
+                                    4拍
+                                </div><div class="filter-more-day-item">
+                                    應買
+                                </div>
+                            </div>
+                        </div> <div class="filter-more filter-isclinch">
+                            <div title="" class="filter-more-txt">
+                                點交情況
+                            </div> <div class="icon-arrow"></div> <div class="filter-more-list" style="display: none;"><div data-gtm-stat="中古屋列表頁_更多_點交情況" class="filter-more-item"><span>點交</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_點交情況" class="filter-more-item"><span>不點交</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_點交情況" class="filter-more-item"><span>部分點交</span> <div class="checkbox-icon"></div></div></div> <div class="filter-more-day-list" style="display: none;">
+                                <div class="filter-more-day-item">
+                                    點交
+                                </div><div class="filter-more-day-item">
+                                    不點交
+                                </div><div class="filter-more-day-item">
+                                    部分點交
+                                </div>
+                            </div>
+                        </div> <div class="filter-more filter-houseage">
+                            <div title="" class="filter-more-txt" style="max-width: 70px;">
+                                屋齡
+                            </div> <div class="icon-arrow"></div> <div class="filter-more-list" style="width: 220px; display: none;"><div data-gtm-stat="中古屋列表頁_更多_屋齡" class="filter-more-item"><span>5年以下</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_屋齡" class="filter-more-item"><span>5-10年</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_屋齡" class="filter-more-item"><span>10-20年</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_屋齡" class="filter-more-item"><span>20-30年</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_屋齡" class="filter-more-item"><span>30-40年</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_屋齡" class="filter-more-item"><span>40年以上</span> <div class="checkbox-icon"></div></div> <div class="filter-more-item is-custom"><div class="filter-custom is-small-input"><input type="text" maxlength="3" class="filter-custom-min filter-custom-input"> <div class="filter-custom-line"></div> <input type="text" maxlength="3" class="filter-custom-max filter-custom-input"> <span class="filter-custom-unit">年</span> <button type="button" class="filter-custom-submit">確定</button></div></div></div> <div class="filter-more-day-list" style="width: 220px; display: none;">
+                                <div class="filter-more-day-item">
+                                    5年以下
+                                </div><div class="filter-more-day-item">
+                                    5-10年
+                                </div><div class="filter-more-day-item">
+                                    10-20年
+                                </div><div class="filter-more-day-item">
+                                    20-30年
+                                </div><div class="filter-more-day-item">
+                                    30-40年
+                                </div><div class="filter-more-day-item">
+                                    40年以上
+                                </div> <div class="filter-more-item is-custom"><div class="filter-custom is-small-input"><input type="text" maxlength="3" class="filter-custom-min filter-custom-input"> <div class="filter-custom-line"></div> <input type="text" maxlength="3" class="filter-custom-max filter-custom-input"> <span class="filter-custom-unit">年</span> <button type="button" class="filter-custom-submit">確定</button></div></div>
+                            </div>
+                        </div> <div class="filter-more filter-price">
+                            <div title="" class="filter-more-txt">
+                                單價
+                            </div> <div class="icon-arrow"></div> <div class="filter-more-list" style="display: none;"><div data-gtm-stat="中古屋列表頁_更多_單價" class="filter-more-item"><span>20萬以下</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_單價" class="filter-more-item"><span>20-30萬</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_單價" class="filter-more-item"><span>30-50萬</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_單價" class="filter-more-item"><span>50-70萬</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_單價" class="filter-more-item"><span>70萬以上</span> <div class="checkbox-icon"></div></div></div> <div class="filter-more-day-list" style="display: none;">
+                                <div class="filter-more-day-item">
+                                    20萬以下
+                                </div><div class="filter-more-day-item">
+                                    20-30萬
+                                </div><div class="filter-more-day-item">
+                                    30-50萬
+                                </div><div class="filter-more-day-item">
+                                    50-70萬
+                                </div><div class="filter-more-day-item">
+                                    70萬以上
+                                </div>
+                            </div>
+                        </div> <div class="filter-more filter-direction">
+                            <div title="" class="filter-more-txt">
+                                朝向
+                            </div> <div class="icon-arrow"></div> <div class="filter-more-list" style="display: none;"><div data-gtm-stat="中古屋列表頁_更多_朝向" class="filter-more-item"><span>坐東朝西</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_朝向" class="filter-more-item"><span>坐西朝東</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_朝向" class="filter-more-item"><span>坐南朝北</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_朝向" class="filter-more-item"><span>坐北朝南</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_朝向" class="filter-more-item"><span>坐東南朝西北</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_朝向" class="filter-more-item"><span>坐西南朝東北</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_朝向" class="filter-more-item"><span>坐西北朝東南</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_朝向" class="filter-more-item"><span>坐東北朝西南</span> <div class="checkbox-icon"></div></div></div> <div class="filter-more-day-list" style="display: none;">
+                                <div class="filter-more-day-item">
+                                    坐東朝西
+                                </div><div class="filter-more-day-item">
+                                    坐西朝東
+                                </div><div class="filter-more-day-item">
+                                    坐南朝北
+                                </div><div class="filter-more-day-item">
+                                    坐北朝南
+                                </div><div class="filter-more-day-item">
+                                    坐東南朝西北
+                                </div><div class="filter-more-day-item">
+                                    坐西南朝東北
+                                </div><div class="filter-more-day-item">
+                                    坐西北朝東南
+                                </div><div class="filter-more-day-item">
+                                    坐東北朝西南
+                                </div>
+                            </div>
+                        </div> <div class="filter-more filter-floor">
+                            <div title="" class="filter-more-txt">
+                                樓層
+                            </div> <div class="icon-arrow"></div> <div class="filter-more-list" style="width: 220px; display: none;"><div data-gtm-stat="中古屋列表頁_更多_樓層" class="filter-more-item"><span>1層</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_樓層" class="filter-more-item"><span>2-6層</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_樓層" class="filter-more-item"><span>6-12層</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_樓層" class="filter-more-item"><span>12層以上</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_樓層" class="filter-more-item"><span>地下樓</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_樓層" class="filter-more-item"><span>整棟</span> <div class="checkbox-icon"></div></div> <div class="filter-more-item is-custom"><div class="filter-custom is-small-input"><input type="text" maxlength="3" class="filter-custom-min filter-custom-input"> <div class="filter-custom-line"></div> <input type="text" maxlength="3" class="filter-custom-max filter-custom-input"> <span class="filter-custom-unit">層</span> <button type="button" class="filter-custom-submit">確定</button></div></div></div> <div class="filter-more-day-list" style="width: 220px; display: none;">
+                                <div class="filter-more-day-item">
+                                    1層
+                                </div><div class="filter-more-day-item">
+                                    2-6層
+                                </div><div class="filter-more-day-item">
+                                    6-12層
+                                </div><div class="filter-more-day-item">
+                                    12層以上
+                                </div><div class="filter-more-day-item">
+                                    地下樓
+                                </div><div class="filter-more-day-item">
+                                    整棟
+                                </div> <div class="filter-more-item is-custom"><div class="filter-custom is-small-input"><input type="text" maxlength="3" class="filter-custom-min filter-custom-input"> <div class="filter-custom-line"></div> <input type="text" maxlength="3" class="filter-custom-max filter-custom-input"> <span class="filter-custom-unit">層</span> <button type="button" class="filter-custom-submit">確定</button></div></div>
+                            </div>
+                        </div> <div class="filter-more filter-fitment">
+                            <div title="" class="filter-more-txt">
+                                裝潢程度
+                            </div> <div class="icon-arrow"></div> <div class="filter-more-list" style="display: none;"><div data-gtm-stat="中古屋列表頁_更多_裝潢程度" class="filter-more-item"><span>尚未裝潢</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_裝潢程度" class="filter-more-item"><span>簡易裝潢</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_裝潢程度" class="filter-more-item"><span>中檔裝潢</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_裝潢程度" class="filter-more-item"><span>高檔裝潢</span> <div class="checkbox-icon"></div></div></div> <div class="filter-more-day-list" style="display: none;">
+                                <div class="filter-more-day-item">
+                                    尚未裝潢
+                                </div><div class="filter-more-day-item">
+                                    簡易裝潢
+                                </div><div class="filter-more-day-item">
+                                    中檔裝潢
+                                </div><div class="filter-more-day-item">
+                                    高檔裝潢
+                                </div>
+                            </div>
+                        </div> <div class="filter-more filter-life">
+                            <div title="" class="filter-more-txt">
+                                生活機能
+                            </div> <div class="icon-arrow"></div> <div class="filter-more-list" style="display: none;"><div data-gtm-stat="中古屋列表頁_更多_生活機能" class="filter-more-item"><span>便利店</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_生活機能" class="filter-more-item"><span>傳統市場</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_生活機能" class="filter-more-item"><span>近醫療機構</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_生活機能" class="filter-more-item"><span>近學校</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_生活機能" class="filter-more-item"><span>近公園</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_生活機能" class="filter-more-item"><span>近夜市</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_生活機能" class="filter-more-item"><span>百貨公司</span> <div class="checkbox-icon"></div></div></div> <div class="filter-more-day-list" style="display: none;">
+                                <div class="filter-more-day-item">
+                                    便利店
+                                </div><div class="filter-more-day-item">
+                                    傳統市場
+                                </div><div class="filter-more-day-item">
+                                    近醫療機構
+                                </div><div class="filter-more-day-item">
+                                    近學校
+                                </div><div class="filter-more-day-item">
+                                    近公園
+                                </div><div class="filter-more-day-item">
+                                    近夜市
+                                </div><div class="filter-more-day-item">
+                                    百貨公司
+                                </div>
+                            </div>
+                        </div> <div class="filter-more filter-role">
+                            <div title="" class="filter-more-txt">
+                                經辦人選擇
+                            </div> <div class="icon-arrow"></div> <div class="filter-more-list" style="display: none;"><div data-gtm-stat="中古屋列表頁_更多_經辦人選擇" class="filter-more-item"><span>屋主刊登</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_經辦人選擇" class="filter-more-item"><span>仲介刊登</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_經辦人選擇" class="filter-more-item"><span>代理人刊登</span> <div class="checkbox-icon"></div></div></div> <div class="filter-more-day-list" style="display: none;">
+                                <div class="filter-more-day-item">
+                                    屋主刊登
+                                </div><div class="filter-more-day-item">
+                                    仲介刊登
+                                </div><div class="filter-more-day-item">
+                                    代理人刊登
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <a asp-action="Details" class="btn btn-primary form-control" asp-route-houseId="@land.Id">
-                            Details
-                        </a>
-                    </div>
                 </div>
             </div>
-        </div>
-    }
-</div>
+        </div>*@
+        <!------------------------------------------------------------------------>
 
-<!-- SCRIPTS -->
-<script src="~/js/jquery.js"></script>
-<script src="~/js/bootstrap.min.js"></script>
-<script src="~/js/jquery.sticky.js"></script>
-<script src="~/js/jquery.stellar.min.js"></script>
-<script src="~/js/wow.min.js"></script>
-<script src="~/js/smoothscroll.js"></script>
-<script src="~/js/owl.carousel.min.js"></script>
-<script src="~/js/custom.js"></script>
-<script src="~/js/index.js"></script>
+        <div class="main-title text-center" style="margin-top:50px;">
+            <h3 class="section-head mt55">
+                最新上架物件
+                <p>嚴選區域最新的物件</p>
+            </h3>
+
+        </div>
+         @foreach (var land in Model)
+         {
+                <div data-bind="14924947" data-gtm-stat="中古屋列表頁_所有物件_點擊量" title="@land.AdTitle" addtion="bid" class="j-house houseList-item clearfix" house-detail-stat="2-8-14924947" data-browse-stated="">
+                    <a asp-action="Details" asp-route-landId="@land.Id">
+                        <div class="houseList-item-left pull-left">
+                            <div data-gtm-stat="" class="relative">
+                                <!---->
+                                <img src="@land.ImageUrl" data-original="https://img2.591.com.tw/house/2024/01/05/170446315486209697.jpg!400x300.jpg" title="@land.AdTitle" class="houseList-item-thumb j-lazyimg" style="display: inline;">
+                                <!---->
+                                <div class="houseList-item-photonum">
+                                    <i class="icon-photo-num"></i> <span>15</span>
+                                </div>
+                            </div>
+                            <div class="houseList-item-addition">
+                                <div class="houseList-item-addition-tag z-recommend z-animate">
+                                    精選
+                                </div>
+                                <!----> <!---->
+                            </div>
+                        </div>
+                    </a>
+                    <a asp-action="Details" asp-route-landId="@land.Id">
+                        <div title="" class="houseList-item-right text-right pull-right">
+                            <!---->
+                            <div class="houseList-item-price">
+                                <em> @land.Price.ToString("0")</em> <span>萬</span>
+                            </div>
+                            <div class="houseList-item-has-carport">
+                                ( 含車位價 )
+                            </div>
+                            <div class="houseList-item-unitprice">
+                                @land.EachSquarePrice 萬/坪
+                            </div>
+                        </div>
+                    </a>
+                    <a asp-action="Details" asp-route-landId="@land.Id">
+                        <div class="houseList-item-main oh">
+                            <div class="houseList-item-title">
+                                <!--------------------------Mobile--------------------------->
+                                <span class="houseList-item-title-label-mobile z-good-house-mobile"></span>
+                                <!----------------------------------------------------------->
+                                <a href="/home/house/detail/2/14924947.html" title="@land.AdTitle">@land.AdTitle</a>
+
+                                <span class="houseList-item-title-label z-good-house"></span>
+
+                            </div>
+
+                            <div class="houseList-item-attr-row clearfix">
+                                <i class="icon-house"></i>
+                                <span class="houseList-item-attrs-shape">電梯大樓</span>
+                              @*<span class="houseList-item-attrs-layout">@land.BedRoom 房 @house.LivingRoom 廳 @house.BathRoom 衛</span>*@
+                                <span class="houseList-item-attrs-area">權狀 @land.SquareMeters 坪</span>
+                                <!---->
+                                @*<span class="houseList-item-attrs-houseage">@land.HouseAge 年</span>*@
+                                <span class="houseList-item-attrs-floor">11F/12F</span>
+                            </div>
+
+                            <!--------------------------Mobile device--------------------------------->
+                            <div class="houseList-item-attr-row-mobile clearfix">
+                                @*<span class="houseList-item-attrs-layout">@land.BedRoom 房 @house.LivingRoom 廳</span>*@
+                                <span class="houseList-item-attrs-area">@land.SquareMeters 坪</span>
+                                <span class="houseList-item-address pull-left"><i class="icon-address"></i> 三重區-元信二街</span>
+                            </div>
+                            <!----------------------------------------------------------------------->
+
+                            <div class="houseList-item-address-row clearfix">
+                                <i class="icon-address"></i>
+                                <span class="houseList-item-community mr15 pull-left" style="margin-right: 15px;">
+                                    <a href="https://market.591.com.tw/103592" target="_blank" data-gtm-stat="中古屋列表_社區行情_社區文字鏈" class="houseList-item-community-link">
+                                        @land.LandSerialNumber
+                                    </a>
+                                </span>
+                                <span class="houseList-item-section pull-left">三重區-</span>
+                                <span class="houseList-item-address pull-left">元信二街</span>
+                            </div>
+                            <div class="houseList-item-user-row">
+                                <span class="houseList-item-user-head" style="background-image: url(&quot;https://img2.591.com.tw/user/2020/05/24/159028324132317003.jpg!100x100.jpg&quot;);"></span>
+                                <span class="houseList-item-user">仲介王小姐</span>
+                                <span class="split-line"></span>
+                                <i class="icon-browse"></i> <span class="houseList-item-browsenum relative">869人瀏覽</span>
+                            </div> <!---->
+
+                            <div class="houseList-item-tag-row clearfix">
+                                <!----> <!----> <!----> <!---->
+                                <div class="houseList-item-tag-item">含車位</div>
+                                <div class="houseList-item-tag-item">有陽台</div>
+                                <div class="houseList-item-tag-item">重劃區</div>
+                            </div>
+
+                            <!------------------------------------Mobile device---------------------------------------------------------------->
+                            <div title="" class="houseList-prive-main text-left pull-left">
+
+                                <div class="houseList-item-price">
+                                    <em>@land.Price</em> <span>萬</span> <span class="houseList-item-unitprice-moblie">@land.EachSquarePrice 萬/坪</span>
+                                </div>
+                                @*<div class="houseList-item-has-carport">
+                                    @land.IncludeCarSquarePrice
+                                </div>*@
+
+                            </div>
+                            <!---------------------------------------------------------------------------------------------------------------->
+
+                        </div>
+                    </a>
+                        <span class="shoucang"><a href="javascript:;" data-bind="2" data-text="14924947" data-colle="0" class="houseList-item-collect"></a></span>
+                </div>
+         }
+
+
+        <div data-bind="14924947" data-gtm-stat="中古屋列表頁_所有物件_點擊量" title="(馬上約看)麗捷黃金次頂樓河景3房車" addtion="bid" class="j-house houseList-item clearfix" house-detail-stat="2-8-14924947" data-browse-stated="">
+            <div class="houseList-item-left pull-left">
+                <div data-gtm-stat="" class="relative">
+                <!----> 
+                <img src="https://img2.591.com.tw/house/2024/01/05/170446315486209697.jpg!400x300.jpg" data-original="https://img2.591.com.tw/house/2024/01/05/170446315486209697.jpg!400x300.jpg" title="(馬上約看)麗捷黃金次頂樓河景3房車" class="houseList-item-thumb j-lazyimg" style="display: inline;">
+                <!----> 
+                    <div class="houseList-item-photonum">
+                        <i class="icon-photo-num"></i> <span>15</span>
+                    </div>
+                </div>
+                <div class="houseList-item-addition">
+                    <div class="houseList-item-addition-tag z-recommend z-animate">
+                        精選
+                    </div> 
+                <!----> <!---->
+                </div>
+            </div> 
+            <div title="" class="houseList-item-right text-right pull-right">
+                <!---->
+                    <div class="houseList-item-price">
+                        <em> 2,888</em> <span>萬</span>
+                    </div>
+                    <div class="houseList-item-has-carport">
+                        ( 含車位價 )
+                    </div>
+                    <div class="houseList-item-unitprice">
+                        62.66萬/坪
+                    </div>
+            </div>
+            <div class="houseList-item-main oh">
+                <div class="houseList-item-title">
+                    <!--------------------------Mobile--------------------------->
+                    <span class="houseList-item-title-label-mobile z-good-house-mobile"></span>
+                    <!----------------------------------------------------------->
+                    <a href="/home/house/detail/2/14924947.html" title="(馬上約看)麗捷黃金次頂樓河景3房車">(馬上約看)麗捷黃金次頂樓河景3房車</a>
+                    
+                    <span class="houseList-item-title-label z-good-house"></span>
+                    
+                </div>
+                
+                <div class="houseList-item-attr-row clearfix">
+                    <i class="icon-house"></i> 
+                    <span class="houseList-item-attrs-shape">電梯大樓</span> 
+                    <span class="houseList-item-attrs-layout">3房2廳2衛</span> 
+                    <span class="houseList-item-attrs-area">權狀46.09坪</span> 
+                    <!----> 
+                    <span class="houseList-item-attrs-houseage">1年</span> 
+                    <span class="houseList-item-attrs-floor">11F/12F</span>
+                </div>
+
+                <!--------------------------Mobile device--------------------------------->
+                <div class="houseList-item-attr-row-mobile clearfix">
+                    <span class="houseList-item-attrs-layout">3房2廳</span>
+                    <span class="houseList-item-attrs-area">46.09坪</span>
+                    <span class="houseList-item-address pull-left"><i class="icon-address"></i> 三重區-元信二街</span>
+                </div>
+                <!----------------------------------------------------------------------->
+
+                <div class="houseList-item-address-row clearfix">
+                    <i class="icon-address"></i> 
+                    <span class="houseList-item-community mr15 pull-left" style="margin-right: 15px;">
+                        <a href="https://market.591.com.tw/103592" target="_blank" data-gtm-stat="中古屋列表_社區行情_社區文字鏈" class="houseList-item-community-link">
+                            麗捷花園廣場
+                        </a>
+                    </span> 
+                    <span class="houseList-item-section pull-left">三重區-</span> 
+                    <span class="houseList-item-address pull-left">元信二街</span>
+                </div> 
+                <div class="houseList-item-user-row">
+                    <span class="houseList-item-user-head" style="background-image: url(&quot;https://img2.591.com.tw/user/2020/05/24/159028324132317003.jpg!100x100.jpg&quot;);"></span> 
+                    <span class="houseList-item-user">仲介王小姐</span> 
+                    <span class="split-line"></span>
+                    <i class="icon-browse"></i> <span class="houseList-item-browsenum relative">869人瀏覽</span>
+                </div> <!---->
+
+                <div class="houseList-item-tag-row clearfix"><!----> <!----> <!----> <!----> 
+                    <div class="houseList-item-tag-item">含車位</div>
+                    <div class="houseList-item-tag-item">有陽台</div>
+                    <div class="houseList-item-tag-item">重劃區</div>
+                </div>
+
+                <!------------------------------------Mobile device---------------------------------------------------------------->
+                <div title="" class="houseList-prive-main text-left pull-left">
+                    
+                    <div class="houseList-item-price">
+                        <em> 2,888</em> <span>萬</span> <span class="houseList-item-unitprice-moblie">62.66萬/坪</span>
+                    </div>
+                    <div class="houseList-item-has-carport">
+                        ( 含車位價 )
+                    </div>
+                    
+                </div>
+                <!---------------------------------------------------------------------------------------------------------------->
+
+            </div> <span class="shoucang"><a href="javascript:;" data-bind="2" data-text="14924947" data-colle="0" class="houseList-item-collect"></a></span>
+        </div>
+
+    </section>
+
+    
+
+    
+
+    <!-- SCRIPTS -->
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.sticky.js"></script>
+    <script src="~/js/jquery.stellar.min.js"></script>
+    <script src="~/js/wow.min.js"></script>
+    <script src="~/js/smoothscroll.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/custom.js"></script>
+    <script src="~/js/index.js"></script>
+    <script src="~/js/owl.carousel.js"></script>
+    <script src="~/js/HotBuild.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</body>
+</html>

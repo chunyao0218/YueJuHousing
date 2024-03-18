@@ -59,20 +59,20 @@
                     <li class="dropdown nav-item activ">
                         <a asp-area="Customer" asp-controller="AllItem" asp-action="Index" class="smoothScroll" style="font-size: larger; color:#fff;" target="_blank">買屋<span class="caret"></span></a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="smoothScroll" asp-area="Customer" asp-controller="AllHouse" asp-action="Index" target="_blank">所有物件</a></li>
-                            <li><a class="smoothScroll" asp-area="Customer" asp-controller="AllHouse" asp-action="Index" target="_blank">預售屋</a></li>
+                            <li><a class="smoothScroll" asp-area="Customer" asp-controller="AllItem" asp-action="Index" target="_blank">所有物件</a></li>
+                            @*<li><a class="smoothScroll" asp-area="Customer" asp-controller="AllHouse" asp-action="Index" target="_blank">預售屋</a></li>
                             <li><a class="smoothScroll" asp-area="Customer" asp-controller="AllHouse" asp-action="Index" target="_blank">新成屋</a></li>
                             <li><a class="smoothScroll" asp-area="Customer" asp-controller="AllHouse" asp-action="Index" target="_blank">中古屋</a></li>
-                            <li><a class="smoothScroll" asp-area="Customer" asp-controller="AllHouse" asp-action="Index" target="_blank">偏好找屋</a></li>
+                            <li><a class="smoothScroll" asp-area="Customer" asp-controller="AllHouse" asp-action="Index" target="_blank">偏好找屋</a></li>*@
                         </ul>
                     </li>
-                    <li class="dropdown nav-item activ">
+                    @*<li class="dropdown nav-item activ">
                         <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" id="navbarDropdown" style="font-size: larger; color:#fff;" target="_blank">租屋<span class="caret"></span></a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="smoothScroll" asp-area="Customer" asp-controller="AllHouse" asp-action="Index" target="_blank">所有物件</a></li>
                             <li><a class="smoothScroll" asp-area="Customer" asp-controller="AllHouse" asp-action="Index" target="_blank">偏好找屋</a></li>
                         </ul>
-                    </li>
+                    </li>*@
                     @if (User.IsInRole(SD.Role_Admin) || User.IsInRole(SD.Role_Manager))
                     {
                         <li class="dropdown nav-item activ">
@@ -83,17 +83,24 @@
                             </ul>
                         </li>
                     }
-                    <li><a href="~/About/Index" class="smoothScroll" style="font-size: larger; color: #fff;" target="_blank">辦公</a></li>
+                    @*<li><a href="~/About/Index" class="smoothScroll" style="font-size: larger; color: #fff;" target="_blank">辦公</a></li>
                     <li><a href="~/Team/Index" class="smoothScroll" style="font-size: larger; color: #fff;" target="_blank">店面</a></li>
-                    <li><a href="~/News/Index" class="smoothScroll" style="font-size: larger; color: #fff;" target="_blank">廠房</a></li>
+                    <li><a href="~/News/Index" class="smoothScroll" style="font-size: larger; color: #fff;" target="_blank">廠房</a></li>*@
                     <li class="dropdown nav-item activ">
-                        <a asp-area="Customer" asp-controller="AllHouse" asp-action="Index" class="smoothScroll" style="font-size: larger; color: #fff;" target="_blank">土地<span class="caret"></span></a>
+                        <a asp-area="Customer" asp-controller="AllLand" asp-action="Index" class="smoothScroll" style="font-size: larger; color: #fff;" target="_blank">土地<span class="caret"></span></a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="smoothScroll" asp-area="Customer" asp-controller="AllHouse" asp-action="Index" target="_blank">所有物件</a></li>
+                            <li><a class="smoothScroll" asp-area="Customer" asp-controller="AllLand" asp-action="Index" target="_blank">所有物件</a></li>
                         </ul> 
                     </li>
                     @*<li><a href="~/TDSS/Index" class="smoothScroll" target="_blank" style="font-size: medium; color: #405545;">OA治療決策輔助工具</a></li>*@
-                    <li class="appointment-btn"><a asp-area="Customer" asp-controller="PostAd" asp-action="Index" style="font-size:larger;" target="_blank">我要刊登</a></li>
+                     @if (User.IsInRole(SD.Role_Admin) || User.IsInRole(SD.Role_Manager))
+                    {
+                        <li class="appointment-btn"><a asp-area="Customer" asp-controller="PostAd" asp-action="ChooseAdType" style="font-size:larger;" target="_blank">我要刊登</a></li>
+                    }
+                    else
+                    {
+                        <li class="appointment-btn"><a asp-area="Identity" asp-controller="Account" asp-action="Login" style="font-size:larger;" target="_blank">我要刊登</a></li>
+                    }
                 </ul>
             </div>
 
