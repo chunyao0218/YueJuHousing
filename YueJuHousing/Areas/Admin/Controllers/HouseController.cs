@@ -57,39 +57,79 @@ namespace YueJuHousing.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult Upsert(HouseVM houseVM, List<IFormFile>? files)
+        public IActionResult Upsert(HouseVM houseVM, IFormFile? file, List<IFormFile> files)
         {
             if (ModelState.IsValid)
             {
-                //
                 string wwwRootPath = _webHostEnvironment.WebRootPath;
-                
-                if(files != null && files.Count > 0)
+
+                if (file != null)
+                {
+                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+                    string housePath = Path.Combine(wwwRootPath, @"images\house");
+
+                    //有新圖片上傳，刪除舊照片
+                    if (!string.IsNullOrEmpty(houseVM.House.ImageUrl))
+                    {
+                        var oldImagePath = Path.Combine(wwwRootPath, houseVM.House.ImageUrl.TrimStart('\\'));
+                        if (System.IO.File.Exists(oldImagePath))
+                        {
+                            System.IO.File.Delete(oldImagePath);
+                        }
+                    }
+
+                    using (var fileStream = new FileStream(Path.Combine(housePath, fileName), FileMode.Create))
+                    {
+                        file.CopyTo(fileStream);
+                    }
+                    houseVM.House.ImageUrl = @"\images\house\" + fileName;
+
+
+
+                    if (!string.IsNullOrEmpty(houseVM.House.PatternImageUrl))
+                    {
+                        var oldImagePath = Path.Combine(wwwRootPath, houseVM.House.PatternImageUrl.TrimStart('\\'));
+                        if (System.IO.File.Exists(oldImagePath))
+                        {
+                            System.IO.File.Delete(oldImagePath);
+                        }
+                    }
+
+                    using (var fileStream = new FileStream(Path.Combine(housePath, fileName), FileMode.Create))
+                    {
+                        file.CopyTo(fileStream);
+                    }
+                    houseVM.House.PatternImageUrl = @"\images\house\" + fileName;
+                }
+
+                if (files != null && files.Count > 0)
                 {
                     List<string> imageUrls = new List<string>();
-                    for (int i = 0; i < files.Count; i++)
-                    {
-                        string fileName = Guid.NewGuid().ToString() + Path.GetExtension(files[i].FileName);
-                        string housePath = Path.Combine(wwwRootPath, @"images\house");
 
-                        //有新圖片上傳，刪除舊照片
-                        if (!string.IsNullOrEmpty(houseVM.House.ImageUrl))
-                        {
-                            var oldImagePath = Path.Combine(wwwRootPath, houseVM.House.ImageUrl.TrimStart('\\'));
-                            if (System.IO.File.Exists(oldImagePath))
-                            {
-                                System.IO.File.Delete(oldImagePath);
-                            }
-                        }
+                    foreach (var uploadedFile in files)
+                    {
+                        string fileName = Guid.NewGuid().ToString() + Path.GetExtension(uploadedFile.FileName);
+                        string housePath = Path.Combine(wwwRootPath, @"images\house");
 
                         using (var fileStream = new FileStream(Path.Combine(housePath, fileName), FileMode.Create))
                         {
-                            files[i].CopyTo(fileStream);
+                            uploadedFile.CopyTo(fileStream);
                         }
                         imageUrls.Add(@"\images\house\" + fileName);
                     }
 
-                    // 設置圖片URL時，使用動態的屬性名稱
+                    // 清空之前的图片链接
+                    houseVM.House.ImageUrl = string.Empty;
+                    houseVM.House.ImageUrl2 = string.Empty;
+                    houseVM.House.ImageUrl3 = string.Empty;
+                    houseVM.House.ImageUrl4 = string.Empty;
+                    houseVM.House.ImageUrl5 = string.Empty;
+                    houseVM.House.ImageUrl6 = string.Empty;
+                    houseVM.House.ImageUrl7 = string.Empty;
+                    houseVM.House.ImageUrl8 = string.Empty;
+                    houseVM.House.ImageUrl9 = string.Empty;
+
+                    // 将新的图片链接填充到对象中
                     for (int i = 0; i < imageUrls.Count; i++)
                     {
                         switch (i)
@@ -121,29 +161,14 @@ namespace YueJuHousing.Areas.Admin.Controllers
                             case 8:
                                 houseVM.House.ImageUrl9 = imageUrls[i];
                                 break;
-                            case 9:
-                                houseVM.House.PatternImageUrl = imageUrls[9];
-                                break;
                             default:
                                 break;
                         }
                     }
-
-                    houseVM.House.ImageUrl = houseVM.House.ImageUrl ?? string.Empty;
-                    houseVM.House.ImageUrl2 = houseVM.House.ImageUrl2 ?? string.Empty;
-                    houseVM.House.ImageUrl3 = houseVM.House.ImageUrl3 ?? string.Empty;
-                    houseVM.House.ImageUrl4 = houseVM.House.ImageUrl4 ?? string.Empty;
-                    houseVM.House.ImageUrl5 = houseVM.House.ImageUrl5 ?? string.Empty;
-                    houseVM.House.ImageUrl6 = houseVM.House.ImageUrl6 ?? string.Empty;
-                    houseVM.House.ImageUrl7 = houseVM.House.ImageUrl7 ?? string.Empty;
-                    houseVM.House.ImageUrl8 = houseVM.House.ImageUrl8 ?? string.Empty;
-                    houseVM.House.ImageUrl9 = houseVM.House.ImageUrl9 ?? string.Empty;
-
                 }
 
                 if (houseVM.House.Id == 0)
                 {
-                    houseVM.House.PatternImageUrl = houseVM.House.PatternImageUrl ?? string.Empty;
                     //刊登物件
                     _unitOfWork.House.Add(houseVM.House);
                 }

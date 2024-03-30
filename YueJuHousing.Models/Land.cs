@@ -131,9 +131,41 @@ namespace YueJuHousing.Models
 
         /*照片&影片*/
 
-        [DisplayName("土地照片上傳：")]
+        [DisplayName("土地照片1上傳：")]
         [ValidateNever]
         public string ImageUrl { get; set; }
+
+        [DisplayName("土地照片2上傳：")]
+        [ValidateNever]
+        public string ImageUrl2 { get; set; }
+
+        [DisplayName("土地照片3上傳：")]
+        [ValidateNever]
+        public string ImageUrl3 { get; set; }
+
+        [DisplayName("土地照片4上傳：")]
+        [ValidateNever]
+        public string ImageUrl4 { get; set; }
+
+        [DisplayName("土地照片5上傳：")]
+        [ValidateNever]
+        public string ImageUrl5 { get; set; }
+
+        [DisplayName("土地照片6上傳：")]
+        [ValidateNever]
+        public string ImageUrl6 { get; set; }
+
+        [DisplayName("土地照片7上傳：")]
+        [ValidateNever]
+        public string ImageUrl7 { get; set; }
+
+        [DisplayName("土地照片8上傳：")]
+        [ValidateNever]
+        public string ImageUrl8 { get; set; }
+
+        [DisplayName("土地照片9上傳：")]
+        [ValidateNever]
+        public string ImageUrl9 { get; set; }
 
         [DisplayName("影片網址上傳：")]
         [ValidateNever]

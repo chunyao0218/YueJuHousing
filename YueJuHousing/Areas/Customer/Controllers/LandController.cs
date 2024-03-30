@@ -57,37 +57,76 @@ namespace YueJuHousing.Areas.Customer.Controllers
 
         [HttpPost]
         // 本次修改部分
-        public IActionResult Upsert(LandVM landVM, IFormFile? file)
+        public IActionResult Upsert(LandVM landVM, List<IFormFile> files)
         {
             if (ModelState.IsValid)
             {
                 //
                 string wwwRootPath = _webHostEnvironment.WebRootPath;
-                
-                if(file != null)
-                {
-                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
-                    string landPath= Path.Combine(wwwRootPath, @"images\land");
 
-                    //有新圖片上傳，刪除舊照片
-                    if (!string.IsNullOrEmpty(landVM.Land.ImageUrl))
+                if (files != null && files.Count > 0)
+                {
+                    List<string> imageUrls = new List<string>();
+
+                    foreach (var uploadedFile in files)
                     {
-                        var oldImagePath = Path.Combine(wwwRootPath, landVM.Land.ImageUrl.TrimStart('\\'));
-                        if (System.IO.File.Exists(oldImagePath))
+                        string fileName = Guid.NewGuid().ToString() + Path.GetExtension(uploadedFile.FileName);
+                        string landPath = Path.Combine(wwwRootPath, @"images\land");
+
+                        using (var fileStream = new FileStream(Path.Combine(landPath, fileName), FileMode.Create))
                         {
-                            System.IO.File.Delete(oldImagePath);
+                            uploadedFile.CopyTo(fileStream);
+                        }
+                        imageUrls.Add(@"\images\land\" + fileName);
+                    }
+
+                    // 清空之前的图片链接
+                    landVM.Land.ImageUrl = string.Empty;
+                    landVM.Land.ImageUrl2 = string.Empty;
+                    landVM.Land.ImageUrl3 = string.Empty;
+                    landVM.Land.ImageUrl4 = string.Empty;
+                    landVM.Land.ImageUrl5 = string.Empty;
+                    landVM.Land.ImageUrl6 = string.Empty;
+                    landVM.Land.ImageUrl7 = string.Empty;
+                    landVM.Land.ImageUrl8 = string.Empty;
+                    landVM.Land.ImageUrl9 = string.Empty;
+
+                    // 将新的图片链接填充到对象中
+                    for (int i = 0; i < imageUrls.Count; i++)
+                    {
+                        switch (i)
+                        {
+                            case 0:
+                                landVM.Land.ImageUrl = imageUrls[i];
+                                break;
+                            case 1:
+                                landVM.Land.ImageUrl2 = imageUrls[i];
+                                break;
+                            case 2:
+                                landVM.Land.ImageUrl3 = imageUrls[i];
+                                break;
+                            case 3:
+                                landVM.Land.ImageUrl4 = imageUrls[i];
+                                break;
+                            case 4:
+                                landVM.Land.ImageUrl5 = imageUrls[i];
+                                break;
+                            case 5:
+                                landVM.Land.ImageUrl6 = imageUrls[i];
+                                break;
+                            case 6:
+                                landVM.Land.ImageUrl7 = imageUrls[i];
+                                break;
+                            case 7:
+                                landVM.Land.ImageUrl8 = imageUrls[i];
+                                break;
+                            case 8:
+                                landVM.Land.ImageUrl9 = imageUrls[i];
+                                break;
+                            default:
+                                break;
                         }
                     }
-
-                    using (var fileStream = new FileStream(Path.Combine(landPath, fileName), FileMode.Create))
-                    {
-                        file.CopyTo(fileStream);
-                    }
-                    landVM.Land.ImageUrl = @"\images\land\" + fileName;
-
-
-
-                    
                 }
 
 
