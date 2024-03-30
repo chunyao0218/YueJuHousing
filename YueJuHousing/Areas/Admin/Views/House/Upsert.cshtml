@@ -1497,7 +1497,7 @@
                         </div>
                         <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
                             <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
-                                <input type="file" name="files" asp-for="House.ImageUrl" class="form-control" />
+                                <input type="file" name="files" asp-for="House.ImageUrl" class="form-control" multiple />
                             </div>
                         </div>
                         @if (!string.IsNullOrEmpty(Model.House.ImageUrl))
@@ -1506,7 +1506,127 @@
                                 <img class="mt-4" src="@Model.House.ImageUrl" width="20%" style="border-radius:5px; border:1px solid #bbb9b9" />
                             </div>
                         }
-                        @* 房屋圖片2 *@
+
+                        @if (!string.IsNullOrEmpty(Model.House.ImageUrl2))
+                        {
+                            <div class="col-md-12 col-sm-12">
+                                <label asp-for="House.ImageUrl2" class="p-0"></label>
+                            </div>
+                            <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                    <input type="file" name="files" asp-for="House.ImageUrl2" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <img class="mt-4" src="@Model.House.ImageUrl2" width="20%" style="border-radius:5px; border:1px solid #bbb9b9" />
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrEmpty(Model.House.ImageUrl3))
+                        {
+                            <div class="col-md-12 col-sm-12">
+                                <label asp-for="House.ImageUrl3" class="p-0"></label>
+                            </div>
+                            <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                    <input type="file" name="files" asp-for="House.ImageUrl3" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <img class="mt-4" src="@Model.House.ImageUrl3" width="20%" style="border-radius:5px; border:1px solid #bbb9b9" />
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrEmpty(Model.House.ImageUrl4))
+                        {
+                            <div class="col-md-12 col-sm-12">
+                                <label asp-for="House.ImageUrl4" class="p-0"></label>
+                            </div>
+                            <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                    <input type="file" name="files" asp-for="House.ImageUrl4" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <img class="mt-4" src="@Model.House.ImageUrl4" width="20%" style="border-radius:5px; border:1px solid #bbb9b9" />
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrEmpty(Model.House.ImageUrl5))
+                        {
+                            <div class="col-md-12 col-sm-12">
+                                <label asp-for="House.ImageUrl5" class="p-0"></label>
+                            </div>
+                            <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                    <input type="file" name="files" asp-for="House.ImageUrl5" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <img class="mt-4" src="@Model.House.ImageUrl5" width="20%" style="border-radius:5px; border:1px solid #bbb9b9" />
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrEmpty(Model.House.ImageUrl6))
+                        {
+                            <div class="col-md-12 col-sm-12">
+                                <label asp-for="House.ImageUrl6" class="p-0"></label>
+                            </div>
+                            <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                    <input type="file" name="files" asp-for="House.ImageUrl6" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <img class="mt-4" src="@Model.House.ImageUrl6" width="20%" style="border-radius:5px; border:1px solid #bbb9b9" />
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrEmpty(Model.House.ImageUrl7))
+                        {
+                            <div class="col-md-12 col-sm-12">
+                                <label asp-for="House.ImageUrl7" class="p-0"></label>
+                            </div>
+                            <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                    <input type="file" name="files" asp-for="House.ImageUrl7" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <img class="mt-4" src="@Model.House.ImageUrl7" width="20%" style="border-radius:5px; border:1px solid #bbb9b9" />
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrEmpty(Model.House.ImageUrl8))
+                        {
+                            <div class="col-md-12 col-sm-12">
+                                <label asp-for="House.ImageUrl8" class="p-0"></label>
+                            </div>
+                            <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                    <input type="file" name="files" asp-for="House.ImageUrl8" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <img class="mt-4" src="@Model.House.ImageUrl8" width="20%" style="border-radius:5px; border:1px solid #bbb9b9" />
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrEmpty(Model.House.ImageUrl9))
+                        {
+                            <div class="col-md-12 col-sm-12">
+                                <label asp-for="House.ImageUrl9" class="p-0"></label>
+                            </div>
+                            <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                    <input type="file" name="files" asp-for="House.ImageUrl9" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <img class="mt-4" src="@Model.House.ImageUrl9" width="20%" style="border-radius:5px; border:1px solid #bbb9b9" />
+                            </div>
+                        }
+                        @* 房屋圖片2
                         <div class="col-md-12 col-sm-12">
                             <label asp-for="House.ImageUrl2" class="p-0"></label>
                         </div>
@@ -1521,7 +1641,7 @@
                                 <img class="mt-4" src="@Model.House.ImageUrl2" width="20%" style="border-radius:5px; border:1px solid #bbb9b9" />
                             </div>
                         }
-                        @* 房屋圖片3 *@
+                        @* 房屋圖片3 
                         <div class="col-md-12 col-sm-12">
                             <label asp-for="House.ImageUrl3" class="p-0"></label>
                         </div>
@@ -1536,7 +1656,7 @@
                                 <img class="mt-4" src="@Model.House.ImageUrl3" width="20%" style="border-radius:5px; border:1px solid #bbb9b9" />
                             </div>
                         }
-                        @* 房屋圖片4 *@
+                        @* 房屋圖片4
                         <div class="col-md-12 col-sm-12">
                             <label asp-for="House.ImageUrl4" class="p-0"></label>
                         </div>
@@ -1551,7 +1671,7 @@
                                 <img class="mt-4" src="@Model.House.ImageUrl4" width="20%" style="border-radius:5px; border:1px solid #bbb9b9" />
                             </div>
                         }
-                        @* 房屋圖片5 *@
+                        @* 房屋圖片5
                         <div class="col-md-12 col-sm-12">
                             <label asp-for="House.ImageUrl5" class="p-0"></label>
                         </div>
@@ -1566,7 +1686,7 @@
                                 <img class="mt-4" src="@Model.House.ImageUrl5" width="20%" style="border-radius:5px; border:1px solid #bbb9b9" />
                             </div>
                         }
-                        @* 房屋圖片6 *@
+                        @* 房屋圖片6
                         <div class="col-md-12 col-sm-12">
                             <label asp-for="House.ImageUrl6" class="p-0"></label>
                         </div>
@@ -1581,7 +1701,7 @@
                                 <img class="mt-4" src="@Model.House.ImageUrl6" width="20%" style="border-radius:5px; border:1px solid #bbb9b9" />
                             </div>
                         }
-                        @* 房屋圖片7 *@
+                        @* 房屋圖片7
                         <div class="col-md-12 col-sm-12">
                             <label asp-for="House.ImageUrl7" class="p-0"></label>
                         </div>
@@ -1596,7 +1716,7 @@
                                 <img class="mt-4" src="@Model.House.ImageUrl7" width="20%" style="border-radius:5px; border:1px solid #bbb9b9" />
                             </div>
                         }
-                        @* 房屋圖片8 *@
+                        @* 房屋圖片8
                         <div class="col-md-12 col-sm-12">
                             <label asp-for="House.ImageUrl8" class="p-0"></label>
                         </div>
@@ -1611,7 +1731,7 @@
                                 <img class="mt-4" src="@Model.House.ImageUrl8" width="20%" style="border-radius:5px; border:1px solid #bbb9b9" />
                             </div>
                         }
-                        @* 房屋圖片9 *@
+                        @* 房屋圖片9
                         <div class="col-md-12 col-sm-12">
                             <label asp-for="House.ImageUrl9" class="p-0"></label>
                         </div>
@@ -1625,14 +1745,14 @@
                             <div class="col-2">
                                 <img class="mt-4" src="@Model.House.ImageUrl9" width="20%" style="border-radius:5px; border:1px solid #bbb9b9" />
                             </div>
-                        }
+                        } *@
                         @* 格局圖 *@
                         <div class="col-md-12 col-sm-12">
                             <label asp-for="House.PatternImageUrl" class="p-0"></label>
                         </div>
                         <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
                             <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
-                                <input type="file" name="files" asp-for="House.PatternImageUrl" class="form-control" />
+                                <input type="file" name="file" asp-for="House.PatternImageUrl" class="form-control" />
                             </div>
                         </div>
                         @if (!string.IsNullOrEmpty(Model.House.PatternImageUrl))

@@ -1203,16 +1203,16 @@
                             <label asp-for="Land.LandWidth" class="p-0"></label>
                         </div>
                         <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
-                            <p><strong>面寬</strong></p><input asp-for="Land.LandWidth" class="form-control" placeholder="請輸入土地面寬" /><p><strong>米</strong></p>
+                            <p><strong>面寬</strong></p><input asp-for="Land.LandWidth" style="width:20%;" class="form-control" placeholder="請輸入土地面寬" /><p><strong>米</strong></p>
                             <span asp-validation-for="Land.LandWidth" class="text-danger"></span>
-                            <p><strong>縱深</strong></p><input asp-for="Land.LandDepth" class="form-control" placeholder="請輸入土地縱深" /><p><strong>米</strong></p>
+                            <p><strong style="margin-left: 20px;">縱深</strong></p><input asp-for="Land.LandDepth" style="width:20%;" class="form-control" placeholder="請輸入土地縱深" /><p><strong>米</strong></p>
                             <span asp-validation-for="Land.LandDepth" class="text-danger"></span>
                         </div>
                         <div class="col-md-12 col-sm-12">
                             <label asp-for="Land.CloseRoad" class="p-0"></label>
                         </div>
                         <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
-                            <p><strong>臨路</strong></p><input asp-for="Land.CloseRoad" class="form-control" placeholder="請輸入土地面寬" /><p><strong>米</strong></p>
+                            <p><strong>臨路路寬</strong></p><input asp-for="Land.CloseRoad" style="width:20%;" class="form-control" placeholder="請輸入土地面寬" /><p><strong>米</strong></p>
                             <span asp-validation-for="Land.CloseRoad" class="text-danger"></span>
                         </div>
                         <div class="col-md-12 col-sm-12">
@@ -1224,7 +1224,7 @@
                         </div>
                         <div id="urbanZones" class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
                             <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="住宅區" required checked>住宅區</label>
-                            <select asp-for="Land.LandUseZoneTypeDetail" id="city" class="form-control" style="margin-right: 10px;" onchange="updateTownships()" required>
+                            <select asp-for="Land.LandUseZoneTypeDetail" id="city" class="form-control" style="margin-right: 10px; width:20%; margin-left: 10px;" onchange="updateTownships()" required>
                                 <option value="" disabled selected style="color: #b7b7b7;">請選擇類型</option>
                                 <option value="住一">住一</option>
                                 <option value="住二">住二</option>
@@ -1237,7 +1237,7 @@
                                 <option value="住四之一">住四之一</option>
                             </select>
                             <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="商業區" style="margin-left:10px;" >商業區</label>
-                            <select asp-for="Land.LandUseZoneTypeDetail" id="city" class="form-control" style="margin-right: 10px;" onchange="updateTownships()" required>
+                            <select asp-for="Land.LandUseZoneTypeDetail" id="city" class="form-control" style="margin-right: 10px; width:20%; margin-left: 10px;" onchange="updateTownships()" required>
                                 <option value="" disabled selected style="color: #b7b7b7;">請選擇類型</option>
                                 <option value="商一">商一</option>
                                 <option value="商二">商二</option>
@@ -1245,7 +1245,7 @@
                                 <option value="商四">商四</option>
                             </select>
                             <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="工業區" style="margin-left:10px;" >工業區</label>
-                            <select asp-for="Land.LandUseZoneTypeDetail" id="city" class="form-control" style="margin-right: 10px;" onchange="updateTownships()" required>
+                            <select asp-for="Land.LandUseZoneTypeDetail" id="city" class="form-control" style="margin-right: 10px; width:20%; margin-left: 10px;" onchange="updateTownships()" required>
                                 <option value="" disabled selected style="color: #b7b7b7;">請選擇類型</option>
                                 <option value="特種工業區">特種工業區</option>
                                 <option value="甲種工業區">甲種工業區</option>
@@ -1253,17 +1253,18 @@
                                 <option value="零星工業區">零星工業區</option>
                             </select>
 
-                            <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="行政區" style="margin-left:10px;" >行政區</label>
-                            <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="文教區" style="margin-left:10px;" >文教區</label>
-                            <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="體育運動區" style="margin-left:10px;" >體育運動區</label>
-                            <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="風景區" style="margin-left:10px;" >風景區</label>
-                            <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="保存區" style="margin-left:10px;" >保存區</label>
-                            <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="保護區" style="margin-left:10px;" >保護區</label>
-                            <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="農業區" style="margin-left:10px;" checked >農業區</label>
-                            <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="特定專用區" style="margin-left:10px;" >特定專用區</label>
-                            <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="其他" style="margin-left:10px;" >其他</label>
-                            <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="自定義使用分區" style="margin-left:10px;" ><input asp-for="Land.LandUseZoneTypeDetail" class="form-control" placeholder="自定義使用分區" /></label>
-
+                        </div>
+                        <div id="urbanZones" class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                           
+                            <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="行政區" style="">行政區</label>
+                            <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="文教區" style="margin-left:10px;">文教區</label>
+                            <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="體育運動區" style="margin-left:10px;">體育運動區</label>
+                            <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="風景區" style="margin-left:10px;">風景區</label>
+                            <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="保存區" style="margin-left:10px;">保存區</label>
+                            <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="保護區" style="margin-left:10px;">保護區</label>
+                            <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="農業區" style="margin-left:10px;" checked>農業區</label>
+                            <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="特定專用區" style="margin-left:10px;">特定專用區</label>
+                            <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="其他使用區" style="margin-left:10px;">其他使用區</label>
                         </div>
 
                         <div id="nonUrbanZones" class="col-md-12 col-sm-12" style="display: none; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
@@ -1276,8 +1277,8 @@
                             <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="風景區" style="margin-left:10px;" >風景區</label>
                             <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="國家公園區" style="margin-left:10px;" >國家公園區</label>
                             <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="河川區" style="margin-left:10px;" >河川區</label>
-                            <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="其他" style="margin-left:10px;" >其他</label>
-                            <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="自定義使用分區" style="margin-left:10px;" ><input asp-for="Land.LandUseZoneTypeDetail" class="form-control" placeholder="自定義使用分區" /></label>
+                            <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="海域區" style="margin-left:10px;"></label>
+                            <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="其他或特定專用區" style="margin-left:10px;">其他或特定專用區</label>
                         </div>
 
                         <div class="col-md-12 col-sm-12">
@@ -1462,15 +1463,142 @@
                         </div>
                     </div>
                     <div class="wow fadeInUp" data-wow-delay="1s">
+                        @* 土地圖片1 *@
                         <div class="col-md-12 col-sm-12">
                             <label asp-for="Land.ImageUrl" class="p-0"></label>
                         </div>
                         <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
                             <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
-                                <input type="file" name="file" asp-for="Land.ImageUrl" class="form-control" />
-                                <span asp-validation-for="Land.ImageUrl" class="text-danger"></span>
+                                <input type="file" name="files" asp-for="Land.ImageUrl" class="form-control" multiple />
                             </div>
                         </div>
+                        @if (!string.IsNullOrEmpty(Model.Land.ImageUrl))
+                        {
+                            <div class="col-2">
+                                <img class="mt-4" src="@Model.Land.ImageUrl" width="20%" style="border-radius:5px; border:1px solid #bbb9b9" />
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrEmpty(Model.Land.ImageUrl2))
+                        {
+                            <div class="col-md-12 col-sm-12">
+                                <label asp-for="Land.ImageUrl2" class="p-0"></label>
+                            </div>
+                            <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                    <input type="file" name="files" asp-for="Land.ImageUrl2" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <img class="mt-4" src="@Model.Land.ImageUrl2" width="20%" style="border-radius:5px; border:1px solid #bbb9b9" />
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrEmpty(Model.Land.ImageUrl3))
+                        {
+                            <div class="col-md-12 col-sm-12">
+                                <label asp-for="Land.ImageUrl3" class="p-0"></label>
+                            </div>
+                            <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                    <input type="file" name="files" asp-for="Land.ImageUrl3" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <img class="mt-4" src="@Model.Land.ImageUrl3" width="20%" style="border-radius:5px; border:1px solid #bbb9b9" />
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrEmpty(Model.Land.ImageUrl4))
+                        {
+                            <div class="col-md-12 col-sm-12">
+                                <label asp-for="Land.ImageUrl4" class="p-0"></label>
+                            </div>
+                            <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                    <input type="file" name="files" asp-for="Land.ImageUrl4" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <img class="mt-4" src="@Model.Land.ImageUrl4" width="20%" style="border-radius:5px; border:1px solid #bbb9b9" />
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrEmpty(Model.Land.ImageUrl5))
+                        {
+                            <div class="col-md-12 col-sm-12">
+                                <label asp-for="Land.ImageUrl5" class="p-0"></label>
+                            </div>
+                            <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                    <input type="file" name="files" asp-for="Land.ImageUrl5" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <img class="mt-4" src="@Model.Land.ImageUrl5" width="20%" style="border-radius:5px; border:1px solid #bbb9b9" />
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrEmpty(Model.Land.ImageUrl6))
+                        {
+                            <div class="col-md-12 col-sm-12">
+                                <label asp-for="Land.ImageUrl6" class="p-0"></label>
+                            </div>
+                            <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                    <input type="file" name="files" asp-for="Land.ImageUrl6" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <img class="mt-4" src="@Model.Land.ImageUrl6" width="20%" style="border-radius:5px; border:1px solid #bbb9b9" />
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrEmpty(Model.Land.ImageUrl7))
+                        {
+                            <div class="col-md-12 col-sm-12">
+                                <label asp-for="Land.ImageUrl7" class="p-0"></label>
+                            </div>
+                            <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                    <input type="file" name="files" asp-for="Land.ImageUrl7" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <img class="mt-4" src="@Model.Land.ImageUrl7" width="20%" style="border-radius:5px; border:1px solid #bbb9b9" />
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrEmpty(Model.Land.ImageUrl8))
+                        {
+                            <div class="col-md-12 col-sm-12">
+                                <label asp-for="Land.ImageUrl8" class="p-0"></label>
+                            </div>
+                            <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                    <input type="file" name="files" asp-for="Land.ImageUrl8" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <img class="mt-4" src="@Model.Land.ImageUrl8" width="20%" style="border-radius:5px; border:1px solid #bbb9b9" />
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrEmpty(Model.Land.ImageUrl9))
+                        {
+                            <div class="col-md-12 col-sm-12">
+                                <label asp-for="Land.ImageUrl9" class="p-0"></label>
+                            </div>
+                            <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                                    <input type="file" name="files" asp-for="Land.ImageUrl9" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <img class="mt-4" src="@Model.Land.ImageUrl9" width="20%" style="border-radius:5px; border:1px solid #bbb9b9" />
+                            </div>
+                        }
+
                         <div class="col-md-12 col-sm-12">
                             <label asp-for="Land.VideoUrl" class="p-0"></label>
                         </div>
@@ -1594,10 +1722,6 @@
                         </div>
                     </div>
             
-                <div class="col-2">
-                    <img class="mt-4" src="@Model.Land.ImageUrl" width="20%" style="border-radius:5px; border:1px solid #bbb9b9" />
-                </div>
-        
         </form>
       </div>
     </div>

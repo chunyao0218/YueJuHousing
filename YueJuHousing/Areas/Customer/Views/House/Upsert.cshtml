@@ -1456,9 +1456,9 @@
                         </div>
                         <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
                             <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
-                                <label asp-for="House.ControlDamper" style="display:contents;margin-left:10px;"><input asp-for="House.ControlDamper" type="checkbox" value="制震宅" >制震宅</label>
-                                <label asp-for="House.ReplanArea" style="display:contents;margin-left:10px;"><input asp-for="House.ReplanArea" type="checkbox" value="重劃區" style="margin-left:10px;">重劃區</label>
-                                <label asp-for="House.FamousSchoolArea" style="display:contents;margin-left:10px;"><input asp-for="House.FamousSchoolArea" type="checkbox" value="明星學區" style="margin-left:10px;">明星學區</label>
+                                <label asp-for="House.ControlDamper" style="display:contents;margin-left:10px;"><input asp-for="House.ControlDamper" type="checkbox" value="true" >制震宅</label>
+                                <label asp-for="House.ReplanArea" style="display:contents;margin-left:10px;"><input asp-for="House.ReplanArea" type="checkbox" value="true" style="margin-left:10px;">重劃區</label>
+                                <label asp-for="House.FamousSchoolArea" style="display:contents;margin-left:10px;"><input asp-for="House.FamousSchoolArea" type="checkbox" value="true" style="margin-left:10px;">明星學區</label>
                                 <span asp-validation-for="House.ControlDamper" class="text-danger"></span>
                             </div>
                         </div>
@@ -1488,7 +1488,7 @@
                         </div>
                         <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
                             <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
-                                <input type="file" name="file" asp-for="House.ImageUrl" class="form-control" />
+                                <input type="file" name="file" asp-for="House.ImageUrl" class="form-control" multiple />
                                 <span asp-validation-for="House.ImageUrl" class="text-danger"></span>
                             </div>
                         </div>
