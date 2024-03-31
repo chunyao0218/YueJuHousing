@@ -1500,7 +1500,7 @@
                                 <input type="file" name="files" id="chooseImg" asp-for="House.ImageUrl" class="form-control" multiple />
                             </div>
                         </div>
-                        <div id="imgPreview" style="width: 100%; display: flex; flex-wrap: nowrap; overflow-x: auto;"></div>     
+                        <div class="col-md-12 col-sm-12" id="imgPreview" style="width: 100%; display: flex; flex-wrap: nowrap; overflow-x: auto;"></div>
                         @if (!string.IsNullOrEmpty(Model.House.ImageUrl))
                         {
                             <div class="col-2">

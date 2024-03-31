@@ -1469,9 +1469,10 @@
                         </div>
                         <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
                             <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
-                                <input type="file" name="files" asp-for="Land.ImageUrl" class="form-control" multiple />
+                                <input type="file" name="files" id="chooseImg" asp-for="Land.ImageUrl" class="form-control" multiple />
                             </div>
                         </div>
+                        <div class="col-md-12 col-sm-12" id="imgPreview" style="width: 100%; display: flex; flex-wrap: nowrap; overflow-x: auto;"></div>
                         @if (!string.IsNullOrEmpty(Model.Land.ImageUrl))
                         {
                             <div class="col-2">
@@ -1744,3 +1745,5 @@
 <script src="~/js/custom.js"></script>
 <script src="~/js/index.js"></script>
 <script src="~/js/PostAd.js"></script>
+
+<script src="~/js/landPreviewImage.js"></script>
