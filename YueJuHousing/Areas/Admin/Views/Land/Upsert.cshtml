@@ -1467,10 +1467,11 @@
                         </div>
                         <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
                             <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
-                                <input type="file" name="file" asp-for="Land.ImageUrl" class="form-control" />
+                                <input type="file" name="file" id="chooseImg" accept="Image/*" asp-for="Land.ImageUrl" class="form-control" />
                                 <span asp-validation-for="Land.ImageUrl" class="text-danger"></span>
                             </div>
                         </div>
+                        <img src="https://placehold.jp/100x100.png" id="imgPreview" style="width:100px; height:100px"; alt="Your Image"/>
                         <div class="col-md-12 col-sm-12">
                             <label asp-for="Land.VideoUrl" class="p-0"></label>
                         </div>
@@ -1618,3 +1619,5 @@
 <script src="~/js/owl.carousel.min.js"></script>
 <script src="~/js/custom.js"></script>
 <script src="~/js/index.js"></script>
+
+<script src="~/js/landPreviewImage.js"></script>

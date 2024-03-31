@@ -63,44 +63,44 @@ namespace YueJuHousing.Areas.Admin.Controllers
             {
                 string wwwRootPath = _webHostEnvironment.WebRootPath;
 
-                if (file != null)
-                {
-                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
-                    string housePath = Path.Combine(wwwRootPath, @"images\house");
+                //if (file != null)
+                //{
+                //    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+                //    string housePath = Path.Combine(wwwRootPath, @"images\house");
 
-                    //有新圖片上傳，刪除舊照片
-                    if (!string.IsNullOrEmpty(houseVM.House.ImageUrl))
-                    {
-                        var oldImagePath = Path.Combine(wwwRootPath, houseVM.House.ImageUrl.TrimStart('\\'));
-                        if (System.IO.File.Exists(oldImagePath))
-                        {
-                            System.IO.File.Delete(oldImagePath);
-                        }
-                    }
+                //    //有新圖片上傳，刪除舊照片
+                //    if (!string.IsNullOrEmpty(houseVM.House.ImageUrl))
+                //    {
+                //        var oldImagePath = Path.Combine(wwwRootPath, houseVM.House.ImageUrl.TrimStart('\\'));
+                //        if (System.IO.File.Exists(oldImagePath))
+                //        {
+                //            System.IO.File.Delete(oldImagePath);
+                //        }
+                //    }
 
-                    using (var fileStream = new FileStream(Path.Combine(housePath, fileName), FileMode.Create))
-                    {
-                        file.CopyTo(fileStream);
-                    }
-                    houseVM.House.ImageUrl = @"\images\house\" + fileName;
+                //    using (var fileStream = new FileStream(Path.Combine(housePath, fileName), FileMode.Create))
+                //    {
+                //        file.CopyTo(fileStream);
+                //    }
+                //    houseVM.House.ImageUrl = @"\images\house\" + fileName;
 
 
 
-                    if (!string.IsNullOrEmpty(houseVM.House.PatternImageUrl))
-                    {
-                        var oldImagePath = Path.Combine(wwwRootPath, houseVM.House.PatternImageUrl.TrimStart('\\'));
-                        if (System.IO.File.Exists(oldImagePath))
-                        {
-                            System.IO.File.Delete(oldImagePath);
-                        }
-                    }
+                //    if (!string.IsNullOrEmpty(houseVM.House.PatternImageUrl))
+                //    {
+                //        var oldImagePath = Path.Combine(wwwRootPath, houseVM.House.PatternImageUrl.TrimStart('\\'));
+                //        if (System.IO.File.Exists(oldImagePath))
+                //        {
+                //            System.IO.File.Delete(oldImagePath);
+                //        }
+                //    }
 
-                    using (var fileStream = new FileStream(Path.Combine(housePath, fileName), FileMode.Create))
-                    {
-                        file.CopyTo(fileStream);
-                    }
-                    houseVM.House.PatternImageUrl = @"\images\house\" + fileName;
-                }
+                //    using (var fileStream = new FileStream(Path.Combine(housePath, fileName), FileMode.Create))
+                //    {
+                //        file.CopyTo(fileStream);
+                //    }
+                //    houseVM.House.PatternImageUrl = @"\images\house\" + fileName;
+                //}
 
                 if (files != null && files.Count > 0)
                 {
