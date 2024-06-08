@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using YueJuHousing.Attributes;
 using YueJuHousing.Models;
 using YueJuHousing.Utility;
 
@@ -59,20 +60,22 @@ namespace YueJuHousing.Areas.Identity.Pages.Account
 
         public class InputModel
         {
-            [Required]
-            [EmailAddress]
+            [Required(ErrorMessage = "信箱是必填項")]
+            [EmailAddress(ErrorMessage = "信箱格式不正確")]
             [Display(Name = "信箱")]
             public string Email { get; set; }
 
-            [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+            [Required(ErrorMessage = "密碼是必填項")]
+            [StringLength(100, ErrorMessage = "{0} 至少 {2} 到 {1}", MinimumLength = 6)]
+            [PasswordComplexity(ErrorMessage = "密碼必須包含至少一個小寫字母，一個大寫字母和一個非字母數字字符")]
             [DataType(DataType.Password)]
             [Display(Name = "密碼")]
             public string Password { get; set; }
 
+            [Required(ErrorMessage = "確認密碼是必填項")]
             [DataType(DataType.Password)]
             [Display(Name = "確認密碼")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Compare("Password", ErrorMessage = "密碼和確認密碼輸入不一致")]
             public string ConfirmPassword { get; set; }
 
             public string? Role { get; set; }
@@ -80,12 +83,15 @@ namespace YueJuHousing.Areas.Identity.Pages.Account
             [ValidateNever]
             public IEnumerable<SelectListItem> RoleList { get; set; }
 
-
-            [Required]
+            [Required(ErrorMessage = "名字是必填項")]
             [Display(Name = "名字")]
             public string Name { get; set; }
+
+            [Required(ErrorMessage = "地址是必填項")]
             [Display(Name = "地址")]
             public string? Address { get; set; }
+
+            [Required(ErrorMessage = "電話是必填項")]
             [Display(Name = "電話")]
             public string? PhoneNumber { get; set; }
         }
