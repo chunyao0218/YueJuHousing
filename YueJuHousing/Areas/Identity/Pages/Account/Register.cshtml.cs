@@ -72,7 +72,7 @@ namespace YueJuHousing.Areas.Identity.Pages.Account
 
             [DataType(DataType.Password)]
             [Display(Name = "確認密碼")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Compare("Password", ErrorMessage = "輸入的密碼不相符")]
             public string ConfirmPassword { get; set; }
 
             public string? Role { get; set; }

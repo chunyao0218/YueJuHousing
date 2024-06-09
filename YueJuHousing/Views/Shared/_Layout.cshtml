@@ -93,7 +93,7 @@
                         </ul> 
                     </li>
                     @*<li><a href="~/TDSS/Index" class="smoothScroll" target="_blank" style="font-size: medium; color: #405545;">OA治療決策輔助工具</a></li>*@
-                     @if (User.IsInRole(SD.Role_Admin) || User.IsInRole(SD.Role_Manager))
+                    @if (User.IsInRole(SD.Role_Admin) || User.IsInRole(SD.Role_Manager) || User.IsInRole(SD.Role_Customer))
                     {
                         <li class="appointment-btn"><a asp-area="Customer" asp-controller="PostAd" asp-action="ChooseAdType" style="font-size:larger;" target="_blank">我要刊登</a></li>
                     }

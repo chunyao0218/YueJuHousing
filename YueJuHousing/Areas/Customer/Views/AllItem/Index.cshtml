@@ -259,8 +259,8 @@
         </div>
          @foreach (var house in Model)
          {
-                <div data-bind="14924947" data-gtm-stat="中古屋列表頁_所有物件_點擊量" title="@house.AdTitle" addtion="bid" class="j-house houseList-item clearfix" house-detail-stat="2-8-14924947" data-browse-stated="">
-                    <a asp-action="Details" asp-route-houseId="@house.Id">
+                <div id="clickableDiv-@house.Id" data-bind="14924947" data-gtm-stat="中古屋列表頁_所有物件_點擊量" title="@house.AdTitle" addtion="bid" class="j-house houseList-item clearfix" house-detail-stat="2-8-14924947" data-browse-stated="">
+                    <a asp-action="Details" asp-route-houseId="@house.Id" target="_blank">
                         <div class="houseList-item-left pull-left">
                             <div data-gtm-stat="" class="relative">
                                 <!---->
@@ -278,7 +278,7 @@
                             </div>
                         </div>
                     </a>
-                    <a asp-action="Details" asp-route-houseId="@house.Id">
+                    <a asp-action="Details" asp-route-houseId="@house.Id" target="_blank">
                         <div title="" class="houseList-item-right text-right pull-right">
                             <!---->
                             <div class="houseList-item-price">
@@ -292,13 +292,13 @@
                             </div>
                         </div>
                     </a>
-                    <a asp-action="Details" asp-route-houseId="@house.Id">
+                    <a asp-action="Details" asp-route-houseId="@house.Id" target="_blank">
                         <div class="houseList-item-main oh">
                             <div class="houseList-item-title">
                                 <!--------------------------Mobile--------------------------->
                                 <span class="houseList-item-title-label-mobile z-good-house-mobile"></span>
                                 <!----------------------------------------------------------->
-                                <a href="/home/house/detail/2/14924947.html" title="@house.AdTitle">@house.AdTitle</a>
+                                <a asp-action="Details" asp-route-houseId="@house.Id" title="@house.AdTitle" target="_blank">@house.AdTitle</a>
 
                                 <span class="houseList-item-title-label z-good-house"></span>
 
@@ -363,10 +363,15 @@
                     </a>
                         <span class="shoucang"><a href="javascript:;" data-bind="2" data-text="14924947" data-colle="0" class="houseList-item-collect"></a></span>
                 </div>
+            <script>
+                document.getElementById('clickableDiv-@house.Id').addEventListener('click', function () {
+                    window.open('@Url.Action("Details", "AllItem", new { houseId = house.Id })', '_blank');
+                });
+            </script>
          }
 
 
-        <div data-bind="14924947" data-gtm-stat="中古屋列表頁_所有物件_點擊量" title="(馬上約看)麗捷黃金次頂樓河景3房車" addtion="bid" class="j-house houseList-item clearfix" house-detail-stat="2-8-14924947" data-browse-stated="">
+        @*<div data-bind="14924947" data-gtm-stat="中古屋列表頁_所有物件_點擊量" title="(馬上約看)麗捷黃金次頂樓河景3房車" addtion="bid" class="j-house houseList-item clearfix" house-detail-stat="2-8-14924947" data-browse-stated="">
             <div class="houseList-item-left pull-left">
                 <div data-gtm-stat="" class="relative">
                 <!----> 
@@ -461,7 +466,7 @@
                 <!---------------------------------------------------------------------------------------------------------------->
 
             </div> <span class="shoucang"><a href="javascript:;" data-bind="2" data-text="14924947" data-colle="0" class="houseList-item-collect"></a></span>
-        </div>
+        </div>*@
 
     </section>
 
