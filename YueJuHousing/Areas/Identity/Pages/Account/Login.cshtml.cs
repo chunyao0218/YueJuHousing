@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using YueJuHousing.Attributes;
 
 namespace YueJuHousing.Areas.Identity.Pages.Account
 {
@@ -42,12 +43,13 @@ namespace YueJuHousing.Areas.Identity.Pages.Account
 
         public class InputModel
         {
-            [Required]
-            [EmailAddress]
+            [Required(ErrorMessage = "信箱是必填項")]
+            [EmailAddress(ErrorMessage = "信箱格式不正確")]
             [Display(Name = "信箱")]
             public string Email { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "密碼是必填項")]
+            [StringLength(100, ErrorMessage = "{0} 至少 {2} 到 {1}", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "密碼")]
             public string Password { get; set; }
@@ -86,7 +88,7 @@ namespace YueJuHousing.Areas.Identity.Pages.Account
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
-                    _logger.LogInformation("User logged in.");
+                    _logger.LogInformation("用戶已經登入");
                     return LocalRedirect(returnUrl);
                 }
                 if (result.RequiresTwoFactor)
@@ -95,12 +97,12 @@ namespace YueJuHousing.Areas.Identity.Pages.Account
                 }
                 if (result.IsLockedOut)
                 {
-                    _logger.LogWarning("User account locked out.");
+                    _logger.LogWarning("用戶已被鎖定");
                     return RedirectToPage("./Lockout");
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    ModelState.AddModelError(string.Empty, "無效的登入，帳號或密碼錯誤");
                     return Page();
                 }
             }
