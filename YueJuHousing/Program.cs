@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using YueJuHousing.Utility;
 using YueJuHousing.DataAccess.Repository.IRepository;
 using YueJuHousing.DataAccess.Repository;
+using YueJuHousing.Services;
+using YueJuHousing.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,7 +20,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IEmailSender, EmailSender>();
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders().AddErrorDescriber<CustomIdentityErrorDescriber>();
 //
 builder.Services.ConfigureApplicationCookie(options =>
 {
