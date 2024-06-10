@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "悅聚房屋 | 最佳房屋選擇";
 }
+
 <html lang="en">
 <head>
 
@@ -30,7 +31,7 @@
     <link rel="stylesheet" href="~/css/owl.carousel.min.css">
     <link rel="stylesheet" href="~/css/owl.theme.default.css">
     <link rel="stylesheet" href="~/css/AllItem.css">
-
+    
 
 
     <!-- MAIN CSS -->
@@ -258,8 +259,9 @@
         </div>
          @foreach (var land in Model)
          {
-                <div data-bind="14924947" data-gtm-stat="中古屋列表頁_所有物件_點擊量" title="@land.AdTitle" addtion="bid" class="j-house houseList-item clearfix" house-detail-stat="2-8-14924947" data-browse-stated="">
-                    <a asp-action="Details" asp-route-landId="@land.Id">
+            <a asp-action="Details" asp-route-landId="@land.Id" target="_blank">
+                <div id="clickableDiv-@land.Id" data-bind="14924947" data-gtm-stat="中古屋列表頁_所有物件_點擊量" title="@land.AdTitle" addtion="bid" class="j-house houseList-item clearfix" house-detail-stat="2-8-14924947" data-browse-stated="">
+                    
                         <div class="houseList-item-left pull-left">
                             <div data-gtm-stat="" class="relative">
                                 <!---->
@@ -273,11 +275,10 @@
                                 <div class="houseList-item-addition-tag z-recommend z-animate">
                                     精選
                                 </div>
-                                <!----> <!---->
+                                
                             </div>
                         </div>
-                    </a>
-                    <a asp-action="Details" asp-route-landId="@land.Id">
+                    
                         <div title="" class="houseList-item-right text-right pull-right">
                             <!---->
                             <div class="houseList-item-price">
@@ -290,14 +291,14 @@
                                 @land.EachSquarePrice 萬/坪
                             </div>
                         </div>
-                    </a>
-                    <a asp-action="Details" asp-route-landId="@land.Id">
                         <div class="houseList-item-main oh">
+
+                            
                             <div class="houseList-item-title">
                                 <!--------------------------Mobile--------------------------->
                                 <span class="houseList-item-title-label-mobile z-good-house-mobile"></span>
                                 <!----------------------------------------------------------->
-                                <a href="/home/house/detail/2/14924947.html" title="@land.AdTitle">@land.AdTitle</a>
+                                <a asp-action="Details" asp-route-landId="@land.Id" title="@land.AdTitle" target="_blank">@land.AdTitle</a>
 
                                 <span class="houseList-item-title-label z-good-house"></span>
 
@@ -324,9 +325,9 @@
                             <div class="houseList-item-address-row clearfix">
                                 <i class="icon-address"></i>
                                 <span class="houseList-item-community mr15 pull-left" style="margin-right: 15px;">
-                                    <a href="https://market.591.com.tw/103592" target="_blank" data-gtm-stat="中古屋列表_社區行情_社區文字鏈" class="houseList-item-community-link">
+                                    
                                         @land.LandSerialNumber
-                                    </a>
+                                    
                                 </span>
                                 <span class="houseList-item-section pull-left">三重區-</span>
                                 <span class="houseList-item-address pull-left">元信二街</span>
@@ -357,15 +358,21 @@
 
                             </div>
                             <!---------------------------------------------------------------------------------------------------------------->
-
+                            
                         </div>
-                    </a>
-                        <span class="shoucang"><a href="javascript:;" data-bind="2" data-text="14924947" data-colle="0" class="houseList-item-collect"></a></span>
+                    
+                        <span class="shoucang"><a asp-action="Details" asp-route-landId="@land.Id" data-bind="2" data-text="14924947" data-colle="0" class="houseList-item-collect"></a></span>
                 </div>
+            </a>
+            <script>
+                document.getElementById('clickableDiv-@land.Id').addEventListener('click', function () {
+                    window.open('@Url.Action("Details", "AllLand", new { landId = land.Id })', '_blank');
+                });
+            </script>
          }
 
 
-        <div data-bind="14924947" data-gtm-stat="中古屋列表頁_所有物件_點擊量" title="(馬上約看)麗捷黃金次頂樓河景3房車" addtion="bid" class="j-house houseList-item clearfix" house-detail-stat="2-8-14924947" data-browse-stated="">
+        @*<div data-bind="14924947" data-gtm-stat="中古屋列表頁_所有物件_點擊量" title="(馬上約看)麗捷黃金次頂樓河景3房車" addtion="bid" class="j-house houseList-item clearfix" house-detail-stat="2-8-14924947" data-browse-stated="">
             <div class="houseList-item-left pull-left">
                 <div data-gtm-stat="" class="relative">
                 <!----> 
@@ -460,7 +467,7 @@
                 <!---------------------------------------------------------------------------------------------------------------->
 
             </div> <span class="shoucang"><a href="javascript:;" data-bind="2" data-text="14924947" data-colle="0" class="houseList-item-collect"></a></span>
-        </div>
+        </div>*@
 
     </section>
 
