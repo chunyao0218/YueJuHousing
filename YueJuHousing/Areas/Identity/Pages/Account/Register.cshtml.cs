@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
@@ -67,7 +71,7 @@ namespace YueJuHousing.Areas.Identity.Pages.Account
 
             [Required(ErrorMessage = "密碼是必填項")]
             [StringLength(100, ErrorMessage = "{0} 至少 {2} 到 {1}", MinimumLength = 6)]
-            [PasswordComplexity(ErrorMessage = "密碼必須包含至少一個小寫字母，一個大寫字母和一個非字母數字字符")]
+            //[PasswordComplexity(ErrorMessage = "密碼必須包含至少一個小寫字母，一個大寫字母和一個非字母數字字符")]
             [DataType(DataType.Password)]
             [Display(Name = "密碼")]
             public string Password { get; set; }
@@ -157,8 +161,16 @@ namespace YueJuHousing.Areas.Identity.Pages.Account
                         values: new { area = "Identity", userId = user.Id, code = code, returnUrl = returnUrl },
                         protocol: Request.Scheme);
 
-                    await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
-                        $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                    try
+                    {
+                        await SendEmailAsync(Input.Email, "悅聚房屋帳號確認信箱", $"請點擊下列網址驗證信箱: {callbackUrl}");
+                    }
+                    catch (Exception ex)
+                    {
+                        _logger.LogError($"Failed to send email to {Input.Email}: {ex.Message}");
+                        ModelState.AddModelError(string.Empty, "Error sending confirmation email.");
+                        return Page();
+                    }
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {
@@ -178,6 +190,35 @@ namespace YueJuHousing.Areas.Identity.Pages.Account
 
             // If we got this far, something failed, redisplay form
             return Page();
+        }
+
+        private async Task<bool> SendEmailAsync(string email, string subject, string confirmLink)
+        {
+            try
+            {
+                MailMessage message = new MailMessage();
+                SmtpClient smtpClient = new SmtpClient();
+                message.From = new MailAddress("yuejuhousing@gmail.com");
+                message.To.Add(email);
+                message.Subject = subject;
+                message.Body = confirmLink;
+
+                smtpClient.Port = 587;
+                smtpClient.Host = "smtp.gmail.com";
+
+                smtpClient.EnableSsl = true;
+                smtpClient.UseDefaultCredentials = false;
+                smtpClient.Credentials = new NetworkCredential("yuejuhousing@gmail.com", "efyzjciwtbdzhsml");
+                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtpClient.Send(message);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
         }
 
         private ApplicationUser CreateUser()
