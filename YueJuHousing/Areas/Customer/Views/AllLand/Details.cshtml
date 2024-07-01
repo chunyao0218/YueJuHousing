@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="~/css/_id_.B1cS4VWc.css">
     <link rel="stylesheet" href="~/css/view-statis.BwikEjud.css">
     <link rel="stylesheet" href="~/css/entry.C9l7dSBI.css">
+    <link rel="stylesheet" href="~/css/quick-nav.B8HgXas6.css">
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="~/css/tooplate-style.css">
@@ -44,9 +45,10 @@
                     @Model.AdTitle
                 </h1>
                 <div class="detail-title-info">
-                    <span class="detail-info-span pull-right">有效期：2024-04-27</span>
-                    <span class="detail-info-span">瀏覽人數：1565</span>
-                    <span class="detail-info-span">（<i class="visit-pc"></i>293 &nbsp;&nbsp;|&nbsp;&nbsp; <i class="visit-move"></i>1272）</span>
+                    @*<span class="detail-info-span pull-right">有效期：2024-04-27</span>*@
+                    <span class="detail-info-span">有效期：2024-04-27</span>
+                    </br>
+                    <span class="detail-info-span">瀏覽人數：1565（<i class="visit-pc"></i>293 &nbsp;&nbsp;|&nbsp;&nbsp; <i class="visit-move"></i>1272）</span>
                 </div>
             </div>
             <div class="detail-title-right" style="margin-top: 20px;">
@@ -54,7 +56,6 @@
                     <i class="fa fa-heart-o"></i>
                     <a href="javascript:;">
                         收藏
-                        （4）
                     </a>
                 </div>
 
@@ -77,7 +78,8 @@
     </div>
 
     <div class="top-container" data-v-e642ddf0="">
-        <section class="album-container" data-v-e642ddf0="" data-v-ca00f923="">
+
+        <section class="album-container" data-v-e642ddf0 data-v-ca00f923>
             <div class="album-container-pc" data-v-ca00f923="">
                 <div class="left-container" data-behavior-img="" data-v-ca00f923="">
                     <img data-src="https://img2.591.com.tw/house/2024/03/07/170979627010443500.jpg!1000x.water2.jpg" alt="" data-v-ca00f923="" src="https://img2.591.com.tw/house/2024/03/07/170979627010443500.jpg!1000x.water2.jpg" data-loaded="1" data-visible="1">
@@ -98,6 +100,8 @@
                     </div>
                     <div class="view-more-btn" data-behavior-imglist="" data-v-ca00f923=""><i class="ic-house house-more" data-v-ca00f923=""></i>查看全部15張照片 </div>
             </div>
+
+
             <div class="album-container-touch" data-v-ca00f923="" data-v-c2e97c82="">
                 <div class="swiper swiper-initialized swiper-horizontal" data-v-c2e97c82="">
                     <div class="swiper-wrapper" style="transition-duration: 0ms;">
@@ -148,6 +152,10 @@
                             </div>
                     </div>
                 </div>
+
+              
+
+                
                 <div class="action-bar" data-v-c2e97c82="">
                     <span style="color:#fff;display:inline-block;height:24px;line-height:24px;width:24px;text-align:center;" data-v-c2e97c82="">
                         <svg width="24" height="24" class="icon" viewBox="0 0 1024 1024"><path fill="currentColor" d="M602.266 159.027a38.4 38.4 0 0 1 57.702 50.381l-3.43 3.891-298.701 298.752 298.7 298.65a38.4 38.4 0 0 1 3.431 50.33l-3.43 3.942a38.4 38.4 0 0 1-50.381 3.43l-3.891-3.43-325.837-325.837a38.4 38.4 0 0 1-3.482-50.38l3.533-3.892 325.837-325.837z"></path></svg>
@@ -310,7 +318,7 @@
 
     <section class="detail-house navScroll  detail-font-" data-nav="nav-type-house">
         <div class="detail-house-title triggerOne_show">土<trc></trc>地<trc></trc>介紹</div>
-        <div class="font-size-control">
+        @*<div class="font-size-control">
             <span>調整字體大小：</span>
 
 
@@ -318,75 +326,121 @@
             <div class="font-size-btn font-size-middle font-size-select" google-data-stat="出售_新版列表詳細頁_字體中">中</div>
             <div class="font-size-btn font-size-big" google-data-stat="出售_新版列表詳細頁_字體大">大</div>
 
-        </div>
+        </div>*@
         <div class="detail-house-box">
             <div class="detail-house-name">土<sqftvk></sqftvk><sqftvk></sqftvk>地資料</div>
             <div class="detail-house-content">
                 <div class="detail-house-item">
-                    <div class="detail-house-key"><rsi></rsi>現況</div>
+                    <div class="detail-house-key"><rsi></rsi>地號</div>
                     <span>：</span>
-                    <div class="detail-house-value">住<cdzqdp></cdzqdp>宅</div>
+                    <div class="detail-house-value">@Model.LandSerialNumber</div>
                 </div>
                 <div class="detail-house-item">
-                    <div class="detail-house-key">型態</div>
+                    <div class="detail-house-key">使用分區</div>
                     <span>：</span>
-                    <div class="detail-house-value"><qpuelq></qpuelq>電<qpuelq></qpuelq><qpuelq></qpuelq>梯大樓</div>
+                    <div class="detail-house-value">@Model.LandUseZone-@Model.LandUseZoneType-@Model.LandUseZoneTypeDetail</div>
                 </div>
                 <div class="detail-house-item">
-                    <div class="detail-house-key">裝<qcuaks></qcuaks>潢<qcuaks></qcuaks>程度</div>
+                    <div class="detail-house-key">用<qcuaks></qcuaks>地<qcuaks></qcuaks>類別</div>
                     <span>：</span>
-                    <div class="detail-house-value">簡<w></w>易裝潢</div>
+                    <div class="detail-house-value">@Model.LandType</div>
                 </div>
                 <div class="detail-house-item">
-                    <div class="detail-house-key">管理費</div>
+                    <div class="detail-house-key">土地位置</div>
                     <span>：</span>
-                    <div class="detail-house-value"><i></i>2975元/月</div>
+                    <div class="detail-house-value"><i></i>@Model.Address</div>
                 </div>
                 <div class="detail-house-item">
-                    <div class="detail-house-key">帶租約</div>
+                    <div class="detail-house-key">所有權</div>
                     <span>：</span>
-                    <div class="detail-house-value">否</div>
+                    <div class="detail-house-value">@Model.OwnerShipType</div>
                 </div>
                 <div class="detail-house-item">
-                    <div class="detail-house-key"><nfmhpvv></nfmhpvv>法定用途</div>
+                    <div class="detail-house-key"><nfmhpvv></nfmhpvv>建蔽率</div>
                     <span>：</span>
-                    <div class="detail-house-value"><aw></aw><aw></aw>住家用</div>
+                    <div class="detail-house-value">@Model.BuildingCoverageRate%</div>
                 </div>
                 <div class="detail-house-item">
-                    <div class="detail-house-key">車<knp></knp>位</div>
+                    <div class="detail-house-key">容<knp></knp>積率</div>
                     <span>：</span>
-                    <div class="detail-house-value">9.0<rjydu></rjydu>5坪，<rjydu></rjydu>平面式，<rjydu></rjydu>已含售金內</div>
-                </div>
-                <div class="detail-house-item">
-                    <div class="detail-house-key">公設比</div>
-                    <span>：</span>
-                    <div class="detail-house-value">2<re></re><re></re>9%</div>
+                    <div class="detail-house-value">@Model.BuildingBulkRate%</div>
                 </div>
             </div>
         </div>
 
         <div class="detail-house-box">
-            <div class="detail-house-name">坪<imxu></imxu><imxu></imxu>數說明</div>
+            <div class="detail-house-name">現<imxu></imxu><imxu></imxu>況說明</div>
             <div class="detail-house-content">
                 <div class="detail-house-item">
-                    <div class="detail-house-key">主<ppt></ppt>建物</div>
+                    <div class="detail-house-key">臨路路寬</div>
                     <span>：</span>
-                    <div class="detail-house-value">27.55坪</div>
+                    <div class="detail-house-value">@Model.CloseRoad 米</div>
                 </div>
                 <div class="detail-house-item">
-                    <div class="detail-house-key">共用部分</div>
+                    <div class="detail-house-key">面寬縱深</div>
                     <span>：</span>
-                    <div class="detail-house-value">12.<mllf></mllf>8坪</div>
+                    <div class="detail-house-value">@Model.LandWidth 米*@Model.LandDepth 米</div>
                 </div>
                 <div class="detail-house-item">
-                    <div class="detail-house-key">附屬建物</div>
+                    <div class="detail-house-key">基礎設施</div>
                     <span>：</span>
-                    <div class="detail-house-value">4.2<vtur></vtur>4坪</div>
+                    @if (@Model.HaveElectricity == true && @Model.HaveWater == true && @Model.PathWay == true && @Model.SmoothGround == true)
+                    {
+                        <div class="detail-house-value">有電、有水、通路、地面平整</div>
+
+                        <!--]-->
+                    }
+                    else if (@Model.HaveElectricity == true && @Model.HaveWater == true && @Model.PathWay == true)
+                    {
+                        <div class="detail-house-value">有電、有水、通路</div>
+
+                        <!--]-->
+                    }
+                    else if (@Model.HaveElectricity == true && @Model.HaveWater == true && @Model.SmoothGround == true)
+                    {
+                        <div class="detail-house-value">有電、有水、地面平整</div>
+
+                        <!--]-->
+                    }
+                    else if (@Model.HaveElectricity == true && @Model.PathWay == true && @Model.SmoothGround == true)
+                    {
+                        <div class="detail-house-value">有電、通路、地面平整</div>
+
+                        <!--]-->
+                    }
+                    else if (@Model.HaveWater == true && @Model.PathWay == true && @Model.SmoothGround == true)
+                    {
+                        <div class="detail-house-value">有水、通路、地面平整</div>
+
+                        <!--]-->
+                    }
+                    else if (@Model.HaveElectricity == true && @Model.HaveWater == true)
+                    {
+                        <div class="detail-house-value">有電、有水</div>
+
+                        <!--]-->
+                    }
+                    else if (@Model.HaveElectricity == true)
+                    {
+                        <div class="detail-house-value">有水</div>
+
+                        <!--]-->
+                    }
+                    else if (@Model.SmoothGround == true)
+                    {
+                        <div class="detail-house-value">地面平整</div>
+
+                        <!--]-->
+                    }
+                    else
+                    {
+
+                    }
                 </div>
                 <div class="detail-house-item">
-                    <div class="detail-house-key">土<bzby></bzby>地<bzby></bzby>坪數</div>
+                    <div class="detail-house-key">現況</div>
                     <span>：</span>
-                    <div class="detail-house-value">10.54坪</div>
+                    <div class="detail-house-value">@Model.LandStatus</div>
                 </div>
             </div>
         </div>
@@ -397,7 +451,7 @@
             <div class="detail-house-feature">土地特色</div>
             <div class="detail-feature-content">
                 <div class="detail-feature-text" id="detail-feature-text" style="-moz-user-select:none;user-select:none;" onselectstart="return false;">
-                    <p align="center"><span style="font-size:18px;"><span style="background-color:#ffcccc;">格局方正&nbsp;大房大廳</span></span></p><p align="center"><span style="font-size:18px;"><span style="background-color:#ffcc99;">通風採光佳&nbsp;面中庭環境清幽<br></span></span></p><p align="center"><span style="font-size:18px;"><span style="background-color:#ffff99;">一手持有&nbsp;屋況良好&nbsp;直接入住<br></span></span></p><p align="center"><span style="font-size:18px;"><span style="background-color:#99ffff;">一層兩戶出入單純&nbsp;全天候管理<br></span></span></p><p align="center"><span style="font-size:18px;"><span style="background-color:#ccccff;">鄰近學校上下課便利&nbsp;近公園休閒好去處<br></span></span></p><p align="center"><span style="font-size:18px;"><span style="background-color:#ffccff;">佳瑪商圈&nbsp;黃昏市場&nbsp;生活機能方便</span></span><br></p><p align="center"><span style="font-size:18px;"><span style="background-color:#ffccff;"></span></span></p><br><br><span style="font-family:&quot;"><span style="color:#333333;">蘆洲在新莊副都心、士林北投科技園區、五股洪水平原，3大產業專區的包圍下，內有捷運蘆洲線、環狀線、台64快速道路作為交通動脈，市區劃分為4大重劃區、2大都更特區正準備全面翻新，再加上蘆洲運動中心已完工開始營運。未來「三環三線」整個捷運系統完成後，蘆洲的發展潛力會更驚人。此外還計畫在三蘆地區設立大型醫院，對於蘆洲地區的地方建設與發展投入大量的利多。<br>&nbsp;o &nbsp;&nbsp;&nbsp;台64快速道路串起3條快速道路、2條高速公路、3個新北市重要策略發展區(新板特區、新莊副都心、台北港特定區)&nbsp;</span></span><br><br><span style="font-family:&quot;"><span style="color:#333333;">o &nbsp;&nbsp;</span></span><span style="font-family:&quot;"><span style="color:#333333;">捷運蘆洲線通車，從捷運蘆洲站到忠孝新生站只需要19分鐘，大幅縮短蘆洲通勤至北市的時間&nbsp;</span></span><br><br><span style="font-family:&quot;"><span style="color:#333333;">o &nbsp;&nbsp;</span></span><span style="font-family:&quot;"><span style="color:#333333;">機場捷運先導公車~90分鐘立即到達機場，是新北與桃園之間第1條結合捷運與快速公車性質路線，沿途各站旅客前往機場，或回國民眾轉乘捷運蘆洲線、新莊線至大台北地區都很方便</span></span><br><br><span style="font-family:&quot;"><span style="color:#333333;">&nbsp;</span></span><span style="font-family:&quot;"><span style="color:#333333;">俗話說「地段地段地段」蘆洲發展潛力無窮要買在對的地段坐享房價增值</span></span><br><br><span style="font-family:&quot;"><span style="color:#333333;">*&nbsp;*&nbsp;*&nbsp;</span></span><span style="font-family:&quot;"><span style="color:#333333;">全&nbsp;國&nbsp;不&nbsp;動&nbsp;產&nbsp;*&nbsp;*&nbsp;*&nbsp;&nbsp;&nbsp;蘆洲捷運總站加盟店&nbsp;<br>立信不動產經紀有限公司&nbsp;<br>經紀人鐘振志&nbsp;(105)北市經證字第02342號</span></span>
+                    @Model.FeatureDescribe
                 </div>
                 <div class="detail-feature-more" google-data-stat="出售_新版列表詳細頁_查看更多內容" style="display: block;">查看更多內容</div>
             </div>
@@ -829,3 +883,4 @@
 <script src="~/js/owl.carousel.min.js"></script>
 <script src="~/js/custom.js"></script>
 <script src="~/js/index.js"></script>
+<script src="~/js/ImageViewer.js"></script>

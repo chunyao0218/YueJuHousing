@@ -1575,7 +1575,7 @@
 @media only screen and (min-width: 850px) {
     .main-info-container[data-v-5646250c] {
         border-bottom: 1px solid #e6e6e6;
-        min-width: 526px;
+        min-width: 100%;
         padding: 36px 0 38px
     }
 }

@@ -2027,9 +2027,36 @@ iframe:fullscreen {
     width: 1200px
 }
 
-@media only screen and ( max-width: 1190px) {
+@media only screen and (min-width: 1200px) {
     .detail-title {
-        width: 1000px
+        margin-top: 30px;
+        margin-bottom: 10px;
+        display: inline-block;
+        width: 1170px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .detail-title {
+        margin-top: 30px;
+        margin-bottom: 10px;
+        display: inline-block;
+        width: 970px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .detail-title {
+        margin-top: 30px;
+        margin-bottom: 10px;
+        display: inline-block;
+        width: 1170px;
+    }
+}
+
+@media only screen and (max-width: 1190px) {
+    .detail-title {
+        width: 100%;
     }
 }
 
@@ -2046,7 +2073,7 @@ iframe:fullscreen {
 
 @media screen and (max-width: 1190px) {
     .detail-title .detail-title-left {
-        width: 646px
+        width: 100%
     }
 }
 
@@ -2095,11 +2122,37 @@ iframe:fullscreen {
     margin-top: 8px
 }
 
+
+@media only screen and (min-width: 1200px) {
+    .detail-title .detail-title-right {
+        position: relative;
+        float: right;
+        margin-top: 8px
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .detail-title .detail-title-right {
+        position: relative;
+        float: right;
+        margin-top: 8px
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .detail-title .detail-title-right {
+        position: relative;
+        float: right;
+        margin-top: 8px
+    }
+}
+
+
     .detail-title .detail-title-right .detail-title-func {
         font-size: 14px;
         color: #4c4c4c;
         float: left;
-        margin-left: 30px;
+        margin-left: 12px;
         cursor: pointer;
         position: relative
     }
@@ -3644,7 +3697,7 @@ iframe:fullscreen {
 
 @media only screen and ( max-width: 1190px) {
     .detail-house {
-        width: 1000px;
+        width: 100%;
         padding: 30px
     }
 }
@@ -3672,7 +3725,7 @@ iframe:fullscreen {
 
 @media only screen and ( max-width: 1190px) {
     .detail-house .detail-house-box .detail-house-name {
-        margin-right: 80px
+        margin-right: 20px
     }
 }
 
@@ -3835,12 +3888,12 @@ iframe:fullscreen {
 
 @media only screen and ( max-width: 1190px) {
     .detail-house .detail-feature-box .detail-house-feature {
-        margin-right: 80px
+        margin-right: 20px
     }
 }
 
 .detail-house .detail-feature-box .detail-feature-content {
-    margin-right: 100px;
+    margin-right: 50px;
     margin-left: 165px;
     font-size: 16px
 }
