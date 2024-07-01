@@ -9,12 +9,14 @@
 
   <ItemGroup>
     <Content Remove="wwwroot\js\house.js" />
+    <Content Remove="wwwroot\js\ImageViewer.js" />
     <Content Remove="wwwroot\js\land.js" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="wwwroot\js\land.js" />
     <None Include="wwwroot\js\house.js" />
+    <None Include="wwwroot\js\ImageViewer.js" />
     <None Include="wwwroot\js\site.js" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
