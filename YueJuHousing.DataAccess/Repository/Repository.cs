@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using YueJuHousing.DataAccess.Data;
 using YueJuHousing.DataAccess.Repository.IRepository;
+using YueJuHousing.Models;
 
 namespace YueJuHousing.DataAccess.Repository
 {
@@ -64,6 +65,11 @@ namespace YueJuHousing.DataAccess.Repository
         public void RemoveRange(IEnumerable<T> entity)
         {
             dbSet.RemoveRange(entity);
+        }
+
+        public IEnumerable<Land> GetLandsByUserId(string userId)
+        {
+            return _db.Lands.Where(l => l.UserId == userId).ToList();
         }
     }
 }

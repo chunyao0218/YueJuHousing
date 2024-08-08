@@ -11,5 +11,6 @@ namespace YueJuHousing.DataAccess.Repository.IRepository
     {
         void Update(Land obj);
         //void Save();
+        IEnumerable<Land> GetLandsByUserId(string userId);
     }
 }
