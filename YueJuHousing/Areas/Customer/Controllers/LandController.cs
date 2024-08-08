@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.Reflection.Metadata;
 using YueJuHousing.DataAccess.Data;
@@ -17,17 +19,23 @@ namespace YueJuHousing.Areas.Customer.Controllers
         //private readonly ICategoryRepository _categoryRepo;
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly UserManager<IdentityUser> _userManager;
         //private readonly ApplicationDbContext _db;
-        public LandController(IUnitOfWork unitOfWork, IWebHostEnvironment webHostEnvironment)
+        public LandController(IUnitOfWork unitOfWork, IWebHostEnvironment webHostEnvironment, UserManager<IdentityUser> userManager)
         {
             _unitOfWork = unitOfWork;
             _webHostEnvironment = webHostEnvironment;
+            _userManager = userManager;
         }
 
         public IActionResult Index()
         {
-            List<Land> objCategoryList = _unitOfWork.Land.GetAll().ToList();
-            return View(objCategoryList);
+            // 設定目前登入者的 UserId
+            var userId = _userManager.GetUserId(User);
+
+            IEnumerable<Land> landList = _unitOfWork.Land.GetLandsByUserId(userId);
+            //List<Land> objCategoryList = _unitOfWork.Land.GetAll().ToList();
+            return View(landList);
         }
 
         public IActionResult Upsert(int? id)
@@ -56,7 +64,6 @@ namespace YueJuHousing.Areas.Customer.Controllers
         }
 
         [HttpPost]
-        // 本次修改部分
         public IActionResult Upsert(LandVM landVM, List<IFormFile> files)
         {
             if (ModelState.IsValid)
@@ -129,9 +136,14 @@ namespace YueJuHousing.Areas.Customer.Controllers
                     }
                 }
 
+                // 設定目前登入者的 UserId
+                var userId = _userManager.GetUserId(User);
+                landVM.Land.UserId = userId;
 
                 if (landVM.Land.Id == 0)
                 {
+                    // to do
+                    landVM.Land.CreateDate = DateTime.Now;
                     _unitOfWork.Land.Add(landVM.Land);
                 }
                 else
@@ -149,6 +161,13 @@ namespace YueJuHousing.Areas.Customer.Controllers
                     Text = u.Name,
                     Value = u.Id.ToString()
                 });
+
+                // 檢查 ModelState 中的錯誤
+                var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList();
+                foreach (var error in errors)
+                {
+                    Console.WriteLine(error); // 或者使用其他方式輸出錯誤信息
+                }
                 return View(landVM);
             }
         }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using YueJuHousing.DataAccess.Data;
 
@@ -11,9 +12,11 @@ using YueJuHousing.DataAccess.Data;
 namespace YueJuHousing.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240804053601_addLandsUserId")]
+    partial class addLandsUserId
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -771,9 +774,6 @@ namespace YueJuHousing.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<double>("EachSquarePrice")
                         .HasColumnType("float");
 
@@ -876,9 +876,6 @@ namespace YueJuHousing.DataAccess.Migrations
                     b.Property<double>("MaximumHeightRestriction")
                         .HasColumnType("float");
 
-                    b.Property<DateTime>("ModifyDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<bool>("NoIntermediaryDisturb")
                         .HasColumnType("bit");
 
@@ -961,7 +958,6 @@ namespace YueJuHousing.DataAccess.Migrations
                             CloseRoad = 15.0,
                             ContactPeopleName = "陳小明",
                             ContactPeopleType = "屋主",
-                            CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EachSquarePrice = 100.0,
                             Email = "kevin87332000@gmail.com",
                             Factory = false,
@@ -990,7 +986,6 @@ namespace YueJuHousing.DataAccess.Migrations
                             LandWidth = 15.0,
                             LineID = "h12s12bs",
                             MaximumHeightRestriction = 30.0,
-                            ModifyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             NoIntermediaryDisturb = true,
                             OpenStore = false,
                             OwnerShipType = "民有土地",
@@ -1024,7 +1019,6 @@ namespace YueJuHousing.DataAccess.Migrations
                             CloseRoad = 15.0,
                             ContactPeopleName = "陳小明",
                             ContactPeopleType = "屋主",
-                            CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EachSquarePrice = 100.0,
                             Email = "kevin87332000@gmail.com",
                             Factory = false,
@@ -1053,7 +1047,6 @@ namespace YueJuHousing.DataAccess.Migrations
                             LandWidth = 15.0,
                             LineID = "h12s12bs",
                             MaximumHeightRestriction = 30.0,
-                            ModifyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             NoIntermediaryDisturb = true,
                             OpenStore = false,
                             OwnerShipType = "民有土地",
@@ -1087,7 +1080,6 @@ namespace YueJuHousing.DataAccess.Migrations
                             CloseRoad = 15.0,
                             ContactPeopleName = "陳小明",
                             ContactPeopleType = "屋主",
-                            CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EachSquarePrice = 100.0,
                             Email = "kevin87332000@gmail.com",
                             Factory = false,
@@ -1116,7 +1108,6 @@ namespace YueJuHousing.DataAccess.Migrations
                             LandWidth = 15.0,
                             LineID = "h12s12bs",
                             MaximumHeightRestriction = 30.0,
-                            ModifyDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             NoIntermediaryDisturb = true,
                             OpenStore = false,
                             OwnerShipType = "民有土地",

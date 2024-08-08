@@ -199,8 +199,14 @@ namespace YueJuHousing.Models
         [Required]
         public string ProtectPhone { get; set; }
 
+        [ValidateNever]
+        public string UserId { get; set; }
 
+        [ValidateNever]
+        public DateTime CreateDate { get; set; }
 
+        [ValidateNever]
+        public DateTime ModifyDate { get; set; }
 
         //[DisplayName("類別:")]
         //public int CategoryId { get; set; }
@@ -209,6 +215,6 @@ namespace YueJuHousing.Models
         //[ValidateNever]
         //public Category Category { get; set; }
 
-        
+
     }
 }
