@@ -9071,7 +9071,8 @@
         margin-right: 4px;
         background-size: cover;
         vertical-align: sub;
-        border-radius: 50%
+        border-radius: 50%;
+        background-image: url(../images/NoPeopleImage.jpg);
     }
 
     .houseList-item-user-row .split-line {
@@ -9213,1093 +9214,802 @@
             font-weight: bold
         }
 
-.houseList-item-right {
-    font-size: 14px;
-    position: relative;
-    padding-top: 72px;
-    padding-right: 5px;
-    color: #999
-}
-
-.houseList-item-down {
-    position: absolute;
-    top: 42px;
-    right: 0;
-    height: 20px;
-    font-size: 12px;
-    font-weight: 700;
-    text-align: left;
-    color: #fff;
-    padding: 0 4px;
-    background: #36b324;
-    display: flex;
-    align-items: center;
-    border-radius: 4px;
-    white-space: nowrap
-}
-
-    .houseList-item-down .icon-down-price {
-        height: 16px;
-        width: 16px;
-        margin-right: 2px;
-        display: inline-block;
-        background: url(../images/icon-down-price.png) no-repeat;
-        background-size: contain
-    }
-
-.houseList-item-price {
-    font-size: 14px;
-    margin-bottom: 6px;
-    color: #f01800
-}
-
-    .houseList-item-price em {
-        font-size: 26px;
-        font-weight: bold
-    }
-
-@media screen and (max-width: 1200px) {
-    .houseList-item-price em {
-        font-size: 24px
-    }
-}
-
-.houseList-item-unitprice, .houseList-item-original_price {
-    color: #666;
-    font-size: 14px;
-    margin-bottom: 5px
-}
-
-.houseList-item-has-carport {
-    color: #ff2a00;
-    font-size: 14px;
-    margin-bottom: 5px
-}
-
-.houseList-item-original_price {
-    text-decoration: line-through
-}
-
-.houseList-item-collect {
-    position: absolute;
-    top: 21px;
-    right: 21px;
-    display: none;
-    width: 30px;
-    height: 26px;
-    cursor: default;
-    cursor: pointer;
-    background: url(../images/heart-o.png) center no-repeat
-}
-
-.houseList-item .isShoucang .houseList-item-collect {
-    display: none;
-    background-image: url(../images/heart.png)
-}
-
-.houseList-item.z-housing {
-    overflow: hidden
-}
-
-    .houseList-item.z-housing .houseList-item-phone-num {
-        position: absolute;
-        right: 9px;
-        bottom: 7px;
-        height: 20px;
-        line-height: 20px;
-        font-size: 12px;
-        padding: 0 5px;
-        background: rgba(0,0,0,.5);
-        border-radius: 2px;
-        color: #fff
-    }
-
-    .houseList-item.z-housing .houseList-item-right {
-        padding-top: 48px
-    }
-
-@media screen and (max-width: 1200px) {
-    .houseList-item.z-housing .houseList-item-right {
-        padding-top: 40px
-    }
-}
-
-.houseList-item.z-housing .houseList-item-phone {
-    position: absolute;
-    right: 0;
-    bottom: 82px;
-    color: #333;
-    font-weight: bolder;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    font-size: 18px
-}
-
-    .houseList-item.z-housing .houseList-item-phone.is-low {
-        right: 0;
-        bottom: 100px
-    }
-
-    .houseList-item.z-housing .houseList-item-phone .house-phone-icon {
-        width: 23px;
-        height: 24px;
-        background: url(../images/house-phone.png) no-repeat;
-        background-size: contain
-    }
-
-.houseList-item.z-housing .houseList-item-tags-item.z-green {
-    color: #24b39b;
-    background: #f2fffd
-}
-
-.houseList-item.z-housing .houseList-item-tags-item.z-orange {
-    color: #ff8000;
-    background: #fff6eb
-}
-
-.houseList-item.z-housing .houseList-item-tags-item.z-blue {
-    color: #006aff;
-    background: #f2f8ff
-}
-
-.houseList-item.z-housing .houseList-item-unit-price {
-    color: #666;
-    font-size: 12px;
-    margin-bottom: 5px
-}
-
-.houseList-item.z-housing .houseList-item-right.z-all-exist {
-    padding-top: 30px
-}
-
-.houseList-item.z-housing .houseList-item-address-row {
-    margin-bottom: 57px
-}
-
-.houseList-item.z-has-distance .houseList-item-user-row {
-    margin-bottom: 15px
-}
-
-.houseList-item.z-housing.z-hascompany .houseList-item-address-row {
-    margin-bottom: 13px
-}
-
-.houseList-item.z-housing.z-hascompany .houseList-item-company-row {
-    margin-bottom: 25px
-}
-
-.houseList-item.goodhouse-banner {
-    height: 200px;
-    border-top: 2px solid #eee;
-    border-bottom-width: 3px;
-    background-color: skyblue
-}
-
-.houseList-traded-item {
-    line-height: 50px;
-    height: 50px;
-    cursor: pointer;
-    border-bottom: 1px solid #eee
-}
-
-    .houseList-traded-item:hover {
-        background: #f7f7f7
-    }
-
-.houseList-traded-item-section {
-    font-size: 15px;
-    width: 120px;
-    color: #333
-}
-
-@media screen and (max-width: 1200px) {
-    .houseList-traded-item-section {
-        font-size: 14px;
-        width: 110px
-    }
-}
-
-.houseList-traded-item-title {
-    overflow: hidden;
-    white-space: nowrap;
-    flex: 1
-}
-
-    .houseList-traded-item-title a {
-        color: #04d
-    }
-
-        .houseList-traded-item-title a:hover {
-            text-decoration: underline
-        }
-
-        .houseList-traded-item-title a:visited {
-            color: #3d80bb
-        }
-
-    .houseList-traded-item-title span {
-        font-size: 13px;
-        line-height: 1;
-        display: inline-block;
-        padding: 2px 4px;
-        color: #fff;
-        border-radius: 2px;
-        background: #f83d3d
-    }
-
-        .houseList-traded-item-title span.z-slow {
-            background: #519e30
-        }
-
-.houseList-traded-item-area {
-    width: 130px
-}
-
-@media screen and (max-width: 1200px) {
-    .houseList-traded-item-area {
-        width: 110px
-    }
-}
-
-.houseList-traded-item-price {
-    width: 130px
-}
-
-@media screen and (max-width: 1200px) {
-    .houseList-traded-item-price {
-        width: 110px
-    }
-}
-
-.houseList-traded-item-price em {
-    font-weight: bold;
-    color: #e60012
-}
-
-.houseList-traded-item-browse {
-    width: 90px;
-    color: #888
-}
-
-@media screen and (max-width: 1200px) {
-    .houseList-traded-item-browse {
-        width: 80px
-    }
-}
-
-.houseList-traded-item-day {
-    width: 100px;
-    color: #119393
-}
-
-@media screen and (max-width: 1200px) {
-    .houseList-traded-item-day {
-        width: 80px
-    }
-}
-
-.houseList-traded-item-day.z-yesterday {
-    color: #008401
-}
-
-.houseList-traded-item-day.z-today {
-    color: #f06
-}
-
-.houseList.z-fetch {
-    opacity: .6
-}
-
-.houseList.z-kind-8 .houseList-order-more .houseage_asc, .houseList.z-kind-8 .houseList-order-more .houseage_desc, .houseList.z-shType-oversea .houseList-order-more .houseage_asc, .houseList.z-shType-oversea .houseList-order-more .houseage_desc {
-    display: none
-}
-
-.houseList .houseList-bid-broker-row {
-    margin-bottom: 14px;
-    margin-left: 12px;
-    display: flex;
-    max-width: 367px;
-    height: 26px;
-    background: linear-gradient(90deg, #ffe8a9 0%, rgba(255, 246, 210, 0.72) 73%, rgba(255, 246, 210, 0.2) 100%)
-}
-
-    .houseList .houseList-bid-broker-row .houseList-bid-broker-left {
-        display: flex;
-        align-items: center;
-        position: relative;
-        flex: none;
-        height: 26px;
-        padding-left: 24px
-    }
-
-        .houseList .houseList-bid-broker-row .houseList-bid-broker-left .bid-broker-left-avatar {
-            position: absolute;
-            top: -3px;
-            left: -12px;
-            display: inline-block;
-            width: 28px;
-            height: 32px;
-            background: url("../images/gold-broker-avatar-bg.png") no-repeat;
-            background-size: contain;
-            z-index: 2
-        }
-
-            .houseList .houseList-bid-broker-row .houseList-bid-broker-left .bid-broker-left-avatar img {
-                position: absolute;
-                top: 3px;
-                left: 3px;
-                width: 22px;
-                height: 25px;
-                -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-                -o-object-fit: cover;
-                object-fit: cover;
-                -o-object-position: top;
-                object-position: top
-            }
-
-        .houseList .houseList-bid-broker-row .houseList-bid-broker-left .bid-broker-left-title {
-            position: relative;
-            top: 1px;
-            font-size: 14px;
-            background-image: linear-gradient(164deg, #8d5918 15%, #542d0a 99%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: rgba(0,0,0,0)
-        }
-
-        .houseList .houseList-bid-broker-row .houseList-bid-broker-left .bid-broker-left-name {
-            position: relative;
-            top: 1px;
-            margin-left: 3px;
-            font-size: 14px;
-            font-weight: bold;
-            color: #6f4822
-        }
-
-        .houseList .houseList-bid-broker-row .houseList-bid-broker-left .icon-gold-broker {
-            display: inline-block;
-            margin-left: 1px;
-            width: 20px;
-            height: 20px;
-            background: url("../images/gold-broker-icon.png") no-repeat;
-            background-size: contain
-        }
-
-    .houseList .houseList-bid-broker-row .houseList-bid-broker-right {
-        flex: 1;
-        margin-left: 23px;
-        height: 26px;
-        line-height: 27px;
-        font-size: 14px;
-        color: #845124;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap
-    }
-
-.pages {
-    margin: 28px 0;
-    cursor: default;
-    text-align: center
-}
-
-    .pages > a, .pages > span {
-        line-height: 32px;
-        display: inline-block;
-        height: 32px;
-        margin-right: 8px;
-        padding: 0 12px;
-        border-radius: 4px
-    }
-
-    .pages .pageNum-form, .pages .pagePrev, .pages .pageNext {
-        color: #333;
-        cursor: pointer;
-        background: #f5f5f5
-    }
-
-        .pages .pageNum-form:hover, .pages .pagePrev:hover, .pages .pageNext:hover {
-            background: #e6e6e6
-        }
-
-        .pages .pagePrev.first, .pages .pageNext.last {
-            cursor: not-allowed;
-            color: #ccc;
-            background: #f5f5f5
-        }
-
-            .pages .pagePrev.first:hover, .pages .pageNext.last:hover {
-                background: #f5f5f5
-            }
-
-    .pages .pageCurrent {
-        color: #fff;
-        background: #ff8000
-    }
-
-.noHouse-tips {
-    margin: 90px 0;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    justify-content: center
-}
-
-.noHouse-tips-left {
-    width: 360px;
-    height: 204px;
-    background: url(../images/noInfoTips.png?20231114) no-repeat;
-    background-size: contain
-}
-
-.noHouse-tips-right {
-    margin-left: 28px
-}
-
-    .noHouse-tips-right .clear-btn {
-        width: 108px;
-        margin-top: 20px;
-        display: flex;
-        align-items: center;
-        padding: 0 15px;
-        color: #fff;
-        height: 32px;
-        background: #ff8000;
-        border-radius: 4px;
-        font-size: 14px;
-        font-weight: bold;
-        cursor: pointer
-    }
-
-        .noHouse-tips-right .clear-btn .icon-clear-white {
-            margin-right: 2px;
-            height: 20px;
-            width: 20px;
-            background: url(../images/icon-clear-white.png) no-repeat;
-            background-size: contain
-        }
-
-        .noHouse-tips-right .clear-btn:hover {
-            background: #ff9326
-        }
-
-        .noHouse-tips-right .clear-btn:active {
-            background: #f06800
-        }
-
-.noHouse-tips-right-new {
-    text-align: left
-}
-
-    .noHouse-tips-right-new .filter-options {
-        padding-left: 0
-    }
-
-    .noHouse-tips-right-new .noHouse-tips-try {
-        font-weight: bold
-    }
-
-    .noHouse-tips-right-new .noHouse-tips-title {
-        font-size: 16px;
-        font-weight: bold;
-        color: #333;
-        padding-bottom: 12px
-    }
-
-        .noHouse-tips-right-new .noHouse-tips-title.with-community {
-            position: absolute;
-            top: 0;
-            left: 0;
-            margin-top: 24px;
-            font-weight: normal;
-            font-size: 20px;
-            color: #999
-        }
-
-        .noHouse-tips-right-new .noHouse-tips-title span {
-            color: #ff9701
-        }
-
-    .noHouse-tips-right-new .broker-entrust {
-        margin-top: -8px;
-        padding-bottom: 12px
-    }
-
-    .noHouse-tips-right-new .broker-entrust-title {
-        margin-top: 30px;
-        font-size: 20px;
-        height: 26px;
-        line-height: 26px;
-        color: #333
-    }
-
-    .noHouse-tips-right-new .broker-entrust-btn {
-        margin-top: 16px;
-        width: 96px;
-        height: 44px;
-        background: #ff8000;
-        border-radius: 4px;
-        font-size: 16px;
-        line-height: 44px;
-        font-weight: bold;
-        text-align: center;
-        color: #fff;
-        cursor: pointer
-    }
-
-        .noHouse-tips-right-new .broker-entrust-btn:hover {
-            background: #ff9326
-        }
-
-    .noHouse-tips-right-new .noHouse-tips-list {
-        color: #4a4a4a
-    }
-
-        .noHouse-tips-right-new .noHouse-tips-list a {
-            color: #006aff
-        }
-
-            .noHouse-tips-right-new .noHouse-tips-list a:hover {
-                text-decoration: underline
-            }
-
-    .noHouse-tips-right-new .feedback-button {
-        color: #333;
-        cursor: pointer;
-        text-decoration: underline
-    }
-
-.noHouse-tips-right-new {
-    text-align: left
-}
-
-    .noHouse-tips-right-new .filter-options {
-        padding-left: 0
-    }
-
-    .noHouse-tips-right-new .noHouse-tips-title {
-        font-size: 16px;
-        font-weight: bold;
-        color: #222;
-        padding-bottom: 12px
-    }
-
-        .noHouse-tips-right-new .noHouse-tips-title.with-community {
-            font-size: 20px
-        }
-
-        .noHouse-tips-right-new .noHouse-tips-title span {
-            color: #ff9701
-        }
-
-            .noHouse-tips-right-new .noHouse-tips-title span em {
-                color: #222
-            }
-
-.noHouse-tips-tips {
-    margin-bottom: 10px;
-    color: gray
-}
-
-.side_tool_wrap {
-    z-index: 99999
-}
-
-.record-body {
-    z-index: 99999
-}
-
-.gad_Top img, .gad_a img, .gad_b img, .gad_c img, .gad_Foot img {
-    width: 100%;
-    height: auto
-}
-
-.gad_a img, .gad_b img, .gad_c img {
-    display: block;
-    height: 320px
-}
-
-@media screen and (max-width: 1200px) {
-    .gad_a img, .gad_b img, .gad_c img {
-        height: 260px
-    }
-}
-
-#UNION_17 img {
-    border-radius: 8px;
-    margin-top: 16px
-}
-
-.union18 img {
-    margin-bottom: 16px;
-    border-radius: 8px
-}
-
-.vr-style {
-    position: absolute;
-    pointer-events: auto;
-    border-radius: 100%;
-    background: #fff;
-    display: flex
-}
-
-.vr-spinning {
-    animation: spinning 2s infinite linear
-}
-
-.vr-spinning-reverse {
-    animation: spinning-reverse 2s infinite linear
-}
-
-@keyframes spinning {
-    0% {
-        transform: rotate(0deg)
-    }
-
-    100% {
-        transform: rotate(359deg)
-    }
-}
-
-@keyframes spinning-reverse {
-    0% {
-        transform: rotate(359deg)
-    }
-
-    100% {
-        transform: rotate(0deg)
-    }
-}
-
-.vr-annulus {
-    width: 25px;
-    height: 39px;
-    left: 9px;
-    top: 2px;
-    background-color: rgba(0,0,0,0);
-    border: 2px solid #fff;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    padding: 0;
-    animation-iteration-count: infinite;
-    z-index: 5;
-    pointer-events: auto;
-    animation-duration: 5s;
-    animation-fill-mode: backwards
-}
-
-.vr-auto {
-    width: 25px;
-    height: 25px;
-    left: 10px;
-    top: 10px;
-    transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    font-size: 12px;
-    padding: 3px;
-    text-align: center;
-    line-height: 20px;
-    font-weight: bold;
-    font-style: normal;
-    z-index: 5;
-    opacity: 1;
-    pointer-events: auto;
-    color: #000
-}
-
-.vr-icon {
-    width: 45px;
-    height: 45px;
-    background: rgba(0,0,0,.5);
-    border-radius: 23px;
-    position: absolute;
-    top: 70px;
-    left: 100px
-}
-
-@media screen and (max-width: 1200px) {
-    .vr-icon {
-        top: 45px;
-        left: 67px
-    }
-}
-
-.bid-banner {
-    width: 100%;
-    margin-top: 15px;
-    height: 90px;
-    background: url(../images/bid_banner.png) no-repeat;
-    background-size: cover;
-    position: relative
-}
-
-@media screen and (max-width: 1200px) {
-    .bid-banner {
-        height: 70px
-    }
-}
-
-.bid-banner a {
-    display: block;
-    position: absolute;
-    width: 198px;
-    height: 43px;
-    right: 27px;
-    top: 23px;
-    cursor: pointer
-}
-
-@media screen and (max-width: 1200px) {
-    .bid-banner a {
-        width: 166px;
-        height: 35px;
-        right: 23px;
-        top: 20px
-    }
-}
-
-.video-banner {
-    display: block;
-    width: 100%;
-    position: relative;
-    margin: 20px 0
-}
-
-    .video-banner img {
-        width: 100%
-    }
-
-@media screen and (max-width: 1200px) {
-    .video-banner {
-        height: 118px
-    }
-}
-
-.video-banner .close-video-banner {
-    display: block;
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 10px;
-    right: 11px
-}
-
-
-
-
-/* Common styles for both desktop and mobile */
-.houseList-item {
-    /* Add any common styles here */
-}
-
-.houseList-item-left,
-.houseList-item-right,
-.houseList-item-main {
-    /* Adjust these styles based on your layout needs */
-}
-
-
-.houseList-item-thumb {
-    width: 100%; /* Make the image full width on smaller screens */
-    height: auto; /* Maintain aspect ratio */
-}
-
-.houseList-item-phone {
-    display: none; /* Hide the phone number on mobile */
-}
-
-.houseList-prive-main {
-    width: 100%;
-    box-sizing: border-box;
-    font-size: 14px;
-    position: relative;
-    padding-top: 5px;
-    padding-right: 5px;
-    color: #999;
-    display: none;
-}
-
-.houseList-item-attr-row-mobile {
-    display: none;
-}
-
-.houseList-item-title-label-mobile.z-good-house-mobile {
-    display: none;
-    width: 61px;
-    height: 22px;
-    background: url(../images/good-house.png) no-repeat;
-    background-size: contain;
-    padding: 0;
-}
-
-
-
-/* Media query for mobile devices  列表 */
-
-@media screen and (max-width: 997px) {
-    .houseList-item-left .relative {
-        width: 248px;
-        height: 188px;
-    }
-
-    .houseList-item-photonum {
-        font-size: 12px;
-        position: absolute;
-        z-index: 1;
-        right: 1px;
-        bottom: 1px;
-        width: 38px;
-        height: 20px;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(0,0,0,.5);
-        border-radius: 2px;
-    }
-    .houseList-prive-main {
-        width: 100%;
-        box-sizing: border-box;
-        font-size: 14px;
-        position: relative;
-        padding-top: 5px;
-        padding-right: 5px;
-        color: #999;
-        display: none;
-    }
-
-    .houseList-item-attr-row-mobile {
-        display: none;
-    }
-
-    .houseList-item-title-label-mobile.z-good-house-mobile {
-        display: none;
-        width: 61px;
-        height: 22px;
-        background: url(../images/good-house.png) no-repeat;
-        background-size: contain;
-        padding: 0;
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    .houseList-item-left {
-        width: 0%; /* Make the elements full width on smaller screens */
-        box-sizing: border-box; /* Include padding and border in element's total width */
-    }
-
-
-
-    .houseList-item-right {
-        width: 15%; /* Make the elements full width on smaller screens */
-        box-sizing: border-box; /* Include padding and border in element's total width */
-    }
-
-
-
-    .houseList-item-main {
-        width: 85%; /* Make the elements full width on smaller screens */
-        box-sizing: border-box; /* Include padding and border in element's total width */
-    }
-
-
-
-    .houseList-item-price {
-        width: 100%; /* Make the elements full width on smaller screens */
-        box-sizing: border-box; /* Include padding and border in element's total width */
-    }
-
-
-
-    .houseList-item-main {
-        padding-left: 180px;
-        font-size: 14px;
-    }
-
-
-
-    .houseList-item-left .relative {
-        width: 162px;
-        height: 153px;
-    }
-
-
-
-    .houseList-item-title a {
-        font-size: 14px;
-    }
-
-
-    .houseList-item-photonum {
-        font-size: 12px;
-        position: absolute;
-        z-index: 1;
-        right: 0px;
-        bottom: 25px;
-        width: 38px;
-        height: 20px;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(0,0,0,.5);
-        border-radius: 2px;
-    }
-
-
-
-    .houseList-item-title {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        margin-bottom: 6px;
-        line-height: 32px;
-    }
-
-    .houseList-item-price em {
-        font-size: 18px;
-    }
-
-
-
-    .houseList-item-has-carport {
-        color: #ff2a00;
-        font-size: 12px;
-        margin-bottom: 5px;
-    }
-
-
-    .houseList-item-unitprice, .houseList-item-original_price {
-        color: #666;
-        font-size: 12px;
-        margin-bottom: 5px;
-    }
-
-
-    .houseList-item-attr-row, .houseList-item-address-row, .houseList-item-user-row, .houseList-item-company-row, .houseList-item-distance-row {
-        display: flex;
-        align-items: center;
-        line-height: 20px;
-        flex-wrap: wrap;
-        margin-bottom: 10px;
-        font-size: 12px;
-    }
-
-
-    .houseList-item-user-row {
-        margin-bottom: 15px;
-        display: none;
-    }
-
-    /* Hide unnecessary information */
-    .houseList-item-attrs-shape,
-    .houseList-item-community,
-    .houseList-item-has-carport {
-        display: none;
-    }
-
-    /* Adjust property area */
-    .houseList-item-attrs-area::before {
-        content: "";
-    }
-
-    /* Move price information to the bottom */
-    .houseList-item-price {
-        order: 1;
-    }
-
-    /* Adjust font size */
-    .houseList-item-title a {
-        font-size: 14px;
-    }
-
-    .houseList-item-has-carport,
-    .houseList-item-unitprice {
-        font-size: 12px;
-    }
-
-    /* Add spacing */
-    .houseList-item-unitprice {
-        margin-top: 5px;
-    }
-
-    .houseList-prive-main {
-        width: 100%;
-        box-sizing: border-box;
-        font-size: 14px;
-        position: relative;
-        padding-top: 5px;
-        padding-right: 5px;
-        color: #999;
-        display:none;
-    }
-    .houseList-item-attr-row-mobile {
-        display:none;
-    }
-
-    .houseList-item-title-label-mobile.z-good-house-mobile {
-        display: none;
-        width: 61px;
-        height: 22px;
-        background: url(../images/good-house.png) no-repeat;
-        background-size: contain;
-        padding: 0;
-    }
-}
-
-@media only screen and (max-width: 611px) {
-
-    .houseList-item-title-label.z-good-house {
-        display: none;
-        width: 61px;
-        height: 22px;
-        background: url(../images/good-house.png) no-repeat;
-        background-size: contain;
-        padding: 0;
-    }
-
-    .houseList-item-title-label-mobile.z-good-house-mobile {
-        display: inline-block;
-        width: 61px;
-        height: 22px;
-        background: url(../images/good-house.png) no-repeat;
-        background-size: contain;
-        padding: 0;
-    }
-
-    .houseList-item-title-label {
-        height: 22px;
-        border-radius: 2px;
-        line-height: 22px;
-        margin-left: 8px;
-        margin-bottom: 2px;
-        color: #fff;
-        padding: 0 6px;
-        font-weight: bolder;
-        font-size: 14px;
-    }
     .houseList-item-right {
         font-size: 14px;
         position: relative;
         padding-top: 72px;
         padding-right: 5px;
-        color: #999;
-        display: none;
-    }
-    .houseList-item-right {
-        width: 0%;
-        box-sizing: border-box;
+        color: #999
     }
 
-    .houseList-item-main {
-        width: 100%;
-        box-sizing: border-box;
+    .houseList-item-down {
+        position: absolute;
+        top: 42px;
+        right: 0;
+        height: 20px;
+        font-size: 12px;
+        font-weight: 700;
+        text-align: left;
+        color: #fff;
+        padding: 0 4px;
+        background: #36b324;
+        display: flex;
+        align-items: center;
+        border-radius: 4px;
+        white-space: nowrap
     }
-    .houseList-item-main {
-        padding-left: 150px;
+
+        .houseList-item-down .icon-down-price {
+            height: 16px;
+            width: 16px;
+            margin-right: 2px;
+            display: inline-block;
+            background: url(../images/icon-down-price.png) no-repeat;
+            background-size: contain
+        }
+
+    .houseList-item-price {
         font-size: 14px;
+        margin-bottom: 6px;
+        color: #f01800
     }
+
+        .houseList-item-price em {
+            font-size: 26px;
+            font-weight: bold
+        }
+
+    @media screen and (max-width: 1200px) {
+        .houseList-item-price em {
+            font-size: 24px
+        }
+    }
+
+    .houseList-item-unitprice, .houseList-item-original_price {
+        color: #666;
+        font-size: 14px;
+        margin-bottom: 5px
+    }
+
+    .houseList-item-has-carport {
+        color: #ff2a00;
+        font-size: 14px;
+        margin-bottom: 5px
+    }
+
+    .houseList-item-original_price {
+        text-decoration: line-through
+    }
+
+    .houseList-item-collect {
+        position: absolute;
+        top: 21px;
+        right: 21px;
+        display: none;
+        width: 30px;
+        height: 26px;
+        cursor: default;
+        cursor: pointer;
+        background: url(../images/heart-o.png) center no-repeat
+    }
+
+    .houseList-item .isShoucang .houseList-item-collect {
+        display: none;
+        background-image: url(../images/heart.png)
+    }
+
+    .houseList-item.z-housing {
+        overflow: hidden
+    }
+
+        .houseList-item.z-housing .houseList-item-phone-num {
+            position: absolute;
+            right: 9px;
+            bottom: 7px;
+            height: 20px;
+            line-height: 20px;
+            font-size: 12px;
+            padding: 0 5px;
+            background: rgba(0,0,0,.5);
+            border-radius: 2px;
+            color: #fff
+        }
+
+        .houseList-item.z-housing .houseList-item-right {
+            padding-top: 48px
+        }
+
+    @media screen and (max-width: 1200px) {
+        .houseList-item.z-housing .houseList-item-right {
+            padding-top: 40px
+        }
+    }
+
+    .houseList-item.z-housing .houseList-item-phone {
+        position: absolute;
+        right: 0;
+        bottom: 82px;
+        color: #333;
+        font-weight: bolder;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        font-size: 18px
+    }
+
+        .houseList-item.z-housing .houseList-item-phone.is-low {
+            right: 0;
+            bottom: 100px
+        }
+
+        .houseList-item.z-housing .houseList-item-phone .house-phone-icon {
+            width: 23px;
+            height: 24px;
+            background: url(../images/house-phone.png) no-repeat;
+            background-size: contain
+        }
+
+    .houseList-item.z-housing .houseList-item-tags-item.z-green {
+        color: #24b39b;
+        background: #f2fffd
+    }
+
+    .houseList-item.z-housing .houseList-item-tags-item.z-orange {
+        color: #ff8000;
+        background: #fff6eb
+    }
+
+    .houseList-item.z-housing .houseList-item-tags-item.z-blue {
+        color: #006aff;
+        background: #f2f8ff
+    }
+
+    .houseList-item.z-housing .houseList-item-unit-price {
+        color: #666;
+        font-size: 12px;
+        margin-bottom: 5px
+    }
+
+    .houseList-item.z-housing .houseList-item-right.z-all-exist {
+        padding-top: 30px
+    }
+
+    .houseList-item.z-housing .houseList-item-address-row {
+        margin-bottom: 57px
+    }
+
+    .houseList-item.z-has-distance .houseList-item-user-row {
+        margin-bottom: 15px
+    }
+
+    .houseList-item.z-housing.z-hascompany .houseList-item-address-row {
+        margin-bottom: 13px
+    }
+
+    .houseList-item.z-housing.z-hascompany .houseList-item-company-row {
+        margin-bottom: 25px
+    }
+
+    .houseList-item.goodhouse-banner {
+        height: 200px;
+        border-top: 2px solid #eee;
+        border-bottom-width: 3px;
+        background-color: skyblue
+    }
+
+    .houseList-traded-item {
+        line-height: 50px;
+        height: 50px;
+        cursor: pointer;
+        border-bottom: 1px solid #eee
+    }
+
+        .houseList-traded-item:hover {
+            background: #f7f7f7
+        }
+
+    .houseList-traded-item-section {
+        font-size: 15px;
+        width: 120px;
+        color: #333
+    }
+
+    @media screen and (max-width: 1200px) {
+        .houseList-traded-item-section {
+            font-size: 14px;
+            width: 110px
+        }
+    }
+
+    .houseList-traded-item-title {
+        overflow: hidden;
+        white-space: nowrap;
+        flex: 1
+    }
+
+        .houseList-traded-item-title a {
+            color: #04d
+        }
+
+            .houseList-traded-item-title a:hover {
+                text-decoration: underline
+            }
+
+            .houseList-traded-item-title a:visited {
+                color: #3d80bb
+            }
+
+        .houseList-traded-item-title span {
+            font-size: 13px;
+            line-height: 1;
+            display: inline-block;
+            padding: 2px 4px;
+            color: #fff;
+            border-radius: 2px;
+            background: #f83d3d
+        }
+
+            .houseList-traded-item-title span.z-slow {
+                background: #519e30
+            }
+
+    .houseList-traded-item-area {
+        width: 130px
+    }
+
+    @media screen and (max-width: 1200px) {
+        .houseList-traded-item-area {
+            width: 110px
+        }
+    }
+
+    .houseList-traded-item-price {
+        width: 130px
+    }
+
+    @media screen and (max-width: 1200px) {
+        .houseList-traded-item-price {
+            width: 110px
+        }
+    }
+
+    .houseList-traded-item-price em {
+        font-weight: bold;
+        color: #e60012
+    }
+
+    .houseList-traded-item-browse {
+        width: 90px;
+        color: #888
+    }
+
+    @media screen and (max-width: 1200px) {
+        .houseList-traded-item-browse {
+            width: 80px
+        }
+    }
+
+    .houseList-traded-item-day {
+        width: 100px;
+        color: #119393
+    }
+
+    @media screen and (max-width: 1200px) {
+        .houseList-traded-item-day {
+            width: 80px
+        }
+    }
+
+    .houseList-traded-item-day.z-yesterday {
+        color: #008401
+    }
+
+    .houseList-traded-item-day.z-today {
+        color: #f06
+    }
+
+    .houseList.z-fetch {
+        opacity: .6
+    }
+
+    .houseList.z-kind-8 .houseList-order-more .houseage_asc, .houseList.z-kind-8 .houseList-order-more .houseage_desc, .houseList.z-shType-oversea .houseList-order-more .houseage_asc, .houseList.z-shType-oversea .houseList-order-more .houseage_desc {
+        display: none
+    }
+
+    .houseList .houseList-bid-broker-row {
+        margin-bottom: 14px;
+        margin-left: 12px;
+        display: flex;
+        max-width: 367px;
+        height: 26px;
+        background: linear-gradient(90deg, #ffe8a9 0%, rgba(255, 246, 210, 0.72) 73%, rgba(255, 246, 210, 0.2) 100%)
+    }
+
+        .houseList .houseList-bid-broker-row .houseList-bid-broker-left {
+            display: flex;
+            align-items: center;
+            position: relative;
+            flex: none;
+            height: 26px;
+            padding-left: 24px
+        }
+
+            .houseList .houseList-bid-broker-row .houseList-bid-broker-left .bid-broker-left-avatar {
+                position: absolute;
+                top: -3px;
+                left: -12px;
+                display: inline-block;
+                width: 28px;
+                height: 32px;
+                background: url("../images/gold-broker-avatar-bg.png") no-repeat;
+                background-size: contain;
+                z-index: 2
+            }
+
+                .houseList .houseList-bid-broker-row .houseList-bid-broker-left .bid-broker-left-avatar img {
+                    position: absolute;
+                    top: 3px;
+                    left: 3px;
+                    width: 22px;
+                    height: 25px;
+                    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+                    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+                    -o-object-fit: cover;
+                    object-fit: cover;
+                    -o-object-position: top;
+                    object-position: top
+                }
+
+            .houseList .houseList-bid-broker-row .houseList-bid-broker-left .bid-broker-left-title {
+                position: relative;
+                top: 1px;
+                font-size: 14px;
+                background-image: linear-gradient(164deg, #8d5918 15%, #542d0a 99%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: rgba(0,0,0,0)
+            }
+
+            .houseList .houseList-bid-broker-row .houseList-bid-broker-left .bid-broker-left-name {
+                position: relative;
+                top: 1px;
+                margin-left: 3px;
+                font-size: 14px;
+                font-weight: bold;
+                color: #6f4822
+            }
+
+            .houseList .houseList-bid-broker-row .houseList-bid-broker-left .icon-gold-broker {
+                display: inline-block;
+                margin-left: 1px;
+                width: 20px;
+                height: 20px;
+                background: url("../images/gold-broker-icon.png") no-repeat;
+                background-size: contain
+            }
+
+        .houseList .houseList-bid-broker-row .houseList-bid-broker-right {
+            flex: 1;
+            margin-left: 23px;
+            height: 26px;
+            line-height: 27px;
+            font-size: 14px;
+            color: #845124;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap
+        }
+
+    .pages {
+        margin: 28px 0;
+        cursor: default;
+        text-align: center
+    }
+
+        .pages > a, .pages > span {
+            line-height: 32px;
+            display: inline-block;
+            height: 32px;
+            margin-right: 8px;
+            padding: 0 12px;
+            border-radius: 4px
+        }
+
+        .pages .pageNum-form, .pages .pagePrev, .pages .pageNext {
+            color: #333;
+            cursor: pointer;
+            background: #f5f5f5
+        }
+
+            .pages .pageNum-form:hover, .pages .pagePrev:hover, .pages .pageNext:hover {
+                background: #e6e6e6
+            }
+
+            .pages .pagePrev.first, .pages .pageNext.last {
+                cursor: not-allowed;
+                color: #ccc;
+                background: #f5f5f5
+            }
+
+                .pages .pagePrev.first:hover, .pages .pageNext.last:hover {
+                    background: #f5f5f5
+                }
+
+        .pages .pageCurrent {
+            color: #fff;
+            background: #ff8000
+        }
+
+    .noHouse-tips {
+        margin: 90px 0;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center
+    }
+
+    .noHouse-tips-left {
+        width: 360px;
+        height: 204px;
+        background: url(../images/noInfoTips.png?20231114) no-repeat;
+        background-size: contain
+    }
+
+    .noHouse-tips-right {
+        margin-left: 28px
+    }
+
+        .noHouse-tips-right .clear-btn {
+            width: 108px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            color: #fff;
+            height: 32px;
+            background: #ff8000;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer
+        }
+
+            .noHouse-tips-right .clear-btn .icon-clear-white {
+                margin-right: 2px;
+                height: 20px;
+                width: 20px;
+                background: url(../images/icon-clear-white.png) no-repeat;
+                background-size: contain
+            }
+
+            .noHouse-tips-right .clear-btn:hover {
+                background: #ff9326
+            }
+
+            .noHouse-tips-right .clear-btn:active {
+                background: #f06800
+            }
+
+    .noHouse-tips-right-new {
+        text-align: left
+    }
+
+        .noHouse-tips-right-new .filter-options {
+            padding-left: 0
+        }
+
+        .noHouse-tips-right-new .noHouse-tips-try {
+            font-weight: bold
+        }
+
+        .noHouse-tips-right-new .noHouse-tips-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            padding-bottom: 12px
+        }
+
+            .noHouse-tips-right-new .noHouse-tips-title.with-community {
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin-top: 24px;
+                font-weight: normal;
+                font-size: 20px;
+                color: #999
+            }
+
+            .noHouse-tips-right-new .noHouse-tips-title span {
+                color: #ff9701
+            }
+
+        .noHouse-tips-right-new .broker-entrust {
+            margin-top: -8px;
+            padding-bottom: 12px
+        }
+
+        .noHouse-tips-right-new .broker-entrust-title {
+            margin-top: 30px;
+            font-size: 20px;
+            height: 26px;
+            line-height: 26px;
+            color: #333
+        }
+
+        .noHouse-tips-right-new .broker-entrust-btn {
+            margin-top: 16px;
+            width: 96px;
+            height: 44px;
+            background: #ff8000;
+            border-radius: 4px;
+            font-size: 16px;
+            line-height: 44px;
+            font-weight: bold;
+            text-align: center;
+            color: #fff;
+            cursor: pointer
+        }
+
+            .noHouse-tips-right-new .broker-entrust-btn:hover {
+                background: #ff9326
+            }
+
+        .noHouse-tips-right-new .noHouse-tips-list {
+            color: #4a4a4a
+        }
+
+            .noHouse-tips-right-new .noHouse-tips-list a {
+                color: #006aff
+            }
+
+                .noHouse-tips-right-new .noHouse-tips-list a:hover {
+                    text-decoration: underline
+                }
+
+        .noHouse-tips-right-new .feedback-button {
+            color: #333;
+            cursor: pointer;
+            text-decoration: underline
+        }
+
+    .noHouse-tips-right-new {
+        text-align: left
+    }
+
+        .noHouse-tips-right-new .filter-options {
+            padding-left: 0
+        }
+
+        .noHouse-tips-right-new .noHouse-tips-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #222;
+            padding-bottom: 12px
+        }
+
+            .noHouse-tips-right-new .noHouse-tips-title.with-community {
+                font-size: 20px
+            }
+
+            .noHouse-tips-right-new .noHouse-tips-title span {
+                color: #ff9701
+            }
+
+                .noHouse-tips-right-new .noHouse-tips-title span em {
+                    color: #222
+                }
+
+    .noHouse-tips-tips {
+        margin-bottom: 10px;
+        color: gray
+    }
+
+    .side_tool_wrap {
+        z-index: 99999
+    }
+
+    .record-body {
+        z-index: 99999
+    }
+
+    .gad_Top img, .gad_a img, .gad_b img, .gad_c img, .gad_Foot img {
+        width: 100%;
+        height: auto
+    }
+
+    .gad_a img, .gad_b img, .gad_c img {
+        display: block;
+        height: 320px
+    }
+
+    @media screen and (max-width: 1200px) {
+        .gad_a img, .gad_b img, .gad_c img {
+            height: 260px
+        }
+    }
+
+    #UNION_17 img {
+        border-radius: 8px;
+        margin-top: 16px
+    }
+
+    .union18 img {
+        margin-bottom: 16px;
+        border-radius: 8px
+    }
+
+    .vr-style {
+        position: absolute;
+        pointer-events: auto;
+        border-radius: 100%;
+        background: #fff;
+        display: flex
+    }
+
+    .vr-spinning {
+        animation: spinning 2s infinite linear
+    }
+
+    .vr-spinning-reverse {
+        animation: spinning-reverse 2s infinite linear
+    }
+
+    @keyframes spinning {
+        0% {
+            transform: rotate(0deg)
+        }
+
+        100% {
+            transform: rotate(359deg)
+        }
+    }
+
+    @keyframes spinning-reverse {
+        0% {
+            transform: rotate(359deg)
+        }
+
+        100% {
+            transform: rotate(0deg)
+        }
+    }
+
+    .vr-annulus {
+        width: 25px;
+        height: 39px;
+        left: 9px;
+        top: 2px;
+        background-color: rgba(0,0,0,0);
+        border: 2px solid #fff;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        padding: 0;
+        animation-iteration-count: infinite;
+        z-index: 5;
+        pointer-events: auto;
+        animation-duration: 5s;
+        animation-fill-mode: backwards
+    }
+
+    .vr-auto {
+        width: 25px;
+        height: 25px;
+        left: 10px;
+        top: 10px;
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        font-size: 12px;
+        padding: 3px;
+        text-align: center;
+        line-height: 20px;
+        font-weight: bold;
+        font-style: normal;
+        z-index: 5;
+        opacity: 1;
+        pointer-events: auto;
+        color: #000
+    }
+
+    .vr-icon {
+        width: 45px;
+        height: 45px;
+        background: rgba(0,0,0,.5);
+        border-radius: 23px;
+        position: absolute;
+        top: 70px;
+        left: 100px
+    }
+
+    @media screen and (max-width: 1200px) {
+        .vr-icon {
+            top: 45px;
+            left: 67px
+        }
+    }
+
+    .bid-banner {
+        width: 100%;
+        margin-top: 15px;
+        height: 90px;
+        background: url(../images/bid_banner.png) no-repeat;
+        background-size: cover;
+        position: relative
+    }
+
+    @media screen and (max-width: 1200px) {
+        .bid-banner {
+            height: 70px
+        }
+    }
+
+    .bid-banner a {
+        display: block;
+        position: absolute;
+        width: 198px;
+        height: 43px;
+        right: 27px;
+        top: 23px;
+        cursor: pointer
+    }
+
+    @media screen and (max-width: 1200px) {
+        .bid-banner a {
+            width: 166px;
+            height: 35px;
+            right: 23px;
+            top: 20px
+        }
+    }
+
+    .video-banner {
+        display: block;
+        width: 100%;
+        position: relative;
+        margin: 20px 0
+    }
+
+        .video-banner img {
+            width: 100%
+        }
+
+    @media screen and (max-width: 1200px) {
+        .video-banner {
+            height: 118px
+        }
+    }
+
+    .video-banner .close-video-banner {
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 10px;
+        right: 11px
+    }
+
+
+
+
+    /* Common styles for both desktop and mobile */
+    .houseList-item {
+        /* Add any common styles here */
+    }
+
+    .houseList-item-left,
+    .houseList-item-right,
+    .houseList-item-main {
+        /* Adjust these styles based on your layout needs */
+    }
+
+
+    .houseList-item-thumb {
+        width: 100%; /* Make the image full width on smaller screens */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .houseList-item-phone {
+        display: none; /* Hide the phone number on mobile */
+    }
+
     .houseList-prive-main {
         width: 100%;
         box-sizing: border-box;
@@ -10308,71 +10018,374 @@
         padding-top: 5px;
         padding-right: 5px;
         color: #999;
-        display:contents;
-    }
-
-    .houseList-item-unitprice-moblie {
-        color: #666;
-        font-size: 10px;
-        margin-bottom: 5px;
-        margin-left:5px;
-    }
-
-    .houseList-item-attr-row {
         display: none;
     }
 
     .houseList-item-attr-row-mobile {
-        display: flex;
-        align-items: center;
-        line-height: 20px;
-        flex-wrap: wrap;
-        margin-bottom: 5px;
-        font-size: 12px;
+        display: none;
     }
 
-    .houseList-item-address-row{
-        display:none;
+    .houseList-item-title-label-mobile.z-good-house-mobile {
+        display: none;
+        width: 61px;
+        height: 22px;
+        background: url(../images/good-house.png) no-repeat;
+        background-size: contain;
+        padding: 0;
     }
 
-    .houseList-item-attr-row-mobile span {
-        float: left;
-        margin-right: 5px;
-        padding-right: 5px;
-        border-right: 1px solid #e6e6e6;
-        font-size: 10px;
+
+
+    /* Media query for mobile devices  列表 */
+
+    @media screen and (max-width: 997px) {
+        .houseList-item-left .relative {
+            width: 248px;
+            height: 188px;
+        }
+
+        .houseList-item-photonum {
+            font-size: 12px;
+            position: absolute;
+            z-index: 1;
+            right: 1px;
+            bottom: 1px;
+            width: 38px;
+            height: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,.5);
+            border-radius: 2px;
+        }
+
+        .houseList-prive-main {
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 14px;
+            position: relative;
+            padding-top: 5px;
+            padding-right: 5px;
+            color: #999;
+            display: none;
+        }
+
+        .houseList-item-attr-row-mobile {
+            display: none;
+        }
+
+        .houseList-item-title-label-mobile.z-good-house-mobile {
+            display: none;
+            width: 61px;
+            height: 22px;
+            background: url(../images/good-house.png) no-repeat;
+            background-size: contain;
+            padding: 0;
+        }
     }
 
-    .houseList-item-attr-row-mobile span:last-child {
-        border-right: none;
-    }
+    @media only screen and (max-width: 768px) {
+        .houseList-item-left {
+            width: 0%; /* Make the elements full width on smaller screens */
+            box-sizing: border-box; /* Include padding and border in element's total width */
+        }
 
-    .houseList-item-left .relative {
-        width: 135px;
-        height: 126px;
-    }
 
-    .houseList-item-tag-row .houseList-item-tag-item {
-        height: 24px;
-        line-height: 24px;
-        width: auto;
-        padding: 0 10px;
-        margin-bottom: 5px;
-        flex-shrink: 0;
-        font-size:9px
-    }
 
-    .houseList-item-title {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        margin-bottom: 1px;
-        line-height: 32px;
-    }
+        .houseList-item-right {
+            width: 15%; /* Make the elements full width on smaller screens */
+            box-sizing: border-box; /* Include padding and border in element's total width */
+        }
+
+
+
+        .houseList-item-main {
+            width: 85%; /* Make the elements full width on smaller screens */
+            box-sizing: border-box; /* Include padding and border in element's total width */
+        }
+
+
+
+        .houseList-item-price {
+            width: 100%; /* Make the elements full width on smaller screens */
+            box-sizing: border-box; /* Include padding and border in element's total width */
+        }
+
+
+
+        .houseList-item-main {
+            padding-left: 180px;
+            font-size: 14px;
+        }
+
+
+
+        .houseList-item-left .relative {
+            width: 162px;
+            height: 153px;
+        }
+
+
+
         .houseList-item-title a {
             font-size: 14px;
-            font-weight: bold;
-            color: #333;
-            line-height: 20px;
         }
-}
+
+
+        .houseList-item-photonum {
+            font-size: 12px;
+            position: absolute;
+            z-index: 1;
+            right: 0px;
+            bottom: 25px;
+            width: 38px;
+            height: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,.5);
+            border-radius: 2px;
+        }
+
+
+
+        .houseList-item-title {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 6px;
+            line-height: 32px;
+        }
+
+        .houseList-item-price em {
+            font-size: 18px;
+        }
+
+
+
+        .houseList-item-has-carport {
+            color: #ff2a00;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+
+        .houseList-item-unitprice, .houseList-item-original_price {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+
+        .houseList-item-attr-row, .houseList-item-address-row, .houseList-item-user-row, .houseList-item-company-row, .houseList-item-distance-row {
+            display: flex;
+            align-items: center;
+            line-height: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+
+
+        .houseList-item-user-row {
+            margin-bottom: 15px;
+            display: none;
+        }
+
+        /* Hide unnecessary information */
+        .houseList-item-attrs-shape,
+        .houseList-item-community,
+        .houseList-item-has-carport {
+            display: none;
+        }
+
+        /* Adjust property area */
+        .houseList-item-attrs-area::before {
+            content: "";
+        }
+
+        /* Move price information to the bottom */
+        .houseList-item-price {
+            order: 1;
+        }
+
+        /* Adjust font size */
+        .houseList-item-title a {
+            font-size: 14px;
+        }
+
+        .houseList-item-has-carport,
+        .houseList-item-unitprice {
+            font-size: 12px;
+        }
+
+        /* Add spacing */
+        .houseList-item-unitprice {
+            margin-top: 5px;
+        }
+
+        .houseList-prive-main {
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 14px;
+            position: relative;
+            padding-top: 5px;
+            padding-right: 5px;
+            color: #999;
+            display: none;
+        }
+
+        .houseList-item-attr-row-mobile {
+            display: none;
+        }
+
+        .houseList-item-title-label-mobile.z-good-house-mobile {
+            display: none;
+            width: 61px;
+            height: 22px;
+            background: url(../images/good-house.png) no-repeat;
+            background-size: contain;
+            padding: 0;
+        }
+    }
+
+    @media only screen and (max-width: 611px) {
+
+        .houseList-item-title-label.z-good-house {
+            display: none;
+            width: 61px;
+            height: 22px;
+            background: url(../images/good-house.png) no-repeat;
+            background-size: contain;
+            padding: 0;
+        }
+
+        .houseList-item-title-label-mobile.z-good-house-mobile {
+            display: inline-block;
+            width: 61px;
+            height: 22px;
+            background: url(../images/good-house.png) no-repeat;
+            background-size: contain;
+            padding: 0;
+        }
+
+        .houseList-item-title-label {
+            height: 22px;
+            border-radius: 2px;
+            line-height: 22px;
+            margin-left: 8px;
+            margin-bottom: 2px;
+            color: #fff;
+            padding: 0 6px;
+            font-weight: bolder;
+            font-size: 14px;
+        }
+
+        .houseList-item-right {
+            font-size: 14px;
+            position: relative;
+            padding-top: 72px;
+            padding-right: 5px;
+            color: #999;
+            display: none;
+        }
+
+        .houseList-item-right {
+            width: 0%;
+            box-sizing: border-box;
+        }
+
+        .houseList-item-main {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .houseList-item-main {
+            padding-left: 150px;
+            font-size: 14px;
+        }
+
+        .houseList-prive-main {
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 14px;
+            position: relative;
+            padding-top: 5px;
+            padding-right: 5px;
+            color: #999;
+            display: contents;
+        }
+
+        .houseList-item-unitprice-moblie {
+            color: #666;
+            font-size: 10px;
+            margin-bottom: 5px;
+            margin-left: 5px;
+        }
+
+        .houseList-item-attr-row {
+            display: none;
+        }
+
+        .houseList-item-attr-row-mobile {
+            display: flex;
+            align-items: center;
+            line-height: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 5px;
+            font-size: 12px;
+        }
+
+        .houseList-item-tag-row {
+            display: inline-table;
+            flex-wrap: no-wrap;
+        }
+
+        .houseList-item-address-row {
+            display: none;
+        }
+
+        .houseList-item-attr-row-mobile span {
+            float: left;
+            margin-right: 5px;
+            padding-right: 5px;
+            border-right: 1px solid #e6e6e6;
+            font-size: 10px;
+        }
+
+            .houseList-item-attr-row-mobile span:last-child {
+                border-right: none;
+            }
+
+        .houseList-item-left .relative {
+            width: 135px;
+            height: 126px;
+        }
+
+        .houseList-item-tag-row .houseList-item-tag-item {
+            height: 24px;
+            line-height: 24px;
+            width: auto;
+            padding: 0 10px;
+            margin-bottom: 5px;
+            flex-shrink: 0;
+            font-size: 9px
+        }
+
+        .houseList-item-title {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 1px;
+            line-height: 32px;
+        }
+
+            .houseList-item-title a {
+                font-size: 14px;
+                font-weight: bold;
+                color: #333;
+                line-height: 20px;
+            }
+    }

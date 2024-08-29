@@ -9,14 +9,14 @@
 
   <ItemGroup>
     <Content Remove="wwwroot\js\house.js" />
-    <Content Remove="wwwroot\js\ImageViewer.js" />
+    <Content Remove="wwwroot\js\ImageViewerModal.js" />
     <Content Remove="wwwroot\js\land.js" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\js\ImageViewerModal.js" />
     <None Include="wwwroot\js\land.js" />
     <None Include="wwwroot\js\house.js" />
-    <None Include="wwwroot\js\ImageViewer.js" />
     <None Include="wwwroot\js\site.js" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
@@ -54,9 +54,6 @@
     <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
     <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
     <None Include="wwwroot\lib\jquery-validation\LICENSE.md" />
-    <None Include="wwwroot\lib\jquery\dist\jquery.js" />
-    <None Include="wwwroot\lib\jquery\dist\jquery.min.js" />
-    <None Include="wwwroot\lib\jquery\dist\jquery.min.map" />
   </ItemGroup>
 
   <ItemGroup>

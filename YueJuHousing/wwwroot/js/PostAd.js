@@ -266,11 +266,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const urbanRadio = document.querySelector('input[value="都市土地"]');
     const nonUrbanRadio = document.querySelector('input[value="非都市土地"]');
     const urbanZonesDiv = document.getElementById('urbanZones');
+    const urbanZones1Div = document.getElementById('urbanZones1');
     const nonUrbanZonesDiv = document.getElementById('nonUrbanZones');
 
     urbanRadio.addEventListener('change', function () {
         if (urbanRadio.checked) {
             urbanZonesDiv.style.display = 'flex';
+            urbanZones1Div.style.display = 'flex';
             nonUrbanZonesDiv.style.display = 'none';
         }
     });
@@ -278,6 +280,7 @@ document.addEventListener("DOMContentLoaded", function () {
     nonUrbanRadio.addEventListener('change', function () {
         if (nonUrbanRadio.checked) {
             urbanZonesDiv.style.display = 'none';
+            urbanZones1Div.style.display = 'none';
             nonUrbanZonesDiv.style.display = 'flex';
         }
     });

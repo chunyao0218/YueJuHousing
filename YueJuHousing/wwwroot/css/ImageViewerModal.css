@@ -1,0 +1,240 @@
+﻿/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000; /* 确保模态框在最上层 */
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* 隐藏滚动条 */
+    background-color: rgba(0, 0, 0, 0.8); /* 半透明黑色背景 */
+}
+
+/* 中央图示的容器设置 */
+.image-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 80%; /* 确保容器宽度自适应屏幕宽度 */
+    max-height: 60vh; /* 确保容器宽度自适应屏幕高度 */
+    margin: auto;
+}
+
+/* 中央图示的设置 */
+.modal-content {
+    width: 100%; /* 图片宽度占满容器 */
+    max-width: 80vh; /* 图片的最大宽度为容器的100% */
+    max-height: 60vh; /* 图片的最大高度为视窗高度的80% */
+    height: auto; /* 高度自动调整，保持比例 */
+    aspect-ratio: 4 / 3; /* 设置4:3的比例 */
+    object-fit: contain; /* 确保图片完整显示，不被裁切 */
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 60px;
+    font-size: xx-large;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+.thumbnail-container-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+    max-width: 80vh; /* 這裡應該與 .modal-content 的 max-width 保持一致 */
+    width: 100%;
+}
+
+/* 缩略图容器 */
+.thumbnail-container {
+    display: flex; /* 使用 flexbox 使缩略图横向排列 */
+    overflow-x: auto; /* 确保超出部分可以横向滚动 */
+    scroll-behavior: smooth;
+    flex-grow: 1;
+    max-width: 80%;
+    justify-content: center;
+}
+
+    /* 缩略图项，保持与中央图示相同的比例 */
+    .thumbnail-container .item {
+        position: relative;
+        width: calc(100% - 10px); /* 调整这个值以控制缩略图的大小，保持与中央图示相同比例 */
+        padding-bottom: calc(100% * 0.75); /* 计算4:3的比例高度 (3 / 4 = 0.75) */
+        margin: 0 5px; /* 控制缩略图之间的间距 */
+        overflow: hidden; /* 确保超出的部分隐藏 */
+    }
+
+        /* 确保缩略图保持与中央图示相同的比例 */
+        .thumbnail-container .item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 确保图片填满容器并保持比例 */
+            cursor: pointer;
+        }
+
+        .thumbnail-container .item img:hover {
+            transform: scale(1.1);
+        }
+
+/* 禁用滚动 */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* 通用箭头样式 */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0%;
+    z-index: 1001;
+    user-select: none; /* 禁止选中文字 */
+}
+
+/* 左箭头 */
+.left-arrow {
+    left: 10px; /* 使箭头靠近中央图示 */
+}
+
+/* 右箭头 */
+.right-arrow {
+    right: 10px; /* 使箭头靠近中央图示 */
+}
+
+/* 针对小屏幕设备的调整 */
+@media (max-width: 768px) {
+    .modal-content {
+        max-width: 90%; /* 在小屏幕上调整图片的最大宽度 */
+        max-height: 60vh; /* 在小屏幕上调整图片的最大高度 */
+    }
+
+    /* 调整箭头大小和位置 */
+    .arrow {
+        font-size: 24px;
+        padding: 8px;
+    }
+
+    .left-arrow {
+        left: 10px;
+    }
+
+    .right-arrow {
+        right: 10px;
+    }
+}
+
+
+.owl-nav {
+    display: flex; /* 强制显示导航按钮 */
+    visibility: visible; /* 确保导航按钮可见 */
+    position: absolute;
+    top: 50%; /* 将按钮垂直居中 */
+    width: 100%;
+    justify-content: space-between;
+    pointer-events: none; /* 确保按钮可以点击 */
+    z-index: 1000; /* 确保导航按钮显示在其他元素上方 */
+    
+}
+
+.owl-nav .owl-prev, .owl-nav .owl-next {
+    pointer-events: auto; /* 允许按钮交互 */
+    cursor: pointer;
+   /* background-color: rgba(0, 0, 0, 0.5);  设置按钮的背景颜色，以确保它们在背景中可见 */
+    color: white;
+    border-radius: 50%; /* 圆形按钮 */
+    font-size: 24px; /* 调整按钮的大小 */
+    padding: 10px;
+    margin: 0 10px; /* 调整按钮与图片之间的距离 */
+}
+
+.owl-dots {
+    text-align: center;
+    margin-top: 15px;
+}
+
+    .owl-dots .owl-dot {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin: 5px;
+        background-color: #D6D6D6;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+        .owl-dots .owl-dot.active {
+            background-color: #869791;
+        }
+
+
+/* 移动端Owl Carousel的调整 */
+#touch-carousel .item {
+    width: calc(100% - 10px);
+    padding-bottom: calc(100%* 0.75);
+    overflow: hidden;
+}
+
+#touch-carousel img {
+   position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+#touch-carousel .owl-prev,
+#touch-carousel .owl-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#touch-carousel .owl-prev {
+    left: 10px;
+}
+
+#touch-carousel .owl-next {
+    right: 10px;
+}

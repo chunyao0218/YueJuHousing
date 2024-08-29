@@ -2016,7 +2016,7 @@ iframe:fullscreen {
 }
 
 .detail-title-container {
-    text-align: center;
+    /*text-align: center;*/
     width: 100%
 }
 
@@ -3690,8 +3690,8 @@ iframe:fullscreen {
     width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
-    padding: 30px 40px 50px 40px;
+    /*margin-top: 30px;*/
+    padding: 30px 40px 80px 40px;
     position: relative
 }
 
@@ -3707,7 +3707,8 @@ iframe:fullscreen {
     font-size: 24px;
     font-weight: 700;
     border-bottom: 1px solid #eee;
-    padding-bottom: 20px
+    padding-bottom: 20px;
+    text-align: left;
 }
 
 .detail-house .detail-house-box {
@@ -3730,7 +3731,7 @@ iframe:fullscreen {
 }
 
 .detail-house .detail-house-box .detail-house-content {
-    overflow: hidden
+    overflow: auto;
 }
 
     .detail-house .detail-house-box .detail-house-content .detail-house-item {

@@ -265,10 +265,10 @@
                         <div class="houseList-item-left pull-left">
                             <div data-gtm-stat="" class="relative">
                                 <!---->
-                                <img src="@land.ImageUrl" data-original="https://img2.591.com.tw/house/2024/01/05/170446315486209697.jpg!400x300.jpg" title="@land.AdTitle" class="houseList-item-thumb j-lazyimg" style="display: inline;">
+                                <img src="@land.ImageUrl" data-original="@land.ImageUrl" title="@land.AdTitle" class="houseList-item-thumb j-lazyimg" style="display: inline;">
                                 <!---->
                                 <div class="houseList-item-photonum">
-                                    <i class="icon-photo-num"></i> <span>15</span>
+                                <i class="fa-regular fa-image"></i><span style="margin-left:5px;">@ViewBag.ImageCountIndex[land.Id]</span>
                                 </div>
                             </div>
                             <div class="houseList-item-addition">
@@ -306,19 +306,20 @@
 
                             <div class="houseList-item-attr-row clearfix">
                                 <i class="icon-house"></i>
-                                <span class="houseList-item-attrs-shape">電梯大樓</span>
+                            <span class="houseList-item-attrs-shape">@land.SquareMeters 坪</span>
                               @*<span class="houseList-item-attrs-layout">@land.BedRoom 房 @house.LivingRoom 廳 @house.BathRoom 衛</span>*@
-                                <span class="houseList-item-attrs-area">權狀 @land.SquareMeters 坪</span>
+                                <span class="houseList-item-attrs-area"> @land.LandType</span>
                                 <!---->
                                 @*<span class="houseList-item-attrs-houseage">@land.HouseAge 年</span>*@
-                                <span class="houseList-item-attrs-floor">11F/12F</span>
+                                <span class="houseList-item-attrs-floor">@land.LandUseZone</span>
                             </div>
 
                             <!--------------------------Mobile device--------------------------------->
                             <div class="houseList-item-attr-row-mobile clearfix">
                                 @*<span class="houseList-item-attrs-layout">@land.BedRoom 房 @house.LivingRoom 廳</span>*@
                                 <span class="houseList-item-attrs-area">@land.SquareMeters 坪</span>
-                                <span class="houseList-item-address pull-left"><i class="icon-address"></i> 三重區-元信二街</span>
+                                <span class="houseList-item-address pull-left"><i class="icon-address"></i> @land.LandType</span>
+                                <span class="houseList-item-attrs-floor">@land.LandUseZone</span>
                             </div>
                             <!----------------------------------------------------------------------->
 
@@ -329,11 +330,11 @@
                                         @land.LandSerialNumber
                                     
                                 </span>
-                                <span class="houseList-item-section pull-left">三重區-</span>
-                                <span class="houseList-item-address pull-left">元信二街</span>
+                                @*<span class="houseList-item-section pull-left">三重區-</span>
+                                  <span class="houseList-item-address pull-left">元信二街</span>*@
                             </div>
                             <div class="houseList-item-user-row">
-                                <span class="houseList-item-user-head" style="background-image: url(&quot;https://img2.591.com.tw/user/2020/05/24/159028324132317003.jpg!100x100.jpg&quot;);"></span>
+                                <span class="houseList-item-user-head"></span>
                                 <span class="houseList-item-user">@land.ContactPeopleType @land.ContactPeopleName</span>
                                 <span class="split-line"></span>
                                 <i class="icon-browse"></i> <span class="houseList-item-browsenum relative">869人瀏覽</span>
@@ -341,9 +342,61 @@
 
                             <div class="houseList-item-tag-row clearfix">
                                 <!----> <!----> <!----> <!---->
-                                <div class="houseList-item-tag-item">含車位</div>
+                                @if (land.HaveElectricity == true )
+                                {
+                                <div class="houseList-item-tag-item">有電</div> 
+                                }
+                                @if (land.HaveWater == true)
+                                {
+                                    <div class="houseList-item-tag-item">有水</div>
+                                }
+                                @if (land.PathWay == true)
+                                {
+                                    <div class="houseList-item-tag-item">有臨路</div>
+                                }
+                                @if (land.SmoothGround == true)
+                                {
+                                    <div class="houseList-item-tag-item">地面平整</div>
+                                }
+                                @if (land.Farming == true)
+                                {
+                                    <div class="houseList-item-tag-item">適農作</div>
+                                }
+                                @if (land.Housing == true)
+                                {
+                                    <div class="houseList-item-tag-item">適住宅</div>
+                                }
+                                @if (land.ProcessingPlant == true)
+                                {
+                                    <div class="houseList-item-tag-item">適加工廠</div>
+                                }
+                                @if (land.SMEnterprise == true)
+                                {
+                                    <div class="houseList-item-tag-item">適中小企業</div>
+                                }
+                                @if (land.HighTechIndustry == true)
+                                {
+                                    <div class="houseList-item-tag-item">適高科技業</div>
+                                }
+                                @if (land.Factory == true)
+                                {
+                                    <div class="houseList-item-tag-item">適廠房</div>
+                                }
+                                @if (land.StoreHouse == true)
+                                {
+                                    <div class="houseList-item-tag-item">適倉庫</div>
+                                }
+                                @if (land.Advertise == true)
+                                {
+                                    <div class="houseList-item-tag-item">適廣告</div>
+                                }
+                                @if (land.OpenStore == true)
+                                {
+                                    <div class="houseList-item-tag-item">適開店</div>
+                                }
+                                @*<div class="houseList-item-tag-item">含車位</div>
                                 <div class="houseList-item-tag-item">有陽台</div>
-                                <div class="houseList-item-tag-item">重劃區</div>
+                                <div class="houseList-item-tag-item">重劃區</div>*@
                             </div>
 
                             <!------------------------------------Mobile device---------------------------------------------------------------->

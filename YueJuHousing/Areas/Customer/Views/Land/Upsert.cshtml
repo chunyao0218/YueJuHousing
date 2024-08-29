@@ -98,7 +98,7 @@
                         <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
                             <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
                                 <input asp-for="Land.SquareMeters" class="form-control" placeholder="請輸入基地面積" />
-                                <select asp-for="Land.SquareMetersUnit" id="city" class="form-control" style="margin-right: 10px;" onchange="updateTownships()" required>
+                                <select asp-for="Land.SquareMetersUnit" id="city" class="form-control" style="margin-right: 10px;" required>
                                     <option value="" disabled selected style="color: #b7b7b7;">請選擇單位</option>
                                     <option value="坪">坪</option>
                                     <option value="平方公尺">平方公尺</option>
@@ -126,12 +126,12 @@
                             <label asp-for="Land.LandUseZone" class="p-0"></label>
                         </div>
                         <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
-                            <label asp-for="Land.LandUseZone" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZone" type="radio" value="都市土地" checked required>都市土地</label>
+                            <label asp-for="Land.LandUseZone" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZone" type="radio" value="都市土地" checked >都市土地</label>
                             <label asp-for="Land.LandUseZone" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZone" type="radio" value="非都市土地" style="margin-left:10px;">非都市土地</label>
                         </div>
                         <div id="urbanZones" class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
-                            <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="住宅區" required checked>住宅區</label>
-                            <select asp-for="Land.LandUseZoneTypeDetail" id="city" class="form-control" style="margin-right: 10px; width:20%; margin-left: 10px;" onchange="updateTownships()" required>
+                            <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="住宅區" checked>住宅區</label>
+                            <select asp-for="Land.LandUseZoneTypeDetail" id="city" class="form-control" style="margin-right: 10px; width:20%; margin-left: 10px;">
                                 <option value="" disabled selected style="color: #b7b7b7;">請選擇類型</option>
                                 <option value="住一">住一</option>
                                 <option value="住二">住二</option>
@@ -144,7 +144,7 @@
                                 <option value="住四之一">住四之一</option>
                             </select>
                             <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="商業區" style="margin-left:10px;" >商業區</label>
-                            <select asp-for="Land.LandUseZoneTypeDetail" id="city" class="form-control" style="margin-right: 10px; width:20%; margin-left: 10px;" onchange="updateTownships()" required>
+                            <select asp-for="Land.LandUseZoneTypeDetail" id="city" class="form-control" style="margin-right: 10px; width:20%; margin-left: 10px;" >
                                 <option value="" disabled selected style="color: #b7b7b7;">請選擇類型</option>
                                 <option value="商一">商一</option>
                                 <option value="商二">商二</option>
@@ -152,7 +152,7 @@
                                 <option value="商四">商四</option>
                             </select>
                             <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="工業區" style="margin-left:10px;" >工業區</label>
-                            <select asp-for="Land.LandUseZoneTypeDetail" id="city" class="form-control" style="margin-right: 10px; width:20%; margin-left: 10px;" onchange="updateTownships()" required>
+                            <select asp-for="Land.LandUseZoneTypeDetail" id="city" class="form-control" style="margin-right: 10px; width:20%; margin-left: 10px;" >
                                 <option value="" disabled selected style="color: #b7b7b7;">請選擇類型</option>
                                 <option value="特種工業區">特種工業區</option>
                                 <option value="甲種工業區">甲種工業區</option>
@@ -161,7 +161,7 @@
                             </select>
 
                         </div>
-                        <div id="urbanZones" class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
+                        <div id="urbanZones1" class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
                            
                             <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="行政區" style="">行政區</label>
                             <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="文教區" style="margin-left:10px;">文教區</label>
@@ -169,7 +169,7 @@
                             <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="風景區" style="margin-left:10px;">風景區</label>
                             <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="保存區" style="margin-left:10px;">保存區</label>
                             <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="保護區" style="margin-left:10px;">保護區</label>
-                            <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="農業區" style="margin-left:10px;" checked>農業區</label>
+                            <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="農業區" style="margin-left:10px;">農業區</label>
                             <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="特定專用區" style="margin-left:10px;">特定專用區</label>
                             <label asp-for="Land.LandUseZoneType" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZoneType" type="radio" value="其他使用區" style="margin-left:10px;">其他使用區</label>
                         </div>
