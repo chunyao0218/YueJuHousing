@@ -11382,7 +11382,7 @@
     }
 
 .album-container-touch[data-v-c2e97c82] {
-    background: #000;
+    /*background: #000;*/
     display: none;
     overflow: hidden;
     position: relative;
@@ -11415,7 +11415,7 @@
 
 @media only screen and (max-width: 849.98px) {
     .album-container-touch[data-v-c2e97c82] {
-        aspect-ratio: 375/281;
+        aspect-ratio: 375/350;/*原375/281*/
         display: -webkit-box;
         display: -webkit-flex;
         display: flex;

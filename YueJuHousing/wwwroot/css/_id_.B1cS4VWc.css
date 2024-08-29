@@ -1574,7 +1574,7 @@
 
 @media only screen and (min-width: 850px) {
     .main-info-container[data-v-5646250c] {
-        border-bottom: 1px solid #e6e6e6;
+        /*border-bottom: 1px solid #e6e6e6;*/
         min-width: 100%;
         padding: 36px 0 38px
     }
@@ -7119,7 +7119,7 @@
 }
 
 .container[data-v-e642ddf0] {
-    position: relative
+    /*position: relative*/
 }
 
 @media only screen and (max-width: 849.98px) {

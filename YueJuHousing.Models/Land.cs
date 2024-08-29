@@ -131,7 +131,7 @@ namespace YueJuHousing.Models
 
         /*照片&影片*/
 
-        [DisplayName("土地照片1上傳：")]
+        [DisplayName("土地照片上傳(最多9張)：")]
         [ValidateNever]
         public string ImageUrl { get; set; }
 
