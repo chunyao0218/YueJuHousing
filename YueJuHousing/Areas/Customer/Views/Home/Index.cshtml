@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Land>
+@{
     ViewData["Title"] = "悅聚房屋 | 最佳房屋選擇";
 }
 
@@ -59,7 +60,7 @@
                             <div class="col-md-offset-1 col-md-10">
                                 <h3 style="font-family: PoiretOne-Regular;">悅聚房屋 品味生活，科學選房</h3>
                                 <h1 class="wow fadeInUp" style="font-family: PoiretOne-Regular;" data-wow-delay="0.1s">YueJu Housing</h1>
-                                <a href="~/Team/Index" class="section-btn btn btn-default smoothScroll">Meet Our Doctors</a>
+                                <a href="~/Customer/AllLand/Index" class="section-btn btn btn-default smoothScroll">Meet Our Doctors</a>
                             </div>
                         </div>
                     </div>
@@ -69,7 +70,7 @@
                             <div class="col-md-offset-1 col-md-10">
                                 <h3 style="font-family: PoiretOne-Regular;">專業房仲、細心呵護、安心信任</h3>
                                 <h1 class="wow fadeInUp" style="font-family: PoiretOne-Regular;" data-wow-delay="0.1s">Profession Care Trust</h1>
-                                <a href="~/About/Index" class="section-btn btn btn-default btn-gray smoothScroll">More About Us</a>
+                                <a href="~/Customer/AllLand/Index" class="section-btn btn btn-default btn-gray smoothScroll">More About Us</a>
                             </div>
                         </div>
                     </div>
@@ -79,7 +80,7 @@
                             <div class="col-md-offset-1 col-md-10">
                                 <h3 style="font-family: PoiretOne-Regular;">高品質不動產買賣服務，解決您各種買賣屋問題</h3>
                                 <h1 class="wow fadeInUp" style="font-family: PoiretOne-Regular;" data-wow-delay="0.1s">High Quality Care</h1>
-                                <a href="~/News/Index" class="section-btn btn btn-default btn-blue smoothScroll">Read Stories</a>
+                                <a href="~/Customer/AllLand/Index" class="section-btn btn btn-default btn-blue smoothScroll">Read Stories</a>
                             </div>
                         </div>
                     </div>
@@ -90,7 +91,7 @@
     </section>
 
     <!-- 熱門建案 -->
-    <section id="AboutArea" class="wn__newsletter__area newsletter--bg">
+    @* <section id="AboutArea" class="wn__newsletter__area newsletter--bg">
         <div class="main-title text-center" style="margin-top:50px;">
             <h3 class="section-head mt55">
                 最熱門建案
@@ -135,8 +136,9 @@
                                                 </div>
                                             </div>
                                             <p>
-                                                    @*<i class="fa fa-quote-left mr5"></i>*@ 「揚昇君悅」位於台北市中山區八德路二段260號，格局坪數規劃二房22坪、三房30~56坪，鄰近忠孝復興捷運站，為地上21層、地下6層的新古典外觀建築外觀，使用SC鋼骨結構、日本森科嘉阻尼器。 @*<i class="fa fa-quote-right quote-right"></i>*@ <span class="newbuild-label ml10">查看更多<em></em></span>
-                                            </p>
+                                                    @*<i class="fa fa-quote-left mr5"></i>*@ @*「揚昇君悅」位於台北市中山區八德路二段260號，格局坪數規劃二房22坪、三房30~56坪，鄰近忠孝復興捷運站，為地上21層、地下6層的新古典外觀建築外觀，使用SC鋼骨結構、日本森科嘉阻尼器。 @*<i class="fa fa-quote-right quote-right"></i>*@ 
+                                                    @* <span class="newbuild-label ml10">查看更多<em></em></span> *@
+                                            @* </p>
                                         </dd>
                                         </a>
                                     </dl>
@@ -144,9 +146,9 @@
                         </div>
                     </div>
                 </div>
-           </div>
+           </div> *@ 
 
-            <div class="item">
+            @* <div class="item">
                 <div class="scroll-wrapper clearfix triggerOne_show" id="hotBuild_unknow" data-id="hotBuild">
                     <div class="clearfix">
 
@@ -182,8 +184,9 @@
                                             </div>
                                         </div>
                                         <p>
-                                                @*<i class="fa fa-quote-left mr5"></i>*@ 「將捷行書」位於松山區三民路38號旁，由將捷股份有限公司投資興建，格局坪數規劃二房28.94、34.18坪、三房37.99坪，交通方面捷運南京三民站、國道一號、國道三號及環東大道、市民高架道路可利用。 @*<i class="fa fa-quote-right quote-right"></i>*@ <span class="newbuild-label ml10">查看更多<em></em></span>
-                                        </p>
+                                                @*<i class="fa fa-quote-left mr5"></i>*@ @*「將捷行書」位於松山區三民路38號旁，由將捷股份有限公司投資興建，格局坪數規劃二房28.94、34.18坪、三房37.99坪，交通方面捷運南京三民站、國道一號、國道三號及環東大道、市民高架道路可利用。 @*<i class="fa fa-quote-right quote-right"></i>*@ 
+                                                @* <span class="newbuild-label ml10">查看更多<em></em></span> *@
+                                        @* </p>
                                     </dd>
                                     </a>
                                 </dl>
@@ -191,8 +194,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="item">
+            </div> *@ 
+           @*  <div class="item">
                 <div class="scroll-wrapper clearfix triggerOne_show" id="hotBuild_unknow" data-id="hotBuild">
                     <div class="clearfix">
 
@@ -229,8 +232,9 @@
                                             </div>
                                         </div>
                                         <p>
-                                                @*<i class="fa fa-quote-left mr5"></i>*@ 「亞伯信義雅晑」位於台北市信義區永吉路30巷157弄18號，由亞伯土地開發投資興建，格局坪數規劃一房(13、15坪)、套房(10坪)，交通方面鄰近捷運市政府站，亦有國道一號可利用，生活便捷。 @*<i class="fa fa-quote-right quote-right"></i>*@ <span class="newbuild-label ml10">查看更多<em></em></span>
-                                        </p>
+                                                @*<i class="fa fa-quote-left mr5"></i>*@ @*「亞伯信義雅晑」位於台北市信義區永吉路30巷157弄18號，由亞伯土地開發投資興建，格局坪數規劃一房(13、15坪)、套房(10坪)，交通方面鄰近捷運市政府站，亦有國道一號可利用，生活便捷。 @*<i class="fa fa-quote-right quote-right"></i>*@ 
+                                                @* <span class="newbuild-label ml10">查看更多<em></em></span> *@
+                                        @* </p>
                                     </dd>
                                     </a>
                                 </dl>
@@ -238,9 +242,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="item">
-                <div class="scroll-wrapper clearfix triggerOne_show" id="hotBuild_unknow" data-id="hotBuild">
+            </div> *@
+    @*<div class="item">
+                 <div class="scroll-wrapper clearfix triggerOne_show" id="hotBuild_unknow" data-id="hotBuild">
                     <div class="clearfix">
 
                         <div class="scroll-main hot-builds">
@@ -275,8 +279,9 @@
                                                 </div>
                                             </div>
                                             <p>
-                                                    @*<i class="fa fa-quote-left mr5"></i>*@ 「長耀四季」位於北投區三合街一段82巷，由長耀建設股份有限公司投資興建，格局規劃一房18~20坪、二房24~26坪、三房32~36坪、四房51坪，交通方面有捷運奇岩站、國道一號及洲美快速道路可利用。 @*<i class="fa fa-quote-right quote-right"></i>*@ <span class="newbuild-label ml10">查看更多<em></em></span>
-                                            </p>
+                                                    @*<i class="fa fa-quote-left mr5"></i>*@ @*「長耀四季」位於北投區三合街一段82巷，由長耀建設股份有限公司投資興建，格局規劃一房18~20坪、二房24~26坪、三房32~36坪、四房51坪，交通方面有捷運奇岩站、國道一號及洲美快速道路可利用。 @*<i class="fa fa-quote-right quote-right"></i>*@
+                                                    @*<span class="newbuild-label ml10">查看更多<em></em></span>*@
+                                           @*  </p>
                                         </dd>
                                         </a>
                                  </dl>
@@ -284,8 +289,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="item">
+            </div> *@ 
+           @*  <div class="item">
                 <div class="scroll-wrapper clearfix triggerOne_show" id="hotBuild_unknow" data-id="hotBuild">
                     <div class="clearfix">
 
@@ -321,8 +326,9 @@
                                                 </div>
                                             </div>
                                             <p>
-                                                    @*<i class="fa fa-quote-left mr5"></i>*@ 「象山主人」位於台北市文山區木柵路三段49巷口，由基泰建設投資興建，格局坪數規劃二房18~26坪、三房31~34坪，交通方面有國道三號及64快速道路可利用，車程5分鐘內可達學區、公園、全聯等生活機能。 @*<i class="fa fa-quote-right quote-right"></i>*@ <span class="newbuild-label ml10">查看更多<em></em></span>
-                                            </p>
+                                                    @*<i class="fa fa-quote-left mr5"></i>*@ @*「象山主人」位於台北市文山區木柵路三段49巷口，由基泰建設投資興建，格局坪數規劃二房18~26坪、三房31~34坪，交通方面有國道三號及64快速道路可利用，車程5分鐘內可達學區、公園、全聯等生活機能。 @*<i class="fa fa-quote-right quote-right"></i>*@ 
+                                                    @* <span class="newbuild-label ml10">查看更多<em></em></span> *@
+                                            @* </p>
                                         </dd>
                                         </a>
                                     </dl>
@@ -331,10 +337,10 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <a href="//newhouse.591.com.tw/housing-list.html?sort=5" class="btn-more mt20" google-data-stat="新版首頁_熱門建案_查看更多房源-0">查看更多</a>
+        </div> *@ 
+        @* <a href="//newhouse.591.com.tw/housing-list.html?sort=5" class="btn-more mt20" google-data-stat="新版首頁_熱門建案_查看更多房源-0">查看更多</a>
            
-    </section>
+    </section> *@
 
 
     <!-- For you-->
@@ -677,7 +683,7 @@
 
     </section>
 
-    <!-- 推薦物件 -->
+    @* <!-- 推薦物件 -->
     <section id="AboutArea" class="wn__newsletter__area newsletter--bg">
         <div class="main-title text-center" style="margin-top:50px;">
             <h3 class="section-head mt55">
@@ -723,8 +729,9 @@
                                             </div>
                                         </div>
                                         <p>
-                                                @*<i class="fa fa-quote-left mr5"></i>*@ 「揚昇君悅」位於台北市中山區八德路二段260號，格局坪數規劃二房22坪、三房30~56坪，鄰近忠孝復興捷運站，為地上21層、地下6層的新古典外觀建築外觀，使用SC鋼骨結構、日本森科嘉阻尼器。 @*<i class="fa fa-quote-right quote-right"></i>*@ <span class="newbuild-label ml10">查看更多<em></em></span>
-                                        </p>
+                                                @*<i class="fa fa-quote-left mr5"></i>*@ @*「揚昇君悅」位於台北市中山區八德路二段260號，格局坪數規劃二房22坪、三房30~56坪，鄰近忠孝復興捷運站，為地上21層、地下6層的新古典外觀建築外觀，使用SC鋼骨結構、日本森科嘉阻尼器。 @*<i class="fa fa-quote-right quote-right"></i>*@ 
+                                                @* <span class="newbuild-label ml10">查看更多<em></em></span> *@
+                                       @*  </p>
                                     </dd>
                                     </a>
                                 </dl>
@@ -732,9 +739,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> *@ 
 
-            <div class="item">
+          @*   <div class="item">
                 <div class="scroll-wrapper clearfix triggerOne_show" id="hotBuild_unknow" data-id="hotBuild">
                     <div class="clearfix">
 
@@ -770,8 +777,9 @@
                                             </div>
                                         </div>
                                         <p>
-                                                @*<i class="fa fa-quote-left mr5"></i>*@ 「將捷行書」位於松山區三民路38號旁，由將捷股份有限公司投資興建，格局坪數規劃二房28.94、34.18坪、三房37.99坪，交通方面捷運南京三民站、國道一號、國道三號及環東大道、市民高架道路可利用。 @*<i class="fa fa-quote-right quote-right"></i>*@ <span class="newbuild-label ml10">查看更多<em></em></span>
-                                        </p>
+                                                @*<i class="fa fa-quote-left mr5"></i>*@ @*「將捷行書」位於松山區三民路38號旁，由將捷股份有限公司投資興建，格局坪數規劃二房28.94、34.18坪、三房37.99坪，交通方面捷運南京三民站、國道一號、國道三號及環東大道、市民高架道路可利用。 @*<i class="fa fa-quote-right quote-right"></i>*@ 
+                                                @* <span class="newbuild-label ml10">查看更多<em></em></span> *@
+                                      @*   </p>
                                     </dd>
                                     </a>
                                 </dl>
@@ -779,8 +787,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="item">
+            </div> *@
+           @*  <div class="item">
                 <div class="scroll-wrapper clearfix triggerOne_show" id="hotBuild_unknow" data-id="hotBuild">
                     <div class="clearfix">
 
@@ -816,9 +824,10 @@
                                                 </strong>
                                             </div>
                                         </div>
-                                        <p>
-                                                @*<i class="fa fa-quote-left mr5"></i>*@ 「亞伯信義雅晑」位於台北市信義區永吉路30巷157弄18號，由亞伯土地開發投資興建，格局坪數規劃一房(13、15坪)、套房(10坪)，交通方面鄰近捷運市政府站，亦有國道一號可利用，生活便捷。 @*<i class="fa fa-quote-right quote-right"></i>*@ <span class="newbuild-label ml10">查看更多<em></em></span>
-                                        </p>
+                                        <p> *@
+                                                @*<i class="fa fa-quote-left mr5"></i>*@ @* 「亞伯信義雅晑」位於台北市信義區永吉路30巷157弄18號，由亞伯土地開發投資興建，格局坪數規劃一房(13、15坪)、套房(10坪)，交通方面鄰近捷運市政府站，亦有國道一號可利用，生活便捷。 @*<i class="fa fa-quote-right quote-right"></i>*@ 
+                                                <@* span class="newbuild-label ml10">查看更多<em></em></span> *@
+                                        @*  </p>
                                     </dd>
                                     </a>
                                 </dl>
@@ -826,8 +835,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="item">
+            </div> *@
+            @* <div class="item">
                 <div class="scroll-wrapper clearfix triggerOne_show" id="hotBuild_unknow" data-id="hotBuild">
                     <div class="clearfix">
 
@@ -863,8 +872,9 @@
                                             </div>
                                         </div>
                                         <p>
-                                                @*<i class="fa fa-quote-left mr5"></i>*@ 「長耀四季」位於北投區三合街一段82巷，由長耀建設股份有限公司投資興建，格局規劃一房18~20坪、二房24~26坪、三房32~36坪、四房51坪，交通方面有捷運奇岩站、國道一號及洲美快速道路可利用。 @*<i class="fa fa-quote-right quote-right"></i>*@ <span class="newbuild-label ml10">查看更多<em></em></span>
-                                        </p>
+                                                @*<i class="fa fa-quote-left mr5"></i>*@ @*「長耀四季」位於北投區三合街一段82巷，由長耀建設股份有限公司投資興建，格局規劃一房18~20坪、二房24~26坪、三房32~36坪、四房51坪，交通方面有捷運奇岩站、國道一號及洲美快速道路可利用。 @*<i class="fa fa-quote-right quote-right"></i>*@ 
+                                                @* <span class="newbuild-label ml10">查看更多<em></em></span> *@
+                                     @*    </p>
                                     </dd>
                                     </a>
                                 </dl>
@@ -872,8 +882,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="item">
+            </div> *@ 
+          @*   <div class="item">
                 <div class="scroll-wrapper clearfix triggerOne_show" id="hotBuild_unknow" data-id="hotBuild">
                     <div class="clearfix">
 
@@ -909,8 +919,9 @@
                                             </div>
                                         </div>
                                         <p>
-                                                @*<i class="fa fa-quote-left mr5"></i>*@ 「象山主人」位於台北市文山區木柵路三段49巷口，由基泰建設投資興建，格局坪數規劃二房18~26坪、三房31~34坪，交通方面有國道三號及64快速道路可利用，車程5分鐘內可達學區、公園、全聯等生活機能。 @*<i class="fa fa-quote-right quote-right"></i>*@ <span class="newbuild-label ml10">查看更多<em></em></span>
-                                        </p>
+                                                @*<i class="fa fa-quote-left mr5"></i>*@ @*     「象山主人」位於台北市文山區木柵路三段49巷口，由基泰建設投資興建，格局坪數規劃二房18~26坪、三房31~34坪，交通方面有國道三號及64快速道路可利用，車程5分鐘內可達學區、公園、全聯等生活機能。 @*<i class="fa fa-quote-right quote-right"></i>*@ 
+                                                @* <span class="newbuild-label ml10">查看更多<em></em></span> *@
+                                        @* </p>
                                     </dd>
                                     </a>
                                 </dl>
@@ -922,11 +933,11 @@
         </div>
         <a href="//newhouse.591.com.tw/housing-list.html?sort=5" class="btn-more mt20" google-data-stat="新版首頁_熱門建案_查看更多房源-0">查看更多</a>
 
-    </section>
+    </section> *@ 
 
 
     <!-- 最新公開銷售建案 -->
-    <section id="AboutArea" class="wn__newsletter__area newsletter--bg">
+   @*  <section id="AboutArea" class="wn__newsletter__area newsletter--bg">
         <div class="main-title text-center" style="margin-top:50px;">
             <h3 class="section-head mt55">
                 最新公開銷售建案
@@ -970,9 +981,10 @@
                                                 </strong>
                                             </div>
                                         </div>
-                                        <p>
-                                                @*<i class="fa fa-quote-left mr5"></i>*@ 「揚昇君悅」位於台北市中山區八德路二段260號，格局坪數規劃二房22坪、三房30~56坪，鄰近忠孝復興捷運站，為地上21層、地下6層的新古典外觀建築外觀，使用SC鋼骨結構、日本森科嘉阻尼器。 @*<i class="fa fa-quote-right quote-right"></i>*@ <span class="newbuild-label ml10">查看更多<em></em></span>
-                                        </p>
+                                        @*<p >
+                                                @*<i class="fa fa-quote-left mr5"></i>*@ @*「揚昇君悅」位於台北市中山區八德路二段260號，格局坪數規劃二房22坪、三房30~56坪，鄰近忠孝復興捷運站，為地上21層、地下6層的新古典外觀建築外觀，使用SC鋼骨結構、日本森科嘉阻尼器。 @*<i class="fa fa-quote-right quote-right"></i>*@ 
+                                                @* <span class="newbuild-label ml10">查看更多<em></em></span> *@
+                                      @*   </p>
                                     </dd>
                                     </a>
                                 </dl>
@@ -980,9 +992,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> *@
 
-            <div class="item">
+            @* <div class="item">
                 <div class="scroll-wrapper clearfix triggerOne_show" id="hotBuild_unknow" data-id="hotBuild">
                     <div class="clearfix">
 
@@ -1017,9 +1029,10 @@
                                                 </strong>
                                             </div>
                                         </div>
-                                        <p>
-                                                @*<i class="fa fa-quote-left mr5"></i>*@ 「將捷行書」位於松山區三民路38號旁，由將捷股份有限公司投資興建，格局坪數規劃二房28.94、34.18坪、三房37.99坪，交通方面捷運南京三民站、國道一號、國道三號及環東大道、市民高架道路可利用。 @*<i class="fa fa-quote-right quote-right"></i>*@ <span class="newbuild-label ml10">查看更多<em></em></span>
-                                        </p>
+                                        <p> *@ 
+                                                @*<i class="fa fa-quote-left mr5"></i>*@ @*「將捷行書」位於松山區三民路38號旁，由將捷股份有限公司投資興建，格局坪數規劃二房28.94、34.18坪、三房37.99坪，交通方面捷運南京三民站、國道一號、國道三號及環東大道、市民高架道路可利用。 @*<i class="fa fa-quote-right quote-right"></i>*@ 
+                                                @* <span class="newbuild-label ml10">查看更多<em></em></span> *@
+                                        @* </p>
                                     </dd>
                                     </a>
                                 </dl>
@@ -1064,9 +1077,10 @@
                                                 </strong>
                                             </div>
                                         </div>
-                                        <p>
-                                                @*<i class="fa fa-quote-left mr5"></i>*@ 「亞伯信義雅晑」位於台北市信義區永吉路30巷157弄18號，由亞伯土地開發投資興建，格局坪數規劃一房(13、15坪)、套房(10坪)，交通方面鄰近捷運市政府站，亦有國道一號可利用，生活便捷。 @*<i class="fa fa-quote-right quote-right"></i>*@ <span class="newbuild-label ml10">查看更多<em></em></span>
-                                        </p>
+                                        <p> *@
+                                                @*<i class="fa fa-quote-left mr5"></i>*@ @*「亞伯信義雅晑」位於台北市信義區永吉路30巷157弄18號，由亞伯土地開發投資興建，格局坪數規劃一房(13、15坪)、套房(10坪)，交通方面鄰近捷運市政府站，亦有國道一號可利用，生活便捷。 @*<i class="fa fa-quote-right quote-right"></i>*@ 
+                                                @* <span class="newbuild-label ml10">查看更多<em></em></span> *@
+                                      @*   </p>
                                     </dd>
                                     </a>
                                 </dl>
@@ -1110,9 +1124,10 @@
                                                 </strong>
                                             </div>
                                         </div>
-                                        <p>
-                                                @*<i class="fa fa-quote-left mr5"></i>*@ 「長耀四季」位於北投區三合街一段82巷，由長耀建設股份有限公司投資興建，格局規劃一房18~20坪、二房24~26坪、三房32~36坪、四房51坪，交通方面有捷運奇岩站、國道一號及洲美快速道路可利用。 @*<i class="fa fa-quote-right quote-right"></i>*@ <span class="newbuild-label ml10">查看更多<em></em></span>
-                                        </p>
+                                        <p> *@
+                                                @*<i class="fa fa-quote-left mr5"></i>*@ @*「長耀四季」位於北投區三合街一段82巷，由長耀建設股份有限公司投資興建，格局規劃一房18~20坪、二房24~26坪、三房32~36坪、四房51坪，交通方面有捷運奇岩站、國道一號及洲美快速道路可利用。 @*<i class="fa fa-quote-right quote-right"></i>*@ 
+                                                @* <span class="newbuild-label ml10">查看更多<em></em></span> *@
+                                  @*       </p>
                                     </dd>
                                     </a>
                                 </dl>
@@ -1156,9 +1171,10 @@
                                                 </strong>
                                             </div>
                                         </div>
-                                        <p>
-                                                @*<i class="fa fa-quote-left mr5"></i>*@ 「象山主人」位於台北市文山區木柵路三段49巷口，由基泰建設投資興建，格局坪數規劃二房18~26坪、三房31~34坪，交通方面有國道三號及64快速道路可利用，車程5分鐘內可達學區、公園、全聯等生活機能。 @*<i class="fa fa-quote-right quote-right"></i>*@ <span class="newbuild-label ml10">查看更多<em></em></span>
-                                        </p>
+                                        <p> *@
+                                                @*<i class="fa fa-quote-left mr5"></i>*@ @*「象山主人」位於台北市文山區木柵路三段49巷口，由基泰建設投資興建，格局坪數規劃二房18~26坪、三房31~34坪，交通方面有國道三號及64快速道路可利用，車程5分鐘內可達學區、公園、全聯等生活機能。 @*<i class="fa fa-quote-right quote-right"></i>*@ 
+                                                @* <span class="newbuild-label ml10">查看更多<em></em></span> *@
+                                     @*    </p>
                                     </dd>
                                     </a>
                                 </dl>
@@ -1170,7 +1186,7 @@
         </div>
         <a href="//newhouse.591.com.tw/housing-list.html?sort=5" class="btn-more mt20" google-data-stat="新版首頁_熱門建案_查看更多房源-0">查看更多</a>
 
-    </section>
+    </section> *@
 
 
     <!-- ABOUT -->

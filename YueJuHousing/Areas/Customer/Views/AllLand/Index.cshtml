@@ -3,7 +3,7 @@
     ViewData["Title"] = "悅聚房屋 | 最佳房屋選擇";
 }
 
-<html lang="en">
+<html lang="zh-Hant">
 <head>
 
     <!--
@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="~/css/owl.carousel.min.css">
     <link rel="stylesheet" href="~/css/owl.theme.default.css">
     <link rel="stylesheet" href="~/css/AllItem.css">
-    
+    <link rel="stylesheet" href="~/css/LandFilter.css">
 
 
     <!-- MAIN CSS -->
@@ -57,198 +57,395 @@
     
     <section id="AboutArea" class="wn__newsletter__area newsletter--bg">
         <!-- 簡易篩選 -->
-       @* <div id="filter" class="">
-            <div class="filter z-kind-null z-shType-list false">
-                <div class="select-wrap filter-location-wrap">
-                    <div class="select-label">位置</div> <div class="filter-location-content">
-                        <div class="header">
-                            <div class="select-group"><div class="select-item is-active"><span>按鄉鎮</span> <i class="expand"></i></div><div class="select-item"><span>按捷運</span> <i class="no-expand"></i></div><div class="select-item"><span>按學校</span> <i class="no-expand"></i></div><div class="select-item"><span>按商圈</span> <i class="no-expand"></i></div></div> <div class="operation">
-                                <a href="javascript:;" data-gtm-stat="中古屋列表頁_麵包屑_清空全部">
-                                    <i class="clean-search"></i>
-                                    清空條件
-                                </a> <a href="javascript:;" data-gtm-stat="中古屋列表頁_麵包屑_訂閱電子報">
-                                    <i class="subscription"></i>
-                                    訂閱電子報
-                                </a>
-                            </div>
-                        </div> <div class="filter-line"></div> <div class="select-options-wrapper"><div class="select-options-group is-section" style=""><div class="select-option-unlimit z-select">不限</div> <div class="select-option-list"><div class="option-item"><div class="checkbox-icon"></div> <span>中和區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>林口區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>淡水區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>新莊區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>汐止區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>板橋區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>新店區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>樹林區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>三重區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>三峽區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>永和區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>土城區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>蘆洲區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>五股區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>泰山區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>八里區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>鶯歌區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>深坑區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>三芝區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>瑞芳區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>金山區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>萬里區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>石碇區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>石門區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>雙溪區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>坪林區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>平溪區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>貢寮區</span></div><div class="option-item"><div class="checkbox-icon"></div> <span>烏來區</span></div></div></div> <div class="select-options-group button-group is-metro" style="display: none;"><div class="select-option-list"><div class="option-item"><span>文湖線</span></div><div class="option-item"><span>淡水信義線</span></div><div class="option-item"><span>新北投支線</span></div><div class="option-item"><span>松山新店線</span></div><div class="option-item"><span>小碧潭支線</span></div><div class="option-item"><span>中和新蘆線</span></div><div class="option-item"><span>板南線</span></div><div class="option-item"><span>淡海輕軌</span></div><div class="option-item"><span>環狀線</span></div></div></div> <!----> <div class="select-options-group is-station" style="display: none;"><div class="select-option-list"></div></div> <div class="select-options-group is-school" style="display: none;"><div class="select-option-list"><div class="option-item"><span>台灣藝術大學</span></div><div class="option-item"><span>亞東技術學院</span></div><div class="option-item"><span>致理技術學院</span></div><div class="option-item"><span>東南科技大學</span></div><div class="option-item"><span>華梵大學</span></div><div class="option-item"><span>德霖技術學院</span></div><div class="option-item"><span>輔仁大學</span></div><div class="option-item"><span>黎明技術學院</span></div><div class="option-item"><span>醒吾科技大學</span></div><div class="option-item"><span>真理大學</span></div><div class="option-item"><span>淡江大學</span></div><div class="option-item"><span>華夏科技大學</span></div><div class="option-item"><span>明志科技大學</span></div><div class="option-item"><span>景文科技大學</span></div><div class="option-item"><span>台北大學三峽校區</span></div></div></div> <div class="select-options-group is-business" style="display: none;"><div class="select-option-list"><div class="option-item"><span>蘆洲市廟街商圈</span></div><div class="option-item"><span>烏來商圈</span></div><div class="option-item"><span>瑞芳鎮九份商圈</span></div><div class="option-item"><span>鶯歌老街商圈</span></div><div class="option-item"><span>坪林商圈</span></div><div class="option-item"><span>新莊夜市商圈</span></div><div class="option-item"><span>鴻金寶商圈</span></div><div class="option-item"><span>幸福商圈</span></div><div class="option-item"><span>板橋後站商圈</span></div><div class="option-item"><span>板橋新站商圈</span></div><div class="option-item"><span>中和捷運商圈</span></div><div class="option-item"><span>中和積穗商圈</span></div><div class="option-item"><span>永和頂溪商圈</span></div><div class="option-item"><span>金國商圈</span></div><div class="option-item"><span>天台商圈</span></div><div class="option-item"><span>汐止麥當勞商圈</span></div><div class="option-item"><span>忠孝東路商圈</span></div><div class="option-item"><span>國泰建成商圈</span></div><div class="option-item"><span>大汐止百貨商圈</span></div><div class="option-item"><span>明峰市場商圈</span></div><div class="option-item"><span>樟樹灣商圈</span></div><div class="option-item"><span>碧潭商圈</span></div><div class="option-item"><span>淡水商圈</span></div><div class="option-item"><span>土城延吉商圈</span></div><div class="option-item"><span>南港軟體工業園區</span></div><div class="option-item"><span>中和工業區</span></div><div class="option-item"><span>新店工業區</span></div><div class="option-item"><span>土城工業區</span></div><div class="option-item"><span>五股工業區</span></div><div class="option-item"><span>瑞芳工業區</span></div><div class="option-item"><span>樹林工業區</span></div><div class="option-item"><span>龜山工業區</span></div><div class="option-item"><span>林口工[二]工業區</span></div><div class="option-item"><span>湯城園區</span></div><div class="option-item"><span>汐止東方科學園區</span></div><div class="option-item"><span>三和夜市商圈</span></div></div></div></div> <div class="filter-line" style="margin-top: 8px;"></div>
+        <div class="filter-container" data-v-d9530ace="" data-v-88be4db3="">
+            <div class="fold wrapper" data-v-88be4db3="">
+                <div class="tools" data-v-88be4db3="">
+                    @*<a class="tools-item" href="https://www.591.com.tw/index.php?module=mailPaper&amp;action=addSalePaper" target="_blank" data-v-88be4db3="" data-tracker="">
+                    <span class="ic-house house-subscribe" data-v-88be4db3=""></span>
+                    <span data-v-88be4db3="">訂閱電子報</span>
+                    </a>*@
+                    <div class="tools-item" data-v-88be4db3="" data-tracker="">
+                        <span class="ic-house house-delete" data-v-88be4db3=""></span>
+                        @*<span data-v-88be4db3="">清空條件</span>*@
                     </div>
-                </div> <div class="select-wrap filter-kind-wrap"><div class="select-label">類型</div> <div class="select-options-group"><div data-gtm-stat="中古屋列表頁_類型_不限" class="select-option-unlimit z-select">不限</div> <div class="select-option-list"><div data-gtm-stat="中古屋列表頁_類型_住宅" class="option-item filter-kind-items-9"><span>住宅</span></div><div data-gtm-stat="中古屋列表頁_類型_套房" class="option-item filter-kind-items-10"><span>套房</span></div><div data-gtm-stat="中古屋列表頁_類型_車位" class="option-item filter-kind-items-8"><span>車位</span></div><div data-gtm-stat="中古屋列表頁_類型_法拍屋" class="option-item filter-kind-items-22"><span>法拍屋</span></div><div data-gtm-stat="中古屋列表頁_類型_其他" class="option-item filter-kind-items-24"><span>其他</span></div></div></div></div> <div class="select-wrap filter-saleprice-wrap"><div class="select-label">售價</div> <div class="select-options-group"><div data-gtm-stat="中古屋列表頁_售金_不限" class="select-option-unlimit z-select">不限</div> <div class="select-option-list"><!----><div data-gtm-stat="中古屋列表頁_售金_750萬以下" class="option-item"><div class="checkbox-icon"></div> <span>750萬以下</span></div><div data-gtm-stat="中古屋列表頁_售金_750-1000萬" class="option-item"><div class="checkbox-icon"></div> <span>750-1000萬</span></div><div data-gtm-stat="中古屋列表頁_售金_1000-1250萬" class="option-item"><div class="checkbox-icon"></div> <span>1000-1250萬</span></div><div data-gtm-stat="中古屋列表頁_售金_1250-1500萬" class="option-item"><div class="checkbox-icon"></div> <span>1250-1500萬</span></div><div data-gtm-stat="中古屋列表頁_售金_1500-2000萬" class="option-item"><div class="checkbox-icon"></div> <span>1500-2000萬</span></div><div data-gtm-stat="中古屋列表頁_售金_2000-3000萬" class="option-item"><div class="checkbox-icon"></div> <span>2000-3000萬</span></div><div data-gtm-stat="中古屋列表頁_售金_3000萬以上" class="option-item"><div class="checkbox-icon"></div> <span>3000萬以上</span></div> <div class="filter-custom" style="width: 227px;"><input type="text" maxlength="6" placeholder="最低價" class="filter-custom-min filter-custom-input"> <div class="filter-custom-line"></div> <input type="text" maxlength="6" placeholder="最高價" class="filter-custom-max filter-custom-input"> <span class="filter-custom-unit">萬</span> <button type="button" class="filter-custom-submit" style="display: none;">確定</button></div></div> <!----></div> <!----></div> <div class="select-wrap filter-shape-wrap"><div class="select-label">型態</div> <div class="select-options-group"><div data-gtm-stat="中古屋列表頁_型態_不限" class="select-option-unlimit z-select">不限</div> <div class="select-option-list"><!----><div data-gtm-stat="中古屋列表頁_型態_公寓" class="option-item"><div class="checkbox-icon"></div> <span>公寓</span></div><div data-gtm-stat="中古屋列表頁_型態_電梯大樓" class="option-item"><div class="checkbox-icon"></div> <span>電梯大樓</span></div><div data-gtm-stat="中古屋列表頁_型態_透天厝" class="option-item"><div class="checkbox-icon"></div> <span>透天厝</span></div><div data-gtm-stat="中古屋列表頁_型態_別墅" class="option-item"><div class="checkbox-icon"></div> <span>別墅</span></div></div></div></div> <div class="select-wrap filter-pattern-wrap"><div class="select-label">格局</div> <div class="select-options-group"><div data-gtm-stat="中古屋列表頁_格局_不限" class="select-option-unlimit z-select">不限</div> <div class="select-option-list"><!----><div data-gtm-stat="中古屋列表頁_格局_1房" class="option-item"><div class="checkbox-icon"></div> <span>1房</span></div><div data-gtm-stat="中古屋列表頁_格局_2房" class="option-item"><div class="checkbox-icon"></div> <span>2房</span></div><div data-gtm-stat="中古屋列表頁_格局_3房" class="option-item"><div class="checkbox-icon"></div> <span>3房</span></div><div data-gtm-stat="中古屋列表頁_格局_4房" class="option-item"><div class="checkbox-icon"></div> <span>4房</span></div><div data-gtm-stat="中古屋列表頁_格局_5房及以上" class="option-item"><div class="checkbox-icon"></div> <span>5房及以上</span></div></div></div></div> <div class="select-wrap filter-area-wrap"><div class="select-label"><div class="filter-custom-select"><div class="filter-custom-select-suffix"><span>權狀</span> <i class="icon-caret-bottom"></i></div> <div class="filter-custom-select-dropdown" style="display: none;"><ul class="filter-custom-select-dropdown__list"><li data-gtm-stat="中古屋列表頁_坪數_權狀" class="filter-custom-select-dropdown__item z-select"><span>權狀</span></li><li data-gtm-stat="中古屋列表頁_坪數_主建" class="filter-custom-select-dropdown__item"><span>主建</span></li></ul></div></div></div> <div class="select-options-group"><div data-gtm-stat="中古屋列表頁_坪數_不限" class="select-option-unlimit z-select">不限</div> <div class="select-option-list"><!----><div data-gtm-stat="中古屋列表頁_坪數_20坪以下" class="option-item"><div class="checkbox-icon"></div> <span>20坪以下</span></div><div data-gtm-stat="中古屋列表頁_坪數_20-30坪" class="option-item"><div class="checkbox-icon"></div> <span>20-30坪</span></div><div data-gtm-stat="中古屋列表頁_坪數_30-40坪" class="option-item"><div class="checkbox-icon"></div> <span>30-40坪</span></div><div data-gtm-stat="中古屋列表頁_坪數_40-50坪" class="option-item"><div class="checkbox-icon"></div> <span>40-50坪</span></div><div data-gtm-stat="中古屋列表頁_坪數_50-60坪" class="option-item"><div class="checkbox-icon"></div> <span>50-60坪</span></div><div data-gtm-stat="中古屋列表頁_坪數_60-100坪" class="option-item"><div class="checkbox-icon"></div> <span>60-100坪</span></div><div data-gtm-stat="中古屋列表頁_坪數_100坪以上" class="option-item"><div class="checkbox-icon"></div> <span>100坪以上</span></div> <div class="filter-custom"><input type="text" maxlength="6" placeholder="最小坪" class="filter-custom-min filter-custom-input"> <div class="filter-custom-line"></div> <input type="text" maxlength="6" placeholder="最大坪" class="filter-custom-max filter-custom-input"> <span class="filter-custom-unit">坪</span> <button type="button" class="filter-custom-submit" style="display: none;">確定</button></div></div></div> <!----></div> <div class="select-wrap filter-more-wrap z-kind-null">
-                    <div class="select-label">更多</div> <div class="select-list">
-                        <div class="filter-more filter-publish_day">
-                            <div title="" class="filter-more-txt" style="max-width: 85px;">
-                                刊登時間
-                            </div> <div class="icon-arrow"></div> <div class="filter-more-list" style="display: none;"><div data-gtm-stat="中古屋列表頁_更多_刊登時間" class="filter-more-item"><span>不限</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_刊登時間" class="filter-more-item"><span>一天內</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_刊登時間" class="filter-more-item"><span>三天內</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_刊登時間" class="filter-more-item"><span>五天內</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_刊登時間" class="filter-more-item"><span>七天內</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_刊登時間" class="filter-more-item"><span>十五天內</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_刊登時間" class="filter-more-item"><span>三十天內</span> <div class="checkbox-icon"></div></div></div> <div class="filter-more-day-list" style="display: none;">
-                                <div class="filter-more-day-item">
-                                    不限
-                                </div><div class="filter-more-day-item">
-                                    一天內
-                                </div><div class="filter-more-day-item">
-                                    三天內
-                                </div><div class="filter-more-day-item">
-                                    五天內
-                                </div><div class="filter-more-day-item">
-                                    七天內
-                                </div><div class="filter-more-day-item">
-                                    十五天內
-                                </div><div class="filter-more-day-item">
-                                    三十天內
+                </div>
+
+                <!-- 位置篩選 -->
+                <div class="location-filter-container" data-v-88be4db3="" data-v-4657696d="">
+                    <div class="title" data-v-4657696d="">位置</div>
+                    <div class="content" data-v-4657696d="">
+                        <div class="categories" data-v-4657696d="">
+                            <div class="active category" data-v-4657696d="">
+                                <span data-v-4657696d="">按縣市及鄉鎮</span>
+                                <span class="active ic-house house-arrow-down" data-v-4657696d=""></span>
+                            </div>
+                        </div>
+
+                        <div class="category-content unlimit" style="" data-v-4657696d="" data-v-8cb48bae="">
+                            <!-- 縣市選擇 -->
+                            <form asp-action="Index" method="get">
+                                <div class="location-filter-container" data-v-88be4db3="" data-v-4657696d="">
+                                    <div class="title" data-v-4657696d="">縣市</div>
+                                    <div class="content" data-v-4657696d="">
+                                        <select name="City" id="county-select" style="width:50%;">
+                                            <option value="" disabled>請選擇縣市</option>
+                                            <option value="不限" selected>不限</option>
+                                            <option value="台北市">台北市</option>
+                                            <option value="新北市">新北市</option>
+                                            <option value="桃園市">桃園市</option>
+                                            <option value="台中市">台中市</option>
+                                            <option value="台南市">台南市</option>
+                                            <option value="高雄市">高雄市</option>
+                                            <option value="基隆市">基隆市</option>
+                                            <option value="新竹市">新竹市</option>
+                                            <option value="新竹縣">新竹縣</option>
+                                            <option value="苗栗縣">苗栗縣</option>
+                                            <option value="彰化縣">彰化縣</option>
+                                            <option value="南投縣">南投縣</option>
+                                            <option value="雲林縣">雲林縣</option>
+                                            <option value="嘉義市">嘉義市</option>
+                                            <option value="嘉義縣">嘉義縣</option>
+                                            <option value="屏東縣">屏東縣</option>
+                                            <option value="宜蘭縣">宜蘭縣</option>
+                                            <option value="花蓮縣">花蓮縣</option>
+                                            <option value="台東縣">台東縣</option>
+                                            <option value="澎湖縣">澎湖縣</option>
+                                            <option value="金門縣">金門縣</option>
+                                            <option value="連江縣">連江縣</option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                        </div> <div class="filter-more filter-fcicount">
-                            <div title="" class="filter-more-txt" style="max-width: 55px;">
-                                拍次
-                            </div> <div class="icon-arrow"></div> <div class="filter-more-list" style="display: none;"><div data-gtm-stat="中古屋列表頁_更多_拍次" class="filter-more-item"><span>1拍</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_拍次" class="filter-more-item"><span>2拍</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_拍次" class="filter-more-item"><span>3拍</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_拍次" class="filter-more-item"><span>4拍</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_拍次" class="filter-more-item"><span>應買</span> <div class="checkbox-icon"></div></div></div> <div class="filter-more-day-list" style="display: none;">
-                                <div class="filter-more-day-item">
-                                    1拍
-                                </div><div class="filter-more-day-item">
-                                    2拍
-                                </div><div class="filter-more-day-item">
-                                    3拍
-                                </div><div class="filter-more-day-item">
-                                    4拍
-                                </div><div class="filter-more-day-item">
-                                    應買
+
+                                <!-- 地區選擇 -->
+                                <div class="location-filter-container" data-v-88be4db3="" data-v-4657696d="">
+                                    <div class="title" data-v-4657696d="">地區</div>
+                                    <div class="content" data-v-4657696d="">
+                                        <div id="district-options" class="options" data-v-8cb48bae="">
+                                            <!-- 地區選項將會根據縣市選擇自動生成 -->
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div> <div class="filter-more filter-isclinch">
-                            <div title="" class="filter-more-txt">
-                                點交情況
-                            </div> <div class="icon-arrow"></div> <div class="filter-more-list" style="display: none;"><div data-gtm-stat="中古屋列表頁_更多_點交情況" class="filter-more-item"><span>點交</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_點交情況" class="filter-more-item"><span>不點交</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_點交情況" class="filter-more-item"><span>部分點交</span> <div class="checkbox-icon"></div></div></div> <div class="filter-more-day-list" style="display: none;">
-                                <div class="filter-more-day-item">
-                                    點交
-                                </div><div class="filter-more-day-item">
-                                    不點交
-                                </div><div class="filter-more-day-item">
-                                    部分點交
+
+                                <!-- 其他篩選條件 -->
+                                <div class="other-filter-wrapper" data-v-88be4db3="">
+                                    <!-- 售價篩選 -->
+                                    <div class="pc-custom-filter-container" data-v-88be4db3="" data-v-f3d96318="">
+                                        <div class="title" style="" data-v-f3d96318="">售價</div>
+                                        <div class="sale_price options-container" data-v-f3d96318="">
+                                            <div class="filter-item" data-v-f3d96318="">
+                                                <label class="t5-checkbox t5-checkbox--housing" data-v-f3d96318="">
+                                                    <span class="t5-checkbox__inner">
+                                                        <input class="t5-checkbox__input" type="checkbox" name="MinPrice" value="0" data-max-price="1000">
+                                                        <span class="t5-checkbox__icon">
+                                                            <span class="t5-checkbox__check"></span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="t5-checkbox__text">1000萬以下</span>
+                                                </label>
+                                            </div>
+                                            <div class="filter-item" data-v-f3d96318="">
+                                                <label class="t5-checkbox t5-checkbox--housing" data-v-f3d96318="">
+                                                    <span class="t5-checkbox__inner">
+                                                        <input class="t5-checkbox__input" type="checkbox" name="MinPrice" value="1000" data-max-price="2000">
+                                                        <span class="t5-checkbox__icon">
+                                                            <span class="t5-checkbox__check"></span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="t5-checkbox__text">1000-2000萬</span>
+                                                </label>
+                                            </div>
+                                            <div class="filter-item" data-v-f3d96318="">
+                                                <label class="t5-checkbox t5-checkbox--housing" data-v-f3d96318="">
+                                                    <span class="t5-checkbox__inner">
+                                                        <input class="t5-checkbox__input" type="checkbox" name="MinPrice" value="2000" data-max-price="3000">
+                                                        <span class="t5-checkbox__icon">
+                                                            <span class="t5-checkbox__check"></span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="t5-checkbox__text">2000-3000萬</span>
+                                                </label>
+                                            </div>
+                                            <div class="filter-item" data-v-f3d96318="">
+                                                <label class="t5-checkbox t5-checkbox--housing" data-v-f3d96318="">
+                                                    <span class="t5-checkbox__inner">
+                                                        <input class="t5-checkbox__input" type="checkbox" name="MinPrice" value="3000" data-max-price="5000">
+                                                        <span class="t5-checkbox__icon">
+                                                            <span class="t5-checkbox__check"></span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="t5-checkbox__text">3000-5000萬</span>
+                                                </label>
+                                            </div>
+                                            <div class="filter-item" data-v-f3d96318="">
+                                                <label class="t5-checkbox t5-checkbox--housing" data-v-f3d96318="">
+                                                    <span class="t5-checkbox__inner">
+                                                        <input class="t5-checkbox__input" type="checkbox" name="MinPrice" value="5000" data-max-price="10000">
+                                                        <span class="t5-checkbox__icon">
+                                                            <span class="t5-checkbox__check"></span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="t5-checkbox__text">5000萬-1億</span>
+                                                </label>
+                                            </div>
+                                            <div class="filter-item" data-v-f3d96318="">
+                                                <label class="t5-checkbox t5-checkbox--housing" data-v-f3d96318="">
+                                                    <span class="t5-checkbox__inner">
+                                                        <input class="t5-checkbox__input" type="checkbox" name="MinPrice" value="10000" data-max-price="20000">
+                                                        <span class="t5-checkbox__icon">
+                                                            <span class="t5-checkbox__check"></span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="t5-checkbox__text">1-2億</span>
+                                                </label>
+                                            </div>
+                                            <div class="filter-item" data-v-f3d96318="">
+                                                <label class="t5-checkbox t5-checkbox--housing" data-v-f3d96318="">
+                                                    <span class="t5-checkbox__inner">
+                                                        <input class="t5-checkbox__input" type="checkbox" name="MinPrice" value="20000" data-max-price="99999999999999">
+                                                        <span class="t5-checkbox__icon">
+                                                            <span class="t5-checkbox__check"></span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="t5-checkbox__text">2億以上</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 坪數篩選 -->
+                                    <div class="pc-custom-filter-container" data-v-88be4db3="" data-v-f3d96318="">
+                                        <div class="title" style="" data-v-f3d96318="">坪數</div>
+                                        <div class="acreage options-container" data-v-f3d96318="">
+                                            <div class="filter-item" data-v-f3d96318="">
+                                                <label class="t5-checkbox t5-checkbox--housing" data-v-f3d96318="">
+                                                    <span class="t5-checkbox__inner">
+                                                        <input class="t5-checkbox__input" type="checkbox" name="Area" value="50">
+                                                        <span class="t5-checkbox__icon">
+                                                            <span class="t5-checkbox__check"></span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="t5-checkbox__text">50坪以下</span>
+                                                </label>
+                                            </div>
+                                            <div class="filter-item" data-v-f3d96318="">
+                                                <label class="t5-checkbox t5-checkbox--housing" data-v-f3d96318="">
+                                                    <span class="t5-checkbox__inner">
+                                                        <input class="t5-checkbox__input" type="checkbox" name="Area" value="100">
+                                                        <span class="t5-checkbox__icon">
+                                                            <span class="t5-checkbox__check"></span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="t5-checkbox__text">50-100坪</span>
+                                                </label>
+                                            </div>
+                                            <div class="filter-item" data-v-f3d96318="">
+                                                <label class="t5-checkbox t5-checkbox--housing" data-v-f3d96318="">
+                                                    <span class="t5-checkbox__inner">
+                                                        <input class="t5-checkbox__input" type="checkbox" name="Area" value="200">
+                                                        <span class="t5-checkbox__icon">
+                                                            <span class="t5-checkbox__check"></span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="t5-checkbox__text">100-200坪</span>
+                                                </label>
+                                            </div>
+                                            <div class="filter-item" data-v-f3d96318="">
+                                                <label class="t5-checkbox t5-checkbox--housing" data-v-f3d96318="">
+                                                    <span class="t5-checkbox__inner">
+                                                        <input class="t5-checkbox__input" type="checkbox" name="Area" value="400">
+                                                        <span class="t5-checkbox__icon">
+                                                            <span class="t5-checkbox__check"></span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="t5-checkbox__text">200-400坪</span>
+                                                </label>
+                                            </div>
+                                            <div class="filter-item" data-v-f3d96318="">
+                                                <label class="t5-checkbox t5-checkbox--housing" data-v-f3d96318="">
+                                                    <span class="t5-checkbox__inner">
+                                                        <input class="t5-checkbox__input" type="checkbox" name="Area" value="700">
+                                                        <span class="t5-checkbox__icon">
+                                                            <span class="t5-checkbox__check"></span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="t5-checkbox__text">400-700坪</span>
+                                                </label>
+                                            </div>
+                                            <div class="filter-item" data-v-f3d96318="">
+                                                <label class="t5-checkbox t5-checkbox--housing" data-v-f3d96318="">
+                                                    <span class="t5-checkbox__inner">
+                                                        <input class="t5-checkbox__input" type="checkbox" name="Area" value="1000">
+                                                        <span class="t5-checkbox__icon">
+                                                            <span class="t5-checkbox__check"></span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="t5-checkbox__text">700-1000坪</span>
+                                                </label>
+                                            </div>
+                                            <div class="filter-item" data-v-f3d96318="">
+                                                <label class="t5-checkbox t5-checkbox--housing" data-v-f3d96318="">
+                                                    <span class="t5-checkbox__inner">
+                                                        <input class="t5-checkbox__input" type="checkbox" name="Area" value="1000+">
+                                                        <span class="t5-checkbox__icon">
+                                                            <span class="t5-checkbox__check"></span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="t5-checkbox__text">1000坪以上</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 類型篩選 -->
+                                    <div class="pc-custom-filter-container" data-v-88be4db3="" data-v-f3d96318="">
+                                        <div class="title" style="" data-v-f3d96318="">類型</div>
+                                        <div class="land_shape options-container" data-v-f3d96318="">
+                                            <div class="filter-item" data-v-f3d96318="">
+                                                <label class="t5-checkbox t5-checkbox--housing" data-v-f3d96318="">
+                                                    <span class="t5-checkbox__inner">
+                                                        <input class="t5-checkbox__input" type="checkbox" name="LandType" value="農地">
+                                                        <span class="t5-checkbox__icon">
+                                                            <span class="t5-checkbox__check"></span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="t5-checkbox__text">農地</span>
+                                                </label>
+                                            </div>
+                                            <div class="filter-item" data-v-f3d96318="">
+                                                <label class="t5-checkbox t5-checkbox--housing" data-v-f3d96318="">
+                                                    <span class="t5-checkbox__inner">
+                                                        <input class="t5-checkbox__input" type="checkbox" name="LandType" value="建地">
+                                                        <span class="t5-checkbox__icon">
+                                                            <span class="t5-checkbox__check"></span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="t5-checkbox__text">建地</span>
+                                                </label>
+                                            </div>
+                                            <div class="filter-item" data-v-f3d96318="">
+                                                <label class="t5-checkbox t5-checkbox--housing" data-v-f3d96318="">
+                                                    <span class="t5-checkbox__inner">
+                                                        <input class="t5-checkbox__input" type="checkbox" name="LandType" value="住宅用地">
+                                                        <span class="t5-checkbox__icon">
+                                                            <span class="t5-checkbox__check"></span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="t5-checkbox__text">住宅用地</span>
+                                                </label>
+                                            </div>
+                                            <div class="filter-item" data-v-f3d96318="">
+                                                <label class="t5-checkbox t5-checkbox--housing" data-v-f3d96318="">
+                                                    <span class="t5-checkbox__inner">
+                                                        <input class="t5-checkbox__input" type="checkbox" name="LandType" value="商業用地">
+                                                        <span class="t5-checkbox__icon">
+                                                            <span class="t5-checkbox__check"></span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="t5-checkbox__text">商業用地</span>
+                                                </label>
+                                            </div>
+                                            <div class="filter-item" data-v-f3d96318="">
+                                                <label class="t5-checkbox t5-checkbox--housing" data-v-f3d96318="">
+                                                    <span class="t5-checkbox__inner">
+                                                        <input class="t5-checkbox__input" type="checkbox" name="LandType" value="工業用地">
+                                                        <span class="t5-checkbox__icon">
+                                                            <span class="t5-checkbox__check"></span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="t5-checkbox__text">工業用地</span>
+                                                </label>
+                                            </div>
+                                            <div class="filter-item" data-v-f3d96318="">
+                                                <label class="t5-checkbox t5-checkbox--housing" data-v-f3d96318="">
+                                                    <span class="t5-checkbox__inner">
+                                                        <input class="t5-checkbox__input" type="checkbox" name="LandType" value="林地">
+                                                        <span class="t5-checkbox__icon">
+                                                            <span class="t5-checkbox__check"></span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="t5-checkbox__text">林地</span>
+                                                </label>
+                                            </div>
+                                            <div class="filter-item" data-v-f3d96318="">
+                                                <label class="t5-checkbox t5-checkbox--housing" data-v-f3d96318="">
+                                                    <span class="t5-checkbox__inner">
+                                                        <input class="t5-checkbox__input" type="checkbox" name="LandType" value="山坡地">
+                                                        <span class="t5-checkbox__icon">
+                                                            <span class="t5-checkbox__check"></span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="t5-checkbox__text">山坡地</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 使用分區篩選 -->
+                                    <div class="location-filter-container use-zone" data-v-88be4db3="" data-v-648c8cf1="">
+                                        <div class="title" data-v-648c8cf1="">使用分區</div>
+                                        <div class="content" data-v-648c8cf1="">
+                                            <div class="categories" data-v-648c8cf1="">
+                                                <div class="category unlimit" data-v-648c8cf1="">
+                                                    <label class="t5-checkbox t5-checkbox--housing">
+                                                        <span class="t5-checkbox__inner">
+                                                            <input class="t5-checkbox__input" type="radio" name="LandUseZone" value="">
+                                                            <span class="t5-checkbox__icon"></span>
+                                                        </span>
+                                                        <span class="t5-checkbox__text">不限</span>
+                                                    </label>
+                                                </div>
+                                                <div class="category" data-v-648c8cf1="">
+                                                    <label class="t5-checkbox t5-checkbox--housing">
+                                                        <span class="t5-checkbox__inner">
+                                                            <input class="t5-checkbox__input" type="radio" name="LandUseZone" value="都市土地">
+                                                            <span class="t5-checkbox__icon"></span>
+                                                        </span>
+                                                        <span class="t5-checkbox__text">都市土地</span>
+                                                    </label>
+                                                </div>
+                                                <div class="category" data-v-648c8cf1="">
+                                                    <label class="t5-checkbox t5-checkbox--housing">
+                                                        <span class="t5-checkbox__inner">
+                                                            <input class="t5-checkbox__input" type="radio" name="LandUseZone" value="非都市土地">
+                                                            <span class="t5-checkbox__icon"></span>
+                                                        </span>
+                                                        <span class="t5-checkbox__text">非都市土地</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                            <!-- LandUseZoneType 選項 -->
+                                            <div class="category-content unlimit" style="" data-v-648c8cf1="" data-v-234ebcb5="">
+                                                <div class="options" data-v-234ebcb5="">
+                                                    <!-- 此处将由JS代码动态生成选项 -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <input type="submit" value="查詢" style="width: 25%;">
                                 </div>
-                            </div>
-                        </div> <div class="filter-more filter-houseage">
-                            <div title="" class="filter-more-txt" style="max-width: 70px;">
-                                屋齡
-                            </div> <div class="icon-arrow"></div> <div class="filter-more-list" style="width: 220px; display: none;"><div data-gtm-stat="中古屋列表頁_更多_屋齡" class="filter-more-item"><span>5年以下</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_屋齡" class="filter-more-item"><span>5-10年</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_屋齡" class="filter-more-item"><span>10-20年</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_屋齡" class="filter-more-item"><span>20-30年</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_屋齡" class="filter-more-item"><span>30-40年</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_屋齡" class="filter-more-item"><span>40年以上</span> <div class="checkbox-icon"></div></div> <div class="filter-more-item is-custom"><div class="filter-custom is-small-input"><input type="text" maxlength="3" class="filter-custom-min filter-custom-input"> <div class="filter-custom-line"></div> <input type="text" maxlength="3" class="filter-custom-max filter-custom-input"> <span class="filter-custom-unit">年</span> <button type="button" class="filter-custom-submit">確定</button></div></div></div> <div class="filter-more-day-list" style="width: 220px; display: none;">
-                                <div class="filter-more-day-item">
-                                    5年以下
-                                </div><div class="filter-more-day-item">
-                                    5-10年
-                                </div><div class="filter-more-day-item">
-                                    10-20年
-                                </div><div class="filter-more-day-item">
-                                    20-30年
-                                </div><div class="filter-more-day-item">
-                                    30-40年
-                                </div><div class="filter-more-day-item">
-                                    40年以上
-                                </div> <div class="filter-more-item is-custom"><div class="filter-custom is-small-input"><input type="text" maxlength="3" class="filter-custom-min filter-custom-input"> <div class="filter-custom-line"></div> <input type="text" maxlength="3" class="filter-custom-max filter-custom-input"> <span class="filter-custom-unit">年</span> <button type="button" class="filter-custom-submit">確定</button></div></div>
-                            </div>
-                        </div> <div class="filter-more filter-price">
-                            <div title="" class="filter-more-txt">
-                                單價
-                            </div> <div class="icon-arrow"></div> <div class="filter-more-list" style="display: none;"><div data-gtm-stat="中古屋列表頁_更多_單價" class="filter-more-item"><span>20萬以下</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_單價" class="filter-more-item"><span>20-30萬</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_單價" class="filter-more-item"><span>30-50萬</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_單價" class="filter-more-item"><span>50-70萬</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_單價" class="filter-more-item"><span>70萬以上</span> <div class="checkbox-icon"></div></div></div> <div class="filter-more-day-list" style="display: none;">
-                                <div class="filter-more-day-item">
-                                    20萬以下
-                                </div><div class="filter-more-day-item">
-                                    20-30萬
-                                </div><div class="filter-more-day-item">
-                                    30-50萬
-                                </div><div class="filter-more-day-item">
-                                    50-70萬
-                                </div><div class="filter-more-day-item">
-                                    70萬以上
-                                </div>
-                            </div>
-                        </div> <div class="filter-more filter-direction">
-                            <div title="" class="filter-more-txt">
-                                朝向
-                            </div> <div class="icon-arrow"></div> <div class="filter-more-list" style="display: none;"><div data-gtm-stat="中古屋列表頁_更多_朝向" class="filter-more-item"><span>坐東朝西</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_朝向" class="filter-more-item"><span>坐西朝東</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_朝向" class="filter-more-item"><span>坐南朝北</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_朝向" class="filter-more-item"><span>坐北朝南</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_朝向" class="filter-more-item"><span>坐東南朝西北</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_朝向" class="filter-more-item"><span>坐西南朝東北</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_朝向" class="filter-more-item"><span>坐西北朝東南</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_朝向" class="filter-more-item"><span>坐東北朝西南</span> <div class="checkbox-icon"></div></div></div> <div class="filter-more-day-list" style="display: none;">
-                                <div class="filter-more-day-item">
-                                    坐東朝西
-                                </div><div class="filter-more-day-item">
-                                    坐西朝東
-                                </div><div class="filter-more-day-item">
-                                    坐南朝北
-                                </div><div class="filter-more-day-item">
-                                    坐北朝南
-                                </div><div class="filter-more-day-item">
-                                    坐東南朝西北
-                                </div><div class="filter-more-day-item">
-                                    坐西南朝東北
-                                </div><div class="filter-more-day-item">
-                                    坐西北朝東南
-                                </div><div class="filter-more-day-item">
-                                    坐東北朝西南
-                                </div>
-                            </div>
-                        </div> <div class="filter-more filter-floor">
-                            <div title="" class="filter-more-txt">
-                                樓層
-                            </div> <div class="icon-arrow"></div> <div class="filter-more-list" style="width: 220px; display: none;"><div data-gtm-stat="中古屋列表頁_更多_樓層" class="filter-more-item"><span>1層</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_樓層" class="filter-more-item"><span>2-6層</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_樓層" class="filter-more-item"><span>6-12層</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_樓層" class="filter-more-item"><span>12層以上</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_樓層" class="filter-more-item"><span>地下樓</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_樓層" class="filter-more-item"><span>整棟</span> <div class="checkbox-icon"></div></div> <div class="filter-more-item is-custom"><div class="filter-custom is-small-input"><input type="text" maxlength="3" class="filter-custom-min filter-custom-input"> <div class="filter-custom-line"></div> <input type="text" maxlength="3" class="filter-custom-max filter-custom-input"> <span class="filter-custom-unit">層</span> <button type="button" class="filter-custom-submit">確定</button></div></div></div> <div class="filter-more-day-list" style="width: 220px; display: none;">
-                                <div class="filter-more-day-item">
-                                    1層
-                                </div><div class="filter-more-day-item">
-                                    2-6層
-                                </div><div class="filter-more-day-item">
-                                    6-12層
-                                </div><div class="filter-more-day-item">
-                                    12層以上
-                                </div><div class="filter-more-day-item">
-                                    地下樓
-                                </div><div class="filter-more-day-item">
-                                    整棟
-                                </div> <div class="filter-more-item is-custom"><div class="filter-custom is-small-input"><input type="text" maxlength="3" class="filter-custom-min filter-custom-input"> <div class="filter-custom-line"></div> <input type="text" maxlength="3" class="filter-custom-max filter-custom-input"> <span class="filter-custom-unit">層</span> <button type="button" class="filter-custom-submit">確定</button></div></div>
-                            </div>
-                        </div> <div class="filter-more filter-fitment">
-                            <div title="" class="filter-more-txt">
-                                裝潢程度
-                            </div> <div class="icon-arrow"></div> <div class="filter-more-list" style="display: none;"><div data-gtm-stat="中古屋列表頁_更多_裝潢程度" class="filter-more-item"><span>尚未裝潢</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_裝潢程度" class="filter-more-item"><span>簡易裝潢</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_裝潢程度" class="filter-more-item"><span>中檔裝潢</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_裝潢程度" class="filter-more-item"><span>高檔裝潢</span> <div class="checkbox-icon"></div></div></div> <div class="filter-more-day-list" style="display: none;">
-                                <div class="filter-more-day-item">
-                                    尚未裝潢
-                                </div><div class="filter-more-day-item">
-                                    簡易裝潢
-                                </div><div class="filter-more-day-item">
-                                    中檔裝潢
-                                </div><div class="filter-more-day-item">
-                                    高檔裝潢
-                                </div>
-                            </div>
-                        </div> <div class="filter-more filter-life">
-                            <div title="" class="filter-more-txt">
-                                生活機能
-                            </div> <div class="icon-arrow"></div> <div class="filter-more-list" style="display: none;"><div data-gtm-stat="中古屋列表頁_更多_生活機能" class="filter-more-item"><span>便利店</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_生活機能" class="filter-more-item"><span>傳統市場</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_生活機能" class="filter-more-item"><span>近醫療機構</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_生活機能" class="filter-more-item"><span>近學校</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_生活機能" class="filter-more-item"><span>近公園</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_生活機能" class="filter-more-item"><span>近夜市</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_生活機能" class="filter-more-item"><span>百貨公司</span> <div class="checkbox-icon"></div></div></div> <div class="filter-more-day-list" style="display: none;">
-                                <div class="filter-more-day-item">
-                                    便利店
-                                </div><div class="filter-more-day-item">
-                                    傳統市場
-                                </div><div class="filter-more-day-item">
-                                    近醫療機構
-                                </div><div class="filter-more-day-item">
-                                    近學校
-                                </div><div class="filter-more-day-item">
-                                    近公園
-                                </div><div class="filter-more-day-item">
-                                    近夜市
-                                </div><div class="filter-more-day-item">
-                                    百貨公司
-                                </div>
-                            </div>
-                        </div> <div class="filter-more filter-role">
-                            <div title="" class="filter-more-txt">
-                                經辦人選擇
-                            </div> <div class="icon-arrow"></div> <div class="filter-more-list" style="display: none;"><div data-gtm-stat="中古屋列表頁_更多_經辦人選擇" class="filter-more-item"><span>屋主刊登</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_經辦人選擇" class="filter-more-item"><span>仲介刊登</span> <div class="checkbox-icon"></div></div><div data-gtm-stat="中古屋列表頁_更多_經辦人選擇" class="filter-more-item"><span>代理人刊登</span> <div class="checkbox-icon"></div></div></div> <div class="filter-more-day-list" style="display: none;">
-                                <div class="filter-more-day-item">
-                                    屋主刊登
-                                </div><div class="filter-more-day-item">
-                                    仲介刊登
-                                </div><div class="filter-more-day-item">
-                                    代理人刊登
-                                </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
+
+                <!-- 展開按鈕 -->
+                @*<div class="fold-btn-container" data-v-88be4db3="">
+                    <div class="fold-btn" data-v-88be4db3="">
+                        <span data-v-88be4db3="" data-tracker="">
+                            展開選項
+                            <span class="tip" data-v-88be4db3="">（用途/特色/所有權/來源）</span>
+                        </span>
+                        <span class="fold ic-house house-arrow-down arrow-icon" data-v-88be4db3=""></span>
+                    </div>
+                </div>*@
             </div>
-        </div>*@
-        <!------------------------------------------------------------------------>
+        </div>
+
+
+
+
 
         <div class="main-title text-center" style="margin-top:50px;">
             <h3 class="section-head mt55">
@@ -541,5 +738,7 @@
     <script src="~/js/owl.carousel.js"></script>
     <script src="~/js/HotBuild.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="~/js/TaiwanDistFilter.js"></script>
+    
 </body>
 </html>
