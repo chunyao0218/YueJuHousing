@@ -458,16 +458,16 @@ p {
   }
 
   .slider .item-first {
-    background-image: url(../images/slider1.jpg);
+    background-image: url(../images/HomeSlider1.jpg);
   }
 
-  .slider .item-second {
-    background-image: url(../images/slider2.jpg);
-  }
+.slider .item-second {
+    background-image: url(../images/HomeSlider1.jpg);
+}
 
-  .slider .item-third {
-    background-image: url(../images/slider3.jpg);
-  }
+.slider .item-third {
+    background-image: url(../images/HomeSlider1.jpg);
+}
 
 
 /*---------------------------------------

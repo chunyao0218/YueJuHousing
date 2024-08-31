@@ -11,9 +11,11 @@
     <Content Remove="wwwroot\js\house.js" />
     <Content Remove="wwwroot\js\ImageViewerModal.js" />
     <Content Remove="wwwroot\js\land.js" />
+    <Content Remove="wwwroot\js\TaiwanDistFilter.js" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\js\TaiwanDistFilter.js" />
     <None Include="wwwroot\js\ImageViewerModal.js" />
     <None Include="wwwroot\js\land.js" />
     <None Include="wwwroot\js\house.js" />
