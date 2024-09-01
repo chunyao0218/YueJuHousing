@@ -4157,10 +4157,17 @@ strong {
 }
 
 .scroll-wrapper .scroll-main .scroll-list {
-    width: 500%;
-    position: absolute;
+    width: 100%;
+    position: relative;
+    height:auto;
     left: 0;
     top: 0
+}
+
+.item {
+    width: 100%; /* 确保每个 item 占满父容器的宽度 */
+    float: left; /* 将每个 item 依次排列 */
+    box-sizing: border-box; /* 包含 padding 和 border 在内 */
 }
 
 #hotBuild_unknow, #hotBuild_sale {
@@ -4486,3 +4493,6 @@ strong {
 #sideNav_wrap.fixed_wrap {
     z-index: 10
 }
+
+
+
