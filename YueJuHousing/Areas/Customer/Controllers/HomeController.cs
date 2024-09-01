@@ -19,7 +19,8 @@ namespace YueJuHousing.Areas.Customer.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var lands = _unitOfWork.Land.GetAll().ToList();
+            return View(lands);
         }
 
         public IActionResult Privacy()

@@ -1,7 +1,7 @@
 // Owl Carousel HotBuild-1
     $('.hotbuild-1').owlCarousel({
         loop: true,
-        margin: 10,
+        margin: 15,
         autoplay: true,
         nav: false,
         responsiveClass: true,
@@ -20,6 +20,7 @@
             }
         }
     });
+
 
 
     $('.detail').owlCarousel({
