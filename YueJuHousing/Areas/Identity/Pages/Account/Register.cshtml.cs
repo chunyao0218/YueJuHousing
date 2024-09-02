@@ -64,16 +64,16 @@ namespace YueJuHousing.Areas.Identity.Pages.Account
 
         public class InputModel
         {
-            [Required(ErrorMessage = "信箱是必填項")]
-            [EmailAddress(ErrorMessage = "信箱格式不正確")]
-            [Display(Name = "信箱")]
+            [Required(ErrorMessage = "電子郵件是必填項")]
+            [EmailAddress(ErrorMessage = "電子郵件格式不正確")]
+            [Display(Name = "電子郵件")]
             public string Email { get; set; }
 
             [Required(ErrorMessage = "密碼是必填項")]
             [StringLength(100, ErrorMessage = "{0} 至少 {2} 到 {1}", MinimumLength = 6)]
             //[PasswordComplexity(ErrorMessage = "密碼必須包含至少一個小寫字母，一個大寫字母和一個非字母數字字符")]
             [DataType(DataType.Password)]
-            [Display(Name = "密碼")]
+            [Display(Name = "密碼(至少6個字元)")]
             public string Password { get; set; }
 
             [Required(ErrorMessage = "確認密碼是必填項")]
@@ -87,16 +87,16 @@ namespace YueJuHousing.Areas.Identity.Pages.Account
             [ValidateNever]
             public IEnumerable<SelectListItem> RoleList { get; set; }
 
-            [Required(ErrorMessage = "名字是必填項")]
-            [Display(Name = "名字")]
+            [Required(ErrorMessage = "姓名是必填項")]
+            [Display(Name = "姓名")]
             public string Name { get; set; }
 
-            [Required(ErrorMessage = "地址是必填項")]
-            [Display(Name = "地址")]
+            [Required(ErrorMessage = "聯絡地址是必填項")]
+            [Display(Name = "聯絡地址")]
             public string? Address { get; set; }
 
-            [Required(ErrorMessage = "電話是必填項")]
-            [Display(Name = "電話")]
+            [Required(ErrorMessage = "聯絡電話是必填項")]
+            [Display(Name = "聯絡電話")]
             public string? PhoneNumber { get; set; }
         }
 

@@ -66,6 +66,20 @@ namespace YueJuHousing.Areas.Customer.Controllers
         [HttpPost]
         public IActionResult Upsert(LandVM landVM, List<IFormFile> files)
         {
+            if (landVM.Land.AreaCodePhoneNumber == "無")
+            {
+                landVM.Land.PhoneNumber = null;
+            }
+
+            // 如果選擇了非都市土地，將 LandUseZoneTypeDetail 設為 null
+            if (landVM.Land.LandUseZone == "非都市土地")
+            {
+                landVM.Land.LandUseZoneTypeDetail = null;
+            }
+
+            // 如果仍然遇到驗證錯誤，您可以明確移除對 VideoUrl 的檢查
+            ModelState.Remove("Land.VideoUrl");
+
             if (ModelState.IsValid)
             {
                 //

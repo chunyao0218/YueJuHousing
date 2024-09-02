@@ -51,6 +51,7 @@
                 <div class="col-md-12 col-sm-12">
                     <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
                           <h2 class="text-primary"> <i class=" fa fa-house-flag" style="color:#456270"></i>@(Model.Land.Id != 0 ? "編輯" : "刊登出售")土地</h2>
+                          <h5>*為必填項</h5>
                       @*   <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
                             <h5>選擇廣告類型：</h5>
                             <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center; margin-top:10px; ">
@@ -99,8 +100,8 @@
                             <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
                                 <input asp-for="Land.SquareMeters" class="form-control" placeholder="請輸入基地面積" />
                                 <select asp-for="Land.SquareMetersUnit" id="city" class="form-control" style="margin-right: 10px;" required>
-                                    <option value="" disabled selected style="color: #b7b7b7;">請選擇單位</option>
-                                    <option value="坪">坪</option>
+                                    <option value="" disabled  style="color: #b7b7b7;">請選擇單位</option>
+                                    <option value="坪" selected>坪</option>
                                     <option value="平方公尺">平方公尺</option>
                                 </select>
                             </div>
@@ -126,7 +127,7 @@
                             <label asp-for="Land.LandUseZone" class="p-0"></label>
                         </div>
                         <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
-                            <label asp-for="Land.LandUseZone" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZone" type="radio" value="都市土地" checked >都市土地</label>
+                            <label asp-for="Land.LandUseZone" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZone" type="radio" value="都市土地" checked>都市土地</label>
                             <label asp-for="Land.LandUseZone" style="display:contents;margin-left:10px;"><input asp-for="Land.LandUseZone" type="radio" value="非都市土地" style="margin-left:10px;">非都市土地</label>
                         </div>
                         <div id="urbanZones" class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
@@ -549,7 +550,7 @@
                             </div>
                         </div>
                         <div class="col-md-12 col-sm-12">
-                            <label asp-for="Land.PhoneNumber" class="p-0"></label>
+                            <label asp-for="Land.AreaCodePhoneNumber" class="p-0"></label>
                         </div>
                         <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
                             <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
@@ -601,8 +602,8 @@
                         <div class="col-md-12 col-sm-12" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
                             <div class="col-md-6 col-sm-6" style="display: flex; flex-wrap: nowrap; overflow-x: auto; align-items: center;">
                                 <select asp-for="Land.ProtectPhone" id="city" class="form-control" required>
-                                    <option value="" disabled selected style="color: #b7b7b7;">建議啟用，不會影響買家撥打</option>
-                                    <option value="啟用">啟用</option>
+                                    <option value="" disabled style="color: #b7b7b7;">建議啟用，不會影響買家撥打</option>
+                                    <option value="啟用" selected>啟用</option>
                                     <option value="不啟用">不啟用</option>
                                 </select>
                                 <span asp-validation-for="Land.ProtectPhone" class="text-danger"></span>
@@ -644,6 +645,7 @@
 
 <!-- SCRIPTS -->
 <script src="~/js/jquery.js"></script>
+<script src="~/lib/jquery/jquery.min.js"></script>
 <script src="~/js/bootstrap.min.js"></script>
 <script src="~/js/jquery.sticky.js"></script>
 <script src="~/js/jquery.stellar.min.js"></script>
@@ -651,7 +653,6 @@
 <script src="~/js/smoothscroll.js"></script>
 <script src="~/js/owl.carousel.min.js"></script>
 <script src="~/js/custom.js"></script>
-<script src="~/js/index.js"></script>
 <script src="~/js/PostAd.js"></script>
 
 <script src="~/js/landPreviewImage.js"></script>
