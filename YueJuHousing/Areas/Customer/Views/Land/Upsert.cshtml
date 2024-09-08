@@ -537,7 +537,11 @@
                                     <option value="代理人">代理人</option>
                                 </select>
                             <input asp-for="Land.ContactPeopleName" class="form-control" placeholder="請輸入姓名" />
-                            <label asp-for="Land.NoIntermediaryDisturb" style="display:contents;margin-left:10px;"><input type="checkbox" name="gender" value="true" style="margin-left:10px;">屋主聲明，請仲介勿擾！</label>
+                            <label asp-for="Land.NoIntermediaryDisturb" style="display:contents;margin-left:10px;">
+                                <input type="hidden" asp-for="Land.NoIntermediaryDisturb" value="false" />
+                                <input type="checkbox" asp-for="Land.NoIntermediaryDisturb" style="margin-left:10px;">
+                                屋主聲明，請仲介勿擾！
+                            </label>
                             <span asp-validation-for="Land.NoIntermediaryDisturb" class="text-danger"></span>
                         </div>
                         <div class="col-md-12 col-sm-12">
