@@ -162,6 +162,8 @@ namespace YueJuHousing.Areas.Customer.Controllers
                 }
                 else
                 {
+                    TimeZoneInfo taiwanTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Taipei Standard Time");
+                    landVM.Land.ModifyDate = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, taiwanTimeZone);
                     _unitOfWork.Land.Update(landVM.Land);
                 }
                 _unitOfWork.Save();

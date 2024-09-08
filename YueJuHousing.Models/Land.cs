@@ -19,15 +19,15 @@ namespace YueJuHousing.Models
 
         [DisplayName("*地址:")]
         [Required(ErrorMessage = "請填寫地址")]
-        public string Address { get; set; }
+        public string? Address { get; set; }
 
         [DisplayName("*地號:")]
         [Required(ErrorMessage = "請填寫地號")]
-        public string LandSerialNumber { get; set; }
+        public string? LandSerialNumber { get; set; }
 
         [DisplayName("*所有權(權屬類型):")]
         [Required]
-        public string OwnerShipType { get; set; }
+        public string? OwnerShipType { get; set; }
 
         /*物件面積*/
 
@@ -35,7 +35,7 @@ namespace YueJuHousing.Models
         [Required]
         public double SquareMeters { get; set; }
         [Required]
-        public string SquareMetersUnit { get; set; }
+        public string? SquareMetersUnit { get; set; }
 
         [DisplayName("規格:")]
         [Required]
@@ -48,14 +48,14 @@ namespace YueJuHousing.Models
 
         [DisplayName("*土地使用分區：")]
         [Required]
-        public string LandUseZone { get; set; }
-        public string LandUseZoneType { get; set; }
+        public string? LandUseZone { get; set; }
+        public string? LandUseZoneType { get; set; }
         [AllowNull]
         public string? LandUseZoneTypeDetail { get; set; }
 
         [DisplayName("*土地類別：")]
         [Required]
-        public string LandType { get; set; }
+        public string? LandType { get; set; }
 
         [DisplayName("建蔽率：")]
         [Required]
@@ -86,7 +86,7 @@ namespace YueJuHousing.Models
 
         [DisplayName("*土地現況：")]
         [Required(ErrorMessage = "請說明現況")]
-        public string LandStatus { get; set; }
+        public string? LandStatus { get; set; }
 
         [DisplayName("投報率:")]
         [Required]
@@ -94,7 +94,7 @@ namespace YueJuHousing.Models
 
         [DisplayName("可分割出售：")]
         [Required]
-        public string SaleBySplit { get; set; }
+        public string? SaleBySplit { get; set; }
 
         [DisplayName("建築限高：")]
         [Required]
@@ -126,49 +126,49 @@ namespace YueJuHousing.Models
 
         [DisplayName("*廣告標題：")]
         [Required(ErrorMessage = "請填寫廣告標題")]
-        public string AdTitle { get; set; }
+        public string? AdTitle { get; set; }
 
         [DisplayName("*現況特色描述：")]
         [Required(ErrorMessage = "請填寫特色描述")]
-        public string FeatureDescribe { get; set; }
+        public string? FeatureDescribe { get; set; }
 
         /*照片&影片*/
 
         [DisplayName("*土地照片上傳(請至少上傳1張，最多9張)：")]
         [ValidateNever]
-        public string ImageUrl { get; set; }
+        public string? ImageUrl { get; set; }
 
         [DisplayName("土地照片2上傳：")]
         [ValidateNever]
-        public string ImageUrl2 { get; set; }
+        public string? ImageUrl2 { get; set; }
 
         [DisplayName("土地照片3上傳：")]
         [ValidateNever]
-        public string ImageUrl3 { get; set; }
+        public string? ImageUrl3 { get; set; }
 
         [DisplayName("土地照片4上傳：")]
         [ValidateNever]
-        public string ImageUrl4 { get; set; }
+        public string? ImageUrl4 { get; set; }
 
         [DisplayName("土地照片5上傳：")]
         [ValidateNever]
-        public string ImageUrl5 { get; set; }
+        public string? ImageUrl5 { get; set; }
 
         [DisplayName("土地照片6上傳：")]
         [ValidateNever]
-        public string ImageUrl6 { get; set; }
+        public string? ImageUrl6 { get; set; }
 
         [DisplayName("土地照片7上傳：")]
         [ValidateNever]
-        public string ImageUrl7 { get; set; }
+        public string? ImageUrl7 { get; set; }
 
         [DisplayName("土地照片8上傳：")]
         [ValidateNever]
-        public string ImageUrl8 { get; set; }
+        public string? ImageUrl8 { get; set; }
 
         [DisplayName("土地照片9上傳：")]
         [ValidateNever]
-        public string ImageUrl9 { get; set; }
+        public string? ImageUrl9 { get; set; }
 
         [DisplayName("影片網址上傳：")]
         [ValidateNever]
@@ -178,13 +178,16 @@ namespace YueJuHousing.Models
 
         [DisplayName("*聯絡人：")]
         [Required]
-        public string ContactPeopleType { get; set; }
-        public string ContactPeopleName { get; set; }
+        public string? ContactPeopleType { get; set; }
+        public string? ContactPeopleName { get; set; }
+
+        [ValidateNever]
         public bool NoIntermediaryDisturb { get; set; }
 
         [DisplayName("*行動電話：")]
         [Required(ErrorMessage = "請填寫行動電話")]
-        public string CellPhoneNumber { get; set; }
+        [RegularExpression(@"^09\d{8}$", ErrorMessage = "行動電話格式不正確，請輸入正確的台灣手機號碼")]
+        public string? CellPhoneNumber { get; set; }
 
         [DisplayName("固定電話：")]
         public string? AreaCodePhoneNumber { get; set; }
@@ -194,23 +197,22 @@ namespace YueJuHousing.Models
         [DisplayName("*Email：")]
         [Required(ErrorMessage = "請填寫Email")]
         [EmailAddress]
-        public string Email { get; set; }
+        public string? Email { get; set; }
 
         [DisplayName("*LineID：")]
         [Required(ErrorMessage = "請填寫LineID")]
-        public string LineID { get; set; }
+        public string? LineID { get; set; }
 
         [DisplayName("*保護電話：")]
         [Required]
-        public string ProtectPhone { get; set; }
+        public string? ProtectPhone { get; set; }
 
         [ValidateNever]
-        public string UserId { get; set; }
+        public string? UserId { get; set; }
 
         [ValidateNever]
         public DateTime CreateDate { get; set; }
 
-        [ValidateNever]
         public DateTime ModifyDate { get; set; }
 
         //[DisplayName("類別:")]

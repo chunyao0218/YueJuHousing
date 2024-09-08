@@ -91,6 +91,7 @@ namespace YueJuHousing.DataAccess.Repository
                 {
                     objFromDb.ImageUrl = obj.ImageUrl;
                 }
+                objFromDb.ModifyDate = obj.ModifyDate;
             }
         }
     }
