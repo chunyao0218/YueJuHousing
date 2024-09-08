@@ -441,7 +441,7 @@
         <div class="main-title text-center" style="margin-top:50px;">
             <h3 class="section-head mt55">
                 最新上架物件
-                <p>嚴選區域最新的物件</p>
+                <p>嚴選最新的物件</p>
             </h3>
         </div>
         <div class="hotbuild-1 owl-carousel owl-theme hotbuild">
@@ -464,7 +464,7 @@
                                             <img src="@land.ImageUrl" alt="@land.AdTitle" width="270" height="180">
                                             <div class="newbuild-title">
                                                 <div class="tel-shade"></div>
-                                                <div class="newbuild-tel"><i b-pysnvdqbir="" class="fa fa-phone" aria-hidden="true"></i> @land.CellPhoneNumber</div>
+                                                <div class="newbuild-tel"><i b-pysnvdqbir="" class="fa fa-phone" aria-hidden="true"></i> @land.CellPhoneNumber.Substring(0, 4)-@land.CellPhoneNumber.Substring(4, 3)-@land.CellPhoneNumber.Substring(7, 3)</div>
                                             </div>
                                         </dt>
                                         <dd>
