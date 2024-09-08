@@ -51,13 +51,24 @@
                 </h1>
                 <div class="detail-title-info">
                     @*<span class="detail-info-span pull-right">有效期：2024-04-27</span>*@
-                    <span class="detail-info-span">有效期：2024-04-27</span>
+                    <span class="detail-info-span">刊登日期：@Model.CreateDate.ToString("yyyy-MM-dd")</span>
                     </br>
-                    <span class="detail-info-span">瀏覽人數：1565@*（<i class="visit-pc"></i>293 &nbsp;&nbsp;|&nbsp;&nbsp; <i class="visit-move"></i>1272）*@</span>
+                    <span class="detail-info-span">更新日期：@Model.ModifyDate.ToString("yyyy-MM-dd")</span>
+                    @*<span class="detail-info-span">瀏覽人數：1565（<i class="visit-pc"></i>293 &nbsp;&nbsp;|&nbsp;&nbsp; <i class="visit-move"></i>1272）*@</span>
                 </div>
             </div>
-            @*<div class="detail-title-right" style="margin-top: 20px;">
+            <div class="detail-title-right" style="margin-top: 20px;">
                 <div class="detail-title-func" id="j_addfav" google-data-stat="出售_新版列表詳細頁_收藏" data-behavior-collect="" data-gtm-behavior="collect">
+                    <a href="tel:@("+886" + Model.CellPhoneNumber.Substring(1))">
+                        <i class="fa fa-phone" aria-hidden="true" style="padding-right:0px;"></i>
+                        @Model.CellPhoneNumber.Substring(0, 4)-@Model.CellPhoneNumber.Substring(4, 3)-@Model.CellPhoneNumber.Substring(7, 3)
+                    </a>
+                    <a href="line://ti/p/@Model.LineID" target="_blank" style="margin-left:10px;">
+                        <img class="appointment-btn" src="https://scdn.line-apps.com/n/line_add_friends/btn/zh-Hant.png" alt="加入好友" style="width: 100px;" border="0">
+                    </a>
+                </div>
+                
+                @*<div class="detail-title-func" id="j_addfav" google-data-stat="出售_新版列表詳細頁_收藏" data-behavior-collect="" data-gtm-behavior="collect">
                     <i class="fa fa-heart-o"></i>
                     <a href="javascript:;">
                         收藏
@@ -77,9 +88,9 @@
                 </div>
 
                 <div class="detail-title-func" id="detailPrint" google-data-stat="出售_新版列表詳細頁_列印" data-behavior-print=""><i class="fa fa-print"></i><a href="javascript:;">列印</a></div>
-                <div class="detail-title-func" id="detailImpeach" google-data-stat="出售_新版列表詳細頁_檢舉"><i class="fa fa-exclamation-triangle"></i><a href="javascript:;">檢舉</a></div>
+                <div class="detail-title-func" id="detailImpeach" google-data-stat="出售_新版列表詳細頁_檢舉"><i class="fa fa-exclamation-triangle"></i><a href="javascript:;">檢舉</a></div>*@
             </div>
-            </div>*@
+        </div>
     </div>
 
     <div class="top-container" data-v-e642ddf0="">
@@ -330,7 +341,7 @@
                     </div>
                 </div>*@
                 <div class="tag-bar" data-v-c2e97c82="">
-                    <span class="" data-v-c2e97c82="">圖片 15</span>
+                        <span class="" data-v-c2e97c82="">圖片 @ViewBag.ImageCountDetail</span>
                 </div>
             </div>
         </section>
