@@ -52,10 +52,12 @@
     <table id="tblData1" class="table table-bordered table-striped" style="width:100%; margin-top:10px;">
         <thead>
             <tr>
-                <th>物件名稱</th>
+                <th>刊登日期</th>
+                <th>物件標題</th>
                 <th>地址</th>
-                <th>坪數</th>
-                <th>價格</th>
+                <th>地號</th>
+                <th>面積</th>
+                <th>總價</th>
                 <th></th>
             </tr>
         </thead>
@@ -63,10 +65,12 @@
             @foreach (var obj in Model)
             {
                 <tr>
+                    <td>@obj.CreateDate</td>
                     <td>@obj.AdTitle</td>
                     <td>@obj.Address</td>
-                    <td>@obj.SquareMeters</td>
-                    <td>@obj.Price</td>
+                    <td>@obj.LandSerialNumber</td>
+                    <td>@obj.SquareMeters @obj.SquareMetersUnit</td>
+                    <td>@obj.Price 萬</td>
                     <td>
                         <div class="w-75 btn-group" role="group">
                             <a asp-controller="Land" asp-action="Upsert" asp-route-id="@obj.Id" class="btn btn-primary mx-2">
