@@ -98,7 +98,7 @@ namespace YueJuHousing.Areas.Customer.Controllers
                         {
                             uploadedFile.CopyTo(fileStream);
                         }
-                        imageUrls.Add(@"\YueJu\images\land\" + fileName);
+                        imageUrls.Add(@"images\land\" + fileName);
                     }
 
                     // 清空之前的图片链接
